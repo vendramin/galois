@@ -1,0 +1,367 @@
+\RequirePackage{amsmath} 
+
+\documentclass[graybox,envcountsect]{svmono}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[notref,notcite]{showkeys}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{mathtools}
+\usepackage{xcolor} 
+\usepackage{centernot}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{mathptmx}
+%\let\openbox\relax
+\usepackage{newtxtext,newtxmath}
+%\usepackage{txfonts}
+\usepackage{datetime}
+\usepackage{stmaryrd}
+\usepackage{tikz-cd}
+
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{type1cm}         
+\usepackage{makeidx}        
+\usepackage{graphicx}        
+\usepackage{multicol}        
+\usepackage[all]{xy}
+\usepackage{hyperref} 
+%\usepackage{tikz-cd}
+\usepackage{colortbl}
+\usepackage{chngcntr}
+
+
+
+
+
+% Table of contents for lectures and topics
+\makeatletter
+\newcommand\listtopicsname{List of topics}
+\newcommand\listoftopics{
+    \chapter*{\listtopicsname}\@starttoc{top}}
+\makeatother
+
+\makeatletter
+\newcommand\listlecturesname{Contents}
+\newcommand\listoflectures{
+    \chapter*{\listlecturesname}\@starttoc{lec}}
+\makeatother
+
+\newcommand{\lecture}[1]{
+    \chapter{#1}
+    \addcontentsline{lec}{chapter}{Lecture \thechapter}
+}
+
+\newcommand{\topic}[1]{
+    \section{#1}
+    \addcontentsline{top}{chapter}{\S\thesection\quad #1}
+}
+
+
+\usepackage[small,bf]{caption}
+
+\usepackage{tikz}
+\usetikzlibrary{braids}
+	
+\usepackage[bottom]{footmisc}
+
+% for QED
+\let\proof\relax\let\endproof\relax
+\let\openbox\relax
+\usepackage{amsthm}
+
+\overfullrule=1mm
+
+%%% for Spanish
+% \def\abstractname{Resumen}%
+% \def\ackname{Agradecimientos}%
+% \def\andname{y}%
+% \def\bibname{Referencias}%
+% \def\lastandname{, y}%
+% \def\appendixname{Apéndice}%
+\def\chaptername{Lecture}%
+% \def\claimname{Afirmación}%
+% \def\conjecturename{Conjetura}%
+% \def\contentsname{Contenidos}%
+% \def\corollaryname{Corolario}%
+% \def\definitionname{Definici\'on}%
+% \def\emailname{e-mail}%
+% \def\examplename{Ejemplo}%
+\def\examplesname{Examples}%
+% \def\exercisename{Ejercicio}%
+\def\figurename{Figure}%
+% \def\forewordname{Foreword}%
+% \def\keywordname{{\bf Palabras clave:}}%
+% \def\indexname{Índice}%
+% \def\lemmaname{Lema}%
+% \def\listfigurename{Figuras}%
+% \def\listtablename{Tablas}%
+% \def\notename{Nota}%
+% \def\partname{Parte}%
+% \def\prefacename{Prefacio}%
+\def\problemname{Open problem}%
+% \def\proofname{Demostración}%
+% \def\propertyname{Propiedad}%
+% \def\propositionname{Proposici\'on}%
+% \def\questionname{Pregunta}%
+% \def\refname{Referencias}%
+% \def\remarkname{Observación}%
+% \def\seename{see}%
+% \def\solutionname{Solución}%
+% \def\tablename{Tabla}%
+% \def\theoremname{Teorema}
+\def\notationname{Notation}
+\def\stepsname{Algorithm}
+% \def\conventionname{Convención}
+
+% change numbers 
+\let\remark\relax
+\let\theorem\relax
+\let\lemma\relax
+\let\definition\relax
+\let\proposition\relax
+\let\corollary\relax
+\let\exercise\relax
+\let\example\relax
+\let\conjecture\relax
+
+% Numerar con sección y no resetear al cambiar de capítulo
+\counterwithout{section}{chapter}
+\counterwithout{theorem}{chapter}
+\spnewtheorem{theorem}{\theoremname}[section]{\bfseries}{\itshape}
+
+\renewcommand\thetheorem{\thesection.\arabic{theorem}}
+\spnewtheorem{lemma}[theorem]{\lemmaname}{\bfseries}{\itshape}
+\spnewtheorem{definition}[theorem]{\definitionname}{\bfseries}{\upshape}
+\spnewtheorem{proposition}[theorem]{\propositionname}{\bfseries}{\itshape}
+\spnewtheorem{corollary}[theorem]{\corollaryname}{\bfseries}{\itshape}
+\spnewtheorem{exercise}[theorem]{\exercisename}{\bfseries}{\upshape}
+\spnewtheorem{example}[theorem]{\examplename}{\bfseries}{\upshape}
+\spnewtheorem{examples}[theorem]{\examplesname}{\bfseries}{\upshape}
+\spnewtheorem{remark}[theorem]{\remarkname}{}{\upshape}
+\spnewtheorem{conjecture}[theorem]{\conjecturename}{\bfseries}{\upshape}
+\spnewtheorem{notation}[theorem]{\notationname}{\bfseries}{\upshape}
+\spnewtheorem{steps}[theorem]{\stepsname}{\bfseries}{\upshape}
+\spnewtheorem{convention}[theorem]{\conventionname}{\bfseries}{\upshape}
+
+% Numerar con sección y no resetear al cambiar de capítulo
+\counterwithout{section}{chapter}
+
+% No sections in TOC
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{0}
+
+ \usepackage{titlesec}
+ \titleformat{\section}
+   {\secsize\secstyle}{\S\thesection.}{1em}{}
+
+% para enumerar
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi})}}
+
+\makeindex             
+
+\renewcommand{\I}{\operatorname{I}}
+\newcommand{\II}{\operatorname{II}}
+
+\newcommand{\GAP}{\textsf{GAP}}
+\newcommand{\FK}{\mathcal{E}}
+\newcommand{\ad}[1]{\operatorname{ad}\,#1}
+
+%\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\T}{\mathbb{T}}
+\renewcommand{\D}{\mathbb{D}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\Fun}{\operatorname{Fun}}
+\newcommand{\mpl}{\operatorname{mpl}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cH}{\mathcal{H}}
+
+\newcommand{\GF}{\mathsf{GF}}
+\newcommand{\MAX}{\operatorname{MAX}}
+\newcommand{\MIN}{\operatorname{MIN}}
+\newcommand{\cf}{\operatorname{cf}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\cd}{\operatorname{cd}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bP}{\mathbf{P}}
+
+\newcommand{\Nil}{\operatorname{Nil}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\newcommand{\Aff}{\mathrm{Aff}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Der}{\operatorname{Der}}
+\newcommand{\Core}{\operatorname{Core}}
+\newcommand{\Soc}{\operatorname{Soc}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Rad}{\mathrm{rad}}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\Ext}{\mathrm{Ext}}
+\newcommand{\Img}{\mathrm{im}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Alg}{\operatorname{Alg}}
+\newcommand{\Bil}{\operatorname{Bil}}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\Syl}{\mathrm{Syl}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Irr}{\operatorname{Irr}}
+\newcommand{\Alt}{\mathbb{A}}
+\newcommand{\Sym}{\mathbb{S}}
+\newcommand{\lcm}{\mathrm{mcm}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\trace}{\operatorname{trace}}
+\newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\ch}{\operatorname{char}}
+
+\newcommand{\inner}{\operatorname{inn}}
+\newcommand{\ext}{\operatorname{ext}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Ret}{\operatorname{Ret}}
+
+\newcommand{\GL}{\mathbf{GL}}
+\newcommand{\SL}{\mathbf{SL}}
+\newcommand{\PSL}{\mathbf{PSL}}
+\newcommand{\PGL}{\mathbf{PGL}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+
+%\newcommand{\char}{\operatorname{char}}
+
+% multiset
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+% column vector
+\newcount\colveccount
+\newcommand*\colvec[1]{
+\global\colveccount#1
+\begin{pmatrix}
+	\colvecnext
+	}
+	\def\colvecnext#1{
+	#1
+	\global\advance\colveccount-1
+	\ifnum\colveccount>0
+	\\
+	\expandafter\colvecnext
+	\else
+\end{pmatrix}
+\fi
+}
+
+
+% numero como secciones
+\renewcommand{\thesection}{\arabic{section}}
+%\renewcommand{\thesubsection}{\Alph{section}}
+
+% To remove Springer from the title page
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}{{\Large Springer\par}}{}{}{}
+\def\ps@bchap{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \def\@oddfoot{\reset@font\small\hfil\thepage\hfil}%
+  \let\@evenfoot\@oddfoot
+}
+
+% Heading 
+\def\ps@headings{%
+  \let\@mkboth\markboth
+  \def\@oddfoot{\reset@font\small\hfil\thepage\hfil}%
+  \let\@evenfoot\@oddfoot
+  \def\@evenhead{\runheadsize\runheadstyle\hfil\leftmark}%
+  \def\@oddhead{\runheadsize\runheadstyle\rightmark\hfil}%
+  \def\chaptermark##1{%
+    \markboth{%
+      {\if@chapnum \thechapter\thechapterend\fi ##1}%
+    }{%
+      {\if@chapnum \thechapter\thechapterend\fi ##1}}%
+    }%
+    \def\sectionmark##1{\markright{{\ifnum\c@secnumdepth>\z@
+     \S\thesection\seccounterend\hskip\betweenumberspace\fi ##1}}}
+}
+\makeatother
+\pagestyle{headings}
+
+\begin{document}
+ 
+\lstset{language=GAP,
+  showstringspaces=false,
+  xleftmargin=0.6cm,
+  xrightmargin=0.6cm,
+  basicstyle=\small\ttfamily,
+  frame=single,
+  framerule=0pt,
+}
+
+\author{Leandro Vendramin}
+\title{Galois theory}
+\subtitle{Notes}
+\maketitle
+
+\frontmatter
+
+%\include{dedic}
+%\include{preface}
+
+\tableofcontents 
+\listoftopics
+
+\mainmatter
+
+%\include{01}
+%\include{02}
+%\include{03}
+%\include{04}
+%\include{05}
+%\include{06}
+%\include{07}
+%\include{08}
+%\include{09}
+%\include{13}
+
+\backmatter
+
+%\addcontentsline{lec}{chapter}{Some hints}
+%\include{exercises}
+\include{hints}
+
+%\addcontentsline{lec}{chapter}{Some solutions}
+\include{solutions}
+
+%\addcontentsline{lec}{chapter}{References}
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+
+\printindex     
+%\phantom{Trick}
+%\addcontentsline{lec}{chapter}{\indexname}
+
+\end{document}
+
+
+
+
+
