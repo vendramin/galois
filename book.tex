@@ -28,7 +28,6 @@
 \usepackage{makeidx}        
 \usepackage{graphicx}        
 \usepackage{multicol}        
-\usepackage[all]{xy}
 \usepackage{hyperref} 
 %\usepackage{tikz-cd}
 \usepackage{colortbl}
@@ -60,7 +59,6 @@
     \section{#1}
     \addcontentsline{top}{chapter}{\S\thesection\quad #1}
 }
-
 
 \usepackage[small,bf]{caption}
 
@@ -164,6 +162,7 @@
 
 \makeindex             
 
+\newcommand{\Gal}{\operatorname{Gal}}
 \renewcommand{\I}{\operatorname{I}}
 \newcommand{\II}{\operatorname{II}}
 
@@ -330,7 +329,7 @@
 
 \mainmatter
 
-%\include{01}
+\include{01}
 %\include{02}
 %\include{03}
 %\include{04}
