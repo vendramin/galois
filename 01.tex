@@ -108,9 +108,10 @@ Examples of prime fields are $\Q$ and $\Z/p$ for $p$ a prime number.
 	Let $K$ be a field. The following statements hold:
 	\begin{enumerate}
 		\item $K$ contains a unique prime field, it is known as the 
-			\textbf{prime subfield} $K_0$ of $K$.
-		\item Either $K_0\simeq\Q$ or $K_0\simeq\Z/p$ for 
-			some prime number $p$.
+			\textbf{prime subfield} of $K$.
+		\item The prime subfield of $K$ is either isomorphic to $\Q$ if 
+			the characteristic of $K$ is zero, or it is isomorphic to $\Z/p$ for
+			some prime number $p$ if the characteristic of $K$ is $p$. 
 	\end{enumerate}
 \end{proposition}
 
@@ -123,7 +124,12 @@ Examples of prime fields are $\Q$ and $\Z/p$ for $p$ a prime number.
 	and $L_1$ is prime, then $L\subseteq L_1$ and 
 	hence $L=L_1$. 
 
-	Suppose that $K$ is of characteristic $p>0$\ldots
+	Let $K_0$ be the prime field of $K$.  Suppose that $K$ is of characteristic
+	$p>0$. Then $K_\Z$ is a field isomorphic to $\Z/p$ and hence $K_0\simeq
+	K_\Z$. Suppose now that the characteristic of $K$ is zero. Then $K_\Z$. Let
+	$L=\{m1/n1:m,n\in\Z,n\ne 0\}$. We claim that $K_0=L$. Since $K_\Z\subseteq
+	K_0$, it follows that $L\subseteq K_0$. Hence $L=K_0$, as $L$ is a subfield
+	of $K$.  
 \end{proof}
 
 \begin{definition}
@@ -468,7 +474,7 @@ $K[x]\simeq K[X]/(f(x,K))$.
 \begin{proof}
 \end{proof}
 
-\begin{corollasy}
+\begin{corollary}
 	If $E/K$ is  an extension, then $\overline{K}_E$ 
 	is a subfield of $E$ that contains $K$. Moreover, 
 	$K(\overline{K}_E)/K$ is algebraic. 
