@@ -396,10 +396,18 @@ $f(\sqrt[3]{2},\Q)=X^3-2$.
 		(\alpha^2-1)^2=8\alpha^2\implies
 		\alpha^4-10\alpha^2+1=0.
 	\end{align*}
-	Thus $\alpha$ is a root of $g=X^4-10X^2+1$. 
-	The roots
+	Thus $\alpha$ is a root of $g=X^4-10X^2+1$. To prove that $g=f(\alpha,\Q)$ 
+	it is enough to prove that 
+	$g$ is irreducible in $\Q[X]$. First note that 
+	the roots
 	of $g$ are $\sqrt{2}+\sqrt{3}$, $\sqrt{2}-\sqrt{3}$, 
-	$-\sqrt{2}+\sqrt{3}$ and $-\sqrt{2}-\sqrt{3}$. $g$ is irreducible \framebox{?}
+	$-\sqrt{2}+\sqrt{3}$ and $-\sqrt{2}-\sqrt{3}$. This means that
+	if $g$ is not irreducible, 
+	then $g=hh_1$ for some polynomials $h,h_1\in\Q[X]$ such that
+	$\deg h=\deg h_1=2$. This is not possible, as 
+	$(\sqrt{2}+\sqrt{3})+(\sqrt{2}-\sqrt{3})=2\sqrt{2}\not\in\Q$, 
+	$(\sqrt{2}+\sqrt{3})+(-\sqrt{2}+\sqrt{3})=2\sqrt{3}\not\in\Q$ and 
+	$(\sqrt{2}+\sqrt{3})(-\sqrt{2}-\sqrt{3})=-5-2\sqrt{6}\not\in\Q$.
 \end{example}
 
 \begin{proposition}
@@ -429,11 +437,26 @@ $f(\sqrt[3]{2},\Q)=X^3-2$.
 		&\implies 
 		a_{ij}=0\text{ for all $i\in I$ and $j\in J$}.\qedhere
 	\end{align*}
+\end{proof}
 
+We state a lemma:
+
+\begin{lemma}
+If $A$ is a finite-dimensional commutative algebra over $K$ 
+and $A$ is an integral domain, then $A$ is a field. 
+\end{lemma}
+
+\begin{proof}
+	Let $a\in A\setminus\{0\}$. We need to prove that there exists $b\in A$
+	such that $ab=1$. Let $\theta\colon A\to A$, $x\mapsto ax$. Clearly
+	$\theta$ is an algebra homomorphism. It is injective, since $A$ is an
+	integral domain.  Since $\dim_KA<\infty$, it follows that $\theta$ is an
+	isomorphism. In particular, $\theta(A)=A$, which means that there exists
+	$b\in A$ such that $1=ab$. 
 \end{proof}
 
 \begin{proposition}
-	Let $E/K$ be an extension and $x\in E$.
+	Let $E/K$ be an extension and $x\in E\setminus K$.
 	The following statements are equivalent:
 	\begin{enumerate}
 		\item $x$ is algebraic over $K$.
@@ -444,17 +467,39 @@ $f(\sqrt[3]{2},\Q)=X^3-2$.
 \end{proposition}
 
 \begin{proof}
+	We first prove $1)\implies 2)$. Let $z\in K[x]$, say $z=h(x)$ for some $h\in K[X]$. There exists
+	$g\in K[X]$ such that $g\ne 0$ and $g(x)=0$. Divide $h$ by $g$ to obtain 
+	polynomials $q,r\in K[X]$ such that $h=gq+r$, where $r=0$ or $\deg r<\deg g$. This implies that
+	\[
+		z=h(x)=g(x)q(x)+r(x)=r(x).
+	\]
+	If $\deg g=m$, then $r=\sum_{i=0}^{m-1}a_iX^i$ for some $a_0,\dots,a_{m-1}\in K$. Thus
+	$z=\sum_{i=0}^{m-1}a_ix^i$, so $K[x]\subseteq\langle 1,x,\dots,x^{m-1}\rangle$. 
+
+	The previous lemma proves that $2)\implies 3)$. 
+
+	It is trivial that $3)\implies 4)$. 
+
+	It remains to prove that $4)\implies 1)$. Let us prove that $K(x)\subseteq K[x]$. 
+	Since $x\ne 0$, $1/x\in K[x]$. There exists $a_0,\dots,a_n\in K$ such that
+	$1/x=a_0+a_1x+\cdots+a_nx^n$. Thus
+	\[
+		a_nx^{n+1}+\cdots+a_1x^2+a_0x-1\ne 0
+	\]
+	and $x$ is a root of $a_nX^{n+1}+\cdots+a_0X-1\in K[X]$. 
 \end{proof}
 
 Note that if $x$ is algebraic over $K$, then
 $K[x]\simeq K[X]/(f(x,K))$. 
 
 \begin{corollary}
-	$E/K$ is algebraic if and only if $E/K$ is finite.
+	If $E/K$ is finite, then $E/K$ is algebraic. 
 \end{corollary}
 
 \begin{proof}
 \end{proof}
+
+We note that the converse of the previous corollary does not hold. 
 
 \begin{corollary}
 	If $E/K$ is an extension and $x_1,\dots,x_n\in E$ 
