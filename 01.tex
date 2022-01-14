@@ -249,40 +249,6 @@ for all $\lambda\in K$ and $x\in E$.
 then $\sigma\in\Hom(K/K_0,K/K_0)$. 
 \end{exercise}
 
-If $E/K$ is an extension, then
-\[
-	\Aut(E/K)=\{\sigma:\sigma\colon E\to E\text{ is a bijective extension homomorphism}\}
-\]
-is a group with composition.
-
-\begin{definition}
-	Let $E/K$ be an extension. The \textbf{Galois group}
-	of $E/K$ is the group
-	$\Aut(E/K)$ and it will be denoted by $\Gal(E/K)$. 
-\end{definition}
-
-A typicall example: $\Gal(\C/\R)\simeq\Z/2$. 
-
-\begin{example}
-	Let $\theta=\sqrt[3]{2}$ and let $E=\{a+b\theta+c\theta^2:a,b,c\in\Q\}$. Note that 
-\[
-	a+b\theta+c\theta^2=0 \Longleftrightarrow a=b=c=0. 
-\]
-In fact, if $abc\ne 0$, then $aX^2+bX+c\ne 0$ and 
-thus $X^3-2=q(X)(aX^2+bX+c)+r(X)$ for some polynomials
-$q(X)\in\Q[X]$ and $r(X)=eX+f\in\Q[X]$. Evaluate in $\theta$ 
-to obtain that $r(\theta)=0$ and hence $r(X)=0$ in $\Q[X]$. This implies  
-that $aX^2+bX+c$ divides $X^3-2$, a contradiction since
-$X^3-2$ is irreducible in $\Q[X]$. 
-
-Then $E$ is an extension of $\Q$ such that $[E:\Q]=3$. We claim
-that $\Gal(E/\Q)$ is trivial. If 
-$\sigma\in\Gal(E/\Q)$ and $z=a+b\theta+c\theta^2$, then
-$\sigma(z)=a+b\sigma(\theta)+c\sigma^2(\theta)$. Since
-$\sigma(\theta)^3=\sigma(\theta^3)=\sigma(2)=2$, it follows
-that $\sigma(\theta)=\theta$ and therefore
-$\sigma=\id$. 
-\end{example}
 
 If $E/K$ is an extension and $S$ is a subset of $E$, then
 there exists a unique smallest 
@@ -677,3 +643,40 @@ For example, $\C/\R$ is an algebraic closure but $\C/\Q$ it is not.
 
 \begin{proof}
 \end{proof}
+
+\chapter{Galois groups}
+
+If $E/K$ is an extension, then
+\[
+	\Aut(E/K)=\{\sigma:\sigma\colon E\to E\text{ is a bijective extension homomorphism}\}
+\]
+is a group with composition.
+
+\begin{definition}
+	Let $E/K$ be an extension. The \textbf{Galois group}
+	of $E/K$ is the group
+	$\Aut(E/K)$ and it will be denoted by $\Gal(E/K)$. 
+\end{definition}
+
+A typicall example: $\Gal(\C/\R)\simeq\Z/2$. 
+
+\begin{example}
+	Let $\theta=\sqrt[3]{2}$ and let $E=\{a+b\theta+c\theta^2:a,b,c\in\Q\}$. Note that 
+\[
+	a+b\theta+c\theta^2=0 \Longleftrightarrow a=b=c=0. 
+\]
+In fact, if $abc\ne 0$, then $aX^2+bX+c\ne 0$ and 
+thus $X^3-2=q(X)(aX^2+bX+c)+r(X)$ for some polynomials
+$q(X)\in\Q[X]$ and $r(X)=eX+f\in\Q[X]$. Evaluate in $\theta$ 
+to obtain that $r(\theta)=0$ and hence $r(X)=0$ in $\Q[X]$. This implies  
+that $aX^2+bX+c$ divides $X^3-2$, a contradiction since
+$X^3-2$ is irreducible in $\Q[X]$. 
+
+Then $E$ is an extension of $\Q$ such that $[E:\Q]=3$. We claim
+that $\Gal(E/\Q)$ is trivial. If 
+$\sigma\in\Gal(E/\Q)$ and $z=a+b\theta+c\theta^2$, then
+$\sigma(z)=a+b\sigma(\theta)+c\sigma^2(\theta)$. Since
+$\sigma(\theta)^3=\sigma(\theta^3)=\sigma(2)=2$, it follows
+that $\sigma(\theta)=\theta$ and therefore
+$\sigma=\id$. 
+\end{example}
