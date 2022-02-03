@@ -815,13 +815,45 @@ For example, $\C/\R$ is an algebraic closure but $\C/\Q$ it is not.
 \end{proposition}
 
 \begin{proof}
-	Suppose that $E=K(x)$ and let $f=f(x,K)$. Let $\overline{\sigma}(f)\in C[X]$ 
+	Suppose first that $E=K(x)$ and let $f=f(x,K)$. Let $\overline{\sigma}(f)\in C[X]$ 
 	and let $y\in C$ be a root of $\overline{\sigma}(f)$. If $z\in E$, then $z=g(x)$ for
 	some $g\in K[X]$. Let $\varphi\colon E\to C$, $z\mapsto \overline{\sigma}(g)(y)$. 
 
-	The map $\varphi$ is well-defined. 
+	The map $\varphi$ is well-defined. If $z=h(x)$ for some $h\in K[X]$, then
+	\[
+	0=g(x)-h(x)=(g-h)(x)
+	\]
+	and thus $f$ divides $g-h$. In particular, $\overline{\sigma}(f)$ divides
+    $\overline{\sigma}(g-h)=\overline{\sigma}(g)-\overline{\sigma}(h)$ and hence
+    $(\overline{\sigma}(g)-\overline{\sigma}(h))(y)=0$. 
 
-	The map $\varphi$ is a ring homomorphism. 
+	It is an exercise to show that the map $\varphi$ is a ring homomorphism.
+	
+	Let $a\in K$. Since $a=(aX^0)(x)$, it follows that $\varphi|_K=\sigma$, as 
+	\[
+	\varphi(a)=\overline{\sigma}(aX^0)(y)=(\sigma(a)X^0)(y)=\sigma(a)
+	\]
+	and 
+	$\varphi(x)=\overline{\sigma}(X)(y)=y$. 
+	
+	Let us now prove the proposition in full generality. Let 
+	$X$ be the set of pairs $(F,\tau)$, where $F$ is a subfield of $E$ that contains $K$ and
+	$\tau\colon F\to C$ is a field homomorphism such that $\tau|_K=\sigma$. Note that
+	$(K,\sigma)\in X$, so $X$ is non-empty. Moreover, $X$ is partially ordered by
+	\[
+	(F,\tau)\leq (F_1,\tau_1)\Longleftrightarrow F\subseteq F_1\text{ and }\tau_1|_F=\tau.
+	\]
+	If $\{(F_i,\tau_i):i\in I\}$ is a chain in $X$, then $F=\cup_{i\in I}F_i$ is a subfield of $E$
+	that contains $K$. Moreover, if $z\in F$, then $z\in F_i$ for some $i\in I$ and 
+	then one defines $\tau(z)=\tau_i(z)$. It is an exercise to prove that $\tau$ is well-defined.
+	Since $(F,\tau)\in X$ is an upper bound, Zorn's lemma implies that there exists
+	a maximal element 
+	$(E_1,\theta)\in X$. We claim that $E=E_1$. If not, let $z\in E\setminus E_1$. 
+	Since we know the proposition is true for the extension $E_1(z)/K$, 
+	let  
+	$\rho\colon E_1(z)\to C$ be a field homomorphism such that $\rho|_{E_1}=\sigma$. Then, in particular, 
+	$\rho|_K=\sigma$. This implies that $(E_1(z),\rho)\in X$ and hence
+	$(E_1,\theta)<(E_1(z),\rho)$, a contradiction to the maximality of $(E_1,\theta)$. 
 \end{proof}
 
 The previous proposition will be used to prove 
