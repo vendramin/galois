@@ -1,0 +1,18 @@
+
+
+\begin{sol}{xca:dim}
+ Let $\{v_i:i\in I\}$ be a basis of $V$ over $K$. For each $i\in I$
+ let $f_i\colon V\to F$, $f_i(v_j)=\delta_{ij}$. Then $\{f_i:i\in I\}$ is linearly 
+ independent over $F$. In fact, let 
+ $\sum a_if_i=0$, where each $a_i\in F$. Then 
+ $a_i=0$ for almost all $i$. If $j\in I$, then 
+ \[
+ 0=\left(\sum a_if_i\right)(v_j)=\sum a_if_i(v_j)=a_j.
+ \]
+ Now assume that $\dim_KV=n$. Let $\{v_1,\dots,v_n\}$ be a basis of $V$ over $K$.
+ We claim that $\{f_1,\dots,f_n\}$ is a basis of $\Hom_K(V,F)$ over $F$. If 
+ $g\in\Hom_K(V,F)$, then $g=\sum g(v_i)f_i$. If $1\leq k\leq n$, then
+ \[
+ \left(\sum g(v_i)f_i\right)(v_k)=\sum g(v_i)f_i(v_k)=g(v_k).
+ \]
+\end{sol}
