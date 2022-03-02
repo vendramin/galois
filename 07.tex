@@ -1,0 +1,144 @@
+\chapter{}
+
+\topic{Galois extensions}
+
+Let $E/K$ be an algebraic extension. Assume that $E=K(S)$ and
+let $C$ be an algebraic closure of $K$ containing $E$. Let 
+\[
+T=\{y\in C:y\text{ is a root of $f(x,K)$ for some $x\in S$}\}
+\]
+and let $L=K(T)$. Then $E\subseteq L$, as $S\subseteq T$. The extension
+$L/K$ is normal, as $L/K$ is a decomposition field of the family $\{f(x,K):x\in S\}$. 
+Moreover, $L$ is the smallest normal extension of $K$ containing $E$. The field
+$L$ is the \textbf{normal closure} of $E$ (with respect to $C$). 
+
+\begin{exercise}
+If $E/K$ is finite, then $L/K$ is finite
+\end{exercise}
+
+\begin{exercise}
+If $E/K$ is separable, then $L/K$ is separable.
+\end{exercise}
+
+Let $E/K$ be an extension and $S\subseteq\Gal(E/K)$ be a subset. 
+the set 
+\[
+    \prescript{S}{}{E}=\{x\in E:\sigma(x)=x\text{ for all $\sigma\in S$}\}
+\]
+is a subfield of $E$ that contains $K$. The subfield $\prescript{S}{}{E}$
+is known as the \textbf{fixed field} of $S$. 
+
+\begin{definition}
+    \index{Extension!Galois}
+    Let $E/K$ be an algebraic extension and $G=\Gal(E/K$). 
+    Then $E/K$ is a \textbf{Galois extension} if $\prescript{G}{}{E}=K$. 
+\end{definition}
+
+Clearly, $K/K$ is a Galois extension. 
+Note that $\Q(\sqrt[3]{2})/\Q$ is not a Galois extension. Why?
+
+\begin{exercise}
+    Prove that $\Q(\sqrt{2},\sqrt{3})/\Q$ is a Galois extension. 
+\end{exercise}
+
+\begin{exercise}
+If the characteristic of $K$ is different from two, 
+then every quadratic extension of $K$ is a Galois extension. 
+\end{exercise}
+
+\begin{exercise}
+    Let $E/K$ be an algebraic extension and $G=\Gal(E/K)$. Let
+    $F=\prescript{G}{}{E}$. Prove that $\Gal(E/F)=G$ and hence $E/F$ is a Galois extension. 
+\end{exercise}
+
+\begin{proposition}
+    Let $E/K$ be an algebraic extension. Then $E/K$ is a Galois extension
+    if and only if $E/K$ is normal and separable. 
+\end{proposition}
+
+\begin{proof}
+    Let $G=\Gal(E/K)$. Let us first assume that $E/K$ is Galois. Let $x\in E$
+    and $f_x=\prod_{y\in O_G(x)}(X-y)\in E[X]$. If $\varphi\in G$, then 
+    $\overline{\varphi}(f_x)=\prod_{y\in O_G(x)}(X-\varphi(y))$... (pag70)
+\end{proof}
+
+\begin{definition}
+Let $K$ be a field and $f\in K[X]$. Then $f$ is \textbf{separable}
+if all roots of $f$ are simple (in some algebraic closure of $K$). 
+\end{definition}
+
+\begin{proposition}
+    Let $E/K$ be a finite extension. Then $E/K$ is a Galois extension 
+    if and only if $E$ is a decomposition field over $K$ 
+    of a separable polynomial $f\in K[X]$. 
+\end{proposition}
+
+\begin{proof}
+    
+\end{proof}
+
+In the previous case, $\Gal(E/K)$ is known as the \textbf{Galois group}
+of the polynomial $f$. The notation is $\Gal(f,K)$. 
+
+\begin{theorem}[Artin]
+\index{Artin's theorem}
+\label{thm:ArtinGalois}
+    Let $E$ be a field and $G$ be a finite group of automorphisms of $E$. 
+    If $K=\prescript{G}{}{E}$, then $E/K$ is a Galois extension,
+    $[E:K]=|G|$ and $\Gal(E/K)=G$. 
+\end{theorem}
+
+Before proving the theorem, we need a lemma.
+
+\begin{lemma}
+    Let $E/K$ be a separable extension such that $\deg(x,K)\leq m$
+    for all $x\in E$. Then $E/K$ is finite and $[E:K]\leq m$. 
+\end{lemma}
+
+\begin{proof}
+   Let $z\in E$ be of maximal degree. If $x\in E$, 
+   then $K(x,z)/K$ is separable. Then $K(x,z)=K(y)$ for some $y$. 
+   It follows that 
+   \[
+   K(z)\subseteq K(x,z)=K(y).
+   \]
+   Since 
+   $\deg(z,K)\leq\deg(y,K)$, it follows that
+   $\deg(z,K)=\deg(y,K)$ and hence 
+   $K(y)=K(z)$. In particular, $x\in K(z)$ and
+   therefore $E=K(z)$. 
+\end{proof}
+
+Now we are ready to prove Artin's theorem: 
+
+\begin{proof}[Proof of Theorem \ref{thm:ArtinGalois}]
+    Note that $G\subseteq\Gal(E/K)$. Let $x\in E$ and 
+    \[
+    f_x=\prod_{y\in O_G(x)}(X-y).
+    \]
+    Since $f_x\in K[X]$, it follows
+    that $E/K$ is normal and separable, so $E/K$ is a Galois extension. Moreover, 
+    \[
+    \deg(x,K)\leq \deg f_x=|O_G(x)|\leq |G|.
+    \]
+    By the previous lemma, $E/K$ is finite and $[E:K]\leq |G|$. This
+    implies that
+    $|G(E/K)|=[E:K]\leq |G|$ and hence $|G(E/K)|=|G|$. 
+\end{proof}
+
+\topic{Galois' correspondence}
+
+\begin{theorem}[Galois]
+\index{Galois' theorem}
+    Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
+    There exists a bijective correspondence
+    \[
+    \{F:K\subseteq F\subseteq E\text{ subfields}\}\to 
+    \{\text{subgroups of $G$}\}
+    \]
+    The correspondence is given by $F\mapsto G(E/F)$ and 
+    $\prescript{S}{}{E}\mapsfrom S$. Moreover, 
+    normal subextensions of $E/K$ correspond 
+    to normal subgroups of $G$. 
+\end{theorem}
+

@@ -1,3 +1,13 @@
+\chapter*{Some solutions}
+
+\pagestyle{plain}
+\fancyhf{}
+\fancyhead[LE,RO]{Rings and modules}
+\fancyhead[RE,LO]{Some solutions}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\addcontentsline{toc}{chapter}{Some solutions}
 
 
 \begin{sol}{xca:dim}
@@ -15,4 +25,16 @@
  \[
  \left(\sum g(v_i)f_i\right)(v_k)=\sum g(v_i)f_i(v_k)=g(v_k).
  \]
+\end{sol}
+
+
+\begin{sol}{xca:gamma_C}
+We need to find a bijective map 
+\[
+\Hom(E/K,C/K)\to\Hom(E/K,C_1/K).
+\]
+If $\sigma\in\Hom(E/K,C/K)$, then $\theta^{-1}\sigma\in\Hom(E/K,C_1/K)$. 
+If $\varphi\in\Hom(E/K,C_1/K)$, then $\theta\varphi\in\Hom(E/K,C/K)$. The 
+maps $\sigma\mapsto\theta^{-1}\sigma$ and 
+$\varphi\mapsto\theta\varphi$ are inverse to each other. 
 \end{sol}
