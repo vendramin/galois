@@ -1,0 +1,32 @@
+\chapter{}
+
+\topic{The fundamental theorem of algebra}
+
+We now present an easy proof of the fundamental theorem 
+of algebra based on the ideas of Galois Theory. 
+We need the following well-known facts:
+\begin{enumerate}
+\item Every real polynomial of odd degree admits a real root. This means that $\R$ 
+does not admit extension of odd degree $>1$. 
+\item Every complex number admits a square root in $\C$. This means that $\C$ 
+does not admit degree-two extensions.
+\end{enumerate}
+
+\begin{theorem}
+The field $\C$ is algebraically closed.
+\end{theorem}
+
+\begin{proof}
+    Let $E/\C$ be an algebraic finite extension. Then $E/\R$ 
+    is finite separable extension of even degree. There exists a Galois
+    extension 
+    $L/\R$ such that $E\subseteq L$, so $[L:\R]$ is even. Let $G=\Gal(L/\R)$. 
+    Then $|G|=2^ms$ for some odd number $s$. If $T$ is a 2-Sylow subgroup
+    of $G$, 
+    then there exists a subextension $F/\R$ of degree $s$. Since 
+    $\R$ does not admit extensions of odd degree $>1$, $s=1$ and
+    hence $G$ is a $2$-group. In particular, $|\Gal(L/\C)|=2^{m-1}$. If $m>1$, 
+    let $U$ be a subgroup of $\Gal(L/\C)$ of order $2^{m-2}$. Then $U$ corresponds 
+    to a subextension $L_1/\C$ of degree two, a contradiction. Hence $m=1$ 
+    and $[L:\C]=1$, so $L=\C$ and $E=\C$. 
+\end{proof}
