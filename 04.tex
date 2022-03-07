@@ -25,9 +25,10 @@ that the algebraic closure always exists.
     surjective and hence $\varphi$ is bijective. 
     
     We now prove the existence. Let us assume that $K$ admits an extension $E/K$ 
-    with $E$ algebraically closed. Let 
+    with $E$ algebraically closed. We will prove later that this extension indeed exists, at the moment
+    we only want to get an algebraic extension from this setting. Let 
     \[
-    	F=\overline{K}_E=\{x\in E:x\text{ is algebraic over }K\}. 
+    	F=\{x\in E:x\text{ is algebraic over }K\}. 
     \]
     Then $F/K$ is algebraic. Let $g\in F[X]$ be such that
     $\deg g>0$. Since $E$ is algebraically closed, $g$ admits a root $\alpha$ in $E$. In particular, $\alpha$
@@ -55,7 +56,8 @@ that the algebraic closure always exists.
     Then $1=\sigma(1)=\sum_{j=1}^m\sigma(g_j)f_{i_j}(\alpha_j)=0$, a contradiction. 
     
     Since $J$ is a proper ideal, it is contained in a maximal ideal $M$. Let $L=R/M$ 
-    and let $\sigma\colon K\to L$ be the composition $K\hookrightarrow R\to R/M=L$. 
+    and let $\sigma\colon K\to L$ be the composition $K\hookrightarrow R\to R/M=L$, 
+    where $\pi\colon R\to R/M$ is the canonical map.  
     As we did before,
     $\pi(X_i)$ is a root of $\overline{\sigma}(f_i)$ for all $i$n
     and there exists an extension $E_1/K$ such that
@@ -102,8 +104,8 @@ Easy examples:
 
 \begin{proposition}
 	$E$ is a decomposition field of $f\in K[X]$ if and only if
-	$f$ factorizes linearly in $E[X]$ and $E=K(x_1,\dots,x_n)$ where 
-	$x_1,\dots,x_n$ are roots of $f$. 
+	$f$ factorizes linearly in $E[X]$ and $E=K(x_1,\dots,x_n)$, where 
+	$x_1,\dots,x_n$ are the roots of $f$. 
 \end{proposition}
 
 \begin{proof}
@@ -118,7 +120,7 @@ One immediately obtains the following consequence:
 If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite. 
 
 \begin{theorem}
-    Let $f\in K[X]$. There exists a (unique up to extension isomorphism) 
+    Let $f\in K[X]$ be such that $\deg f>0$. There exists a (unique up to extension isomorphism) 
     decomposition field of $f$ over $K$. 
 \end{theorem}
 
@@ -128,12 +130,13 @@ If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite.
     uniqueness: if $E_1/K$ is a decomposition field of $f$ over $K$, 
     then $E_1/K$ is algebraic and thus Proposition
     \ref{pro:Artin} implies that 
-    there exists $\varphi\in\Hom(E_1/K,C/K)$ such that $\varphi|_K$ is the identity.
+    there exists $\varphi\in\Hom(E_1/K,C/K)$, that is $\varphi\colon E_1\to C$ is a field
+    homomorphism such that $\varphi|_K$ is the identity.
     Factorize $f$ linearly in $E_1[X]$ and apply $\overline{\varphi}$:
     \[
     f=a\prod_{j=1}^s(X-y_j)^{m_j}
     \implies
-    \overline{\varphi}(f)=\varphi(a)\prod_{j=1}^s(X-\varphi(y_j))^{m_j}
+    f=\overline{\varphi}(f)=\varphi(a)\prod_{j=1}^s(X-\varphi(y_j))^{m_j}
     \]
     so $f$ factorizes linearly in $\varphi(E_1)$. Moreover, 
     $E_1=K(y_1,\dots,y_s)$ and it follows that 
@@ -249,7 +252,7 @@ not true if $f$ is not irreducible. Find an example.
     Let $K$ be a field and $\{f_i:i\in I\}$ be a non-empty 
     family of polynomials of positive degree
     with coefficients in $K$. A \textbf{decomposition field} 
-    of the $\{f_i:i\in I\}$ is an extension $E/K$
+    of $\{f_i:i\in I\}$ is an extension $E/K$
     such that every $f_i$ factorizes linearly in $E[X]$ and 
     if $F/K$ is a subextension of $E/K$ such that every $f_i$ 
     factorizes linearly in $F[X]$, then $F=E$. 
@@ -273,4 +276,32 @@ not true if $f$ is not irreducible. Find an example.
     there exists a decomposition field of $\{f_i:i\in I\}$ 
     and it is unique up to extension isomorphism. 
 \end{exercise}
+
+\topic{Normal extensions}
+
+\begin{proposition}
+    Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
+    Then $\sigma$ is bijective. 
+\end{proposition}
+
+\begin{proof}
+    Let $x\in E$ and 
+    $C$ be an algebraic closure of $K$ that contains $E$. There
+    exists $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
+    Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
+    $\varphi\in G$. If $z\in O_G(x)$, 
+    then $z=\tau(x)$ for some $\tau\in G$ and hence
+    \[
+    \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
+    \]
+    This implies that $\varphi(z)\in O_G(x)$ 
+    and $\varphi(O_G(x))=O_G(x)$. Thus $\sigma|_{(E\cap O_G(x)}$ is injective, as 
+    \begin{align*}
+    \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
+    &=\varphi(E)\cap\varphi(O_G(x))
+    =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
+    \end{align*}
+    Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
+    hence $x$ belongs to the image of $\sigma$. 
+\end{proof}
 
