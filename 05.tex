@@ -1,32 +1,5 @@
 \chapter{}
 
-\topic{Normal extensions}
-
-\begin{proposition}
-    Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
-    Then $\sigma$ is bijective. 
-\end{proposition}
-
-\begin{proof}
-    Let $x\in E$ and 
-    $C$ be an algebraic closure of $K$ that contains $E$. There
-    exists $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
-    Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
-    $\varphi\in G$. If $z\in O_G(x)$, 
-    then $z=\tau(x)$ for some $\tau\in G$ and hence
-    \[
-    \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
-    \]
-    This implies that $\varphi(z)\in O_G(x)$ 
-    and $\varphi(O_G(x))=O_G(x)$. Thus $\sigma|_{(E\cap O_G(x)}$ is injective, as 
-    \begin{align*}
-    \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
-    &=\varphi(E)\cap\varphi(O_G(x))
-    =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
-    \end{align*}
-    Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
-    hence $x$ belongs to the image of $\sigma$. 
-\end{proof}
 
 % pag 21 example
 
