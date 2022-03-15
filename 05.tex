@@ -57,7 +57,7 @@ Let $K\subseteq F\subseteq E$ be a tower of fields.
 If $E/K$ is normal, then $E/F$ is normal. However, 
 Note that $E/K$ normal does not imply $F/K$ normal, as this would imply 
 that every extension is normal. Moreover, 
-$E/K$ normal and $F/K$ normal do not imply $E/K$ normal.
+$E/F$ normal and $F/K$ normal do not imply $E/K$ normal.
     
 \begin{example}
 The extensions $\Q(\sqrt[4]{2})/\Q(\sqrt{2})$ and $\Q(\sqrt{2})/\Q$ are both
@@ -82,7 +82,7 @@ where the product is taken over all
 $y\in O_{\Gal(E/K)}(x)$. 
 
 \begin{proposition}
-    Let $K\subseteq F\subseteq E$ be a tower of fields. If $F/K$ 
+    Let $E/K$ and $F/K$ be extensions. If $F/K$ 
     is normal, then $EF/E$ is normal.
 \end{proposition}
 
@@ -96,7 +96,7 @@ $y\in O_{\Gal(E/K)}(x)$.
     Since $F/K$ is normal and $\sigma|_F\in\Hom(F/K,\overline{K}/K)$, 
     it follows that $\sigma(F)=F$. If $z\in EF$, then
     $z=\sum_{i=1}^m e_if_i$ for some $e_1,\dots,e_m\in E$ and 
-    $f_1,\dots,f_m\in F$. Then 
+    $f_1,\dots,f_m\in F$. Since $\sigma(e_i)=e_i$ for all $i$,  
     \[
     \sigma(z)=\sum_{i=1}^m\sigma(e_i)\sigma(f_i)=\sum_{i=1}^m e_i\sigma(f_i)\in EF.\qedhere 
     \]
@@ -116,7 +116,7 @@ $y\in O_{\Gal(E/K)}(x)$.
     Conversely, assume that $E/K$ is a decomposition field of the family 
     $\{f_i:i\in I\}$. Then $E=K(S)$ where $S$ is the set of roots
     of the polynomials $f_i$. Let $C/K$ be an algebraic closure
-    of $K$ that contains $E$ and let $\sigma\in\Hom(C/K,E/K)$. Let $x\in S$. 
+    of $K$ that contains $E$ and let $\sigma\in\Hom(E/K,C/K)$. Let $x\in S$. 
     Then $x$ is a root of some $f_j=\sum a_kX^k$. Since $f_j(x)=0$, 
     it follows that $\sigma(x)$ is a root of $f_j$, as 
     \[
@@ -165,7 +165,11 @@ is linearly independent over $F$.
     Assume it is not. Let $\{\varphi_1,\dots,\varphi_n\}$ 
     be linearly dependent over $F$ with $n$ minimal. Clearly, $n>1$. 
     We may assume that 
-    $\sum_{i=1}^n a_i\varphi_i=0$ for some $a_1,\dots,a_n\in F$ all different from zero. 
+    \begin{equation}
+        \label{eq:Dedekind1}
+        \sum_{i=1}^n a_i\varphi_i=0
+    \end{equation}
+    for some $a_1,\dots,a_n\in F$ all different from zero. 
     Let
     $z\in E\setminus\{0\}$ be such that $\varphi_1(z)\ne\varphi_2(z)$. If $x\in E$, then
     \[
@@ -174,10 +178,12 @@ is linearly independent over $F$.
     =\left(\sum_{i=1}^n (a_i\varphi_i(z))\varphi_i\right)(x).
     \]
     Thus 
-    \[
-    \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
-    \]
+    \begin{equation}
+        \label{eq:Dedekind2}
+        \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
+    \end{equation}
     Since $\sum_{i=1}^na_i\varphi_i=0$ and $\varphi_1(z)\ne0$, 
+    subtracting \eqref{eq:Dedekind1} and \eqref{eq:Dedekind2} we obtain that  
     \[
     a_1\varphi_1+a_2\frac{\varphi_2(z)}{\varphi_1(z)}\varphi_2+\cdots+a_n\frac{\varphi_n(z)}{\varphi_1(z)}\varphi_n=0.
     \]
@@ -187,7 +193,7 @@ is linearly independent over $F$.
     +\cdots+\left(a_n-a_n\frac{\varphi_n(z)}{\varphi_1(z)}\right)\varphi_n=0.
     \]
     Since $a_n\ne 0$ and $\varphi_2(z)\ne\varphi_1(z)$, 
-    the scalar $(a_2-a_2\frac{\varphi_2(z)}{\varphi_1(z)}\ne 0$ and hence 
+    the scalar $a_2-a_2\frac{\varphi_2(z)}{\varphi_1(z)}\ne 0$ and hence 
     $\{\varphi_2,\dots,\varphi_n\}$ is linearly dependent, a contradiction. 
 \end{proof}
 
