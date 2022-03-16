@@ -222,6 +222,7 @@ not depend on the algebraic closure.
 \end{exercise}
 
 \begin{proposition}
+\label{pro:gamma_orbit}
     Let $C$ be an algebraic closure of $K$ and $G=\Gal(C/K)$. 
     If $x\in C$, then $\gamma(K(x)/K)=|O_G(x)|$. 
 \end{proposition}
@@ -263,40 +264,81 @@ $|A|=m|\overline{A}|=m|B|$.
     \lambda\colon \Hom(E/K,C/K)\to\Hom(F/K,C/K),\quad
     \sigma\mapsto\sigma|_F,
     \]
-    is surjective. If $\varphi\in\Hom(F/K,C/K)$, then
+    is well-defined. It is surjective: if $\varphi\in\Hom(F/K,C/K)$, then $\varphi\colon F\to C$ is, 
+    in particular, a field homomorphism. Since $E/F$ is algebraic, by Proposition \ref{pro:Artin} 
+    there exists a field homomorphism 
+    $\sigma\colon E\to C$ such that $\sigma|_F=\varphi$. Since $\sigma|_K=\varphi|_K=\id$, in particular 
+    $\sigma\in\Hom(E/K,C/K)$. 
+    
+    For $\varphi\in\Hom(F/K,C/K)$,  
     \[
-    \lambda^{-1}(\{\varphi\})=\{\sigma\in\Hom(E/K,C/K):\sigma|_F=\varphi\}.
+    \lambda^{-1}(\{\varphi\})=\{\sigma\in\Hom(E/K,C/K):\sigma|_F=\varphi\}
     \]
-    Assume that $\sigma|_F=\varphi$. Then 
-    $\sigma(x)$ is a root of $\overline{\varphi}(f)$ in $C$, as 
+    and let $R_\varphi$ be the set of roots (in $C$) of the polynomial $\overline{\varphi}(f)=\sum\varphi(b_i)X^i$. 
+    
+    \begin{claim}
+    The map $\alpha\colon \lambda^{-1}(\{\varphi\})\to R_{\varphi}$, $\sigma\mapsto\sigma(x)$, is well-defined. 
+    \end{claim}
+    
+    We need to show that $\sigma(x)$ is a root of $\overline{\varphi}(f)$:
     \begin{align*}
-    \overline{\varphi}(f)(\sigma(x))&=\sum \varphi(b_i)\sigma(x)^i\\
-    &=\sum\sigma(b_i)\sigma(x^i)
-    =\sum\sigma(b_ix^i)=\sigma\left(\sum b_ix^i\right)=\sigma(f(x))=\sigma(0)=0.
+    \overline{\varphi}(f)(\sigma(x))&=\sum \varphi(b_i)\sigma(x)^i
+    =\sum\sigma(b_i)\sigma(x^i)\\
+    &=\sum\sigma(b_ix^i)=\sigma\left(\sum b_ix^i\right)=\sigma(f(x))=\sigma(0)=0.
     \end{align*}
-    So there is an injective map from $\lambda^{-1}(\{\varphi\})$ 
-    to the set $R_{\varphi}$ of roots of $\overline{\varphi}(f)$ in $C$. Conversely,
-    if $y\in R_{\varphi}$ and $z\in E$, say $z=h(x)$ for some $h\in F[X]$, 
-    let $\sigma_y(z)=\overline{\varphi}(h)(y)$. 
     
-    This is well-defined: if $z=t(x)$ 
-    for some $t\in F[X]$, then, since $(t-h)(x)=0$, it follows that 
-    $f$ divides $h-t$. This implies that $\overline{\varphi}(f)$ divides
-    $\overline{\varphi}(h)-\overline{\varphi}(t)$ and hence 
-    $\overline{\varphi}(h)(y)=\overline{\varphi}(t)(y)$. 
-    Since $\sigma_y|_F=\varphi$, $\sigma_y\in\lambda^{-1}(\varphi)$. 
-    Moreover, $\sigma_y(x)=y$. 
+    \begin{claim}
+    The map $\beta\colon R_{\varphi}\to \lambda^{-1}(\{\varphi\})$, $y\mapsto\sigma_y$, 
+    where $\sigma_y(z)=\overline{\varphi}(h)(y)$
+    if $z=h(x)$, is well-defined. 
+    \end{claim}
     
-    Since the map is surjective, $|\lambda^{-1}(\varphi)|=|R_{\varphi}|$. 
+    We first need to show that if $z=h(x)$ and 
+    $z=h_1(x)$ for some $h,h_1\in F[X]$, then 
+    $\overline{\varphi}(h)(y)=\overline{\varphi}(h_1)(y)$. 
+    The assumptions imply that 
+    $(h-h_1)(x)=0$ and hence $f$ divides $h-h_1$. Since
+    $\overline{\varphi}$ is a ring homomorphism, 
+    $\overline{\varphi}(f)$ divides $\overline{\varphi}(h)-\overline{\varphi}(h_1)$. This implies $(\overline{\varphi}(h)-\overline{\varphi}(h_1))(y)=0$. We also need to show that 
+    $\sigma_y|F=\varphi$: if $f\in F$, then 
+    write $f=fX^0\in F[X]$. Thus 
+    $\sigma_y(f)=\overline{\varphi}(fX^0)(y)=\varphi(f)\in C$. 
+
+    \begin{claim}
+        $|\lambda^{-1}(\{\varphi\})|=|R_\varphi|$. 
+    \end{claim}
     
-    We claim that $\phi^{-1}(R_{\varphi})=O_G(x)$. Let us first prove $\phi^{-1}(R_{\varphi})\subseteq O_G(x)$.  
-    There exists $\phi\in G$ such that $\phi|_F=\varphi$. If $y\in R_{\varphi}$, 
+    For this we need to show that $\beta$ is
+    the inverse of $\alpha$, that is 
+    $\alpha\circ\beta=\id$ and $\beta\circ\alpha=\id$. 
+    To prove that $\beta\circ\alpha=\id$ 
+    let $\sigma$ be such that $\sigma|_F=\varphi$. 
+    Then $y=\sigma(x)\in R_\varphi$. Let
+    $z=h(x)=\sum a_ix^i\in F[x]=E$. Then  
+    \[
+    \overline{\varphi}(h)(y)=\sum\varphi(a_i)y^i=\sum\sigma(a_i)y^i
+    =\sigma\left(\sum a_ix^i\right)=\sigma(y).
+    \]
+    Conversely, if $y\in R_\varphi$, then
+    \[
+    \alpha(\sigma_y)=\sigma_y(x)=y,
+    \]
+    as $\sigma_y(x)=\overline{\varphi}(X)(y)=y$.
+    
+    \begin{claim}
+        If $\phi\in\Gal(C/K)$, then 
+        $O_{\Gal(C/K)}(x)=\phi^{-1}(R_\varphi)$.
+    \end{claim}
+
+    Let us first prove $O_{\Gal(C/K)}(x)\supseteq \phi^{-1}(R_\varphi)$.
+    If $y\in R_{\varphi}$, 
     then 
     \begin{align*}
     f(\phi^{-1}(y))&=\sum b_i\phi^{-1}(y^i)=\phi^{-1}\left(\sum\phi(b_i)y^i\right)\\
     &=\phi^{-1}\left(\sum\varphi(b_i)y^i\right)=\phi^{-1}\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
     \end{align*}
-    Now we prove $\phi^{-1}(R_{\varphi})\supseteq O_G(x)$. Let $z\in O_G(x)$ and $y\in C$ be such that 
+    Now we prove $O_{\Gal(C/K)}(x)\subseteq\phi^{-1}(R_\varphi)$.
+    Let $z\in O_{\Gal(C/K)}(x)$ and $y\in C$ be such that 
     $\phi^{-1}(y)=z$. Then $\overline{\varphi}(f)(y)=0$, as
     \begin{align*}
     \overline{\varphi}(f)(y)&=\sum\varphi(b_i)y^i\\
@@ -304,15 +346,23 @@ $|A|=m|\overline{A}|=m|B|$.
     =\sum\phi(b_i)\phi(z^i)=\phi\left(\sum b_iz^i\right)=\phi(f(z))=\phi(0)=0.
     \end{align*}
     
-    Hence $|R_\varphi|=|\phi^{-1}(R_{\varphi}|=|O_G(x)|$ and therefore
-    $|\lambda^{-1}(\{\varphi\})|=|O_G(x)|$ for all $\varphi$. This implies
-    that $\gamma(E/K)=\gamma(F/K)|O_G(x)|=\gamma(F/K)\gamma(F(x)/F)$. 
+    \medskip
+    It follows that $|\lambda^{-1}(\varphi)|=|O_{\Gal(C/K)}(x)$ for
+    all $\varphi$. By using the argument
+    before the proposition, 
+    \begin{align*}
+    \gamma(E/K)&=|\Hom(E/K,C/K)|\\
+        &=|O_{\Gal(C/K)}(x)||\Hom(F/K,C/K)|\\
+        &=|O_{\Gal(C/K)}(x)|\gamma(F/K).
+    \end{align*}
+    Since $\gamma(K(x)/K)=|O_{\Gal(C/K)}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
     
+    \medskip 
     For the general case we assume that $E=F[x_1,\dots,x_n]$. We proceed
     by induction on $n$. If $n=0$, then $E=F$ and the result is trivial. 
     If $n>0$, let $L=F[x_1,\dots,x_{n-1}]$ and $E=L(x_n)$. The previous
     case implies that $\gamma(E/F)=\gamma(E/L)\gamma(L/F)$. By the inductive 
-    assumption, $\gamma(L/K)=\gamma(L/F)\gamma(F/K)$. Thus 
+    hypothesis, $\gamma(L/K)=\gamma(L/F)\gamma(F/K)$. Thus 
     \[
     \gamma(E/F)\gamma(F/K)=\gamma(E/L)\gamma(L/F)\gamma(F/K)
     =\gamma(E/L)\gamma(L/K)=\gamma(E/K),
