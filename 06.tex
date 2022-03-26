@@ -71,3 +71,133 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
 As a consequence, if $E/K$ is finite and separable, then $E/K$ admits
 finitely many subextensions. 
 
+\topic{Galois extensions}
+
+Let $E/K$ be an algebraic extension. Assume that $E=K(S)$ and
+let $C$ be an algebraic closure of $K$ containing $E$. Let 
+\[
+T=\{y\in C:y\text{ is a root of $f(x,K)$ for some $x\in S$}\}
+\]
+and let $L=K(T)$. Then $E\subseteq L$, as $S\subseteq T$. The extension
+$L/K$ is normal, as $L/K$ is a decomposition field of the family $\{f(x,K):x\in S\}$. 
+Moreover, $L$ is the smallest normal extension of $K$ containing $E$. The field
+$L$ is the \textbf{normal closure} of $E$ (with respect to $C$). 
+
+\begin{exercise}
+If $E/K$ is finite, then $L/K$ is finite
+\end{exercise}
+
+\begin{exercise}
+If $E/K$ is separable, then $L/K$ is separable.
+\end{exercise}
+
+Let $E/K$ be an extension and $S\subseteq\Gal(E/K)$ be a subset. 
+the set 
+\[
+    \prescript{S}{}{E}=\{x\in E:\sigma(x)=x\text{ for all $\sigma\in S$}\}
+\]
+is a subfield of $E$ that contains $K$. The subfield $\prescript{S}{}{E}$
+is known as the \textbf{fixed field} of $S$. 
+
+\begin{definition}
+    \index{Extension!Galois}
+    Let $E/K$ be an algebraic extension and $G=\Gal(E/K$). 
+    Then $E/K$ is a \textbf{Galois extension} if $\prescript{G}{}{E}=K$. 
+\end{definition}
+
+Clearly, $K/K$ is a Galois extension. 
+Note that $\Q(\sqrt[3]{2})/\Q$ is not a Galois extension. Why?
+
+\begin{exercise}
+    Prove that $\Q(\sqrt{2},\sqrt{3})/\Q$ is a Galois extension. 
+\end{exercise}
+
+\begin{exercise}
+If the characteristic of $K$ is different from two, 
+then every quadratic extension of $K$ is a Galois extension. 
+\end{exercise}
+
+\begin{exercise}
+    Let $E/K$ be an algebraic extension and $G=\Gal(E/K)$. Let
+    $F=\prescript{G}{}{E}$. Prove that $\Gal(E/F)=G$ and hence $E/F$ is a Galois extension. 
+\end{exercise}
+
+\begin{proposition}
+    Let $E/K$ be an algebraic extension. Then $E/K$ is a Galois extension
+    if and only if $E/K$ is normal and separable. 
+\end{proposition}
+
+\begin{proof}
+    Let $G=\Gal(E/K)$. Let us first assume that $E/K$ is Galois. Let $x\in E$
+    and $f_x=\prod_{y\in O_G(x)}(X-y)\in E[X]$. If $\varphi\in G$, then 
+    \[
+    \overline{\varphi}(f_x)=\prod_{y\in O_G(x)}(X-\varphi(y))=f_x,
+    \]
+    as if $O_G(x)=\{\sigma_1(x),\dots,\sigma_r(x)\}$, then if 
+    $\varphi(\sigma_i(x))(\varphi\sigma_i)(x)=\sigma_j(x)$ for some $j$. Thus $f_x\in K[X]$
+    and $E/K$ is a decomposition field of the family $\{f_x:x\in E\}$. In particular, 
+    $E/K$ is normal. Moreover, $x$ is a simple root of $f_x\in K[X]$ and hence
+    $x$ is separable over $K$. 
+
+    Conversely, let $x\in \prescript{G}{}{E}$. Since $E/K$ is normal, then 
+    $f(x,K)=\prod_{y\in O_G(x)}(X-y)^m$ for some $m$. Since $E/K$ is separable, 
+    $m=1$. Thus $f(x,K)=\prod_{y\in O_G(x)}(X-y)=X-x$ and $x\in K$. 
+\end{proof}
+
+\begin{definition}
+Let $K$ be a field and $f\in K[X]$. Then $f$ is \textbf{separable}
+if all roots of $f$ are simple (in some algebraic closure of $K$). 
+\end{definition}
+
+\begin{proposition}
+    Let $E/K$ be a finite extension. Then $E/K$ is a Galois extension 
+    if and only if $E$ is a decomposition field over $K$ 
+    of a separable polynomial $f\in K[X]$. 
+\end{proposition}
+
+\begin{proof}
+    Let us assume that $E=K(x)$. Then $E/K$ is a decomposition field of $f(x,K)$ since
+    $E/K$ is normal. Since $E/K$ is separable, $x$ is separable over $K$. Thus $x$ is 
+    a simple root of $f(x,K)$ and hence $f(x,K)$ is separable. 
+    
+    Conversely, let $x_1,\dots,x_r$ be the roots of a separable polynomial $f\in K[X]$.
+    Then $E=K(x_1,\dots,x_r)$ is separable and normal.  
+\end{proof}
+
+In the previous case, $\Gal(E/K)$ is known as the \textbf{Galois group}
+of the polynomial $f$. The notation is $\Gal(f,K)$. If $n=\deg f$ and
+$x_1,\dots,x_n$ are the roots of $f$, then any 
+$\varphi\in\Gal(f,K)$ permutes the roots of $f$, that is
+$\varphi$ permutes the 
+set $\{x_1,\dots,x_n\}$. In particular, $\Gal(f,K)$ is isomorphic to a subgroup of
+$\Sym_n$ and hence $|\Gal(f,K)|$ divides $n!$. 
+
+\begin{proposition}
+    Let $E/K$ be a normal extension and $F$ be the separable
+    closure of $K$. Then $F/K$ is a Galois extension.
+\end{proposition}
+
+\begin{proof} 
+    Let $C/K$ be an algebraic closure such that $E\subseteq C$. Let $\sigma\in\Hom(F/K,C/K)$. 
+    and let $\varphi\in\Hom(E/K,C/K)$ be such that $\varphi|_F=\sigma$. Since $E/K$ is normal, 
+    $\varphi(E)=E$. Let $x\in F$. Then $\sigma(x)=\varphi(x)\in E$. Thus
+    $f(\sigma(x),K)=f(x,K)$ and $\sigma(x)$ is separable over $K$, which 
+    implies that $\sigma(x)\in F$. 
+\end{proof}
+
+Some easy facts.
+
+\begin{exercise}
+    Let $E/K$ be a separable extension and $L/K$ be some algebraic closure 
+    that contains $E$. Prove that $L/K$ is a Galois extension.
+\end{exercise}
+
+\begin{exercise}
+    Let $E/K$ be a finite extension. Prove that $E/K$ is Galois
+    if and only if $[E:K]=|\Gal(E/K)|$.
+\end{exercise}
+
+\begin{exercise}
+    Let $E/K$ be a Galois extension and $F/K$ be a subextension of $E/K$. 
+    Prove that $E/F$ is a Galois extension. 
+\end{exercise}
