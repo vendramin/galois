@@ -75,3 +75,61 @@ Now we are ready to prove Artin's theorem:
     to normal subgroups of $G$. 
 \end{theorem}
 
+\[
+\begin{tikzcd}
+	&& E \\
+	& F && {\{1\}} \\
+	K && S \\
+	& G
+	\arrow[no head, from=1-3, to=2-2]
+	\arrow[no head, from=2-2, to=3-1]
+	\arrow[no head, from=3-1, to=4-2]
+	\arrow[no head, from=4-2, to=3-3]
+	\arrow[no head, from=2-2, to=3-3]
+	\arrow[no head, from=1-3, to=2-4]
+	\arrow[no head, from=2-4, to=3-3]
+\end{tikzcd}
+\]
+
+\begin{proof}
+We first note that
+\begin{align*}
+   &\beta(\alpha(F))=\beta(\Gal(E/F))=\prescript{\Gal(E/F)}{}{E}=F
+\end{align*}
+since $E/F$ is a Galois Extension. Moreover,
+\begin{align*}
+   &\alpha(\beta(S))=\alpha(\prescript{S}{}{E})=\Gal(E/\prescript{S}{}{E})=S
+\end{align*}
+by Artin's theorem, as $S$ is finite. 
+
+Let $F$ be a subfield of $E$ containing $K$ and 
+$S=\alpha(F)$. Then
+\[
+[F:K]=\frac{[E:K]}{[E:F]}=\frac{|G|}{|S|}=(G:S).
+\]
+
+Let $C$ be an algebraic closure of $K$ that contains $E$. 
+If $S=\Gal(E/F)$, then $F=\prescript{S}{}{E}$. 
+
+We need to prove that $F/K$ is normal if and only if $S$ is normal in $G$. 
+Let us first prove $\implies$. Let $\tau\in S$ and $\sigma\in G$. Since
+$F/K$ is normal, $\sigma|_F\in\Aut(F)$. Thus $\sigma^{-1}(F)=F$. In particular, 
+if $x\in F$, then $\sigma^{-1}(x)\in F$ and 
+\[
+\sigma\tau\sigma^{-1}(x)=\sigma\sigma^{-1}(x)=x.
+\]
+Conversely, let $\varphi\in\Hom(F/K,C/K)$. There exists 
+$\Phi\in\colon E\to C$ such that $\Phi|_F=\varphi$. Since $E/K$ is normal, 
+$\Phi(E)=E$ and hence $\Phi\in G$. We claim that $\varphi(x)\in F$ for all $x\in F$
+ for all $x\in F$. Note that $F=\prescript{S}{}{E}$, so
+ \[
+ \tau\varphi(x)=\tau\Phi(x)=\Phi\Phi^{-1}\tau\Phi(x)=\Phi(x)=\varphi(x)
+ \]
+ for all $\tau\in S$, as $\Phi^{-1}\tau\Phi\in S$. 
+ 
+ Let us compute $\Gal(F/K)$. Since $F/K$ is normal, 
+ the map 
+ $\lambda\colon G\to\Gal(F/K)$, $\sigma\mapsto\sigma|_F$, 
+ is a surjective group homomorphism such that $\ker\lambda=S$. The first isomortphism 
+ theorem implies that $\Gal(F/K)\simeq G/S$. 
+\end{proof}
