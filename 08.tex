@@ -133,3 +133,167 @@ $\Phi(E)=E$ and hence $\Phi\in G$. We claim that $\varphi(x)\in F$ for all $x\in
  is a surjective group homomorphism such that $\ker\lambda=S$. The first isomortphism 
  theorem implies that $\Gal(F/K)\simeq G/S$. 
 \end{proof}
+
+Some easy consequences.
+
+\begin{exercise}
+    If $E/K$ is a Galois extension of degree $n$ and
+    $p$ is a prime number dividing $n$, then $E/K$ admits
+    a subextension of degree $n/p$. 
+\end{exercise}
+    
+\begin{exercise}
+    If $E/K$ is a Galois extension of degree $p^\alpha m$ with
+    $p$ a prime number coprime with $m$, then $E/K$ admits 
+    a subextension of degree $m$. 
+    %This follows from Sylow's theorem
+    %and Galois's theorem.
+\end{exercise}
+
+\begin{definition}
+\index{Extension!abelian}
+    An extension $E/K$ is \textbf{abelian} if $E/K$ is a Galois extension
+    with $\Gal(E/K)$ abelian.
+\end{definition}
+
+\begin{exercise}
+    If $E/K$ is an abelian extension of degree $n$ and $d$ divides
+    $n$, then $E/K$ admits a subextension of degree $d$. 
+\end{exercise}
+
+\begin{definition}
+    \index{Extension!cyclic}
+    An extension $E/K$ is \textbf{cyclic} if $E/K$ is 
+    a Galois extension with $\Gal(E/K)$ cyclic. 
+\end{definition}
+
+\begin{exercise}
+    If $E/K$ is an abelian extension of degree $n$ and $d$ divides
+    $n$, then $E/K$ admits a subextension of degree $d$. 
+\end{exercise}
+
+\begin{example}
+    The extension $\Q(\sqrt{2},\sqrt{3})/\Q$ admits
+    exactly three non-trivial subextensions: 
+    \[
+    \Q(\sqrt{2})/\Q,
+    \quad
+    \Q(\sqrt{3})/\Q,
+    \quad 
+    \Q(\sqrt{6})/\Q,
+    \]
+    as $\Gal(\Q(\sqrt{2},\sqrt{3})/Q)\simeq C_2\times C_2$. 
+    % Note that if $\sigma\in\Gal(\Q(\sqrt{2},\sqrt{3})/Q)$, then
+    % $\sigma(\sqrt{2})\in\{\sqrt{2},-\sqrt{2}\}$ and
+    % $\sigma(\sqrt{3})\in\{\sqrt{3},-\sqrt{3}\}$.
+\end{example}
+
+\begin{example}
+    Let $\omega\in\C\setminus\{1\}$ be such that $\omega^5=1$.
+    Then 
+    \[
+    f(\omega,\Q)=1+X+X^2+X^3+X^4
+    \]
+    and $\Q(\omega)/\Q$ has
+    degree four. 
+    Moreover, $\Q(\omega)/\Q$ is a Galois extension
+    and 
+    $\Gal(\Q(\omega)/\Q)\simeq C_4$. If $\sigma\in \Gal(\Q(\omega)/\Q)$,
+    then $\sigma(\omega)=\omega^i$ for some $i\in\{1,\dots,4\}$. 
+    Moreover, for every $i\in\{1,\dots,4\}$ 
+    the map $\omega_i\mapsto\omega^i$ induces an automorphism
+    of $\Q(\omega)/\Q$. Thus $|\Gal(\Q(\omega)/\Q)|=4$. Now 
+    \[
+    \sigma_i^k=\id\Longleftrightarrow
+    \omega^{i^k}=\sigma_i^k(\omega)=\omega\Longleftrightarrow
+    i^k\equiv1\bmod 5.
+    \]
+    Thus the map $\sigma_2$ given 
+    by $\omega\mapsto\omega^2$ has order four. 
+    
+    Since $\Gal(\Q(\omega)/\Q)=\langle\sigma\rangle$,
+    where $\sigma(\omega)=\omega^2$, 
+    is cyclic of order four, 
+    the extension $\Q(\omega)/\Q$ has a unique degree-two 
+    subtextension $F/\Q$. Note that $|\langle\sigma^2\rangle|=2$ 
+    and $\sigma^2(\omega)=\omega^4=\omega^{-1}$. Thus 
+    $F=\prescript{\langle\sigma^2\rangle}{}{\Q(\omega)}$. Let 
+    $\theta=\omega+\omega^{-1}$. Then 
+    \[
+    \theta^2=\omega^2+\omega^3+2=-(1+\omega+\omega^{-1})+2=1-\theta
+    \]
+    and hence $\theta$ is a root of $X^2+X+1$. Since $\theta\not\in\Q$, 
+    it follows that 
+    \[
+    \theta\in\{(-1+\sqrt{5})/2,(-1-\sqrt{5})/2\}.
+    \]
+    Therefore
+    $F=\Q(\sqrt{5})$. 
+\end{example}
+
+Let us mention some other consequences.
+
+\begin{exercise}
+    Let $E/K$ be a finite Galois extension 
+    and $F_1,\dots,F_n$ fields 
+    such that $K\subseteq F_i\subseteq E$ for 
+    all $i\in\{1,\dots,n\}$. For every 
+    $i$ let $S_i=\Gal(E/F_i)$. Then
+    \[
+    \Gal\left(E/\bigcap_{i=1}^nF_i\right)=\left\langle\bigcup_{i=1}^nS_i\right\rangle,
+    \quad
+    \Gal\left(E/\prod_{i=1}^nF_i\right)=\bigcap_{i=1}^nS_i.
+    \]
+\end{exercise}
+
+The following statement is a concrete application of the 
+previous exercise.
+
+\begin{exercise}
+    Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$.
+    Assume that $G$ is the direct product
+    $G=S\times T$
+    of the groups $S$ and $T$. Let 
+    $F=\prescript{S}{}{E}$ and
+    $L=\prescript{T}{}{E}$. Then $F\cap L=K$ and $FL=E$.
+\end{exercise}
+
+\begin{proposition}
+Let $E_1/K,\dots,E_r/K$ be Galois extensions. 
+If $E=\prod_{i=1}^rE_i$, then $E/K$ is a Galois extension. If, moreover, each $E_i/K$ is finite,
+then 
+\[
+\theta\colon \Gal(E/K)\to \Gal(E_1/K)\times\cdots\times\Gal(E_r/K),
+\quad
+\sigma\mapsto(\sigma|_{E_1},\dots,\sigma|_{E_r}),
+\]
+is an injective group homomorphism.
+\end{proposition}
+
+\begin{proof}
+    We only do the first part in the case $r=2$, the general case is left as an exercise. Since $E_1/K$ is algebraic, 
+    then $E_1E_2/E_2$ is algebraic. Since $E_2/K$ is algebraic, $E_1E_2/K$ is algebraic. Similarly, 
+    $E_1E_2/K$ is separable. 
+    
+    Let $C/K$ be an algebraic closure such that $E_1E_2\subseteq C$. If $\sigma\in\Hom(E_1E_2/K,C/K)$, then 
+    $\sigma(E_1E_2)\subseteq\sigma(E_1)\sigma(E_2)=E_1E_2$ (do this calculation as an exercise). 
+    Thus $E_1E_2/K$ is normal. 
+    
+    If both $E_1/K$ and $E_2/K$ are finite, then $E_1E_2/K$ is finite. 
+    
+    Clearly, $\theta$ is a group homomorphism. We claim that the map $\theta$ is injective. Let $\sigma\in\ker\theta$. Then
+    $\sigma|_{E_i}=\id_{E_i}$ for all $i\in\{1,\dots,r\}$. Let $S=\langle\sigma\rangle\subseteq\Gal(E/K)$ and
+    $F=\prescript{S}{}{E}$. Then $E_i\subseteq F$ for all $i\in\{1,\dots,r\}$ and
+    hence $E\subseteq F$. It follows that $F=E=\prescript{\{\id\}}{}{E}$ and therefore $S=\{\id\}$, so 
+    $\sigma=\id$. 
+\end{proof}
+
+\begin{exercise}
+    Let $E_1/K,\dots,E_r/K$ be finite Galois extensions such that for each $j$ 
+    one has $E_j\cap (E_1\cdots E_{j-1}E_{j+1}\cdots E_r)=K$. Then 
+    \[
+    \Gal(E/K)\simeq\Gal(E_1/K)\times\cdots\times\Gal(E_r/K).
+    \]
+    In this case, $[E:K]=\prod_{i=1}^r[E_i:K]$. 
+\end{exercise}
+
