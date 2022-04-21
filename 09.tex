@@ -47,9 +47,9 @@ $E/F$ is a \textbf{purely inseparable} extension, meaning that
 for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable. 
 
 The number $[E:F]$ is known as the \textbf{degree of inseparability} of $E/K$. 
-
-Clearly, $E/K$ is separable if and only if $[E:F]=1$ and 
-$E/K$ is purely inseparable if and only if $[E:F]=[E:K]$. 
+We write $[E:K]_{\operatorname{ins}}=[E:F]$.
+Clearly, $E/K$ is separable if and only if $[E:K]_{\operatorname{ins}}=1$ and 
+$E/K$ is purely inseparable if and only if $[E:K]_{\operatorname{ins}}=[E:K]$. 
 
 \begin{proposition}
 Let $K$ be a field of characteristic $p>0$ and
@@ -63,7 +63,146 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 \end{proposition}
 
 \begin{proof}
+    We first prove $1)\implies 2)$. We proceed by induction on the degree of $x$. The result
+    is clearly true for elements of degree one. So assume the result holds for element of degree $\leq n$ 
+    for some $n\geq1$. 
+    If $x\in E$ is such that $\deg(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
+    $x^p$ has degree $\leq n$. By the inductive hypothesis, $x^{p^{m+1}}=(x^p)^{p^m}\in K$.  
     
+    We now prove $2)\implies 3)$. Let $x\in E$ and $m$ be the minimal positive integer 
+    such that $x^{p^m}\in K$. Then
+    $x$ is a root of $X^{p^m}-x^{p^m}\in K[X]$. Since 
+    $X^{p^m}-x^{p^m}=(X-x)^{p^m}$, it follows that $f(x,K)=(X-x)^r$ for some
+    $r\in\{1,\dots,p^m\}$. Write $r=p^st$ for some integer $t$ coprime with $p$ and $s$ such that
+    $0\leq s\leq m$. Let $a,b\in\Z$ be such that $ar+bp^m=p^s$. Then 
+    \[
+    x^{p^s}=x^{ar+bp^m}=\left(x^r\right)^a\left(x^{p^m}\right)^b\in K.
+    \]
+    The minimality of $m$ implies that $s\geq m$ and hence $s=m$. Now $p^mt=p^st=r\leq p^m$, so $t=1$. 
+    This means $f(x,K)=X^{p^m}-x^{p^m}$. 
+    
+    We now prove $3)\implies 4)$. Let $C/K$ be an algebraic closure that contains $E$
+    and $\sigma\in\Hom(E/K,C/K)$. Let $x\in E$. We claim that $\sigma(x)=x$. Since 
+    $f(x,K)=X^{p^m}-a$, 
+    \[
+    \left(\sigma(x)\right)^{p^m}=\sigma\left(x^{p^m}\right)=\sigma(a)=a=x^{p^m}.
+    \]
+    It follows that $\sigma(x)=x$. 
+    
+    Finally, we prove that $4)\implies1)$. If $x\in E$ is separable over $K$, then, 
+    as $\sigma(x)=x$ for all $\sigma\in\Gal(E/K)$, 
+    \[
+    f(x,K)=\prod_{y\in O_{\Gal(E/K)}(x)}(X-y)=X-x\in\ K[X].
+    \]
+    Thus $x\in K$ and hence $E/K$ is purely inseparable. 
 \end{proof}
 
+Some consequences:
 
+\begin{exercise}
+    Let $E/K$ be finite and purely inseparable. Then $[E:K]=p^s$ for some prime number $p$ and some $s$.
+    Moreover, $x^{[E:K]}\in K$. 
+\end{exercise}
+
+For the first part of previous exercise write $E=K(x_1,\dots,x_n)$ and proceed by induction on $n$. 
+
+\begin{exercise}
+    Let $K$ be of characteristic $p>0$ and 
+    $E/K$ be a finite extension such that $[E:K]$ is not divisible by $p$. Then 
+    $E/K$ is separable. 
+\end{exercise}
+
+Let $E/K$ be finite and $F$ be the separable closure of $K$ in $E$. 
+Since 
+\begin{gather*}
+\gamma(E/K)=\gamma(E/F)\gamma(F/K)=\gamma(F/K),
+\shortintertext{it follows that}
+[E:K]=[E:F]\gamma(E/K)=[E:K]_{\operatorname{ins}}\gamma(E/K).
+\end{gather*}
+
+\topic{Norm and trace}
+
+\begin{definition}
+\index{Trace}
+\index{Norm}
+    Let $E/K$ be a finite extension and $C/K$ be an algebraic closure 
+    that contains $E$. Let $A=\Hom(E/K,C/K)$. For $x\in E$
+    we define the \textbf{trace} of $x$ in $E/K$ 
+    as 
+    \[
+    \trace_{E/K}(x)=[E:K]_{\operatorname{ins}}\sum_{\varphi\in A}\varphi(x)
+    \]
+    and the \textbf{norm} of $x$ in $E/K$ as
+    \[
+    \norm_{E/K}(x)=\left(\prod_{\varphi\in A}\varphi(x)\right)^{[E:K]_{\operatorname{ins}}}.
+    \]
+\end{definition}
+
+As an optional exercise, one can show that these definitions do not depend on the algebraic closure. 
+
+We collect some basic properties as an exercise:
+
+\begin{exercise}
+    Let $E/K$ be a finite extension. The following statements hold:
+    \begin{enumerate}
+        \item If $E/K$ is not separable, then $\trace_{E/K}(x)=0$ for all $x\in E$.
+        \item If $x\in K$, then $\trace_{E/K}(x)=[E:K]x$.
+        \item $\trace_{E/K}(x)\in K$ for all $x\in E$.
+        \item $\norm_{E/K}(x)=0$ if and only if $x=0$. 
+        \item If $x\in K$, then $\norm_{E/K}(x)=x^{[E:K]}$. 
+        \item $\norm_{E/K}(x)\in K$ for all $x\in E$. 
+    \end{enumerate}
+\end{exercise}
+
+One proves, moreover, that both 
+$\trace_{E/K}\colon E\to K$ and $\norm_{E/K}\colon E\to K$ 
+are linear forms in $E$. 
+
+\begin{exercise}
+        Let $E/K$ be a finite extension and
+        $x\in E$. If
+        \[
+        f(x,K)=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0,
+        \]
+        then 
+        $\norm_{E/K}(x)=\left((-1)^na_0\right)^{[E:K(x)]}$ and 
+        $\trace_{E/K}(x)=-[E:K(x)]a_{n-1}$. 
+\end{exercise}
+
+\begin{example}
+    Let $E=\Q(\sqrt{2},\sqrt{3})$. Then 
+    \begin{align*}
+    &\trace_{E/\Q}(\sqrt{2})=0,
+    &&
+    \norm_{E/\Q}(\sqrt{2})=4,\\
+    &\trace_{E/\Q(\sqrt{2})}(\sqrt{2})=2\sqrt{2},
+    &&\norm_{E/\Q(\sqrt{2})}(\sqrt{2})=2.    
+    \end{align*}
+\end{example}
+
+\begin{example}
+    If $E/K$ is a finite Galois extension, then 
+    \[
+    \trace_{E/K}(x)=\sum_{\sigma\in\Gal(E/K)}\sigma(x)
+    \quad\text{and}\quad
+    \trace_{E/K}(x)=\prod_{\sigma\in\Gal(E/K)}\sigma(x)
+    \]
+    for all $x\in E$. In particular, since $E=K(y)$ for some
+    $y$ by Proposition \ref{pro:monogenic}, 
+    \[
+    \trace_{E/K}(y)=-a_{n-1}
+    \quad\text{and}\quad
+    \norm_{E/K}(y)=(-1)^na_0,
+    \]
+    where
+    $f(y,K)=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0$.
+    
+    
+    
+\end{example}        
+
+\topic{Finite fields}
+
+\topic{Cyclotomic extensions}
+
+\topic{Hilbert's theorem}
