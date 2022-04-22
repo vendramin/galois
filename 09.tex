@@ -276,7 +276,139 @@ the \textbf{Frobenius automorphism}.
 \end{exercise}
 
 % page 96
+% number of irreducible polynomials
+% Moebius inversion formula in commutative rings
 
 \topic{Cyclotomic extensions}
+
+For $n\geq1$ let $G_n(K)=\{x\in K:x^n=1\}$ be the 
+set of $n$-roots of one in $K$. Note that
+$G_n(K)$ is a cyclic subgroup of $K^{\times}$ and that 
+$|G_n(K)|$ divides $n$. 
+
+\begin{example}
+    $G_n(\R)=\{-1,1\}$ if $n$ is odd and $G_{n}=\{1\}$ is $n$ is even.
+\end{example}
+
+\begin{exercise}
+    Let $K$ be a field of characteristic $p>0$. Let $n=p^sm$ for some $m$ not divisible by $p$. 
+    Then $G_n(K)=G_m(K)$. 
+\end{exercise}
+
+\begin{exercise}
+    Let $q$ be a prime number. Then $G_n(\Z/q)\simeq\Z/\gcd(n,q-1)$. 
+\end{exercise}
+
+Similarly, one can prove that if $K$ is a finite field, then $G_n(K)$ is a cyclic group
+of order $\gcd(n,|K^{\times}|)$. 
+
+\begin{example}
+    If $C$ is algebraically closed of characteristic coprime with $n$, 
+    then $G_n(C)$ is cyclic of order $n$, as $X^n-1$ 
+    has all his roots in $C$ and does not contain multiple roots. 
+\end{example}
+
+Let $K$ be an algebraically closed field and $n$ be
+such that $n$ is coprime with the characteristic of $K$. The set of 
+\textbf{primitive $n$-roots} is defined as 
+\[
+H_n(K)=\{x\in G_n(K):|x|=n\}.
+\]
+
+\begin{definition}
+\index{Cyclotomic polynomial}
+    Let $K$ be an algebraically closed field and $n$ be
+    such that $n$ is coprime with the characteristic of $K$. The \textbf{$n$-th cyclotomic
+    polynomial} is defined as 
+    \[
+    \Phi_n=\prod_{x\in H_n(K)}(X-x)\in K[X].
+    \]
+\end{definition}
+
+\index{Euler's $\phi$ function}
+For $n\geq1$ the Euler's function is defined as 
+\[
+\varphi(n)=|\{k:1\leq k\leq n,\;\gcd(k,n)=1\}|.
+\]
+For example, $\varphi(4)=2$, $\varphi(8)=\varphi(10)=4$ and $\varphi(p)=p-1$ for every prime $p$. 
+
+\begin{proposition}
+    Let $K$ be an algebraically closed field and $n$ be
+    such that $n$ is coprime with the characteristic of $K$. Let $A$ be
+    the ring of integers of $K$. 
+    \begin{enumerate}
+        \item $\deg\Phi_n=\varphi(n)$.
+        \item $\Phi_n\in A[X]$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    The first statement is clear. Let us prove 2) by induction on $n$. The case $n=1$ is
+    trivial, as $\Phi_1=X-1$. Assume that $\Phi_d\in A[X]$ for all $d$ such that $d<n$. 
+    In particular,
+    \[
+    \gamma=\prod_{\substack{d\mid n\\d\ne n}}\Phi_d\in A[X].
+    \]
+    Since $\gamma$ is monic, it follows that 
+    $\frac{X^n-1}{\gamma}\in A[X]$. Now the claim follows from 
+    \[
+    X^n-1=\prod_{d\mid n}\Phi_d=\Phi_n\prod_{\substack{d\mid n\\d\ne n}}\Phi_d=\Phi_n\gamma.\qedhere
+    \]
+\end{proof}
+
+By taking degree in the equality 
+$X^n-1=\prod_{d\mid n}\Phi_d$ 
+one gets 
+\[
+n=\sum_{d\mid n}\varphi(d).
+\]
+
+\begin{definition}
+\label{defn:cyclotomic}
+\index{Extension!cyclotomic}
+    Let $n\geq2$ and $K$ be a field of characteristic coprime with $n$. A 
+    \textbf{cyclotomic extension} of $K$ of index $n$ is a 
+    decomposition field of $X^n-1$ over $K$. 
+\end{definition}
+
+Let $C$ be an algebraic closure of $K$ and $n\geq2$ be coprime with the characteristic of $K$. 
+If follows from Definition \ref{defn:cyclotomic} 
+that a cyclotomic extension of index $n$ is of the form 
+$K(\omega)/K$ for some $\omega\in H_n(K)$. 
+
+\begin{proposition}
+    A cyclotomic extension of index $n$ is abelian and of degree a divisor of $\varphi(n)$. 
+\end{proposition}
+
+\begin{proof}
+    Let $C$ be an algebraic closure of $K$ and $n\geq2$ be coprime with the characteristic of $K$. 
+    Let $\omega\in H_n(C)$ and $K(\omega)/K$ be a cyclotomic extension. Then $K(\omega)/K$
+    is a Galois extension, as it is a decomposition field of a separable polynomial. 
+    Let $U=\mathcal{U}(\Z/n)$ be the group of units of $\Z/n$ and 
+    \[
+    \lambda\colon \Gal(K(\omega)/K)\to U,
+    \quad
+    \sigma\mapsto m_{\sigma},
+    \]
+    where $m_{\sigma}$ is such that $\sigma(\omega)=\omega^{m_{\sigma}}$. The map $\lambda$ is well-defined and
+    it is a group homomorphism, as if $\sigma,\tau\in\Gal(K(\omega)/K)$, then, since 
+    \[
+        (\tau\sigma)(\omega)=\tau(\sigma(\omega))=\tau(\omega^{m_\sigma})=\left(\omega^{m_\sigma}\right)^{m_\tau}=\omega^{m_\sigma m_\tau},
+    \]
+    it follows that $\lambda(\sigma)\lambda(\tau)=\lambda(\sigma\tau)$. Since 
+    $\lambda$ is injective, $\Gal(K(\omega)/K)$ is isomorphic to a subgroup 
+    of the abelian group $U$. Hence $\Gal(K(\omega)/K)$ is abelian. Moreover, 
+    $[K(\omega):K]=|\Gal(K(\omega)/K)|$ is a divisor of $|U|=\varphi(n)$. 
+\end{proof}
+
+\begin{exercise}
+    Prove that a cyclotomic extension $K(\omega)/K$ has degree $\varphi(n)$ if and only if 
+    $\Phi_n$ is irreducible over $K$. 
+\end{exercise}
+
+
+\begin{example}
+
+\end{example}
 
 \topic{Hilbert's theorem}
