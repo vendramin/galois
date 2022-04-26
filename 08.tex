@@ -25,8 +25,8 @@ Before proving the theorem, we need a lemma.
    K(z)\subseteq K(x,z)=K(y).
    \]
    Since 
-   $\deg(z,K)\leq\deg(y,K)$, it follows that
-   $\deg(z,K)=\deg(y,K)$ and hence 
+   $\deg(z,K)\leq\deg(y,K)$, 
+   $\deg(z,K)=\deg(y,K)$. Hence 
    $K(y)=K(z)$. In particular, $x\in K(z)$ and
    therefore $E=K(z)$. 
 \end{proof}
@@ -39,7 +39,8 @@ Now we are ready to prove Artin's theorem:
     f_x=\prod_{y\in O_G(x)}(X-y).
     \]
     Since $f_x\in K[X]$, it follows
-    that $E/K$ is normal and separable, so $E/K$ is a Galois extension. Moreover, 
+    that the extension $E/K$ is normal and separable (as it is a decomposition
+    field of a family of separable polynomials), so $E/K$ is a Galois extension. Moreover, 
     \[
     \deg(x,K)\leq \deg f_x=|O_G(x)|\leq |G|.
     \]
@@ -53,7 +54,7 @@ Now we are ready to prove Artin's theorem:
     a field homomorphism $\overline{\sigma}\colon E\to E$ such that 
     $\overline{\sigma}^2=\id$. Recall that such a homomorphism is given by 
     $f/g\mapsto \sigma(f)/\sigma(g)$. Let $G=\langle\overline{\sigma}\rangle$. Then $|G|=2$. 
-    We claim that $\prescript{G}{}{E}=K(X+Y,XY)$. Let $F==K(X+Y,XY)$. We only prove
+    We claim that $\prescript{G}{}{E}=K(X+Y,XY)$. Let $F=K(X+Y,XY)$. We only prove
     that $\prescript{G}{}{E}\subseteq F$, as the other inclusion is trivial. Artin's theorem
     implies that $[E:\prescript{G}{}{E}]=2$ and $E=F(X)$, as $X$ is a root
     of the polynomial $Z^2-(X+Y)Z+XY$. Then $[E:F]\leq 2$ and $[\prescript{G}{}{E}:F]=1$.
@@ -66,7 +67,7 @@ Now we are ready to prove Artin's theorem:
     Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
     There exists a bijective correspondence
     \[
-    \{F:K\subseteq F\subseteq E\text{ subfields}\}\to 
+    \{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
     \{\text{subgroups of $G$}\}
     \]
     The correspondence is given by $F\mapsto G(E/F)$ and 
@@ -92,6 +93,8 @@ Now we are ready to prove Artin's theorem:
 \]
 
 \begin{proof}
+Let $\alpha$ and $\beta$ be the maps $\alpha(F)=\Gal(E/F)$ and $\beta(S)=\prescript{S}{}{E}$. A routine
+exercise shows that $\alpha$ and $\beta$ are well-defined. 
 We first note that
 \begin{align*}
    &\beta(\alpha(F))=\beta(\Gal(E/F))=\prescript{\Gal(E/F)}{}{E}=F
@@ -119,18 +122,18 @@ if $x\in F$, then $\sigma^{-1}(x)\in F$ and
 \sigma\tau\sigma^{-1}(x)=\sigma\sigma^{-1}(x)=x.
 \]
 Conversely, let $\varphi\in\Hom(F/K,C/K)$. There exists 
-$\Phi\in\colon E\to C$ such that $\Phi|_F=\varphi$. Since $E/K$ is normal, 
-$\Phi(E)=E$ and hence $\Phi\in G$. We claim that $\varphi(x)\in F$ for all $x\in F$
- for all $x\in F$. Note that $F=\prescript{S}{}{E}$, so
+$\Phi\colon E\to C$ such that $\Phi|_F=\varphi$. Since $E/K$ is normal, 
+$\Phi(E)=E$ and hence $\Phi\in G$. We claim that $\varphi(x)\in F$ for all $x\in F$. 
+Note that $F=\prescript{S}{}{E}$, so
  \[
  \tau\varphi(x)=\tau\Phi(x)=\Phi\Phi^{-1}\tau\Phi(x)=\Phi(x)=\varphi(x)
  \]
- for all $\tau\in S$, as $\Phi^{-1}\tau\Phi\in S$. 
+ for all $\tau\in S$, as $\Phi^{-1}\tau\Phi\in S$. This means that $\varphi(x)\in\prescript{S}{}{E}=F$. 
  
  Let us compute $\Gal(F/K)$. Since $F/K$ is normal, 
  the map 
  $\lambda\colon G\to\Gal(F/K)$, $\sigma\mapsto\sigma|_F$, 
- is a surjective group homomorphism such that $\ker\lambda=S$. The first isomortphism 
+ is a surjective group homomorphism such that $\ker\lambda=S$. The first isomorphism 
  theorem implies that $\Gal(F/K)\simeq G/S$. 
 \end{proof}
 
@@ -201,7 +204,7 @@ Some easy consequences.
     $\Gal(\Q(\omega)/\Q)\simeq C_4$. If $\sigma\in \Gal(\Q(\omega)/\Q)$,
     then $\sigma(\omega)=\omega^i$ for some $i\in\{1,\dots,4\}$. 
     Moreover, for every $i\in\{1,\dots,4\}$ 
-    the map $\omega_i\mapsto\omega^i$ induces an automorphism
+    the map $\omega\mapsto\omega^i$ induces an automorphism
     of $\Q(\omega)/\Q$. Thus $|\Gal(\Q(\omega)/\Q)|=4$. Now 
     \[
     \sigma_i^k=\id\Longleftrightarrow
@@ -222,7 +225,7 @@ Some easy consequences.
     \[
     \theta^2=\omega^2+\omega^3+2=-(1+\omega+\omega^{-1})+2=1-\theta
     \]
-    and hence $\theta$ is a root of $X^2+X+1$. Since $\theta\not\in\Q$, 
+    and hence $\theta$ is a root of $X^2+X-1$. Since $\theta\not\in\Q$, 
     it follows that 
     \[
     \theta\in\{(-1+\sqrt{5})/2,(-1-\sqrt{5})/2\}.
