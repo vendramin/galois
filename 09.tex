@@ -25,7 +25,9 @@ The field $\C$ is algebraically closed.
     of $G$, 
     then there exists a subextension $F/\R$ of degree $s$. Since 
     $\R$ does not admit extensions of odd degree $>1$, $s=1$ and
-    hence $G$ is a $2$-group. In particular, $|\Gal(L/\C)|=2^{m-1}$. If $m>1$, 
+    hence $G$ is a $2$-group. Since 
+    $L/\R$ is a Galois estension, $L/\C$ is a Galois extension. 
+    In particular, $|\Gal(L/\C)|=2^{m-1}$. If $m>1$, 
     let $U$ be a subgroup of $\Gal(L/\C)$ of order $2^{m-2}$. Then $U$ corresponds 
     to a subextension $L_1/\C$ of degree two, a contradiction. Hence $m=1$ 
     and $[L:\C]=1$, so $L=\C$ and $E=\C$. 
@@ -72,7 +74,11 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     We now prove $2)\implies 3)$. Let $x\in E$ and $m$ be the minimal positive integer 
     such that $x^{p^m}\in K$. Then
     $x$ is a root of $X^{p^m}-x^{p^m}\in K[X]$. Since 
-    $X^{p^m}-x^{p^m}=(X-x)^{p^m}$, it follows that $f(x,K)=(X-x)^r$ for some
+    $X^{p^m}-x^{p^m}=(X-x)^{p^m}$, it follows that 
+    \[
+    f(x,K)=(X-x)^r=X^r+\cdots+(-1)^rx^r
+    \]
+    for some
     $r\in\{1,\dots,p^m\}$. Write $r=p^st$ for some integer $t$ coprime with $p$ and $s$ such that
     $0\leq s\leq m$. Let $a,b\in\Z$ be such that $ar+bp^m=p^s$. Then 
     \[
@@ -87,10 +93,13 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     \[
     \left(\sigma(x)\right)^{p^m}=\sigma\left(x^{p^m}\right)=\sigma(a)=a=x^{p^m}.
     \]
-    It follows that $\sigma(x)=x$. 
+    It follows that $\sigma(x)$ is a root of $X^{p^m}-x^{p^m}=(X-x)^{p^m}$. 
+    Thus $\sigma(x)=x$. 
     
-    Finally, we prove that $4)\implies1)$. If $x\in E$ is separable over $K$, then, 
-    as $\sigma(x)=x$ for all $\sigma\in\Gal(E/K)$, 
+    Finally, we prove that $4)\implies1)$. Let 
+    $C$ be an algebraic closure of $K$ containing $E$. 
+    Then $\Gal(E/K)=\Hom(E/K,C/K)=\{\id\}$, as $\gamma(E/K)=1$. 
+    If $x\in E$ is separable over $K$, then
     \[
     f(x,K)=\prod_{y\in O_{\Gal(E/K)}(x)}(X-y)=X-x\in\ K[X].
     \]
@@ -154,9 +163,18 @@ We collect some basic properties as an exercise:
     \end{enumerate}
 \end{exercise}
 
-One proves, moreover, that both 
-$\trace_{E/K}\colon E\to K$ and $\norm_{E/K}\colon E\to K$ 
-are linear forms in $E$. 
+One proves, moreover, that  
+$\trace_{E/K}\colon E\to K$ 
+satisfies
+\[
+\trace_{E/K}(x+\lambda y)=
+\trace_{E/K}(x)+\lambda\trace_{E/K}(y)
+\]
+for all $x,y\in E$ and $\lambda\in K$, that is to say that 
+$\trace_{E/K}\colon E\to K$ 
+is a 
+linear form in $E$ and that 
+$\norm_{E/K}\colon E^{\times}\to K^{\times}$ is a group homomorphism. 
 
 \begin{exercise}
         Let $E/K$ be a finite extension and
@@ -174,7 +192,7 @@ are linear forms in $E$.
     \begin{align*}
     &\trace_{E/\Q}(\sqrt{2})=0,
     &&
-    \norm_{E/\Q}(\sqrt{2})=4,\\
+    \norm_{E/\Q}(\sqrt{2})=-4,\\
     &\trace_{E/\Q(\sqrt{2})}(\sqrt{2})=2\sqrt{2},
     &&\norm_{E/\Q(\sqrt{2})}(\sqrt{2})=2.    
     \end{align*}
@@ -279,218 +297,3 @@ the \textbf{Frobenius automorphism}.
 % number of irreducible polynomials
 % Moebius inversion formula in commutative rings
 
-\topic{Cyclotomic extensions}
-
-For $n\geq1$ let $G_n(K)=\{x\in K:x^n=1\}$ be the 
-set of $n$-roots of one in $K$. Note that
-$G_n(K)$ is a cyclic subgroup of $K^{\times}$ and that 
-$|G_n(K)|$ divides $n$. 
-
-\begin{example}
-    $G_n(\R)=\{-1,1\}$ if $n$ is odd and $G_{n}=\{1\}$ is $n$ is even.
-\end{example}
-
-\begin{exercise}
-    Let $K$ be a field of characteristic $p>0$. Let $n=p^sm$ for some $m$ not divisible by $p$. 
-    Then $G_n(K)=G_m(K)$. 
-\end{exercise}
-
-\begin{exercise}
-    Let $q$ be a prime number. Then $G_n(\Z/q)\simeq\Z/\gcd(n,q-1)$. 
-\end{exercise}
-
-Similarly, one can prove that if $K$ is a finite field, then $G_n(K)$ is a cyclic group
-of order $\gcd(n,|K^{\times}|)$. 
-
-\begin{example}
-    If $C$ is algebraically closed of characteristic coprime with $n$, 
-    then $G_n(C)$ is cyclic of order $n$, as $X^n-1$ 
-    has all his roots in $C$ and does not contain multiple roots. 
-\end{example}
-
-Let $K$ be an algebraically closed field and $n$ be
-such that $n$ is coprime with the characteristic of $K$. The set of 
-\textbf{primitive $n$-roots} is defined as 
-\[
-H_n(K)=\{x\in G_n(K):|x|=n\}.
-\]
-
-\begin{definition}
-\index{Cyclotomic polynomial}
-    Let $K$ be an algebraically closed field and $n$ be
-    such that $n$ is coprime with the characteristic of $K$. The \textbf{$n$-th cyclotomic
-    polynomial} is defined as 
-    \[
-    \Phi_n=\prod_{x\in H_n(K)}(X-x)\in K[X].
-    \]
-\end{definition}
-
-\index{Euler's $\phi$ function}
-For $n\geq1$ the Euler's function is defined as 
-\[
-\varphi(n)=|\{k:1\leq k\leq n,\;\gcd(k,n)=1\}|.
-\]
-For example, $\varphi(4)=2$, $\varphi(8)=\varphi(10)=4$ and $\varphi(p)=p-1$ for every prime $p$. 
-
-\begin{proposition}
-    Let $K$ be an algebraically closed field and $n$ be
-    such that $n$ is coprime with the characteristic of $K$. Let $A$ be
-    the ring of integers of $K$. 
-    \begin{enumerate}
-        \item $\deg\Phi_n=\varphi(n)$.
-        \item $\Phi_n\in A[X]$.
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}
-    The first statement is clear. Let us prove 2) by induction on $n$. The case $n=1$ is
-    trivial, as $\Phi_1=X-1$. Assume that $\Phi_d\in A[X]$ for all $d$ such that $d<n$. 
-    In particular,
-    \[
-    \gamma=\prod_{\substack{d\mid n\\d\ne n}}\Phi_d\in A[X].
-    \]
-    Since $\gamma$ is monic, it follows that 
-    $\frac{X^n-1}{\gamma}\in A[X]$. Now the claim follows from 
-    \[
-    X^n-1=\prod_{d\mid n}\Phi_d=\Phi_n\prod_{\substack{d\mid n\\d\ne n}}\Phi_d=\Phi_n\gamma.\qedhere
-    \]
-\end{proof}
-
-By taking degree in the equality 
-$X^n-1=\prod_{d\mid n}\Phi_d$ 
-one gets 
-\[
-n=\sum_{d\mid n}\varphi(d).
-\]
-
-\begin{definition}
-\label{defn:cyclotomic}
-\index{Extension!cyclotomic}
-    Let $n\geq2$ and $K$ be a field of characteristic coprime with $n$. A 
-    \textbf{cyclotomic extension} of $K$ of index $n$ is a 
-    decomposition field of $X^n-1$ over $K$. 
-\end{definition}
-
-Let $C$ be an algebraic closure of $K$ and $n\geq2$ be coprime with the characteristic of $K$. 
-If follows from Definition \ref{defn:cyclotomic} 
-that a cyclotomic extension of index $n$ is of the form 
-$K(\omega)/K$ for some $\omega\in H_n(K)$. 
-
-\begin{proposition}
-    A cyclotomic extension of index $n$ is abelian and of degree a divisor of $\varphi(n)$. 
-\end{proposition}
-
-\begin{proof}
-    Let $C$ be an algebraic closure of $K$ and $n\geq2$ be coprime with the characteristic of $K$. 
-    Let $\omega\in H_n(C)$ and $K(\omega)/K$ be a cyclotomic extension. Then $K(\omega)/K$
-    is a Galois extension, as it is a decomposition field of a separable polynomial. 
-    Let $U=\mathcal{U}(\Z/n)$ be the group of units of $\Z/n$ and 
-    \[
-    \lambda\colon \Gal(K(\omega)/K)\to U,
-    \quad
-    \sigma\mapsto m_{\sigma},
-    \]
-    where $m_{\sigma}$ is such that $\sigma(\omega)=\omega^{m_{\sigma}}$. The map $\lambda$ is well-defined and
-    it is a group homomorphism, as if $\sigma,\tau\in\Gal(K(\omega)/K)$, then, since 
-    \[
-        (\tau\sigma)(\omega)=\tau(\sigma(\omega))=\tau(\omega^{m_\sigma})=\left(\omega^{m_\sigma}\right)^{m_\tau}=\omega^{m_\sigma m_\tau},
-    \]
-    it follows that $\lambda(\sigma)\lambda(\tau)=\lambda(\sigma\tau)$. Since 
-    $\lambda$ is injective, $\Gal(K(\omega)/K)$ is isomorphic to a subgroup 
-    of the abelian group $U$. Hence $\Gal(K(\omega)/K)$ is abelian. Moreover, 
-    $[K(\omega):K]=|\Gal(K(\omega)/K)|$ is a divisor of $|U|=\varphi(n)$. 
-\end{proof}
-
-\begin{exercise}
-    Prove that a cyclotomic extension $K(\omega)/K$ has degree $\varphi(n)$ if and only if 
-    $\Phi_n$ is irreducible over $K$. 
-\end{exercise}
-
-Note that $\Phi_n$ is irreducible over $\Q$. Some concrete examples:
-\[
-\Phi=X+1,
-\quad
-\Phi_2=X+1,
-\quad
-\Phi_3=X^2+X+1,
-\quad
-Phi_6=X^2-X+1.
-\]
-If $p$ is a prime number, then $\Phi_p=X^{p-1}+\cdots+X+1$. 
-
-\begin{example}
-    $\Phi_5$ is irreducible over $\Z/2$. First note that
-    $\Phi_5=X^{4}+\cdots+X+1$ does not have roots in $\Z/2$. If 
-    $\Phi_5$ is reducible, then, since
-    $X^2+X+1$ is the unique monic irreducible polynomial 
-    over $\Z/2$, it follows that
-    \[
-    \Phi_5=(X^2+X+1)(X^2+X+1)=(X^2+X+1)^2=X^4+X^2+1,
-    \]
-    a contradiction.
-\end{example}
-
-\begin{exercise}
-Prove that
-$\Phi_{12}=X^4-X^2+1$ is not irreducible over $\Z/5$. 
-\end{exercise}
-
-\topic{Hilbert's theorem}
-
-Let $G$ be a group and $A$ be a (left) $G$-module. This means that $A$ is an abelian
-group and there exists a map
-\[
-G\times A\to A,\quad
-(g,a)\mapsto g\cdot a
-\]
-such that $1\cdot a=a$ for all $a\in A$, $(gh)\cdot a=g\cdot (h\cdot a)$ for 
-all $g,h\in G$ and $a\in A$ and $g\cdot (a+b)=g\cdot a+g\cdot b$ for
-all $g\in G$ and $a,b\in A$. 
-
-\begin{definition}
-    \index{Derivation}
-    Let $A$ be a $G$-module. 
-    A \textbf{derivation} of $A$ is a map $d\colon G\to A$ such that
-    $d(gh)=g\cdot d(h)+d(g)$ for all $g,h\in G$. 
-\end{definition}
-
-\index{Inner derivation}
-Let $A$ be a $G$-module and $a\in A$. The map 
-$d(g)=g\cdot a-a$ is a derivation of $A$. 
-Such derivations as known as \textbf{inner derivations}. 
-
-\begin{exercise}
-    Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
-    Then the (multiplicative) group $E^\times$ is a $G$-module with
-    $\sigma\cdot x=\sigma(x)$. 
-\end{exercise}
-
-In the context of the previous exercise, 
-let $d\colon G\to E^\times$ be a derivation. For $\tau\in G$ let 
-$x_\tau=d(\tau)$. Then
-\[
-x_{\sigma\tau}=d(\sigma\tau)=(\sigma\cdot d(\tau))d(\sigma)=\sigma(x_\tau)x_\sigma.
-\]
-Is this true that $x_\sigma=\frac{\sigma(c)}{c}=(\sigma\cdot c)c^{-1}$ 
-for some $c\in E^\times$?
-
-\begin{proposition}
-    Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
-    \begin{enumerate}
-        \item Let $\{x_\tau:\tau\in G\}\subseteq E^\times$ be such that 
-            $x_{\sigma\tau}=\sigma(x_\tau)x_\sigma$. Then there exists
-            $c\in E^\times$ such that $x_\sigma=\frac{\sigma(c)}{c}$ for all $\sigma\in G$. 
-        \item  
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}
-    
-\end{proof}
-
-The following result is known as Hilbert's 90 theorem. 
-
-\begin{theorem}[Hilbert]
-\index{Hilbert's 90 theorem}
-
-\end{theorem}
