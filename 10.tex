@@ -201,17 +201,78 @@ for some $c\in E^\times$?
         \item Let $\{x_\tau:\tau\in G\}\subseteq E^\times$ be such that 
             $x_{\sigma\tau}=\sigma(x_\tau)x_\sigma$. Then there exists
             $c\in E^\times$ such that $x_\sigma=\frac{\sigma(c)}{c}$ for all $\sigma\in G$. 
-        \item  
+        \item Let $\{x_\tau:\tau\in G\}\subseteq E$ be such that 
+            $x_{\sigma\tau}=\sigma(x_\tau)+x_\sigma$. Then there exists
+            $c\in E$ such that $x_\sigma=\sigma(c)-c$ for all $\sigma\in G$.  
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
+    We prove 1). By Dedekind's theorem, the homomorphism 
+    $\sum_{\tau\in G}x_{\tau}^{-1}\tau$ is non-zero. Thus there exists
+    $a\in E^{\times}$ such that $\sum_{\tau\in G}x_{\tau}^{-1}\tau(a)=c\in E^{\times}$. 
+    If $\sigma\in G$, 
+    then 
+    \[
+    \sigma(c)=\sum_{\tau\in G}\sigma(x_{\sigma}^{-1})(\sigma\tau)(a)=
+    x_{\sigma\tau}^{-1}x_{\sigma}\sigma\tau(a)
+    =x_{\sigma}\sum_{\tau\in G}x_{\sigma\tau}^{-1}\sigma\tau(a)=x_{\sigma}c.
+    \]
     
+    We now prove 2). By Dedekind's theorem, $\sum_{\tau\in G}\tau\ne0$. Since
+    it is a linear form in $E$, it is surjective. In particular, there exists 
+    $a\in E$ such that $\sum_{\tau\in G}\tau(a)=1$. Let $c=-\sum_{\tau\in G}x_\tau\tau(a)$. 
+    If $\sigma\in G$, then 
+    \begin{align*}
+    \sigma(c) &= -\sum_{\tau\in G}\sigma(x_{\sigma})\sigma\tau(a)\\
+    &=-\sum_{\tau\in G}(x_{\sigma\tau}-x_{\sigma})\sigma\tau(a)\\
+    &=-\sum_{\tau\in G}x_{\sigma\tau}\sigma\tau(a)+\sum_{\tau\in G}x_{\sigma}\sigma\tau(a)
+    =c+x_{\sigma}.
+    \end{align*}
+    Hence $x_{\sigma}=\sigma(c)-c$. 
 \end{proof}
 
 The following result is known as Hilbert's 90 theorem. 
 
 \begin{theorem}[Hilbert]
 \index{Hilbert's 90 theorem}
-
+    Let $E/K$ be a cyclic extension of degree $n$ and let $G=\Gal(E/K)=\langle\sigma\rangle$. 
+    \begin{enumerate}
+        \item Let $x\in E^{\times}$ be such that $\norm_{E/K}(x)=1$, 
+        There exists $b\in E^{\times}$ such that $x=\sigma(b)/b$. 
+        \item Let  $x\in E$ be such that $\trace_{E/K}(x)=0$. 
+        There exists $b\in E$ such that $x=\sigma(b)-b$. 
+    \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+    Let us prove 1). Note that $G=\{\sigma^i:0\leq i<n\}$. For $i\in\{0,\dots,n-1\}$ let 
+    $x_{\sigma^i}=\prod_{k=0}^{i-1}\sigma^k(x)$. In particular, $x_{\sigma}=x$. We now
+    check that $\{x_{\sigma^i}\}$ satisfy the assumptions of the previous lemma:
+    \begin{align*}
+        \sigma^j(x_{\sigma^i}) &= \prod_{k=0}^{i-1}\sigma^{k+j}(x)
+        =\prod_{k=j}^{i+j-1}\sigma^k(x)\\
+        &=\prod_{k=0}^{i+j-1}\sigma^k(x)\left(\prod_{k=0}^{j-1}\sigma^k(x)\right)^{-1}
+        =\prod_{k=0}^{i+j-1}\sigma^k(x)x_{\sigma^j}^{-1}.
+    \end{align*}
+    If $i+j<n$, then 
+    \[
+    \sigma^j\sigma^i=\sigma^{i+j}
+    \implies
+    \sigma^j(x_{\sigma^i})=x_{\sigma^i\sigma^j}x_{\sigma^j}^{-1}
+    \implies
+    x_{\sigma^j\sigma^i}=\sigma^j(x_{\sigma^i})x_{\sigma^j}.
+    \]
+    If $i+j=n+r$ for some $r\in\{0,\dots,n-1\}$, then, since $i+j<2n$ and
+    $\sigma^i\sigma^j=\sigma^r$, 
+    \[
+    \sigma^j(x_{\sigma^i})=\prod_{k=0}^{n-1}\sigma^k(x)\prod_{k=n}^{n+r-1}\sigma^k(x)x_{\sigma^j}^{-1}
+    =\prod_{k=0}^{r-1}\sigma^k(x)x_{\sigma^j}^{-1}
+    =x_{\sigma^r}x_{\sigma^j}^{-1}=x_{\sigma^j\sigma^i}x_{\sigma^j}^{-1}
+    \]
+    and hence $x_{\sigma^j\sigma^i}=\sigma^j(x_{\sigma^i})x_{\sigma^j}$. By 
+    the previous lemma, there exists $c\in E^{\times}$ such that 
+    $x_{\sigma^i}=\frac{\sigma^i(c)}{c}$. In particular, $x=x_{\sigma}=\sigma(c)/c$. 
+    
+    The second statement is similar and it is left as an exercise. 
+\end{proof}
