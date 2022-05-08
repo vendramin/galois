@@ -276,3 +276,65 @@ The following result is known as Hilbert's 90 theorem.
     
     The second statement is similar and it is left as an exercise. 
 \end{proof}
+
+If $A$, $B$ and $C$ are groups (written multiplicatively) 
+and $f\colon A\to B$ and $g\colon B\to C$ are group homomorphism, 
+the sequence 
+\[\begin{tikzcd}
+	A & B & C 
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["g", from=1-2, to=1-3]
+\end{tikzcd}\]
+of groups and homomorphisms 
+is said to be \textbf{exact} if $f(A)=\ker g$. 
+For example, the sequence 
+\[\begin{tikzcd}
+	1 & B & C 
+	\arrow[from=1-1, to=1-2]
+	\arrow["g", from=1-2, to=1-3]
+\end{tikzcd}\]
+is exact if and only if $g$ is injective, as the first map represents the trivial homomorphism. 
+Similarly, the sequence 
+\[\begin{tikzcd}
+	A & B & 1
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+\end{tikzcd}\]
+is exact if and only if $f$ is surjective. 
+
+\begin{corollary}
+Let $E/K$ be finite and cyclic with $\Gal(E/K)=\langle\sigma\rangle$. 
+\begin{enumerate}
+    \item The sequence 
+    \[\begin{tikzcd}
+	1 & {K^{\times}} & {E^{\times}} & {E^{\times}} & {K^{\times}}
+	\arrow[from=1-1, to=1-2]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow["\rho", from=1-3, to=1-4]
+	\arrow["{\norm_{E/K}}", from=1-4, to=1-5]
+    \end{tikzcd}\]
+    is exact, where $\rho(z)=\sigma(z)/z$. 
+     \item The sequence 
+    \[\begin{tikzcd}
+	0 & {K} & {E} & {E} & {K}
+	\arrow[from=1-1, to=1-2]
+	\arrow[hook, from=1-2, to=1-3]
+	\arrow["\lambda", from=1-3, to=1-4]
+	\arrow["{\trace{E/K}}", from=1-4, to=1-5]
+    \end{tikzcd}\]
+    is exact, where $\lambda(z)=\sigma(z)-z$. 
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+    We only prove 1). Note that 
+    $K^{\times}\hookrightarrow E^{\times}$ is the inclusion map. If 
+    $z\in\ker\rho$, then $\sigma(z)=z$ and hence $z\in K$. The 
+    sequence 
+    \[\begin{tikzcd}
+	{E^{\times}} & {E^{\times}} & {K^{\times}}
+	\arrow["\rho", from=1-1, to=1-2]
+	\arrow["{\norm_{E/K}}", from=1-2, to=1-3]
+    \end{tikzcd}\]
+    is exact by Hilbert's theorem. 
+\end{proof}
