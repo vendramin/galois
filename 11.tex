@@ -1,0 +1,366 @@
+\chapter{}
+
+\begin{proposition}
+    Let $n\geq2$ and $K$ be a field containing a primitive $n$-root of one. If 
+    $a\in K^{\times}$ and 
+    $E/K$ is a decomposition field of $f=X^n-a$, then $E/K$ is cyclic
+    of degree $d$, where $d$ divides $n$. Moreover, 
+    \[
+    d=\min\{k:a^k\in K^n\},
+    \]
+    where $K^n=\{x\in K:x=y^n\text{ for some $y\in K$}\}$. 
+    Conversely, 
+    if $E/K$ is cyclic of degree $n$, then $E/K$ is a decomposition
+    field of an irreducible polynomial 
+    of the form $X^n-a$ for some $a\in K^{\times}$. 
+\end{proposition}
+
+\begin{proof}
+    A decomposition field of $f$ over $K$ is
+    of the form $K(\alpha)$, where $\alpha^n=a$. Thus 
+    $K(\alpha)/K$ is a Galois extension. If $\sigma\in\Gal(K(\alpha)/K)$, 
+    then $\sigma(\alpha)$ is a root of $f$, so 
+    $\sigma(\alpha)=\omega_\sigma\alpha$, where
+    $\omega_\sigma\in G_n(K)$. This means that 
+    there exists an injective map
+    \[
+    \lambda\colon\Gal(K(\alpha)/K)\to G_n(K),
+    \quad
+    \sigma\mapsto\omega_{\sigma}.
+    \]
+    Moreover, $\lambda$ is a group homomorphism, as 
+    \[
+    \sigma\tau(\alpha)=\sigma(\tau(\alpha))=\sigma(\omega_{\sigma}\alpha)=\omega_\tau\sigma(\alpha)=\omega_{\tau}\omega_{\sigma}\alpha.
+    \]
+    Therefore $\Gal(K(\alpha)/K)$ is isomorphic to a subgroup
+    of $G_n(K)$. In particular, $\Gal(K(\alpha)/K)$ is cyclic
+    and $|\Gal(K(\alpha)/K)|$ divides $n$.
+    
+    
+    Let $d=|\Gal(K(\alpha)/K)|$. Since $a=\alpha^n$, 
+    \[
+    \norm(\alpha)^n=\norm(a)=a^d.
+    \]
+    Thus $a^d\in K^n$, as $\norm(\alpha)\in K$. If $a^k\in K^n$, 
+    say $a^k=c^n$ for some $c\in K$, then 
+    \[
+    a^k=c^n=(\alpha^n)^k=(\alpha^k)^n
+    \implies 
+    \alpha^k=c\omega\in K
+    \]
+    for some $\omega\in G_n(K)$. Thus $\alpha$ is a root of $X^k-\alpha^k\in K[X]$
+    and hence $k\geq d$. 
+    
+    Note that $f(\alpha,K)=X^d-\alpha^d$. 
+    
+    Let $E/K$ be cyclic of degree $n$. Assume that  
+    $\Gal(E/K)=\langle\sigma\rangle$.
+    If $\omega$ is a primitive
+    $n$-root of one, 
+    \[
+    \norm_{E/K}(\omega)=1=w^n.
+    \]
+    By Hilbert's theorem, 
+    there exists $b\in E^{\times}$ such that 
+    $\omega=\sigma(b)/b$. Thus
+    $\sigma(b)=\omega b$ and hence 
+    $\sigma^i(b)=\omega^i b$ for all $i\geq0$. Since 
+    $|\{b,\sigma(b),\dots,\sigma^{n-1}(b)\}|=n$, 
+    it follows that $E=K(b)$. Moreover, 
+    \[
+    \sigma(b^n)=\sigma(b)^n=(\omega b)^n=b^n
+    \]
+    and hence $b^n\in K$. This means that $E/K$ is a decomposition
+    field of $X^n-b^n$. Note that $X^n-b^n$ is irreducible, as 
+    $[E:K]=[K(b):K]=n$. 
+\end{proof}
+
+\begin{proposition}
+    Let $K$ be a field of characteristic $p>0$. 
+    \begin{enumerate}
+        \item Let $a\in K$ and $f=X^p-X-a$. Then 
+        $f$ is irreducible over $K$ or all the roots of 
+        $f$ belong to $K$. 
+        In the first case, if $b$ is a root of $f$, then 
+        $K(b)/K$ is a cyclic extension of degree $p$. 
+        \item Every cyclic extension of degree $p$ 
+        is a decomposition field of an irreducible
+        polynomial of the form $X^p-X-a$. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    We first prove 1). 
+    Let $K_0$ be the prime field of $K$. Note that $K_0\simeq\Z/p$. 
+    Let $b$ be a root of $f$ and let $x\in K_0$. 
+    Then
+    \[
+    f(b+x)=(b+x)^p-(b+x)-a
+    =(b^p-b-a)+(x^p-x)=0
+    \]
+    and thus $\{b+x:x\in K_0\}$ is the set of roots of $f$. Note that 
+    $f'=-1$, so $f$ has no multiple roots. 
+    
+    We claim that if $b\not\in K$, then $f$ is irreducible. If 
+    $f$ is not irreducible, then 
+    $f=gh$ for some $g,h\in K[X]$ such that $0<\deg g<p$. There exists
+    a subset $S$ of $K_0$ such that 
+    $g=\prod_{x\in S}(X-(b+x))$ and hence
+    \[
+    |S|b+\sum_{x\in S}x=\sum_{x\in S}(b+x)\in K.
+    \]
+    This implies that $|S|b\in K$ and hence, since 
+    $|S|in K^{\times}$, it follows that 
+    $b\in K$, a contradiction. 
+    
+    Since $K(b)/K$ is a decomposition field of a separable polynomial, 
+    $K(b)/K$ is a Galois extension. Moreover, 
+    $|\Gal(K(b)/K)|=[K(b):K]=p$ and hence 
+    $\Gal(K(b)/K)$ is cyclic. 
+    
+    We now prove 2). Let $E/K$ be cyclic of degree $p$. Assume
+    that $\Gal(E/K)=\langle\sigma\rangle$. Since
+    $\trace{E/K}(1)=p1=0$, Hilbert's theorem 
+    implies that there exists $b\in E$ such that 
+    $\sigma(b)=b+1$. In particular, $b\not\in K$
+    and thus $E=K(b)$. Moreover, since 
+    \[
+    \sigma(b^p-b)=\sigma(b)^p-\sigma(b)=(b+1)^p-(b+1)=b^p-b, 
+    \]
+    it follows that $b^p-b\in K$. Thus 
+    $f(b,K)=X^p-X-(b^p-b)\in K[X]$. 
+\end{proof}
+
+\topic{Symmetric polynomials}
+
+Let $K$ be a field and $\{t_1,\dots,t_n\}$ be an algebraic independent set over $K$. 
+Let $E=K(t_1,\dots,t_n)$ and $f=\prod_{i=1}^n(X-t_i)\in E[X]$. 
+Then
+\[
+f=X^n+\sum_{i=1}^n (-1)^i s_i X^{n-i},
+\]
+where $s_i=\prod_{A_i}\prod_{j\in A_i}t_j$ and 
+$A_i$ runs over all subsets of $\{1,\dots,n\}$ of size $i$. 
+Let us write some examples:
+\begin{align*}
+    s_1 &= t_1+t_2+\cdots+t_n,\\
+    s_2 &= \sum_{1\leq i<j\leq n}t_it_j,\\
+    &\vdots\\
+    s_n &= t_1t_2\cdots t_n.
+\end{align*}
+
+The polynomials $s_1,s_2,\dots,s_n$ are known as the 
+\textbf{elementary symmetric polynomials} in the variables $t_1,\dots,t_n$. Note
+that $\deg s_i=i$. 
+
+Let $\sigma\in\Sym_n$ and 
+\[
+\alpha_{\sigma}\colon K[t_1,\dots,t_n]\to K[t_1,\dots,t_n],
+\quad
+t_i\mapsto t_{\sigma(i)}\quad\text{for all $i$}.
+\]
+Then $\alpha_{\sigma}$ is a bijective homomorphism of $K$-algebras. In fact, 
+$\alpha_{\sigma}^{-1}=\alpha_{\sigma^{-1}}$. Note that
+\[
+\alpha_{\sigma}(h(t_1,\dots,t_n))=h(t_{\sigma(1)},\dots,t_{\sigma(n)}).
+\]
+Since $\alpha_{\sigma}$ is injective, 
+it induces an element $\widehat{\sigma}\in\Gal(E/K)$ given by
+\[
+    \widehat{\sigma}\left(\frac{h}{g}\right)
+    =\frac{\alpha_{\sigma}(h)}{\alpha_{\sigma}(h)}.
+\]
+The map $\Sym_n\to\Gal(E/K)$, $\sigma\mapsto\widehat{\sigma}$, 
+is an injective group homomorphism. Thus
+$\{\widehat{\sigma}:\sigma\in\Sym_n\}\simeq\Sym_n$. 
+
+\begin{definition}
+    Let $g\in K[t_1,\dots,t_n]$. Then $g$ is \textbf{symmetric} 
+    if $\widehat{\sigma}(g)=g$ for all $\sigma\in\Sym_n$. 
+\end{definition}
+    
+We write $P$ to denote the set of symmetric polynomials in $K[t_1,\dots,t_n]$. 
+Clearly,
+$P$ is a subalgebra of $K[t_1,\dots,t_n]$. The following statements hold:
+\begin{enumerate}
+    \item $K\subseteq P$.
+    \item $\sum_{i=1}^n t_i^r\in P$ for all $r\geq1$.
+    \item $s_i\in P$ for all $i$.
+    \item $K(P)\subseteq\prescript{G}{}{E}$, where $G=\{\widehat{\sigma}:\sigma\in\Sym_n\}$.  
+\end{enumerate}
+
+Let $F=K(s_1,s_2,\dots,s_n)$. Then $E/F$ is a Galois extension, as 
+it is a decomposition field of $f$. 
+
+\begin{proposition}
+    $[E:F]\leq n!$.
+\end{proposition}
+
+\begin{proof}
+    We proceed by induction on $n$. The case $n=1$ is clear, as $E=F$. Assume
+    that $n>1$. Let $u_1,\dots,u_{n-1}$ be the elementary symmetric
+    polynomials in $t_1,\dots,t_{n-1}$. Then
+    \[
+    s_i=u_i+t_nu_{i-1}
+    \]
+    for all $i\in\{1,\dots,n\}$, where $u_0=1$ and $u_n=0$. Note that
+    $u_1=s_1-t_n$ and $u_i=s_i-t_nu_{i-1}$ for all $i$. Since
+    $K(s_1,\dots,s_n,t_n)=K(u_1,\dots,u_{n-1},t_n)$, 
+    \begin{align*}
+    &F(t_n)=K(u_1,\dots,u_{n-1},t_n)=K(t_n)(u_1,\dots,u_{n-1})
+    \shortintertext{and}
+    &[E:F]=[E:F(t_n)][F(t_n):F]\leq n[E:F(t_n)].
+    \end{align*}
+    
+    Note that $E=K(t_1,\dots,t_n)=K(t_n)(t_1,\dots,t_{n-1})$. By the
+    inductive hypothesis, $[E:F(t_n)]\leq (n-1)!$ and hence 
+    $[E:F]\leq n!$, as desired. 
+\end{proof}
+
+\begin{theorem}
+    $\prescript{G}{}{E}=F$.
+\end{theorem}
+
+\begin{proof}
+    By Artin's theorem,
+    \[
+    \left[\prescript{G}{}{E}:F\right]=\frac{[E:F]}{\left[E:\prescript{G}{}{E}\right]}
+    \leq\frac{n!}{\left[E:\prescript{G}{}{E}\right]}=1
+    \]
+    and hence $\prescript{G}{}{E}=F$.
+\end{proof}
+
+\begin{exercise}
+    Prove that $\Gal(E/F)\simeq\Sym_n$.
+\end{exercise}
+
+\begin{exercise}
+    Prove that $\{s_1,\dots,s_n\}$ is algebraically independent over $K$. 
+\end{exercise}
+
+\begin{exercise}
+    Prove that every symmetric polynomial in $t_1,\dots,t_n$ can be written as a rational
+    fraction in $s_1,\dots,s_n$. 
+\end{exercise}
+
+\topic{Solvable groups}
+
+\index{Commutator subgroup}
+Let $G$ be a group. If $x,y\in G$ we define
+the \textbf{commutator} of $x$ and $y$ as
+\[
+[x,y]=xyx^{-1}y^{-1}.
+\]
+Note that $[x,y]=1$ if and only if $xy=yx$. 
+Moreover, $[x,y]^{-1}=[y,x]$. 
+The
+\textbf{commutator subgroup} $[G,G]$ of $G$ is defined as
+the subgroup of $G$ generated by all commutators, i.e. 
+\[
+[G,G]=\langle [x,y]:x,y\in G\rangle.
+\]
+This means that every element of $[G,G]$ is a finite product of commutators, 
+so every element of $[G,G]$ is of the form $\prod_{i=1}^m [x_i,y_i]$. 
+In general, the commutator subgroup is not equal to the set of commutators!
+
+\begin{exercise}
+    Let $G$ be a group. 
+    Prove the following facts:
+    \begin{enumerate}
+        \item $G$ is abelian if and only if $[G,G]=\{1\}$.
+        \item $[G,G]$ is a normal subgroup of $G$. 
+        \item $G/[G,G]$ is abelian. 
+        \item If $H$ is a subgroup of $G$ and $[G,G]\subseteq H$, then 
+        $H$ is normal in $G$.
+        \item If $H$ is a normal subgroup of $G$, then 
+        $G/H$ is abelian if and only if $[G,G]\subseteq H$. 
+    \end{enumerate}
+\end{exercise}
+
+\begin{definition}
+\index{Derived series}
+    Let $G$ be a group. The \textbf{derived series} of $G$ 
+    is defined as $G^{(0)}=G$ and
+    $G^{(k+1)}=[G^{(k)},G^{(k)}]$ for $k\geq 0$. 
+\end{definition}
+
+\begin{exercise}
+    Prove that $G^{(k)}$ is normal in $G$ for all $k$. 
+\end{exercise}
+
+Why derived series? We cannot explain this here, but let us use the following
+notation. 
+We write $G'=[G,G]$, $G''=[G',G']$... 
+Note that 
+\[
+G\supseteq G'\supseteq G''\supseteq\cdots
+\]
+
+%\begin{exercise}
+%    $[\Sym_3,\Sym_3]=\Alt_3$. 
+%\end{exercise}
+
+\begin{exercise}
+    Let $n\geq3$. Prove that 
+    $[\Sym_n,\Sym_n]=\Alt_n$. 
+\end{exercise}
+
+\begin{example}
+    Let $K=\{\id,(12)(34),(13)(24),(14)(23)\}$. Then 
+    $K$ is a normal subgroup of $\Alt_4$. 
+    One proves that $[\Alt_4,\Alt_4]=K$. 
+\end{example}
+
+\begin{example}
+    Let $n\geq5$. Since $\Alt_n$ is a non-abelian simple group, 
+    it follows that $[\Alt_n,\Alt_n]=\Alt_n$. 
+\end{example}
+
+\begin{definition}
+\index{Group!solvable}
+    A group $G$ is \textbf{solvable} if and only if
+    $G^{(m)}=\{1\}$ for some $m$. 
+\end{definition}
+
+Clearly, every abelian group is solvable. 
+
+\begin{exercise}
+    Prove that $\Sym_n$ is solvable if and only if $n\leq4$. 
+\end{exercise}
+
+\begin{proposition}
+    Let $G$ be a group and $H$ be a subgroup of $G$. 
+    The following statements hold:
+    \begin{enumerate}
+        \item If $G$ is solvable, then $H$ is solvable.
+        \item If $H$ is normal in $G$ and $G$ is solvable, then $G/H$ is solvable. 
+        \item If $H$ is normal in $G$ and $H$ and $G/H$ are solvable, then $G$ is solvable. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    The first statement follows from the fact that
+    $H^{(i)}\subseteq G^{(i)}$ holds for all $i$. 
+ 
+    Assume now that $H$ is normal in $G$. 
+    Let $Q=G/H$ and $\pi\colon G\to Q$ be the canonical map.
+    By induction one proves that $\pi(G^{(i)})=Q^{(i)}$ for all $i\geq0$.
+    The case where $i=0$ is trivial, as $\pi$ is surjective. 
+    If the result holds for some $i\geq0$, then
+    \[
+            \pi(G^{(i+1)})=\pi([G^{(i)},G^{(i)}])=[\pi(G^{(i)}),\pi(G^{(i)})]=[Q^{(i)},Q^{(i)}]=Q^{(i+1)}.
+    \]
+
+    We now prove 2). Assume first that $G$ is solvable. Then $G^{(n)}=\{1\}$ for some $n$. 
+    Thus $Q$ is solvable, as $Q^{n}=f(G^{(n)})=f(\{1\})=\{1\}$. 
+
+    We finally prove 3). Assume now that $Q$ and $H$ are solvable. 
+    Since $Q$ is solvable, $Q^{(n)}=\{1\}$ for some $n$.
+    Since $\pi(G^{(n)})=Q^{(n)}=\{1\}$, it follows that
+    $G^{(n)}\subseteq H$. Since $H$
+    is solvable, 
+    \[
+        G^{(n+m)}\subseteq (G^{(n)})^{(m)}\subseteq H^{(m)}=\{1\}
+    \]
+    for some $m$. Thus $G$ is solvable.
+\end{proof}
