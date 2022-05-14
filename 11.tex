@@ -329,6 +329,7 @@ Clearly, every abelian group is solvable.
 \end{exercise}
 
 \begin{proposition}
+\label{pro:solvable}
     Let $G$ be a group and $H$ be a subgroup of $G$. 
     The following statements hold:
     \begin{enumerate}
@@ -363,4 +364,19 @@ Clearly, every abelian group is solvable.
         G^{(n+m)}\subseteq (G^{(n)})^{(m)}\subseteq H^{(m)}=\{1\}
     \]
     for some $m$. Thus $G$ is solvable.
+\end{proof}
+
+An application:
+
+\begin{proposition}
+    Let $G$ be a finite $p$-group. Then $G$ is solvable. 
+\end{proposition}
+
+\begin{proof}
+    Assume the result is not true. Let $G$ be a finite
+    $p$-group of minimal order that is not solvable. Since 
+    $G$ is a $p$-group, $Z(G)\ne\{1\}$. Since $|G|$ is minimal, 
+    $G/Z(G)$ is a solvable $p$-group. Since $Z(G)$ is abelian, 
+    $Z(G)$ is solvable. Now $G$ is solvable 
+    by Proposition \ref{pro:solvable}.
 \end{proof}
