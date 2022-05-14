@@ -129,13 +129,13 @@ $K(\omega)/K$ for some $\omega\in H_n(K)$.
 
 Note that $\Phi_n$ is irreducible over $\Q$. Some concrete examples:
 \[
-\Phi=X+1,
+\Phi_1=X-1,
 \quad
 \Phi_2=X+1,
 \quad
 \Phi_3=X^2+X+1,
 \quad
-Phi_6=X^2-X+1.
+\Phi_6=X^2-X+1.
 \]
 If $p$ is a prime number, then $\Phi_p=X^{p-1}+\cdots+X+1$. 
 
@@ -215,7 +215,7 @@ for some $c\in E^\times$?
     then 
     \[
     \sigma(c)=\sum_{\tau\in G}\sigma(x_{\sigma}^{-1})(\sigma\tau)(a)=
-    x_{\sigma\tau}^{-1}x_{\sigma}\sigma\tau(a)
+    \sum_{\tau\in G}x_{\sigma\tau}^{-1}x_{\sigma}\sigma\tau(a)
     =x_{\sigma}\sum_{\tau\in G}x_{\sigma\tau}^{-1}\sigma\tau(a)=x_{\sigma}c.
     \]
     
@@ -248,7 +248,7 @@ The following result is known as Hilbert's 90 theorem.
 \begin{proof}
     Let us prove 1). Note that $G=\{\sigma^i:0\leq i<n\}$. For $i\in\{0,\dots,n-1\}$ let 
     $x_{\sigma^i}=\prod_{k=0}^{i-1}\sigma^k(x)$. In particular, $x_{\sigma}=x$. We now
-    check that $\{x_{\sigma^i}\}$ satisfy the assumptions of the previous lemma:
+    check that $\{x_{\sigma^i}\}$ satisfy the assumptions of the previous proposition:
     \begin{align*}
         \sigma^j(x_{\sigma^i}) &= \prod_{k=0}^{i-1}\sigma^{k+j}(x)
         =\prod_{k=j}^{i+j-1}\sigma^k(x)\\
@@ -338,3 +338,5 @@ Let $E/K$ be finite and cyclic with $\Gal(E/K)=\langle\sigma\rangle$.
     \end{tikzcd}\]
     is exact by Hilbert's theorem. 
 \end{proof}
+
+% 107/136
