@@ -30,7 +30,7 @@
     \]
     Moreover, $\lambda$ is a group homomorphism, as 
     \[
-    \sigma\tau(\alpha)=\sigma(\tau(\alpha))=\sigma(\omega_{\sigma}\alpha)=\omega_\tau\sigma(\alpha)=\omega_{\tau}\omega_{\sigma}\alpha.
+    \sigma\tau(\alpha)=\sigma(\tau(\alpha))=\sigma(\omega_{\tau}\alpha)=\omega_\tau\sigma(\alpha)=\omega_{\tau}\omega_{\sigma}\alpha.
     \]
     Therefore $\Gal(K(\alpha)/K)$ is isomorphic to a subgroup
     of $G_n(K)$. In particular, $\Gal(K(\alpha)/K)$ is cyclic
@@ -58,7 +58,7 @@
     If $\omega$ is a primitive
     $n$-root of one, 
     \[
-    \norm_{E/K}(\omega)=1=w^n.
+    \norm_{E/K}(\omega)=1=\omega^n.
     \]
     By Hilbert's theorem, 
     there exists $b\in E^{\times}$ such that 
@@ -110,8 +110,8 @@
     |S|b+\sum_{x\in S}x=\sum_{x\in S}(b+x)\in K.
     \]
     This implies that $|S|b\in K$ and hence, since 
-    $|S|in K^{\times}$, it follows that 
-    $b\in K$, a contradiction. 
+    $|S|\in K^{\times}$, it follows that 
+    $b\in K$.
     
     Since $K(b)/K$ is a decomposition field of a separable polynomial, 
     $K(b)/K$ is a Galois extension. Moreover, 
@@ -120,7 +120,7 @@
     
     We now prove 2). Let $E/K$ be cyclic of degree $p$. Assume
     that $\Gal(E/K)=\langle\sigma\rangle$. Since
-    $\trace{E/K}(1)=p1=0$, Hilbert's theorem 
+    $\trace_{E/K}(1)=p=0$, Hilbert's theorem 
     implies that there exists $b\in E$ such that 
     $\sigma(b)=b+1$. In particular, $b\not\in K$
     and thus $E=K(b)$. Moreover, since 
@@ -139,15 +139,17 @@ Then
 \[
 f=X^n+\sum_{i=1}^n (-1)^i s_i X^{n-i},
 \]
-where $s_i=\prod_{A_i}\prod_{j\in A_i}t_j$ and 
-$A_i$ runs over all subsets of $\{1,\dots,n\}$ of size $i$. 
-Let us write some examples:
+where 
 \begin{align*}
     s_1 &= t_1+t_2+\cdots+t_n,\\
     s_2 &= \sum_{1\leq i<j\leq n}t_it_j,\\
     &\vdots\\
     s_n &= t_1t_2\cdots t_n.
 \end{align*}
+For example, 
+\[
+(X-t_1)(X-t_2)(X-t_3)=X^3-(t_1+t_2+t_3)X^2+(t_1t_2+t_2t_3+t_1t_3)X-t_1t_2t_3.
+\]
 
 The polynomials $s_1,s_2,\dots,s_n$ are known as the 
 \textbf{elementary symmetric polynomials} in the variables $t_1,\dots,t_n$. Note
@@ -380,3 +382,20 @@ An application:
     $Z(G)$ is solvable. Now $G$ is solvable 
     by Proposition \ref{pro:solvable}.
 \end{proof}
+
+We finish this discussion with two important theorems (without proof) 
+about finite solvable groups. 
+
+\begin{theorem}[Burnside]
+    Let $p$ and $q$ be prime numbers. If $G$ is a group
+    of order $p^aq^b$, then $G$ is solvable. 
+\end{theorem}
+
+The proof appears in courses on representation theory of finite groups. 
+
+\begin{theorem}[Feit--Thompson]
+    Every finite group of odd order is solvable.
+\end{theorem}
+
+The proof of the theorem is extremely hard. It occupies a full volume of
+\emph{Pacific Journal of Mathematics}, see~\cite{MR166261}.
