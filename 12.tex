@@ -1,0 +1,175 @@
+\chapter{}
+
+\section{Radical extensions}
+
+\begin{definition}
+    An extension $E/K$ is \textbf{radical} if $E=K(x_1,\dots,x_n)$ 
+    such that for each $i\in\{1,\dots,n\}$ there exists $a_i\in\Z$ 
+    such that $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$. 
+\end{definition}
+
+Note that radical extensions are finite. 
+
+\begin{example}
+    Let $E$ be a decomposition field of $X^4-2$ over $\Q$. Then $E/\Q$ is radical, 
+    as $E=\Q(\sqrt[4]{2},i)$. 
+\end{example}
+
+\begin{example}
+    Let $\alpha,\beta\in\C$ be such that $\alpha^2=2$ and 
+    $\beta^5=1+\alpha$. 
+    The number $\sqrt[5]{1+\sqrt{2}}$ belongs to the radical extension $\Q(\alpha,\beta)/\Q$. 
+\end{example}
+
+\begin{theorem}
+\label{thm:by_radicals}
+    Let $K$ be of characteristic zero and 
+    $R/K$ be a radical extension. If $E/K$ is a subextension of $R/K$, 
+    then $\Gal(E/K)$ is solvable. 
+\end{theorem}
+
+\begin{proof}
+    Without loss of generality, 
+    we may assume that $E/K$ is a Galois extension. In fact, 
+    let $G=\Gal(E/K)$ and $K_0=\prescript{G}{}{E}$. Then
+    $E/K_0$ is a Galois extension and $\Gal(E/K_0)=G$ by Artin's theorem. 
+    Thus, replacing $K$ by $K_0$ if needed, we may assume that
+    $E/K$ is Galois. 
+    
+    Let $L$ be the normal closure of $R$ in some
+    algebraic closure $C$ that contains $R$. Note that 
+    if $R=K(x_1,\dots,x_n)$, then 
+    \[
+    L=K(\{\sigma_i(x_j):1\leq i\leq\leq s,\,1\leq j\leq m\}),
+    \]
+    where $\Hom(R/K,C/K)=\{\sigma_1,\dots,\sigma_s\}$. 
+    
+    \begin{claim}
+        $L/K$ is radical. 
+    \end{claim}
+    
+    Since $x_j^{a_j}\in K(x_1,\dots,x_{j-1})$ for some integer $a_j$, 
+    \[
+    \sigma_i(x_j)^{a_j}=\sigma_i\left(x_j^{a_j}\right)\in\sigma_i(K(x_1,\dots,x_{j-1})=K(\sigma_i(x_1),\dots,\sigma_i(x_{j-1}))
+    \]
+    Thus $L/K$ is radical and Galois. 
+    
+    We may assume then that $E/K$ and $R/K$ are both Galois. 
+    
+    Since $\Gal(E/K)\simeq\Gal(R/K)/\Gal(R/E)$, we only need
+    to prove that $\Gal(R/K)$ is solvable. 
+    
+    Let $\xi$ be a primitive $n$-th root of one (in some algebraic closure
+    of $K$ that contains $R$). Consider the diagram
+    \[
+    \begin{tikzcd}
+	& {R(\xi)} \\
+	R && {K(\xi)} \\
+	& K
+	\arrow[no head, from=1-2, to=2-3]
+	\arrow[no head, from=1-2, to=2-1]
+	\arrow[no head, from=2-1, to=3-2]
+	\arrow[no head, from=3-2, to=2-3]
+    \end{tikzcd}
+    \]
+    Then
+    \begin{enumerate}
+        \item $K(\xi)/K$ and $R(\xi)/R$ are abelian.
+        \item $R(\xi)/K$ is Galois.
+        \item $\Gal(R/K)\simeq\Gal(R(\xi)/K)/\Gal(R(\xi)/R)$. 
+        \item $\Gal(K(\xi)/K)\simeq\Gal(R(\xi)/K)/\Gal(R(\xi)/K(\xi))$. 
+    \end{enumerate}
+    The third item implies that we need to 
+    show that $\Gal(R(\xi)/K)$ is solvable. By the fourth item
+    it suffices to show that $\Gal(R(\xi)/K(\xi))$ is solvable. 
+    
+    Since
+    $R=K(x_1,\dots,x_n)$,  
+    \[
+    R(\xi)=K(x_1,\dots,x_m,\xi)=K(\xi)(x_1,\dots,x_m)
+    \]
+    and hence $R(\xi)/K(\xi)$ is radical. 
+    This means that
+    without loss of generality we may assume that
+    $K$ contains primitive $n$-roots of one. For example, 
+    if $R=K(x_1,\dots,x_m)$ and $x_i^{a_i}\in K(x_1,\dots,x_{i-1}$, 
+    then we may assume that $K$ contains a primitive $a_i$-root of one. We proceed by induction on $m$. 
+    The case $m=0$ is trivial. Assume that the claim holds for some $m\geq0$. Let 
+    $L=K(x_1)$. Then $L/K$ is a decomposition field of $X^{a_1}-x_1^{a_1}$, and hence
+    $L/K$ is a cyclic extension. Thus $\Gal(L/K)$ is cyclic (and hence, in particular, solvable). 
+    Let $H$ be the subgroup that corresponds to $L$, that is
+    $H=\Gal(R/L)$ (here we use Galois' correspondence). Then $H$ is normal in $\Gal(R/K)$. 
+    Since $R=K(x_1,\dots,x_m)=L(x_2,\dots,x_m)$, $R/L$ is radical and Galois. By the inductive hypothesis, 
+    $\Gal(R/L)$ is solvable. Since 
+    \[
+    \Gal(L/K)\simeq \Gal(R/K)/\Gal(R/L),
+    \]
+    it follows that $\Gal(R/K)$ is solvable. 
+\end{proof}
+
+\begin{definition}
+    Let $f\in K[X]$ and $E$ be a decomposition field of $f$ over $K$. 
+    We say that $f$ is \textbf{solvable by radicals} if
+    there is a radical extension $R/K$ such that $E\subseteq R$. 
+\end{definition}
+
+The general polynomial of degree two 
+is solvable by radicals, as its Galois group 
+is solvable (in fact, it is isomorphic to $\Sym_2$).  
+
+\begin{exercise}
+    Prove that $f=X^2-s_1X+s_2\in\Q[X]$ is solvable by radicals. 
+%    In this case, if 
+%    $F=K(s_1,s_2)$, then $E=F(t_1,t_2)=F(t_1)$, as 
+%    $t_1+t_2=s_1$. Moreover,  
+%    $F(t_1)=F(u)$, as $u^2=s_1^2-4s_2$. 
+\end{exercise}
+
+Theorem \ref{thm:by_radicals} translates into the following result:
+
+\begin{exercise}
+    If $f\in K[X]$ is solvable by radicals, then $\Gal(f,K)$ is solvable. 
+\end{exercise}
+
+As a consequence, the general polynomial of degree $n\geq5$ 
+is not solvable by radicals, as its Galois group is isomorphic to 
+$\Sym_5$. 
+
+\begin{example}
+    Let $p$ be a prime number and $f=X^5-2pX+p\in\Q[X]$. 
+    We claim that 
+    $f$ is not solvable by radicals. 
+    
+    By Gauss' theorem 
+    one proves that $f$ has no rational roots. 
+    
+    Since $f(-1)f(1)<0$ and 
+    $\deg f$ is odd, one proves that $f$ 
+    has at least three real roots. Moreover, 
+    $f$ has exactly three real roots, as $f'=5X^4-2p$. Let 
+    $x_1,x_2\in\R$ and $x_3,x_4,x_5\in\C\setminus\R$ be the roots
+    of $f$. 
+    
+    By Eisenstein's theorem, $f$ is irreducible. 
+    
+    Let $E/\Q$ be a decomposition field of $f$. 
+    Then $\Gal(f,\Q)=\Gal(E/\Q)$ is isomorphic to a subgroup $G$ of $\Sym_5$.
+    Since 
+    $f$ is irreducible, $5$ divides $[E:\Q]=|G|$. In particular, 
+    by Cauchy's theorem, $G$ contains an element $\sigma$ of order five. This element
+    is a $5$-cycle, so without loss of generality we may assume that 
+    $\sigma=(x_1x_2x_3x_4x_5)$. Note that 
+    $(x_1x_2)\in G$. Thus $G\simeq\Sym_5$ and hence
+    $G$ is not solvable. 
+\end{example}
+
+\begin{exercise}
+    Let $f=X^6+2X^5-5X^4+9X^3-5X^2+2X+1\in\Q[X]$ is solvable by radicals. 
+\end{exercise}
+
+%Let us solve the previous exercise
+%with a quick computer calculation:
+%\begin{lstisting}
+%\end{lstisting}
+
+%\section{Constructions (optional)}
