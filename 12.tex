@@ -3,8 +3,8 @@
 \section{Radical extensions}
 
 \begin{definition}
-    An extension $E/K$ is \textbf{radical} if $E=K(x_1,\dots,x_n)$ 
-    such that for each $i\in\{1,\dots,n\}$ there exists $a_i\in\Z$ 
+    An extension $E/K$ is \textbf{radical} if $E=K(x_1,\dots,x_m)$ 
+    such that for each $i\in\{1,\dots,m\}$ there exists $a_i\in\Z$ 
     such that $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$. 
 \end{definition}
 
@@ -38,7 +38,7 @@ Note that radical extensions are finite.
     
     Let $L$ be the normal closure of $R$ in some
     algebraic closure $C$ that contains $R$. Note that 
-    if $R=K(x_1,\dots,x_n)$, then 
+    if $R=K(x_1,\dots,x_m)$, then 
     \[
     L=K(\{\sigma_i(x_j):1\leq i\leq\leq s,\,1\leq j\leq m\}),
     \]
@@ -84,7 +84,7 @@ Note that radical extensions are finite.
     it suffices to show that $\Gal(R(\xi)/K(\xi))$ is solvable. 
     
     Since
-    $R=K(x_1,\dots,x_n)$,  
+    $R=K(x_1,\dots,x_m)$,  
     \[
     R(\xi)=K(x_1,\dots,x_m,\xi)=K(\xi)(x_1,\dots,x_m)
     \]
@@ -92,7 +92,7 @@ Note that radical extensions are finite.
     This means that
     without loss of generality we may assume that
     $K$ contains primitive $n$-roots of one. For example, 
-    if $R=K(x_1,\dots,x_m)$ and $x_i^{a_i}\in K(x_1,\dots,x_{i-1}$, 
+    if $R=K(x_1,\dots,x_m)$ and $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$, 
     then we may assume that $K$ contains a primitive $a_i$-root of one. We proceed by induction on $m$. 
     The case $m=0$ is trivial. Assume that the claim holds for some $m\geq0$. Let 
     $L=K(x_1)$. Then $L/K$ is a decomposition field of $X^{a_1}-x_1^{a_1}$, and hence
@@ -147,7 +147,7 @@ $\Sym_5$.
     $\deg f$ is odd, one proves that $f$ 
     has at least three real roots. Moreover, 
     $f$ has exactly three real roots, as $f'=5X^4-2p$. Let 
-    $x_1,x_2\in\R$ and $x_3,x_4,x_5\in\C\setminus\R$ be the roots
+    $x_1,x_2\in\C\setminus\R$ and $x_3,x_4,x_5\in\R$ be the roots
     of $f$. 
     
     By Eisenstein's theorem, $f$ is irreducible. 
