@@ -65,7 +65,20 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 \end{proposition}
 
 \begin{proof}
-    We first prove $1)\implies 2)$. We proceed by induction on the degree of $x$. The result
+    We first prove $1)\implies 2)$. 
+    Let $x\in E$ and $f=f(x,K)$. 
+    Since $f\in K[X]$, 
+    the set
+    $\left\{k\geq 0:f\in K\left[X^{p^k}\right]\right\}$ is non-empty
+    and hence 
+    \[
+    m=\max\left\{k\geq 0:f\in K\left[X^{p^k}\right]\right\}
+    \]
+    is well-defined. Thus $f\in K[X^{p^m}]$. This means that 
+    there exists a polynomial $h$ such that $\deg f=p^m\deg h$, so
+    $p^m$ divides $\deg f$. In conclusion, $f=g(X^p)$ 
+    for some $g\not\in K[X^p]$. 
+    We now proceed by induction on the degree of $x$. The result
     is clearly true for elements of degree one. So assume the result holds for element of degree $\leq n$ 
     for some $n\geq1$. 
     If $x\in E$ is such that $\deg(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
