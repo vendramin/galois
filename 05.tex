@@ -4,8 +4,7 @@
 % pag 21 example
 
 \begin{definition}
-    Let $E/K$ be an algebraic extensions and $C$ be an algebraic closure of $K$. 
-    Then $E/K$ is \textbf{normal} if 
+    Let $E/K$ be an algebraic extension and $C$ be an algebraic closure of $K$ containing $E$. Then $E/K$ is \textbf{normal} if 
     $\sigma(E)\subseteq E$ for all $\sigma\in\Hom(E/K,C/K)$. 
 \end{definition}
 
@@ -183,11 +182,11 @@ is linearly independent over $F$.
         \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
     \end{equation}
     Since $\sum_{i=1}^na_i\varphi_i=0$ and $\varphi_1(z)\ne0$, 
-    subtracting \eqref{eq:Dedekind1} and \eqref{eq:Dedekind2} we obtain that  
     \[
     a_1\varphi_1+a_2\frac{\varphi_2(z)}{\varphi_1(z)}\varphi_2+\cdots+a_n\frac{\varphi_n(z)}{\varphi_1(z)}\varphi_n=0.
     \]
-    Thus
+    Thus, 
+    subtracting \eqref{eq:Dedekind1} and \eqref{eq:Dedekind2}, 
     \[
     \left(a_2-a_2\frac{\varphi_2(z)}{\varphi_1(z)}\right)\varphi_2
     +\cdots+\left(a_n-a_n\frac{\varphi_n(z)}{\varphi_1(z)}\right)\varphi_n=0.

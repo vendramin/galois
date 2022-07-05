@@ -19,7 +19,7 @@ that the algebraic closure always exists.
     \]
     in $C[X]$, it follows that
     \[
-    f=\overline{\varphi}(f)=\prod (X-\varphi(\alpha_i))^{m_i}
+    f=\overline{\varphi}(f)=\varphi(\lambda)\prod (X-\varphi(\alpha_i))^{m_i}
     \]
     Since $0=f(y)$, we conclude that $y=\varphi(\alpha_j)$ for some $j$. In particular, $\varphi$ is
     surjective and hence $\varphi$ is bijective. 
@@ -59,8 +59,8 @@ that the algebraic closure always exists.
     and let $\sigma\colon K\to L$ be the composition $K\hookrightarrow R\to R/M=L$, 
     where $\pi\colon R\to R/M$ is the canonical map.  
     As we did before,
-    $\pi(X_i)$ is a root of $\overline{\sigma}(f_i)$ for all $i$n
-    and there exists an extension $E_1/K$ such that
+    $\pi(X_i)$ is a root of $\overline{\sigma}(f_i)$ for all $i$. And 
+    there exists an extension $E_1/K$ such that
     every $f_i$ has a root in $E_1$. Proceeding in this way, we construct
     a sequence
     \[
@@ -99,7 +99,7 @@ Easy examples:
 \begin{example}
 	$\Q(\sqrt[3]{2})$ is not a decomposition field of $X^3-2\in\Q[X]$. However, if
 	$\omega$ ia a primitive cubic root of one, then 
-	$\Q(\sqrt[3]{2},\omega)$ is is a decomposition field of $X^3-2\in\Q[X]$. 
+	$\Q(\sqrt[3]{2},\omega)$ is a decomposition field of $X^3-2\in\Q[X]$. 
 \end{example}
 
 \begin{proposition}
@@ -206,10 +206,12 @@ if $y=\sigma(x)$ for some $\sigma\in G$.
     that $g$ divides $h_1-h_2$. In particular, $h_1(y)=h_2(y)$.
     
     A straightforward calculation shows that $\varphi$ is a field 
-    homomorphism such that $\varphi|_K=\id$, so $\varphi$ is 
+    homomorphism such that $\varphi|_K=\id$, this means that
+    $\varphi$ is 
     an extension homomorphism such that $\varphi(x)=y$. There exists
     $\sigma\in\Hom(C/K,C/K)$ such that 
-    $\sigma|_{K[x]}=\varphi$. Since $\sigma$ is a bijective, 
+    $\sigma|_{K[x]}=\varphi$. Since $\sigma$ is bijective 
+    (this is left as an exercise, you did something similar before), 
     $\sigma(x)=\varphi(x)=y$ and hence 
     $O_G(x)=O_G(y)$. 
 \end{proof}
@@ -295,12 +297,13 @@ not true if $f$ is not irreducible. Find an example.
     \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
     \]
     This implies that $\varphi(z)\in O_G(x)$ 
-    and $\varphi(O_G(x))=O_G(x)$. Thus $\sigma|_{(E\cap O_G(x)}$ is injective, as 
+    and $\varphi(O_G(x))=O_G(x)$. Thus $\sigma|_{(E\cap O_G(x)}$ is injective 
+    and 
     \begin{align*}
-    \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
-    &=\varphi(E)\cap\varphi(O_G(x))
-    =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
-    \end{align*}
+        \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
+        &=\varphi(E)\cap\varphi(O_G(x))
+        =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
+        \end{align*}
     Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
     hence $x$ belongs to the image of $\sigma$. 
 \end{proof}

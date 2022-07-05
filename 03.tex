@@ -14,7 +14,7 @@ Algebraic field extensions form a nice class of extensions. The same happens
 with finite field extensions. 
 
 \begin{proposition}
-	Let $F/K$ is a subextension of $E/K$. Then $E/K$ is algebraic 
+	Let $F/K$ be a subextension of $E/K$. Then $E/K$ is algebraic 
 	if and only if $E/F$ and $F/K$ are algebraic. 
 \end{proposition}
 
@@ -31,7 +31,7 @@ with finite field extensions.
 \end{proof}
 
 \begin{exercise}
-	Let $F/K$ is a subextension of $E/K$. Prove that $E/K$ is finite 
+	Let $F/K$ be a subextension of $E/K$. Prove that $E/K$ is finite 
 	if and only if $E/F$ and $F/K$ are finite. 
 \end{exercise}
 
@@ -184,8 +184,8 @@ $\sum_ia_iX^i\mapsto\sum\sigma(a_i)X^i$.
 	We may assume that $f$ is irreducible over $K$. Let $L=K[X]/(f)$ and 
 	$\pi\colon K[X]\to L$ be the canonical map. Then $L$ 
 	is a field (the reader should explain why). 
-	The field homomorphism $\sigma\colon K\to L$, $a\mapsto \pi(aX^0)$. 
-	Let $g=\overline{\sigma}(f)\in L[X]$. 
+	Let $\sigma\colon K\to L$, $a\mapsto \pi(aX^0)$, and 
+	$g=\overline{\sigma}(f)\in L[X]$. 
 
 	We claim that $\pi(X)$ is a root of $g$ in $L$. Suppose that $f=\sum_i a_iX^i$. 
 	Then 
@@ -256,7 +256,7 @@ using Galois theory.
 	such that $C$ is algebraically closed. 
 \end{definition}
 
-For example, $\C/\R$ is an algebraic closure but $\C/\Q$ it is not. 
+For example, $\C/\R$ is an algebraic closure but $\C/\Q$ is not. 
 
 \begin{proposition}
 \label{pro:Artin}
@@ -301,9 +301,9 @@ For example, $\C/\R$ is an algebraic closure but $\C/\Q$ it is not.
 	Since $(F,\tau)\in X$ is an upper bound, Zorn's lemma implies that there exists
 	a maximal element 
 	$(E_1,\theta)\in X$. We claim that $E=E_1$. If not, let $z\in E\setminus E_1$. 
-	Since we know the proposition is true for the extension $E_1(z)/K$, 
+	Since we know the proposition is true for the extension $E_1(z)/E_1$, 
 	let  
-	$\rho\colon E_1(z)\to C$ be a field homomorphism such that $\rho|_{E_1}=\sigma$. Then, in particular, 
+	$\rho\colon E_1(z)\to C$ be a field homomorphism such that $\rho|_{E_1}=\theta$. Then, in particular, 
 	$\rho|_K=\sigma$. This implies that $(E_1(z),\rho)\in X$ and hence
 	$(E_1,\theta)<(E_1(z),\rho)$, a contradiction to the maximality of $(E_1,\theta)$. 
 \end{proof}
