@@ -65,9 +65,12 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
     \quad
     F\mapsto f(x,F),
     \]
-    is injective. Let $\Psi(F)=g\in F[X]$ and write $g=\sum_{i=0}^ma_iX^i$, where $m=\deg g$. 
-    Thus $a_m=1$. Let $F_0=K(a_0,\dots,a_m)$. Then $F_0\subseteq F$. Since $g=f(x,F)$, the polynomial $g$ is irreducible 
-    in $F[X]$ and hence it is irreducible in $F_0[X]$. Now
+    is injective. 
+    Take $K\subseteq F_0\subseteq F\subseteq E$ with 
+    $f(x,F)=f(x,F_0)$. Then  
+%    Let $\Psi(F)=g\in F[X]$ and write $g=\sum_{i=0}^ma_iX^i$, where $m=\deg g$. 
+%    Thus $a_m=1$. Let $F_0=K(a_0,\dots,a_m)$. Then $F_0\subseteq F$. Since $g=f(x,F)$, the polynomial $g$ is irreducible 
+%    in $F[X]$ and hence it is irreducible in $F_0[X]$. Now
     \[
     [E:F_0]=[F_0(x):F_0]=\deg f(x,F_0)=m=[F(x):F]=[E:F]
     \]
@@ -148,7 +151,7 @@ then every quadratic extension of $K$ is a Galois extension.
     \[
     \overline{\varphi}(f_x)=\prod_{y\in O_G(x)}(X-\varphi(y))=f_x,
     \]
-    as if $O_G(x)=\{\sigma_1(x),\dots,\sigma_r(x)\}$, then if 
+    as if $O_G(x)=\{\sigma_1(x),\dots,\sigma_r(x)\}$, then 
     $\varphi(\sigma_i(x))=(\varphi\sigma_i)(x)=\sigma_j(x)$ for some $j$. 
     Since 
     \[
@@ -198,7 +201,7 @@ $\Sym_n$ and hence $|\Gal(f,K)|$ divides $n!$.
 \begin{proposition}
     Let $E/K$ be a normal extension and $F$ be the separable
     closure of $K$ with respect to $E$. 
-    Then $E/K$ is a Galois extension.
+    Then $F/K$ is a Galois extension.
 \end{proposition}
 
 \begin{proof} 
@@ -206,8 +209,8 @@ $\Sym_n$ and hence $|\Gal(f,K)|$ divides $n!$.
     and let $\varphi\in\Hom(E/K,C/K)$ be such that $\varphi|_F=\sigma$. Since $E/K$ is normal, 
     $\varphi(E)=E$. Let $x\in F$. Then $\sigma(x)=\varphi(x)\in E$. Thus
     $f(\sigma(x),K)=f(x,K)$ and $\sigma(x)$ is separable over $K$, which 
-    implies that $\sigma(x)\in F$. Thus $E/K$ is normal. Since $E/K$ is separable, it follows
-    that $E/K$ is a Galois extension by Proposition \ref{pro:normal+separable}.
+    implies that $\sigma(x)\in F$. Thus $F/K$ is normal. Since $F/K$ is separable, it follows
+    that $F/K$ is a Galois extension by Proposition \ref{pro:normal+separable}.
 \end{proof}
 
 Some easy facts.

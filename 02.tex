@@ -41,7 +41,7 @@ $S\subseteq T$, then $K(S)\subseteq K(T)$.
 	exists a non-zero polynomial 
 	$f(X)\in K[X]$ such that $f(x)=0$. If $x$ is
 	not algebraic over $K$, 
-	then it is called \textbf{trascendent} over $K$.
+	then it is called \textbf{transcendent} over $K$.
 \end{definition}
 
 If $E/K$ is an extension, let 
@@ -65,8 +65,9 @@ an algebraic extension.
 	$X^2+(z+\overline{z})X+|z|^2\in\R[X]$. 
 \end{example}
 
-If $F/K$ is an algebraic extension and $x\in E$ is algebraic
-over $K$, then $x$ is algebraic over $E$. 
+If $F/K$ is an algebraic extension $x\in E$ is algebraic
+over $K$ for some field $E\supseteq F$, 
+then $x$ is algebraic over $F$. 
 
 \begin{example}
 	$\Q(\sqrt{2})/\Q$ is algebraic, as the number
@@ -252,7 +253,7 @@ is denoted by $K[S]$.
 	Since $x\ne 0$, $1/x\in K[x]$. There exists $a_0,\dots,a_n\in K$ such that
 	$1/x=a_0+a_1x+\cdots+a_nx^n$. Thus
 	\[
-		a_nx^{n+1}+\cdots+a_1x^2+a_0x-1- 0
+		a_nx^{n+1}+\cdots+a_1x^2+a_0x-1=0
 	\]
 	so $x$ is a root of $a_nX^{n+1}+\cdots+a_0X-1\in K[X]\setminus\{0\}$. 
 \end{proof}

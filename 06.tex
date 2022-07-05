@@ -34,7 +34,7 @@ $|A|=m|\overline{A}|=m|B|$.
     and let $R_\varphi$ be the set of roots (in $C$) of the polynomial $\overline{\varphi}(f)=\sum\varphi(b_i)X^i$. 
     
     \begin{claim}
-    The map $\alpha\colon \lambda^{-1}(\{\varphi\})\to R_{\varphi}$, $\sigma\mapsto\sigma(x)$, is well-defined. 
+        The map $\alpha\colon \lambda^{-1}(\{\varphi\})\to R_{\varphi}$, $\sigma\mapsto\sigma(x)$, is well-defined. 
     \end{claim}
     
     We need to show that $\sigma(x)$ is a root of $\overline{\varphi}(f)$:
@@ -58,10 +58,10 @@ $|A|=m|\overline{A}|=m|B|$.
     $\overline{\varphi}$ is a ring homomorphism, 
     $\overline{\varphi}(f)$ divides $\overline{\varphi}(h)-\overline{\varphi}(h_1)$. 
     This implies $(\overline{\varphi}(h)-\overline{\varphi}(h_1))(y)=0$. We also need to show that 
-    $\sigma_y|F=\varphi$: if $f\in F$, then 
-    write $f=fX^0\in F[X]$. Thus 
-    $\sigma_y(f)=\overline{\varphi}(fX^0)(y)=\varphi(f)\in C$. 
-    We now left as an exercise to prove that $\sigma_y\in\Hom(E/K,C/K)$. 
+    $\sigma_y|_F=\varphi$: if $a\in F$, then 
+    write $a=aX^0\in F[X]$. Thus 
+    $\sigma_y(a)=\overline{\varphi}(aX^0)(y)=\varphi(a)\in C$. 
+    It is now an exercise to prove that $\sigma_y\in\Hom(E/K,C/K)$. 
     
     \begin{claim}
         $|\lambda^{-1}(\{\varphi\})|=|R_\varphi|$. 
@@ -85,19 +85,19 @@ $|A|=m|\overline{A}|=m|B|$.
     as $\sigma_y(x)=\overline{\varphi}(X)(y)=y$.
     
     \begin{claim}
-        If $\phi\in\Gal(C/K)$ is such that $\phi|_F=\varphi$, then 
-        $O_{\Gal(C/K)}(x)=\phi^{-1}(R_\varphi)$.
+        If $\phi\in G$ is such that $\phi|_F=\varphi$, then 
+        $O_{G}(x)=\phi^{-1}(R_\varphi)$.
     \end{claim}
 
-    Let us first prove $O_{\Gal(C/K)}(x)\supseteq \phi^{-1}(R_\varphi)$.
+    Let us first prove $O_{G}(x)\supseteq \phi^{-1}(R_\varphi)$.
     If $y\in R_{\varphi}$, 
     then 
     \begin{align*}
     f(\phi^{-1}(y))&=\sum b_i\phi^{-1}(y^i)=\phi^{-1}\left(\sum\phi(b_i)y^i\right)\\
     &=\phi^{-1}\left(\sum\varphi(b_i)y^i\right)=\phi^{-1}\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
     \end{align*}
-    Now we prove $O_{\Gal(C/K)}(x)\subseteq\phi^{-1}(R_\varphi)$.
-    Let $z\in O_{\Gal(C/K)}(x)$ and $y\in C$ be such that 
+    Now we prove $O_{G}(x)\subseteq\phi^{-1}(R_\varphi)$.
+    Let $z\in O_{G}(x)$ and $y\in C$ be such that 
     $\phi^{-1}(y)=z$. Then $\overline{\varphi}(f)(y)=0$, as
     \begin{align*}
     \overline{\varphi}(f)(y)&=\sum\varphi(b_i)y^i\\
@@ -106,15 +106,15 @@ $|A|=m|\overline{A}|=m|B|$.
     \end{align*}
     
     \medskip
-    It follows that $|\lambda^{-1}(\varphi)|=|O_{\Gal(C/K)}(x)|$ for
+    It follows that $|\lambda^{-1}(\varphi)|=|O_{G}(x)|$ for
     all $\varphi$. By using the argument
     before the proposition, 
     \begin{align*}
     \gamma(E/K)&=|\Hom(E/K,C/K)|\\
-        &=|O_{\Gal(C/K)}(x)||\Hom(F/K,C/K)|\\
-        &=|O_{\Gal(C/K)}(x)|\gamma(F/K).
+        &=|O_{G}(x)||\Hom(F/K,C/K)|\\
+        &=|O_{G}(x)|\gamma(F/K).
     \end{align*}
-    Since $\gamma(K(x)/K)=|O_{\Gal(C/K)}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
+    Since $\gamma(K(x)/K)=|O_{G}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
     
     \medskip 
     For the general case we assume that $E=F(x_1,\dots,x_n)$. We proceed
@@ -151,7 +151,7 @@ If $F/K$ is a subextension of $E/K$ and $x\in E$ is separable over $K$, then
 $x$ is separable over $F$. 
 
 \begin{exercise}
-     If $C$ is an algebraic closure of $K$, $x\in C$ and $G=\Gal(C/K)$
+    If $C$ is an algebraic closure of $K$, $x\in C$ and $G=\Gal(C/K)$. 
     Prove that the following statements are equivalent:
     \begin{enumerate}
         \item $x$ is separable over $K$.
@@ -211,7 +211,7 @@ if and only if $\gamma(E/K)=[E:K]$.
 
 Another consequence: If $E=K(S)$, then $E/K$ is separable if and only if
 every $x\in S$ is separable over $K$. One first does the case $E=K(x)$ 
-and then proceed by induction. 
+and then proceeds by induction. 
 
 \begin{exercise}
 \label{xca:separable1}

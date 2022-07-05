@@ -8,7 +8,7 @@ $G_n(K)$ is a cyclic subgroup of $K^{\times}$ and that
 $|G_n(K)|$ divides $n$. 
 
 \begin{example}
-    $G_n(\R)=\{-1,1\}$ if $n$ is odd and $G_{n}=\{1\}$ is $n$ is even.
+    $G_n(\R)=\{-1,1\}$ if $n$ is odd and $G_{n}=\{1\}$ if $n$ is even.
 \end{example}
 
 \begin{exercise}
@@ -214,8 +214,8 @@ for some $c\in E^\times$?
     If $\sigma\in G$, 
     then 
     \[
-    \sigma(c)=\sum_{\tau\in G}\sigma(x_{\sigma}^{-1})(\sigma\tau)(a)=
-    \sum_{\tau\in G}x_{\sigma\tau}^{-1}x_{\sigma}\sigma\tau(a)
+    \sigma(c)=\sum_{\tau\in G}\sigma(x_{\tau}^{-1})(\sigma\tau)(a)=
+    \sum_{\tau\in G}x_{\sigma\tau}^{-1}x_{\tau}\sigma\tau(a)
     =x_{\sigma}\sum_{\tau\in G}x_{\sigma\tau}^{-1}\sigma\tau(a)=x_{\sigma}c.
     \]
     
@@ -224,10 +224,10 @@ for some $c\in E^\times$?
     $a\in E$ such that $\sum_{\tau\in G}\tau(a)=1$. Let $c=-\sum_{\tau\in G}x_\tau\tau(a)$. 
     If $\sigma\in G$, then 
     \begin{align*}
-    \sigma(c) &= -\sum_{\tau\in G}\sigma(x_{\sigma})\sigma\tau(a)\\
-    &=-\sum_{\tau\in G}(x_{\sigma\tau}-x_{\sigma})\sigma\tau(a)\\
-    &=-\sum_{\tau\in G}x_{\sigma\tau}\sigma\tau(a)+\sum_{\tau\in G}x_{\sigma}\sigma\tau(a)
-    =c+x_{\sigma}.
+        \sigma(c) &= -\sum_{\tau\in G}\sigma(x_{\tau})\sigma\tau(a)\\
+        &=-\sum_{\tau\in G}(x_{\sigma\tau}-x_{\sigma})\sigma\tau(a)\\
+        &=-\sum_{\tau\in G}x_{\sigma\tau}\sigma\tau(a)+\sum_{\tau\in G}x_{\sigma}\sigma\tau(a)
+        =c+x_{\sigma}.
     \end{align*}
     Hence $x_{\sigma}=\sigma(c)-c$. 
 \end{proof}
