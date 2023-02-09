@@ -318,6 +318,19 @@ G\supseteq G'\supseteq G''\supseteq\cdots
     it follows that $[\Alt_n,\Alt_n]=\Alt_n$. 
 \end{example}
 
+Let us show that $\Alt_5$ is a non-abelian simple group. Hence
+it is not solvable: 
+\begin{lstlisting}
+julia> A5 = alternating_group(5)
+Alt( [ 1 .. 5 ] )
+julia> is_abelian(A5)
+false
+julia> is_simple(A5)
+true
+julia> is_solvable(A5)
+false
+\end{lstlisting}
+
 \begin{definition}
 \index{Group!solvable}
     A group $G$ is \textbf{solvable} if and only if
@@ -329,6 +342,27 @@ Clearly, every abelian group is solvable.
 \begin{exercise}
     Prove that $\Sym_n$ is solvable if and only if $n\leq4$. 
 \end{exercise}
+
+Let us compute (with the computer software Oscar) 
+the derived series of the symmetric group
+$\Sym_4$. The calculation shows that $\Sym_4$ is solvable: 
+\begin{lstlisting}
+julia> G = symmetric_group(4);
+julia> derived_series(G)
+4-element Vector{PermGroup}:
+ Sym( [ 1 .. 4 ] )
+ Alt( [ 1 .. 4 ] )
+ Group([ (1,4)(2,3), (1,2)(3,4) ])
+ Group(())
+julia> [order(x) for x in derived_series(G)]
+4-element Vector{fmpz}:
+ 24
+ 12
+ 4
+ 1
+julia> is_solvable(G)
+true
+\end{lstlisting}
 
 \begin{proposition}
 \label{pro:solvable}

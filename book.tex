@@ -7,7 +7,7 @@
 \usepackage{amsmath}
 \usepackage{anyfontsize}
 \usepackage{fancyhdr}
-\usepackage[notref,notcite]{showkeys}
+%\usepackage[notref,notcite]{showkeys}
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{amstext}
@@ -38,8 +38,27 @@
 \usepackage{chngcntr}
 
 
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
 
-
+\lstset{%
+    language         = Julia,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+}
 
 % Table of contents for lectures and topics
 \makeatletter
@@ -310,14 +329,7 @@
 
 \begin{document}
  
-\lstset{language=GAP,
-  showstringspaces=false,
-  xleftmargin=0.6cm,
-  xrightmargin=0.6cm,
-  basicstyle=\small\ttfamily,
-  frame=single,
-  framerule=0pt,
-}
+
 
 \author{Leandro Vendramin}
 \title{Galois theory}
