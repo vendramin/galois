@@ -80,7 +80,7 @@ are integral domains.
 
 Note that if $K$ is a subfield of $E$, then
 the characteristic of $K$ coincides
-with the chacteristic 
+with the characteristic 
 of $E$. Moreover, if $K\to L$ is a field homomorphism, then
 $K$ and $L$ have the same characteristic. 
 
@@ -102,7 +102,7 @@ $(\lambda, x)\mapsto \lambda x$.
 	proper subfields of $K$. 
 \end{definition}
 
-Examples of prime fields are $\Q$ and $\Z/p$ for $p$ a prime number.
+Examples of prime fields are $\Q$ and $\Z/p$ for a prime number $p$.
 
 \begin{proposition}
 	Let $K$ be a field. The following statements hold:
@@ -165,7 +165,26 @@ We know that $[\C:\R]=2$.
 \begin{example}
 	A basis of $\Q(\sqrt{2})$ over $\Q$ 
 	is given by $\{1,\sqrt{2}\}$. Then 
-	$[\Q(\sqrt{2}):\Q]=2$. 
+	$[\Q(\sqrt{2}):\Q]=2$. The calculations 
+	can be easily done by computer: 
+\begin{lstlisting}
+julia> E, a = quadratic_field(2)
+(Real quadratic field defined by x^2 - 2, sqrt(2))
+julia> characteristic(E)
+0
+julia> K = prime_field(E)
+Rational Field
+julia> degree(E)
+2
+julia> basis(E)
+2-element Vector{nf_elem}:
+ 1
+ sqrt(2)
+julia> one(K)==one(E)
+true
+julia> zero(K)==zero(E)
+true
+\end{lstlisting}
 \end{example}
 
 \begin{example}
@@ -197,6 +216,41 @@ then $[E:K]$ is finite.
 	$\sum_{i=1}^ma_ix_i$ for some $a_1,\dots,a_m\in K_0$. Then
 	$K\simeq K_0^m$ and hence $|K|=|K_0^m|=p^m$. 
 \end{proof}
+
+We now perform some basic calculations 
+with a finite field of eight elements: 
+\begin{lstlisting}
+julia> E, x = FiniteField(2, 3, "x")
+(Finite field of degree 3 over F_2, x)
+julia> characteristic(E)
+2
+julia> prime_field(E)
+Galois field with characteristic 2
+julia> degree(E)
+3
+julia> size(E)
+8
+julia> [z for z in E]
+8-element Vector{fq_nmod}:
+ 0
+ 1
+ x
+ x + 1
+ x^2
+ x^2 + 1
+ x^2 + x
+ x^2 + x + 1
+\end{lstlisting}
+
+%julia> F, y = FiniteField(5, 2, "y")
+%(Finite field of degree 2 over F_5, y)
+%julia> degree(F)
+%2
+%julia> prime_field(F)
+%Galois field with characteristic 5
+%julia> size(F)
+%25
+
 
 \begin{definition}
 	Let $E$ be an extension of $K$. A \textbf{subextension} $F$ 
@@ -261,7 +315,20 @@ is a group with composition.
 	$\Aut(E/K)$ and it will be denoted by $\Gal(E/K)$. 
 \end{definition}
 
-A typicall example: $\Gal(\C/\R)\simeq\Z/2$. 
+A typical example: $\Gal(\C/\R)\simeq\Z/2$. 
+
+As an example, we show with the computer that $\Gal(\Q(\sqrt{2})/\Q)\simeq\Z/2$:
+\begin{lstlisting}
+julia> E, x = quadratic_field(2)
+(Real quadratic field defined by x^2 - 2, sqrt(2))
+julia> characteristic(E)
+0
+julia> G, C = galois_group(E);
+julia> describe(G)
+"C2"
+julia> order(G)
+2
+\end{lstlisting}
 
 \begin{example}
 	Let $\theta=\sqrt[3]{2}$ and let $E=\{a+b\theta+c\theta^2:a,b,c\in\Q\}$. Note that 
@@ -287,3 +354,33 @@ $\sigma=\id$.
     Prove that the polynomial $X^3-2$ is irreducible in $\Q[X]$.  
 \end{exercise}
 
+The previous exercise can easily be solved using
+computers: 
+\begin{lstlisting}
+julia> R, x = PolynomialRing(QQ, "x");
+julia> is_irreducible(x^3-2)
+true
+\end{lstlisting}
+
+The following exercise is known as the 
+\emph{Eisenstein's irreducibility criterion}:
+
+\begin{exercise}
+    \index{Eisenstein's criterion}    
+    Let $A$ be a unique factorization domain and $K$ be its fraction field. 
+    Let $f=\sum_{i=0}^n a_iX^i\in K[X]$ be a polynomial of degree $n>0$. 
+    Assume that there exists a prime element $p\in A$ such that
+    $p\mid a_i$ for all $i\in\{0,1,\dots,n-1\}$, $p\nmid a_n$ and
+    $p^2\nmid a_0$. Then $f$ is irreducible in $K[X]$. 
+\end{exercise}
+
+\begin{exercise}
+    Prove that
+    the polynomials 
+    $f=X^{10}+60X^7+82X^6-36X^3+2$ and 
+    $g=3X^{10}+15X^2-45$ are irreducible in $\Z[X]$. 
+\end{exercise}
+
+\begin{exercise}
+    Is the polynomial $f=3(X^{10}+5X^2-15$ irreducible in $\Z[X]$? 
+\end{exercise}
