@@ -97,6 +97,11 @@ Easy examples:
 \end{example}
 
 \begin{example}
+    The decomposition field of $f=X^2-2$ over $\Z/7$ is 
+    precisely $\Z/7$, as 3 and 4 are the roots of $f$ in $\Z/7$. 
+\end{example}
+
+\begin{example}
 	$\Q(\sqrt[3]{2})$ is not a decomposition field of $X^3-2\in\Q[X]$. However, if
 	$\omega$ ia a primitive cubic root of one, then 
 	$\Q(\sqrt[3]{2},\omega)$ is a decomposition field of the polynomial $X^3-2\in\Q[X]$. 
@@ -202,7 +207,7 @@ if $y=\sigma(x)$ for some $\sigma\in G$.
     \[
     (h_1-h_2)(x)=h_1(x)-h_2(x)=0.
     \]
-    Thus implies
+    This implies
     that $g$ divides $h_1-h_2$. In particular, $h_1(y)=h_2(y)$.
     
     A straightforward calculation shows that $\varphi$ is a field 
@@ -241,7 +246,7 @@ The previous proposition shows, in particular,
 that all the roots of 
 an irreducible polynomial $f\in K[X]$ 
 in an algebraic closure $C$ of $K$
-have the same multiplicity. This is clearly 
+have the same multiplicity. This is  
 not true if $f$ is not irreducible. Find an example.
 
 %Take 
@@ -256,7 +261,7 @@ not true if $f$ is not irreducible. Find an example.
     with coefficients in $K$. A \textbf{decomposition field} 
     of $\{f_i:i\in I\}$ is an extension $E/K$
     such that every $f_i$ factorizes linearly in $E[X]$ and 
-    if $F/K$ is a subextension of $E/K$ such that every $f_i$ 
+    if $F/K$ is a sub extension of $E/K$ such that every $f_i$ 
     factorizes linearly in $F[X]$, then $F=E$. 
 \end{definition}
 
@@ -278,6 +283,22 @@ not true if $f$ is not irreducible. Find an example.
     there exists a decomposition field of $\{f_i:i\in I\}$ 
     and it is unique up to extension isomorphism. 
 \end{exercise}
+
+\begin{exercise}
+    Let $f=X^3-X-1\in (\Z/3)[X]$ and $E$ be a decomposition field of $f$. 
+    Compute $[E:\Z/3]$. 
+\end{exercise}
+
+% it is 3, as E is (\Z/3)[\alpha], where $\alpha$ is a root of $f$ (in some algebraic closure)
+What about the decomposition field of $f=X^3-X-1\in \Q[X]$?
+
+\begin{exercise}
+    Let $f=X^4-5x^2+5\in \Q[X]$ and $E$ be a decomposition field of $f$. 
+    Compute $[E:\Q]$ and $\Gal(E/K)$. 
+\end{exercise}
+
+% degree 4, cyclic of order 4
+
 
 \topic{Normal extensions}
 
