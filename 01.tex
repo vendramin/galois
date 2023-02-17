@@ -485,3 +485,18 @@ that $e$ is transcendental
 over $\Q$; see \cite[Therem 24.4]{MR3379917}. Lindemann's theorem 
 states that $\pi$ is 
 not algebraic $\Q$; see \cite[Theorem 24.5]{MR3379917}. 
+
+\begin{example}
+    Let $a=\sqrt{2}$ and $b=\sqrt[3]{3}$. Both $a$ and $b$ are algebraic numbers over $\Q$. 
+    Let us show that $a+b$ is also algebraic. Let $f(X)=X^3-3\in\Q[X]$. Then $f(b)=0$. Note
+    that the polynomial 
+    \[
+    g(X)=f(X-a)=X^3-3aX^2+3aX-a^3-3\in\Q(a)[X]
+    \]
+    is such that $g(a+b)=0$. How can we find a polynomial 
+    with coefficients in $\Q$ that vanishes on $a+b$? We do the ``conjugation" trick:
+    \[
+    h(X)=f(X-a)f(X+a)=X^6-6X^4-6X^3+12X^2-36X+1\in\Q[X].
+    \]
+    Note that $h(a+b)=0$. How can you prove that $ab$ is also algebraic over $\Q$?     
+\end{example}
