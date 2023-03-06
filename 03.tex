@@ -36,7 +36,8 @@ with finite field extensions.
 	if and only if $E/F$ and $F/K$ are finite. 
 \end{exercise}
 
-Let $F\subseteq E$ and $L\subseteq E$. The composite 
+Let $K$ be a field and $K\subseteq 
+F\subseteq E$ and $K\subseteq L\subseteq E$ be fields. The composite 
 of $F$ and $L$ is defined as 
 \[
 FL=K(F\cup L)=F(L)=L(F)
@@ -146,7 +147,8 @@ The solution to the previous exercise shows, in particular, that $[EF:E]\leq [F:
 \end{lemma}
 
 \begin{proof}
-	Let $A$ be a set in bijection with $L\setminus\sigma(K)$ and disjoint with $K$. 
+    Note that $\sigma$ is bijective. 
+    Let $A$ be a set in bijection with $L\setminus\sigma(K)$ and disjoint with $K$. 
 	Let $E=K\cup A$. If $\theta\colon A\to L\setminus\sigma(K)$ is bijective, then 
 	let 
 	\[
@@ -174,7 +176,7 @@ The solution to the previous exercise shows, in particular, that $[EF:E]\leq [F:
 
 If $\sigma\colon A\to B$ is a ring homomorphism, then $\sigma$ induces a ring
 homomorphism $\overline{\sigma}\colon A[X]\to B[X]$,
-$\sum_ia_iX^i\mapsto\sum\sigma(a_i)X^i$. 
+$\sum_ia_iX^i\mapsto\sum_i\sigma(a_i)X^i$. 
 
 \begin{theorem}
 	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. Then 
