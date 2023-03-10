@@ -167,9 +167,19 @@ can be generalized. Let $I$ be a non-empty set.
 For each $i\in I$, let $X_i$ be a variable. Consider
 the polynomial ring $K[\{X_i:i\in I\}]$ and let 
 $S=\{x_i:i\in I\}$ be a subset of $E$. There exists a unique 
-algebras homomorphism $K[\{X_i:i\in I\}]\to E$ 
+algebra homomorphism 
+\[
+K[\{X_i:i\in I\}]\to E
+\]
 such that $X_i\mapsto x_i$ for all $i\in I$. The image 
-is denoted by $K[S]$. 
+is denoted by $K[S]$. In particular, an element $z\in K[S]$ 
+is of the form 
+\[
+z=h(x_1,\dots,x_n)
+\]
+for a polynomial $h\in K[X_1,\dots,X_n]$ 
+in finitely many variables $X_1,\dots,X_n$ and 
+$x_1,\dots,x_n\in S$. 
 
 \begin{exercise}
     Prove that $\Q[\sqrt{2}]=\Q(\sqrt{2})$. 
@@ -234,7 +244,7 @@ We note that the converse of the previous result does not hold.
 	If $E/K$ is an extension and $x_1,\dots,x_n\in E$ 
 	are algebraic over $K$, then 
 	$K(x_1,\dots,x_n)/K$ is finite and
-	$K(x_1,\dots,x_m)=K[x_1,\dots,x_n]$. 
+	$K(x_1,\dots,x_n)=K[x_1,\dots,x_n]$. 
 \end{corollary}
 
 \begin{proof}
