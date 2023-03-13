@@ -19,8 +19,8 @@
     \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
     \]
     This implies that $\varphi(z)\in O_G(x)$ 
-    and $\varphi(O_G(x))=O_G(x)$. Thus $\sigma|_{(E\cap O_G(x)}$ is injective 
-    and 
+    and $\varphi(O_G(x))=O_G(x)$. The restriction
+    $\sigma|_{E\cap O_G(x)}$ is injective. Then 
     \begin{align*}
         \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
         &=\varphi(E)\cap\varphi(O_G(x))
@@ -131,6 +131,10 @@ $y\in O_{\Gal(E/K)}(x)$.
     \]
 \end{proof}
 
+What is the relation between 
+normal extensions and decomposition fields? The notions look
+deeply related. The following explain serves as an explanation: 
+
 \begin{proposition}
     Let $E/K$ be an algebraic extension. Then 
     $E/K$ is normal if and only if $E/K$ is the decomposition field
@@ -138,10 +142,12 @@ $y\in O_{\Gal(E/K)}(x)$.
 \end{proposition}
 
 \begin{proof}
-    Let $G=\Gal(E/K)$. If $x\in E$ and $f(x,K)=\prod_{y\in O_G(x)}(X-y)^m$, 
+    Assume first that $E/K$ is a normal extension. 
+    Let $G=\Gal(E/K)$.  If $x\in E$ and $f(x,K)=\prod_{y\in O_G(x)}(X-y)^m$, 
     then $f(x,K)$ factorizes linearly in $E[X]$. Thus 
     $E/K$ is a decomposition field of the family 
     $\{f(x,K):x\in E\}$. 
+    
     Conversely, assume that $E/K$ is a decomposition field of the family 
     $\{f_i:i\in I\}$. Then $E=K(S)$ where $S$ is the set of roots
     of the polynomials $f_i$. Let $C/K$ be an algebraic closure
