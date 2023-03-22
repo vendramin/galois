@@ -76,7 +76,7 @@ $|A|=m|\overline{A}|=m|B|$.
     $z=h(x)=\sum a_ix^i\in F[x]=E$. Then  
     \[
     \overline{\varphi}(h)(y)=\sum\varphi(a_i)y^i=\sum\sigma(a_i)y^i
-    =\sigma\left(\sum a_ix^i\right)=\sigma(y).
+    =\sigma\left(\sum a_ix^i\right)=\sigma(z).
     \]
     Conversely, if $y\in R_\varphi$, then
     \[
@@ -94,7 +94,7 @@ $|A|=m|\overline{A}|=m|B|$.
     then 
     \begin{align*}
     f(\phi^{-1}(y))&=\sum b_i\phi^{-1}(y^i)=\phi^{-1}\left(\sum\phi(b_i)y^i\right)\\
-    &=\phi^{-1}\left(\sum\varphi(b_i)y^i\right)=\phi^{-1}\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
+&=\phi^{-1}(\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
     \end{align*}
     Now we prove $O_{G}(x)\subseteq\phi^{-1}(R_\varphi)$.
     Let $z\in O_{G}(x)$ and $y\in C$ be such that 
@@ -102,7 +102,9 @@ $|A|=m|\overline{A}|=m|B|$.
     \begin{align*}
     \overline{\varphi}(f)(y)&=\sum\varphi(b_i)y^i\\
     &=\sum\varphi(b_i)\phi(z^i)
-    =\sum\phi(b_i)\phi(z^i)=\phi\left(\sum b_iz^i\right)=\phi(f(z))=\phi(0)=0.
+    =\sum\phi(b_i)\phi(z^i)
+    =\phi\left(\sum b_iz^i\right)
+    =\phi(f(z))=\phi(0)=0.
     \end{align*}
     
     \medskip
@@ -117,7 +119,7 @@ $|A|=m|\overline{A}|=m|B|$.
     Since $\gamma(K(x)/K)=|O_{G}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
     
     \medskip 
-    For the general case we assume that $E=F(x_1,\dots,x_n)$. We proceed
+    For the general case, we assume that $E=F(x_1,\dots,x_n)$. We proceed
     by induction on $n$. If $n=0$, then $E=F$ and the result is trivial. 
     If $n>0$, let $L=F[x_1,\dots,x_{n-1}]$ and $E=L(x_n)$. The 
     case proved 
@@ -216,12 +218,12 @@ and then proceeds by induction.
 \begin{exercise}
 \label{xca:separable1}
     Let $K\subseteq F\subseteq E$ be a tower of fields. Prove that 
-    if $E/K$ is separable, then $F/K$ and $E/F$ are separable. 
+    $E/K$ is separable if and only if $F/K$ and $E/F$ are separable. 
 \end{exercise}
 
 \begin{exercise}
 \label{xca:separable2}
-    Let $E/K$ and $F/K$ be extensions. Prove that if $E/K$ is separable, 
+    Let $E/K$ and $F/K$ be extensions. Prove that if $F/K$ is separable, 
     then $EF/E$ is separable. 
 \end{exercise}
 
