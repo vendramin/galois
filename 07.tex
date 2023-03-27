@@ -57,9 +57,10 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
 \end{proposition}
 
 \begin{proof}
+     We may assume that $K$ is infinite; otherwise, the result is trivial. 
     We first prove $\implies$. 
-    We may assume that $K$ is infinite, otherwise the result is trivial. Let us 
-    assume that $E=K(x)$. We claim that the map
+    Let us 
+    assume that $E=K(x)$ for some $x$. We claim that the map
     \[
     \Psi\colon \{F:K\subseteq F\subseteq E\}\to\{\text{monic divisors of $f(x,K)$}\},
     \quad
@@ -93,7 +94,7 @@ finitely many subextensions.
 Let $E/K$ be an algebraic extension. Assume that $E=K(S)$ and
 let $C$ be an algebraic closure of $K$ containing $E$. Let 
 \[
-T=\{y\in C:y\text{ is a root of $f(x,K)$ for some $x\in S$}\}
+T=\{y\in C:y\text{ is a root of $f(x,K)$ for $x\in S$}\}
 \]
 and let $L=K(T)$. Then $E\subseteq L$, as $S\subseteq T$. The extension
 $L/K$ is normal, as $L/K$ is a decomposition field of the family $\{f(x,K):x\in S\}$. 
@@ -230,3 +231,62 @@ Some easy facts.
     Let $E/K$ be a Galois extension and $F/K$ be a subextension of $E/K$. 
     Prove that $E/F$ is a Galois extension. 
 \end{exercise}
+
+
+\begin{theorem}[Artin]
+\index{Artin's theorem}
+\label{thm:ArtinGalois}
+    Let $E$ be a field and $G$ be a finite group of automorphisms of $E$. 
+    If $K=\prescript{G}{}{E}$, then $E/K$ is a Galois extension,
+    $[E:K]=|G|$ and $\Gal(E/K)=G$. 
+\end{theorem}
+
+Before proving the theorem, we need a lemma.
+
+\begin{lemma}
+    Let $E/K$ be a separable extension such that $\deg(x,K)\leq m$
+    for all $x\in E$. Then $E/K$ is finite and $[E:K]\leq m$. 
+\end{lemma}
+
+\begin{proof}
+   Let $z\in E$ be of maximal degree. If $x\in E$, 
+   then $K(x,z)/K$ is separable. Then $K(x,z)=K(y)$ for some $y$. 
+   It follows that 
+   \[
+   K(z)\subseteq K(x,z)=K(y).
+   \]
+   Since 
+   $\deg(z,K)\leq\deg(y,K)$, 
+   $\deg(z,K)=\deg(y,K)$. Hence 
+   $K(y)=K(z)$. In particular, $x\in K(z)$ and
+   therefore $E=K(z)$. 
+\end{proof}
+
+Now we are ready to prove Artin's theorem: 
+
+\begin{proof}[Proof of Theorem \ref{thm:ArtinGalois}]
+    Note that $G\subseteq\Gal(E/K)$. Let $x\in E$ and 
+    \[
+    f_x=\prod_{y\in O_G(x)}(X-y).
+    \]
+    Since $f_x\in K[X]$, it follows
+    that the extension $E/K$ is normal and separable (as it is a decomposition
+    field of a family of separable polynomials), so $E/K$ is a Galois extension. Moreover, 
+    \[
+    \deg(x,K)\leq \deg f_x=|O_G(x)|\leq |G|.
+    \]
+    By the previous lemma, $E/K$ is finite and $[E:K]\leq |G|$. This
+    implies that
+    $|G(E/K)|=[E:K]\leq |G|$ and hence $|G(E/K)|=|G|$. 
+\end{proof}
+
+\begin{example}
+    Let $E=K(X,Y)$ and $\sigma\colon K[X,Y]\to E$ be the ring homomorphism given by $\sigma(X)=Y$ and $\sigma(Y)=X$. Note that $\sigma$ is bijective, as $\sigma^2=\id$. The map $\sigma$ induces
+    a field homomorphism $\overline{\sigma}\colon E\to E$ such that 
+    $\overline{\sigma}^2=\id$. Recall that such a homomorphism is given by 
+    $f/g\mapsto \sigma(f)/\sigma(g)$. Let $G=\langle\overline{\sigma}\rangle$. Then $|G|=2$. 
+    We claim that $\prescript{G}{}{E}=K(X+Y,XY)$. Let $F=K(X+Y,XY)$. We only prove
+    that $\prescript{G}{}{E}\subseteq F$, as the other inclusion is trivial. Artin's theorem
+    implies that $[E:\prescript{G}{}{E}]=2$ and $E=F(X)$, as $X$ is a root
+    of the polynomial $Z^2-(X+Y)Z+XY$. Then $[E:F]\leq 2$ and $[\prescript{G}{}{E}:F]=1$.
+\end{example}
