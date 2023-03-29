@@ -138,13 +138,13 @@ $|A|=m|\overline{A}|=m|B|$.
 \topic{Separable extensions}
 
 \begin{definition}
-    Let $E/K$ be an algebraic extension and $x\in E$. Then
+    Let $E/K$ be an extension and $x\in E$ an algebraic element. Then
     $x$ is \textbf{separable} over $K$ if $x$ is a simple root
     of $f(x,K)$. 
 \end{definition}
 
 An algebraic extension $E/K$ is \textbf{separable} 
-if every $x\in E$ is separable over $K$. Clearly, $K/K$ is separable. 
+if every $x\in E$ is separable over $K$. Then $K/K$ is separable. 
 
 \begin{exercise}
     Prove that 
@@ -173,10 +173,40 @@ Prove that if $K$ has characteristic zero or $K$ is finite, then
 every algebraic extension of $K$ is separable. 
 \end{exercise}
 
-A consequence: 
-Let $E/K$ be a finite extension. Then $E/K$ is separable
-if and only if $\gamma(E/K)=[E:K]$. 
+%Let $K$ be a field and $g\in K[X]$. Let $z$ be a root of $g$. Then %$z$ is a multiple root of $g$ if and only if $z$ is a root of $g’$. 
 
+%Assume first that $K$ has characteristic zero. If $x$ is a multiple root of $f(x,K)$, then 
+%$f(x,K)$ divides $f(x,K)’$, a contradiction (take degree). 
+%
+%Assume now that $K$ has characteristic $p>0$. Let $f=f(x,K)$. If $x$ is a multiple root of $f$, we repeat the previous argument. 
+%Assume that $f=\sum_{i=0}^n a_iX^i$ and $0=f’=\sum_{i=1}^n a_iiX^{i-1}$. Then $a_i=0$ if $p$ does not divide $i$. Thus
+%$f=\sum_{k=0}^r b_kX^{pk}$. If $K$ is finite, the map $\alpha\mapsto\alpha^p$ is an automorphism of $K$. In particular, 
+%every element of $K$ is a $p$-power. Thus, for every $k$, there exists $c_k\in K$ such that $b_k=c_k^p$. Therefore 
+%$f=\sum_{k=0}^r c_k^pX^{pk}=\left(\sum_{k=0}^r c_kX^k\right)^p$, a contradiction, as $f$ is irreducible.   
+
+
+
+%A consequence: 
+%Let $E/K$ be a finite extension. Then $E/K$ is separable
+%if and only if $\gamma(E/K)=[E:K]$. 
+%Let $x\in E$, Then 
+%\[
+%[E:K]=[E:K(x)][K(x):K]\geq \gamma(E/K(x))\gamma(K(x)/K)=\gamma(E/K).
+%\]
+%This implies that
+%\begin{align*}
+%	[E:K(x)][K(x):K]=\gamma(E/K(x))\gamma(K(x)/K).
+%\end{align*}
+%Then $[E:K(x)]=\gamma(E/K(x))$ and $[K(x):K]=\gamma(K(x)/K)$ because
+%$[E:K(x)]\geq \gamma(E/K(x))$ and $[K(x):K]\geq \gamma(K(x)/K)$. Therefore
+%$x$ is separable over $K$.
+%
+%Conversely, let $E=K(x_1,\dots,x_n)$. We proceed by induction on $n$. The case $n=0$ is trivial, as $E=K$. If $n>0$, 
+%let $F=K(x_1,\dots,x_{n-1})$ and $E=F(x_n)$. Note that $x_n$ is separable over $K$, so $x_n$ is separable over $F$. Thus
+%\[
+%[E:K]=[E:F][F:K]=\gamma(E/F)\gamma(F/K)=\gamma(E/K).
+%\] 
+%
 \begin{example}
     Let $E=\Q(\sqrt{2},\sqrt{3})$. Then 
     $[E:\Q]=4$ and 
@@ -191,7 +221,10 @@ if and only if $\gamma(E/K)=[E:K]$.
 \begin{example}
     Let $E$ be a decomposition field of $X^4-2$ over $\Q$. 
     Then $E/\Q$ is normal and separable. Note that
-    $E=\Q(\sqrt[4]{2},i)$, so $[E:\Q]=8=|\Gal(E/\Q)|$. 
+    $E=\Q(\sqrt[4]{2},i)$, so 
+    \[
+    [E:\Q]=8=|\Gal(E/\Q)|.
+    \]
     
     Let us compute
     $\Gal(E/\Q)$. If $\sigma\in\Gal(E/\Q)$, then 
@@ -223,6 +256,14 @@ and then proceeds by induction.
     Let $K\subseteq F\subseteq E$ be a tower of fields. Prove that 
     $E/K$ is separable if and only if $F/K$ and $E/F$ are separable. 
 \end{exercise}
+
+%If $E/K$ is separable, then $F/K$ and $E/F$ are separable (easy). Conversely, assume that $F/K$ and $E/F$ are separable. Let $x\in E$ and
+%$f=f(x,K)$. Then $x$ is a simple root of $f$. Let $L=K(S)$, where $S$ is the set of coefficients of $f$. Then $L\subseteq F$, $L/K$ is finite and separable and $x$ is separable over $L$. Thus
+%\[
+%[L(x):K]=[L(x):L][L:K]=\gamma(L(x)/L)\gamma(L/K)=\gamma(L(x)/K).
+%\]
+%Hence $L(x)/K$ is separable, and $x$ is separable over $K$. 
+
 
 \begin{exercise}
 \label{xca:separable2}
