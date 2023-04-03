@@ -35,7 +35,8 @@ for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable.
     +X(\sigma_i(x)-\sigma_j(x))\right)\in C[X].
     \]
     Then $f\ne 0$, as $f$ is a product of non-zero polynomials. Since $K$ is infinite, 
-    there exists $c\in K$ such that $f(c)\ne 0$. For any $r,s\in\{1,\dots,n\}$ with 
+    there exists a non-zero 
+    $c\in K$ such that $f(c)\ne 0$. For any $r,s\in\{1,\dots,n\}$ with 
     $r\ne s$,
     \[
         \sigma_r(y)-\sigma_s(y)+c(\sigma_r(x)-\sigma_s(x))\ne 0,
@@ -67,7 +68,7 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
     F\mapsto f(x,F),
     \]
     is injective. 
-    Take $K\subseteq F_0\subseteq F\subseteq E$ with 
+    Take $F_0$ such that $K\subseteq F_0\subseteq F\subseteq E$ and  
     $f(x,F)=f(x,F_0)$. Then  
 %    Let $\Psi(F)=g\in F[X]$ and write $g=\sum_{i=0}^ma_iX^i$, where $m=\deg g$. 
 %    Thus $a_m=1$. Let $F_0=K(a_0,\dots,a_m)$. Then $F_0\subseteq F$. Since $g=f(x,F)$, the polynomial $g$ is irreducible 
@@ -79,7 +80,7 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
     and therefore there are finitely many fields between $K$ and $E$. 
     
     Let us prove $\impliedby$.  
-    As before let us assume that $E=K(x,y)$. For each $a\in K$ we consider
+    As before, let us assume that $E=K(x,y)$. For each $a\in K$ we consider
     the extension $K(ay+x)/K$. By assumption, there exist $a,b\in K$ such that
     $a\ne b$ and $K(x+ay)=K(x+by)=L$. We claim that $L=E$. Note that 
     $x+ay\in L$ and $x+by\in L$, so $(a-b)y\in L$ and hence, since $K\subseteq L$, it follows that
@@ -226,6 +227,15 @@ Some easy facts.
     Let $E/K$ be a finite extension. Prove that $E/K$ is Galois
     if and only if $[E:K]=|\Gal(E/K)|$.
 \end{exercise}
+
+For the previous exercise, 
+note that if $E/K$ is a finite extension, then  
+\[
+|G(E/K)|\leq\gamma(E/K)\leq [E:K].
+\]
+The first inequality
+is equality if and only if $E/K$ is normal. The second
+inequality is equality if and only if $E/K$ is separable.
 
 \begin{exercise}
     Let $E/K$ be a Galois extension and $F/K$ be a subextension of $E/K$. 
