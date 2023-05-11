@@ -48,9 +48,12 @@ $f(i,\C)=X-i$ and
 $f(\sqrt[3]{2},\Q)=X^3-2$:
 \begin{lstlisting}
 julia> E, x = radical_extension(3, QQ(2), "x");
+
 julia> minpoly(x)
 x^3 - 2
+
 julia> F, y = quadratic_field(-1);
+
 julia> minpoly(y)
 x^2 + 1
 \end{lstlisting}

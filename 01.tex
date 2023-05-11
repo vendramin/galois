@@ -185,18 +185,24 @@ We know that $[\C:\R]=2$.
 \begin{lstlisting}
 julia> E, a = quadratic_field(2)
 (Real quadratic field defined by x^2 - 2, sqrt(2))
+
 julia> characteristic(E)
 0
+
 julia> K = prime_field(E)
 Rational Field
+
 julia> degree(E)
 2
+
 julia> basis(E)
 2-element Vector{nf_elem}:
  1
  sqrt(2)
+ 
 julia> one(K)==one(E)
 true
+
 julia> zero(K)==zero(E)
 true
 \end{lstlisting}
@@ -237,14 +243,19 @@ with a finite field of eight elements:
 \begin{lstlisting}
 julia> E, x = FiniteField(2, 3, "x")
 (Finite field of degree 3 over F_2, x)
+
 julia> characteristic(E)
 2
+
 julia> prime_field(E)
 Galois field with characteristic 2
+
 julia> degree(E)
 3
+
 julia> size(E)
 8
+
 julia> [z for z in E]
 8-element Vector{fq_nmod}:
  0
