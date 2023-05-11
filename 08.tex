@@ -216,12 +216,13 @@ is an injective group homomorphism.
     $E_1E_2/K$ is separable. 
     
     Let $C/K$ be an algebraic closure such that $E_1E_2\subseteq C$. If $\sigma\in\Hom(E_1E_2/K,C/K)$, then 
-    $\sigma(E_1E_2)\subseteq\sigma(E_1)\sigma(E_2)=E_1E_2$ (do this calculation as an exercise). 
+    $\sigma(E_1E_2)\subseteq\sigma(E_1)\sigma(E_2)=E_1E_2$ (do this calculation as an exercise using the fact that
+    $E_1/K$ and $E_2/K$ are normal extensions). 
     Thus $E_1E_2/K$ is normal. 
     
     If both $E_1/K$ and $E_2/K$ are finite, then $E_1E_2/K$ is finite. 
     
-    Clearly, $\theta$ is a group homomorphism. We claim that the map $\theta$ is injective. Let $\sigma\in\ker\theta$. Then
+    Then $\theta$ is a group homomorphism. We claim that the map $\theta$ is injective. Let $\sigma\in\ker\theta$. Then
     $\sigma|_{E_i}=\id_{E_i}$ for all $i\in\{1,\dots,r\}$. Let $S=\langle\sigma\rangle\subseteq\Gal(E/K)$ and
     $F=\prescript{S}{}{E}$. Then $E_i\subseteq F$ for all $i\in\{1,\dots,r\}$ and
     hence $E\subseteq F$. It follows that $F=E=\prescript{\{\id\}}{}{E}$ and therefore $S=\{\id\}$, so 
@@ -322,10 +323,11 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 %$p^m$ divides $\deg f$. In conclusion, $f=g(X^p)$ 
 %for some $g\not\in K[X^p]$. 
     We now proceed by induction on the degree of $x$. The result
-    is clearly true for elements of degree one. So assume the result holds for element of degree $\leq n$ 
+    is true for elements of degree one. So assume the result holds for the element of degree $\leq n$ 
     for some $n\geq1$. 
     If $x\in E$ is such that $\deg(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
     $x^p$ has degree $\leq n$. By the inductive hypothesis, $x^{p^{m+1}}=(x^p)^{p^m}\in K$.  
+
     We now prove $2)\implies 3)$. Let $x\in E$ and $m$ be the minimal positive integer 
     such that $x^{p^m}\in K$. Then
     $x$ is a root of $X^{p^m}-x^{p^m}\in K[X]$. Since 
