@@ -1,6 +1,6 @@
 \chapter{}
 
-\section{Radical extensions}
+\topic{Radical extensions}
 
 \begin{definition}
     An extension $E/K$ is \textbf{radical} if $E=K(x_1,\dots,x_m)$ 
@@ -30,10 +30,10 @@ Note that radical extensions are finite.
 
 \begin{proof}
     Without loss of generality, 
-    we may assume that $E/K$ is a Galois extension. In fact, 
-    let $G=\Gal(E/K)$ and $K_0=\prescript{G}{}{E}$. Then
-    $E/K_0$ is a Galois extension and $\Gal(E/K_0)=G$ by Artin's theorem. 
-    Thus, replacing $K$ by $K_0$ if needed, we may assume that
+    we may assume that $E/K$ is a Galois extension. To prove this fact, 
+    let $G=\Gal(E/K)$ and $F=\prescript{G}{}{E}$. Then
+    $E/F$ is a Galois extension and $\Gal(E/F)=G$ by Artin's theorem. 
+    Thus, replacing $K$ by $F$ if needed, we may assume that
     $E/K$ is Galois. 
     
     Let $L$ be the normal closure of $R$ in some
@@ -59,7 +59,8 @@ Note that radical extensions are finite.
     Since $\Gal(E/K)\simeq\Gal(R/K)/\Gal(R/E)$, we only need
     to prove that $\Gal(R/K)$ is solvable. 
     
-    Let $\xi$ be a primitive $n$-th root of one (in some algebraic closure
+    For a positive integer $n$, 
+    let $\xi$ be a primitive $n$-th root of one (in some algebraic closure
     of $K$ that contains $R$). Consider the diagram
     \[
     \begin{tikzcd}
@@ -80,8 +81,8 @@ Note that radical extensions are finite.
         \item $\Gal(K(\xi)/K)\simeq\Gal(R(\xi)/K)/\Gal(R(\xi)/K(\xi))$. 
     \end{enumerate}
     The third item implies that we need to 
-    show that $\Gal(R(\xi)/K)$ is solvable. By the fourth item
-    it suffices to show that $\Gal(R(\xi)/K(\xi))$ is solvable. 
+    show that $\Gal(R(\xi)/K)$ is solvable. By the fourth item,
+    it suffices to show that $\Gal(R(\xi)/K(\xi))$ is solvable (because $\Gal(K(\xi)/K)$ is abelian and hence solvable). 
     
     Since
     $R=K(x_1,\dots,x_m)$,  
@@ -90,7 +91,7 @@ Note that radical extensions are finite.
     \]
     and hence $R(\xi)/K(\xi)$ is radical. 
     This means that
-    without loss of generality we may assume that
+    without loss of generality, we may assume that
     $K$ contains primitive $n$-roots of one. For example, 
     if $R=K(x_1,\dots,x_m)$ and $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$, 
     then we may assume that $K$ contains a primitive $a_i$-root of one. We proceed by induction on $m$. 

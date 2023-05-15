@@ -38,3 +38,29 @@ If $\varphi\in\Hom(E/K,C_1/K)$, then $\theta\varphi\in\Hom(E/K,C/K)$. The
 maps $\sigma\mapsto\theta^{-1}\sigma$ and 
 $\varphi\mapsto\theta\varphi$ are inverse to each other. 
 \end{sol}
+
+\begin{sol}{xca:solvable+simple}
+ If $G$ is solvable, then $[G,G]$ is a proper normal subgroup of $G$. 
+ Since $G$ is simple, $[G,G]=\{1\}$ and $G$ is abelian. Thus $G$ is cyclic of prime order.
+\end{sol}
+
+\begin{sol}{xca:diagonal}
+ Assume that $G$ is simple. Let $A=G\times\{1\}$, $B=\{1\}\times G$ and
+ $D=\{(x,x):x\in G\}$ the diagonal subgroup of $G\times G$. 
+ Since 
+ \[
+ (g,h)=(g,1)(1,h)=(gh^{-1},1)(h,h)
+ \]
+ it follows that $G=AB=AD$. Let $M$ be a subgroup of $G\times G$ that contains $D$. 
+ Note that
+ \[
+ M=M\cap (G\times G)=M\cap AD=(M\cap A)D. 
+ \]
+ Similarly, $M=(M\cap B)D$. Since $A$ is normal in $G\times G$, $M\cap A$ is normal in $G\times G$ 
+ and $(M\cap A)B$ is normal in $MB=G\times G$. Using the second isomorphism theorem, we see that
+ \[
+ M\cap A\simeq \frac{(M\cap A)B}{B}
+ \]
+ is a normal subgroup of $(G\times G)/B\simeq A$. Since $A\simeq G$ is simple, either 
+ $M\cap A=\{1\}$ or $M\cap A=A$. Thus either $M=D$ or $BD=G\times G$. Therefore $D$ is maximal.
+ \end{sol}
