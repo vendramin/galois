@@ -99,7 +99,7 @@ Note that radical extensions are finite.
     $L=K(x_1)$. Then $L/K$ is a decomposition field of $X^{a_1}-x_1^{a_1}$, and hence
     $L/K$ is a cyclic extension. Thus $\Gal(L/K)$ is cyclic (and hence, in particular, solvable). 
     Let $H$ be the subgroup that corresponds to $L$, that is
-    $H=\Gal(R/L)$ (here we use Galois' correspondence). Then $H$ is normal in $\Gal(R/K)$. 
+    $H=\Gal(R/L)$ (here, we use Galois' correspondence). Then $H$ is normal in $\Gal(R/K)$. 
     Since $R=K(x_1,\dots,x_m)=L(x_2,\dots,x_m)$, $R/L$ is radical and Galois. By the inductive hypothesis, 
     $\Gal(R/L)$ is solvable. Since 
     \[
@@ -116,7 +116,7 @@ Note that radical extensions are finite.
 
 The general polynomial of degree two 
 is solvable by radicals, as its Galois group 
-is solvable (in fact, it is isomorphic to $\Sym_2$).  
+is solvable (in fact, isomorphic to $\Sym_2$).  
 
 \begin{exercise}
     Prove that $f=X^2-s_1X+s_2\in\Q[X]$ is solvable by radicals. 
@@ -141,11 +141,9 @@ $\Sym_5$.
     We claim that 
     $f$ is not solvable by radicals. 
     
-    By Gauss' theorem 
-    one proves that $f$ has no rational roots. 
+    By Gauss' theorem, one proves that $f$ has no rational roots. 
     
-    Since $f(-1)f(1)<0$ and 
-    $\deg f$ is odd, one proves that $f$ 
+    Since $f(-1)f(1)<0$ and $\deg f$ is odd, one proves that $f$ 
     has at least three real roots. Moreover, 
     $f$ has exactly three real roots, as $f'=5X^4-2p$. Let 
     $x_1,x_2\in\C\setminus\R$ and $x_3,x_4,x_5\in\R$ be the roots
@@ -154,18 +152,20 @@ $\Sym_5$.
     By Eisenstein's theorem, $f$ is irreducible. 
     
     Let $E/\Q$ be a decomposition field of $f$. 
-    Then $\Gal(f,\Q)=\Gal(E/\Q)$ is isomorphic to a subgroup $G$ of $\Sym_5$.
+    Then $\Gal(f,\Q)=\Gal(E/\Q)$ is isomorphic 
+    to a subgroup $G$ of $\Sym_5$.
     Since 
     $f$ is irreducible, $5$ divides $[E:\Q]=|G|$. In particular, 
     by Cauchy's theorem, $G$ contains an element $\sigma$ of order five. This element
-    is a $5$-cycle, so without loss of generality we may assume that 
+    is a 5-cycle, so without loss of generality, we may assume that 
     $\sigma=(x_1x_2x_3x_4x_5)$. Note that 
     $(x_1x_2)\in G$. Thus $G\simeq\Sym_5$ and hence
     $G$ is not solvable. 
 \end{example}
 
 \begin{exercise}
-    Let $f=X^6+2X^5-5X^4+9X^3-5X^2+2X+1\in\Q[X]$ is solvable by radicals. 
+    Let $f=X^6+2X^5-5X^4+9X^3-5X^2+2X+1\in\Q[X]$. 
+    Prove that $f$ is solvable by radicals. 
 \end{exercise}
 
 %Let us solve the previous exercise
