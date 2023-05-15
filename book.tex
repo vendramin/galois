@@ -38,7 +38,6 @@
 \usepackage{colortbl}
 \usepackage{chngcntr}
 
-
 \lstdefinelanguage{Julia}%
   {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
       end,export,false,for,function,immutable,import,importall,if,in,%
@@ -52,14 +51,58 @@
    morestring=[m]{'}{'},%
 }[keywords,comments,strings]%
 
+\definecolor{background}{HTML}{F5F5F5}
+\definecolor{jlstring}{HTML}{880000}%          % julia's strings
+\definecolor{jlbase}{HTML}{444444}%            % julia's base color
+\definecolor{jlkeyword}{HTML}{444444}%         % julia's keywords
+\definecolor{jlliteral}{HTML}{78A960}%         % julia's literals
+\definecolor{jlbuiltin}{HTML}{397300}%         % julia's built-ins
+\definecolor{jlmacros}{HTML}{1F7199}%          % julia's macros
+\definecolor{jlfunctions}{HTML}{444444}%       % julia's functions
+\definecolor{jlcomment}{HTML}{888888}%         % julia's comments
+\definecolor{jlstring}{HTML}{880000}%          % julia's strings
+
+
 \lstset{%
     language         = Julia,
-    basicstyle       = \ttfamily,
-    keywordstyle     = \bfseries\color{blue},
-    stringstyle      = \color{magenta},
-    commentstyle     = \color{ForestGreen},
+    basicstyle       = \color{jlstring}\ttfamily\scriptsize,
+    backgroundcolor  = \color{background},
+    keywordstyle     = \color{jlkeyword},
+    stringstyle      = \color{jlstring},
+    commentstyle     = \color{jlcomment},
     showstringspaces = false,
+    columns=fixed,
 }
+
+\ExplSyntaxOn
+\NewDocumentCommand{\cycle}{ O{\,} m }
+ {
+  (
+  \alec_cycle:nn { #1 } { #2 }
+  )
+ }
+\seq_new:N \l_alec_cycle_seq
+\cs_new_protected:Npn \alec_cycle:nn #1 #2
+ {
+  \seq_set_split:Nnn \l_alec_cycle_seq { , } { #2 }
+  \seq_use:Nn \l_alec_cycle_seq { #1 }
+ }
+\ExplSyntaxOff
+
+% Cycle without the parentheses
+\ExplSyntaxOn
+\NewDocumentCommand{\npcycle}{ O{\,} m }
+ {
+  \npalec_cycle:nn { #1 } { #2 }
+ }
+\seq_new:N \npl_alec_cycle_seq
+\cs_new_protected:Npn \npalec_cycle:nn #1 #2
+ {
+  \seq_set_split:Nnn \npl_alec_cycle_seq { , } { #2 }
+  \seq_use:Nn \npl_alec_cycle_seq { #1 }
+ }
+\ExplSyntaxOff
+
 
 % Table of contents for lectures and topics
 \makeatletter
