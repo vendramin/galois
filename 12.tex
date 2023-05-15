@@ -3,9 +3,22 @@
 \topic{Radical extensions}
 
 \begin{definition}
-    An extension $E/K$ is \textbf{radical} if $E=K(x_1,\dots,x_m)$ 
-    such that for each $i\in\{1,\dots,m\}$ there exists $a_i\in\Z$ 
-    such that $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$. 
+    \index{Extension!pure}
+    \index{Pure extension}
+    An extension $E/K$ is said to be \textbf{pure} of type $m$ if 
+    $E=K(x)$ for some $x$ such that $x^m\in K$. 
+\end{definition}
+
+Note that if $E=K(x)$ os a pure extension of type $m$ and $K$ contains 
+$m$-th roots of one, then $E/K$ is a splitting field of $X^m-x^m$. 
+
+\begin{definition}
+\index{Radical extension}
+\index{Radical tower}
+\index{Extension!radical}
+    The sequence $K=R_0\subseteq R_1\subseteq\cdots\subseteq R_m$ 
+    of fields is said to be a \textbf{radical tower} if 
+    each $R_{i+1}/R_i$ is pure. In this case, $R_m/K$ is a \textbf{radical extension}. 
 \end{definition}
 
 Note that radical extensions are finite. 
