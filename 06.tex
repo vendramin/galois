@@ -14,9 +14,10 @@ $|A|=m|\overline{A}|=m|B|$.
 \end{proposition}
 
  \begin{proof}
-    Assume that $E=F(x)$. Let $f=f(x,F)=\sum b_iX^i$ and
+    Assume that $E=F(x)$. 
     Let $C$ be an algebraic closure of $K$ containing $E$ 
-    and $G=\Gal(C/F)$. 
+    and $G=\Gal(C/F)$. Let $f=f(x,F)=\sum b_iX^i$.
+    
     The map
     \[
     \lambda\colon \Hom(E/K,C/K)\to\Hom(F/K,C/K),\quad
@@ -89,9 +90,11 @@ $|A|=m|\overline{A}|=m|B|$.
     as $\sigma_y(x)=\overline{\varphi}(X)(y)=y$.
     
     \begin{claim}
-        If $\phi\in G$ is such that $\phi|_F=\varphi$, then 
-        $|\phi^{-1}(R_\varphi)|=|R_{\varphi}|$. 
-        %$O_{G}(x)=\phi^{-1}(R_\varphi)$.
+        If $\phi\in\Gal(C/K)$ is such that $\phi|_F=\varphi$, then 
+        $|\phi^{-1}(R_\varphi)|=|R_{\varphi}|$ and 
+        \[
+        O_{G}(x)=\phi^{-1}(R_\varphi).
+        \]
     \end{claim}
 
     Let us first prove $O_{G}(x)\supseteq \phi^{-1}(R_\varphi)$.
@@ -101,7 +104,7 @@ $|A|=m|\overline{A}|=m|B|$.
     f(\phi^{-1}(y))&=\sum b_i\phi^{-1}(y^i)=\phi^{-1}\left(\sum\phi(b_i)y^i\right)\\
 &=\phi^{-1}(\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
     \end{align*}
-    Then $f(x,F)=f(\phi^{-1}(y),F)$. By Proposition \ref{pro:gamma_orbit}, $\phi^{-1}(y)\in O_G(x)$. 
+    Then $f(x,F)=f(\phi^{-1}(y),F)$. By Proposition \ref{pro:conjugate}, $\phi^{-1}(y)\in O_G(x)$. 
     Now we prove $O_{G}(x)\subseteq\phi^{-1}(R_\varphi)$.
     Let $z\in O_{G}(x)$. Then $\overline{\varphi}(f)(\phi(z))=0$, as
     \begin{align*}
