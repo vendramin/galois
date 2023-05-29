@@ -10,9 +10,9 @@
     There exists a bijective correspondence
     \[
     \{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
-    \{\text{subgroups of $G$}\}
+    \{S:S\text{ is a subgroup of $G$}\}
     \]
-    The correspondence is given by $F\mapsto G(E/F)$ and 
+    The correspondence is given by $F\mapsto \Gal(E/F)$ and 
     $\prescript{S}{}{E}\mapsfrom S$. Moreover, 
     normal subextensions of $E/K$ correspond 
     to normal subgroups of $G$. 
@@ -162,8 +162,7 @@ Some easy consequences.
     \[
     \theta^2=\omega^2+\omega^3+2=-(1+\omega+\omega^{-1})+2=1-\theta
     \]
-    and hence $\theta$ is a root of $X^2+X-1$. Since $\theta\not\in\Q$, 
-    it follows that 
+    and hence $\theta$ is a root of $X^2+X-1$. It follows that 
     \[
     \theta\in\{(-1+\sqrt{5})/2,(-1-\sqrt{5})/2\}.
     \]
@@ -174,6 +173,7 @@ Some easy consequences.
 Let us mention some other consequences.
 
 \begin{exercise}
+\label{xca:composite}
     Let $E/K$ be a finite Galois extension 
     and $F_1,\dots,F_n$ fields 
     such that $K\subseteq F_i\subseteq E$ for 
@@ -185,6 +185,29 @@ Let us mention some other consequences.
     \Gal\left(E/\prod_{i=1}^nF_i\right)=\bigcap_{i=1}^nS_i.
     \]
 \end{exercise}
+
+% \begin{sol}{xca:composite}
+%     We solve the exercise for $n=2$. The general case 
+%     follows by induction. 
+    
+%     Let us prove 
+%     first that
+%     $\Gal(E/F)\cap\Gal(E/L)=\Gal(E/FL)$:
+%     \begin{align*}
+%         \sigma\in\Gal(E/F)\cap\Gal(E/L) & \Longleftrightarrow
+%         \sigma|_F=\id_F\text{ and }\sigma|_L=\id_L\\
+%         &\Longleftrightarrow \sigma|_{FL}=\id_{FL}\\
+%         &\Longleftrightarrow \sigma\in\Gal(E/FL).
+%     \end{align*}
+    
+%     Now we prove that $\Gal(E/F\cap L)\simeq\langle\Gal(E/F)\cup\Gal(E/L)\rangle$. Let 
+%     $S=\Gal(E/F)$ and $T=\Gal(E/L)$. Then
+%     \begin{align*}
+%         x\in \prescript{S}{}{E}\cup \prescript{T}{}{E} &\Longleftrightarrow \sigma(x)=x\text{ for all $\sigma\in S\cup T$}\\
+%         &\Longleftrightarrow \sigma(x)=x\text{ for all $\sigma\in\langle S\cup T\rangle$}\\
+%         &\Longleftrightarrow x\in \prescript{\langle S\cup T\rangle}{}{E}.
+%     \end{align*}
+% \end{sol}
 
 The following statement is a concrete application of the 
 previous exercise.
@@ -325,7 +348,7 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     We now proceed by induction on the degree of $x$. The result
     is true for elements of degree one. So assume the result holds for the element of degree $\leq n$ 
     for some $n\geq1$. 
-    If $x\in E$ is such that $\deg(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
+    If $x\in E$ is such that $\deg f(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
     $x^p$ has degree $\leq n$. By the inductive hypothesis, $x^{p^{m+1}}=(x^p)^{p^m}\in K$.  
 
     We now prove $2)\implies 3)$. Let $x\in E$ and $m$ be the minimal positive integer 
@@ -366,7 +389,8 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 Some consequences:
 
 \begin{exercise}
-    Let $E/K$ be finite and purely inseparable. Then $[E:K]=p^s$ for some prime number $p$ and some $s$.
+    Let $K$ be a field of characteristic $p>0$ and 
+    $E/K$ be finite and purely inseparable. Then $[E:K]=p^s$ for some prime number $p$ and some $s$.
     Moreover, $x^{[E:K]}\in K$. 
 \end{exercise}
 
@@ -378,7 +402,7 @@ For the first part of the previous exercise, write $E=K(x_1,\dots,x_n)$ and proc
     $E/K$ is separable. 
 \end{exercise}
 
-Let $E/K$ be finite and $F$ be the separable closure of $K$ in $E$. 
+Let $K$ be of characteristic $p>0$, $E/K$ be finite and $F$ be the separable closure of $K$ in $E$. 
 Since 
 \begin{gather*}
 \gamma(E/K)=\gamma(E/F)\gamma(F/K)=\gamma(F/K),
@@ -409,6 +433,7 @@ As an optional exercise, one can show that these definitions do not depend on th
 We collect some basic properties as an exercise:
 
 \begin{exercise}
+\label{xca:norm_and_trace}
     Let $E/K$ be a finite extension. The following statements hold:
     \begin{enumerate}
         \item If $E/K$ is not separable, then $\trace_{E/K}(x)=0$ for all $x\in E$.
@@ -450,7 +475,7 @@ is a group homomorphism.
     \begin{align*}
     &\trace_{E/\Q}(\sqrt{2})=0,
     &&
-    \norm_{E/\Q}(\sqrt{2})=-4,\\
+    \norm_{E/\Q}(\sqrt{2})=4,\\
     &\trace_{E/\Q(\sqrt{2})}(\sqrt{2})=2\sqrt{2},
     &&\norm_{E/\Q(\sqrt{2})}(\sqrt{2})=2.    
     \end{align*}

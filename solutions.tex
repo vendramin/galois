@@ -9,6 +9,17 @@
 
 \addcontentsline{toc}{chapter}{Some solutions}
 
+\begin{sol}{xca:algebraic_bijective}
+    Let $\sigma\colon E\to E$ be a homomorphism. As $\sigma$ is
+    injective, we need to prove that $\sigma$ is surjective. Let $y\in E$. Note that $y$ is algebraic over $K$. Let 
+    $R$ be the set of roots of the minimal polynomial 
+    $f(y,K)$ of $y$ over $K$. 
+    The map 
+    $\sigma|_R\colon R\to R$ is injective. Since 
+    $R$ is finite, $\sigma|_R$ is then bijective. In particular, 
+    there exists $x\in R$ such that $y=\sigma(x)$.
+\end{sol}
+
 
 \begin{sol}{xca:dim}
  Let $\{v_i:i\in I\}$ be a basis of $V$ over $K$. For each $i\in I$
@@ -38,6 +49,15 @@ If $\varphi\in\Hom(E/K,C_1/K)$, then $\theta\varphi\in\Hom(E/K,C/K)$. The
 maps $\sigma\mapsto\theta^{-1}\sigma$ and 
 $\varphi\mapsto\theta\varphi$ are inverse to each other. 
 \end{sol}
+
+% \begin{sol}\
+%     \begin{enumerate}
+%         \item If $E/K$ is not separable, 
+%         then $[E:K]_{\operatorname{ins}}=p^s$ for some $s$. 
+%         Then the trace is zero because $K$ is of characteristic $p$. 
+%         \item 
+%     \end{enumerate}
+% \end{sol}
 
 \begin{sol}{xca:solvable+simple}
  If $G$ is solvable, then $[G,G]$ is a proper normal subgroup of $G$. 

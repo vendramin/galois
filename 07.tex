@@ -41,7 +41,7 @@ for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable.
     \[
         \sigma_r(y)-\sigma_s(y)+c(\sigma_r(x)-\sigma_s(x))\ne 0,
     \]
-    as $c\in K$. It follows that $\sigma_r(y+cx)\ne\sigma_s(y+cx)$. Thus $\gamma(K(y+cx)/K)\geq n$. 
+    as $f(c)\ne0$. It follows that $\sigma_r(y+cx)\ne\sigma_s(y+cx)$. Thus $\gamma(K(y+cx)/K)\geq n$. 
     Now 
     \[
     n\geq [K(y+cx):K]=\gamma(K(y+cx)/K)\geq n,
@@ -62,11 +62,10 @@ For example, $\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$.
     We first prove $\implies$. 
     Let us 
     assume that $E=K(x)$ for some $x$. We claim that the map
-    \[
-    \Psi\colon \{F:K\subseteq F\subseteq E\}\to\{\text{monic divisors of $f(x,K)$}\},
-    \quad
-    F\mapsto f(x,F),
-    \]
+    \begin{align*}
+    \Psi\colon \{F:K\subseteq F\subseteq E\}&\to\{g\in K[X]:g\text{ is a monic divisor of $f(x,K)$}\},\\
+    F&\mapsto f(x,F),
+    \end{align*}
     is injective. 
     Take $F_0$ such that $K\subseteq F_0\subseteq F\subseteq E$ and  
     $f(x,F)=f(x,F_0)$. Then  
@@ -231,7 +230,7 @@ Some easy facts.
 For the previous exercise, 
 note that if $E/K$ is a finite extension, then  
 \[
-|G(E/K)|\leq\gamma(E/K)\leq [E:K].
+|\Gal(E/K)|\leq\gamma(E/K)\leq [E:K].
 \]
 The first inequality
 is equality if and only if $E/K$ is normal. The second
@@ -254,7 +253,7 @@ inequality is equality if and only if $E/K$ is separable.
 Before proving the theorem, we need a lemma.
 
 \begin{lemma}
-    Let $E/K$ be a separable extension such that $\deg(x,K)\leq m$
+    Let $E/K$ be a separable extension such that $\deg f(x,K)\leq m$
     for all $x\in E$. Then $E/K$ is finite and $[E:K]\leq m$. 
 \end{lemma}
 
@@ -266,8 +265,8 @@ Before proving the theorem, we need a lemma.
    K(z)\subseteq K(x,z)=K(y).
    \]
    Since 
-   $\deg(z,K)\leq\deg(y,K)$, 
-   $\deg(z,K)=\deg(y,K)$. Hence 
+   $\deg f(z,K)\leq\deg f(y,K)$, 
+   $\deg f(z,K)=\deg f(y,K)$. Hence 
    $K(y)=K(z)$. In particular, $x\in K(z)$ and
    therefore $E=K(z)$. 
 \end{proof}
@@ -279,15 +278,14 @@ Now we are ready to prove Artin's theorem:
     \[
     f_x=\prod_{y\in O_G(x)}(X-y).
     \]
-    Since $f_x\in K[X]$, it follows
-    that the extension $E/K$ is normal and separable (as it is a decomposition
+    Since $f_x\in K[X]$, the extension $E/K$ is normal and separable (as it is a decomposition
     field of a family of separable polynomials), so $E/K$ is a Galois extension. Moreover, 
     \[
-    \deg(x,K)\leq \deg f_x=|O_G(x)|\leq |G|.
+    \deg f(x,K)\leq \deg f_x=|O_G(x)|\leq |G|.
     \]
     By the previous lemma, $E/K$ is finite and $[E:K]\leq |G|$. This
     implies that
-    $|G(E/K)|=[E:K]\leq |G|$ and hence $|G(E/K)|=|G|$. 
+    $|\Gal(E/K)|=[E:K]\leq |G|$ and hence $|\Gal(E/K)|=|G|$. 
 \end{proof}
 
 \begin{example}

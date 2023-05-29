@@ -37,13 +37,34 @@ with finite field extensions.
 \end{exercise}
 
 Let $K$ be a field and $K\subseteq 
-F\subseteq E$ and $K\subseteq L\subseteq E$ be fields. The \textbf{composite}  
-of $F$ and $L$ is defined as 
+F\subseteq L$ and $K\subseteq F\subseteq L$ be fields. The \textbf{composite}  
+of $E$ and $F$ is defined as 
 \[
-FL=K(F\cup L)=F(L)=L(F)
+EF=K(E\cup F)=F(E)=E(F)
 \]
 and it is equal to the 
-smallest field that contains $F$ and $L$. 
+smallest field that contains $E$ and $F$. Here is the
+picture:
+\[\begin{tikzcd}
+	& E \\
+	& EF \\
+	E && F \\
+	& K
+	\arrow[no head, from=1-2, to=2-2]
+	\arrow[no head, from=2-2, to=3-1]
+	\arrow[no head, from=2-2, to=3-3]
+	\arrow[no head, from=3-1, to=4-2]
+	\arrow[no head, from=4-2, to=3-3]
+\end{tikzcd}\]
+
+
+\begin{exercise}
+    Let $E$ and $F$ be fields. 
+    Prove that 
+    \[
+    EF=\left\{\sum_{i=1}^me_if_i:m\in\Z_{>0},e_i\in E,f_i\in F\text{ for all $i\in\{1,\dots,m\}$}\right\}.
+    \]
+\end{exercise}
 
 \begin{exercise}
     If $F=\Q(\sqrt{2})$ and $L=\Q(\sqrt{3})$, then $FL=\Q(\sqrt{2},\sqrt{3})$. 
@@ -147,7 +168,7 @@ The solution to the previous exercise shows, in particular, that $[EF:E]\leq [F:
 \end{lemma}
 
 \begin{proof}
-    Note that $\sigma$ is bijective. 
+    Note that $\sigma\colon K\to\sigma(K)$ is bijective. 
     Let $A$ be a set in bijection with $L\setminus\sigma(K)$ and disjoint with $K$. 
 	Let $E=K\cup A$. If $\theta\colon A\to L\setminus\sigma(K)$ is bijective, then 
 	let 
