@@ -43,8 +43,23 @@ $|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_r$.
 \begin{proof}
     Let $K=\Z/p$. It is enough to show that $F_n/F_m$ is cyclic if $m$ divides $n$. 
     
-    We first prove that $F_n/K$ is cyclic. Let $\sigma\in\Gal(F_n/K)$ be given by $\sigma(x)=x^p$. 
-    Note that $|\Gal(F_n/K)|=[F_n:K]=n$. Since 
+    We first prove that $F_n/K$ is cyclic. 
+    Let 
+    \[
+    \sigma\colon F_n\to F_n,\quad 
+    x\mapsto x^p.
+    \]
+    Then 
+    $\sigma\in\Gal(F_n/K)$ (it is bijective because all field homomorphisms 
+    are injective and $F_n$ is finite). 
+
+    Note that 
+    $F_n/K$ is a Galois extension, as $F_n$ is the splitting
+    field over $K$ 
+    of the separable polynomial $X^{p^n}-X\in K[X]$. 
+    Thus $|\Gal(F_n/K)|=[F_n:K]=n$. 
+    
+    We claim that $\sigma$ generated $\Gal(F_n/K)$. Since 
     $\sigma^i(x)=x^{p^i}$ for all $i\geq 0$, in particular, 
     $\sigma^n(x)=x^{p^n}=x$. Thus $\sigma^n=\id$ and hence $|\sigma|$ divides $n$. Let 
     $s=|\sigma|$. We know that $F_n^{\times}=F_n\setminus\{0\}$ is
@@ -110,7 +125,7 @@ of order $\gcd(n,|K^{\times}|)$.
 \begin{example}
     If $C$ is algebraically closed of characteristic coprime with $n$, 
     then $G_n(C)$ is cyclic of order $n$, as $X^n-1$ 
-    has all his roots in $C$ and does not contain multiple roots. 
+    has all its roots in $C$ and does not contain multiple roots. 
 \end{example}
 
 Let $K$ be an algebraically closed field and $n$ be
@@ -227,7 +242,8 @@ If $p$ is a prime number, then $\Phi_p=X^{p-1}+\cdots+X+1$.
     $\Phi_5$ is irreducible over $\Z/2$. First note that
     $\Phi_5=X^{4}+\cdots+X+1$ does not have roots in $\Z/2$. If 
     $\Phi_5$ is reducible, then, since
-    $X^2+X+1$ is the unique monic irreducible polynomial 
+    $X^2+X+1$ is the unique degree-two 
+    monic irreducible polynomial 
     over $\Z/2$, it follows that
     \[
     \Phi_5=(X^2+X+1)(X^2+X+1)=(X^2+X+1)^2=X^4+X^2+1,
@@ -240,7 +256,7 @@ Prove that
 $\Phi_{12}=X^4-X^2+1$ is not irreducible over $\Z/5$. 
 \end{exercise}
 
-\topic{Hilbert's theorem}
+\topic{Hilbert's theorem 90}
 
 Let $G$ be a group and $A$ be a (left) $G$-module. This means that $A$ is an abelian
 group and there exists a map
@@ -304,7 +320,8 @@ for some $c\in E^\times$?
     \]
     
     We now prove 2). By Dedekind's theorem, $\sum_{\tau\in G}\tau\ne0$. Since
-    it is a linear form in $E$, it is surjective. In particular, there exists 
+    it is a non-zero 
+    linear form in $E$, it is surjective. In particular, there exists 
     $a\in E$ such that $\sum_{\tau\in G}\tau(a)=1$. Let $c=-\sum_{\tau\in G}x_\tau\tau(a)$. 
     If $\sigma\in G$, then 
     \begin{align*}
@@ -318,8 +335,8 @@ for some $c\in E^\times$?
 
 The following result is known as Hilbert's 90 theorem. 
 
-\begin{theorem}[Hilbert]
-\index{Hilbert's 90 theorem}
+\begin{theorem}[Hilbert's theorem 90]
+\index{Hilbert's theorem 90}
     Let $E/K$ be a cyclic extension of degree $n$ with Galois group $G=\Gal(E/K)=\langle\sigma\rangle$. 
     \begin{enumerate}
         \item Let $x\in E^{\times}$ be such that $\norm_{E/K}(x)=1$, 
@@ -420,7 +437,7 @@ Let $E/K$ be finite and cyclic with $\Gal(E/K)=\langle\sigma\rangle$.
 	\arrow["\rho", from=1-1, to=1-2]
 	\arrow["{\norm_{E/K}}", from=1-2, to=1-3]
     \end{tikzcd}\]
-    is exact by Hilbert's theorem. 
+    is exact by Hilbert's theorem 90. 
 \end{proof}
 
 % 107/136

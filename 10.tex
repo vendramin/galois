@@ -1,0 +1,816 @@
+\chapter{}
+
+\begin{proposition}
+    Let $n\geq2$ and $K$ be a field containing a primitive $n$-root of one. If 
+    $a\in K^{\times}$ and 
+    $E/K$ is a decomposition field of $f=X^n-a$, then $E/K$ is cyclic
+    of degree $d$, where $d$ divides $n$. Moreover, 
+    \[
+    d=\min\{k:a^k\in K^n\},
+    \]
+    where $K^n=\{x\in K:x=y^n\text{ for some $y\in K$}\}$. 
+    Conversely, 
+    if $E/K$ is cyclic of degree $n$, then $E/K$ is a decomposition
+    field of an irreducible polynomial 
+    of the form $X^n-a$ for some $a\in K^{\times}$. 
+\end{proposition}
+
+\begin{proof}
+    A decomposition field of $f$ over $K$ is
+    of the form $K(\alpha)$, where $\alpha^n=a$. Thus 
+    $K(\alpha)/K$ is a Galois extension. If $\sigma\in\Gal(K(\alpha)/K)$, 
+    then $\sigma(\alpha)$ is a root of $f$, so 
+    $\sigma(\alpha)=\omega_\sigma\alpha$, where
+    $\omega_\sigma\in G_n(K)$. This means that 
+    there exists an injective map
+    \[
+    \lambda\colon\Gal(K(\alpha)/K)\to G_n(K),
+    \quad
+    \sigma\mapsto\omega_{\sigma}.
+    \]
+    Moreover, $\lambda$ is a group homomorphism, as 
+    \[
+    \sigma\tau(\alpha)=\sigma(\tau(\alpha))=\sigma(\omega_{\tau}\alpha)=\omega_\tau\sigma(\alpha)=\omega_{\tau}\omega_{\sigma}\alpha.
+    \]
+    Therefore $\Gal(K(\alpha)/K)$ is isomorphic to a subgroup
+    of $G_n(K)$. In particular, $\Gal(K(\alpha)/K)$ is cyclic
+    and $|\Gal(K(\alpha)/K)|$ divides $n$.
+    
+    
+    Let $d=|\Gal(K(\alpha)/K)|$. Since $a=\alpha^n$, 
+    \[
+    \norm_{K(\alpha)/K}(\alpha)^n=\norm_{K(\alpha)/K}(a)=a^d.
+    \]
+    Thus $a^d\in K^n$, as $\norm(\alpha)\in K$. If $a^k\in K^n$, 
+    say $a^k=c^n$ for some $c\in K$, then 
+    \[
+    c^n=a^k=(\alpha^n)^k=(\alpha^k)^n
+    \implies 
+    \alpha^k=c\omega\in K
+    \]
+    for some $\omega\in G_n(K)$. Thus $\alpha$ is a root of $X^k-\alpha^k\in K[X]$
+    and hence $k\geq d$. 
+    
+    Note that $f(\alpha,K)=X^d-\alpha^d$. 
+    
+    Let $E/K$ be cyclic of degree $n$. Assume that  
+    $\Gal(E/K)=\langle\sigma\rangle$.
+    If $\omega$ is a primitive
+    $n$-root of one, 
+    \[
+    \norm_{E/K}(\omega)=\omega^n=1.
+    \]
+    By Hilbert's theorem 90, 
+    there exists $b\in E^{\times}$ such that 
+    $\omega=\sigma(b)/b$. Thus
+    $\sigma(b)=\omega b$ and hence 
+    $\sigma^i(b)=\omega^i b$ for all $i\geq0$. Since 
+    $|\{b,\sigma(b),\dots,\sigma^{n-1}(b)\}|=n$, 
+    it follows that $E=K(b)$. Moreover, 
+    \[
+    \sigma(b^n)=\sigma(b)^n=(\omega b)^n=b^n
+    \]
+    and hence $b^n\in K$. This means that $E/K$ is a decomposition
+    field of $X^n-b^n$. Note that $X^n-b^n$ is irreducible, as 
+    $[E:K]=[K(b):K]=n$. 
+\end{proof}
+
+\begin{proposition}
+    Let $K$ be a field of characteristic $p>0$. 
+    \begin{enumerate}
+        \item Let $a\in K$ and $f=X^p-X-a$. Then 
+        $f$ is irreducible over $K$ or all the roots of 
+        $f$ belong to $K$. 
+        In the first case, if $b$ is a root of $f$, then 
+        $K(b)/K$ is a cyclic extension of degree $p$. 
+        \item Every cyclic extension of degree $p$ 
+        is a decomposition field of an irreducible
+        polynomial of the form $X^p-X-a$. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    We first prove 1). 
+    Let $K_0$ be the prime field of $K$. Note that $K_0\simeq\Z/p$. 
+    Let $b$ be a root of $f$ and let $x\in K_0$. 
+    Then
+    \[
+    f(b+x)=(b+x)^p-(b+x)-a
+    =(b^p-b-a)+(x^p-x)=0
+    \]
+    and thus $\{b+x:x\in K_0\}$ is the set of roots of $f$. Note that 
+    $f'=-1$, so $f$ has no multiple roots. 
+    
+    We claim that if $b\not\in K$, then $f$ is irreducible. If 
+    $f$ is not irreducible, then 
+    $f=gh$ for some $g,h\in K[X]$ such that $0<\deg g<p$. There exists
+    a subset $S$ of $K_0$ such that 
+    $g=\prod_{x\in S}(X-(b+x))$ and hence
+    \[
+    |S|b+\sum_{x\in S}x=\sum_{x\in S}(b+x)\in K.
+    \]
+    This implies that $|S|b\in K$ and hence, since 
+    $|S|\in K^{\times}$, it follows that 
+    $b\in K$.
+    
+    Since $K(b)/K$ is a decomposition field of a separable polynomial, 
+    $K(b)/K$ is a Galois extension. Moreover, 
+    $|\Gal(K(b)/K)|=[K(b):K]=p$ and hence 
+    $\Gal(K(b)/K)$ is cyclic. 
+    
+    We now prove 2). Let $E/K$ be cyclic of degree $p$. Assume
+    that $\Gal(E/K)=\langle\sigma\rangle$. Since
+    $\trace_{E/K}(1)=p=0$, Hilbert's theorem 
+    implies that there exists $b\in E$ such that 
+    $\sigma(b)=b+1$. In particular, $b\not\in K$
+    and thus $E=K(b)$. Moreover, since 
+    \[
+    \sigma(b^p-b)=\sigma(b)^p-\sigma(b)=(b+1)^p-(b+1)=b^p-b, 
+    \]
+    it follows that $b^p-b\in K$. Thus 
+    $f(b,K)=X^p-X-(b^p-b)\in K[X]$. 
+\end{proof}
+
+\topic{Symmetric polynomials}
+
+Let $K$ be a field and $\{t_1,\dots,t_n\}$ be a commuting set of  independent variables.  
+Let $E=K(t_1,\dots,t_n)$ and $f=\prod_{i=1}^n(X-t_i)\in E[X]$. 
+Then
+\[
+f=X^n+\sum_{i=1}^n (-1)^i s_i X^{n-i},
+\]
+where 
+\begin{align*}
+    s_1 &= t_1+t_2+\cdots+t_n,\\
+    s_2 &= \sum_{1\leq i<j\leq n}t_it_j,\\
+    &\vdots\\
+    s_n &= t_1t_2\cdots t_n.
+\end{align*}
+For example, 
+\[
+(X-t_1)(X-t_2)(X-t_3)=X^3-(t_1+t_2+t_3)X^2+(t_1t_2+t_2t_3+t_1t_3)X-t_1t_2t_3.
+\]
+
+The polynomials $s_1,s_2,\dots,s_n$ are known as the 
+\textbf{elementary symmetric polynomials} in the variables $t_1,\dots,t_n$. Note
+that $\deg s_i=i$. 
+
+Let $\sigma\in\Sym_n$ and 
+\[
+\alpha_{\sigma}\colon K[t_1,\dots,t_n]\to K[t_1,\dots,t_n],
+\quad
+t_i\mapsto t_{\sigma(i)}\quad\text{for all $i$}.
+\]
+Then $\alpha_{\sigma}$ is a bijective homomorphism of $K$-algebras. In fact, 
+$\alpha_{\sigma}^{-1}=\alpha_{\sigma^{-1}}$. Note that
+\[
+\alpha_{\sigma}(h(t_1,\dots,t_n))=h(t_{\sigma(1)},\dots,t_{\sigma(n)}).
+\]
+Since $\alpha_{\sigma}$ is injective, 
+it induces an element $\widehat{\sigma}\in\Gal(E/K)$ given by
+\[
+    \widehat{\sigma}\left(\frac{h}{g}\right)
+    =\frac{\alpha_{\sigma}(h)}{\alpha_{\sigma}(h)}.
+\]
+The map $\Sym_n\to\Gal(E/K)$, $\sigma\mapsto\widehat{\sigma}$, 
+is an injective group homomorphism. Thus
+$\{\widehat{\sigma}:\sigma\in\Sym_n\}\simeq\Sym_n$. 
+
+\begin{definition}
+    Let $g\in K[t_1,\dots,t_n]$. Then $g$ is \textbf{symmetric} 
+    if $\widehat{\sigma}(g)=g$ for all $\sigma\in\Sym_n$. 
+\end{definition}
+    
+We write $P$ to denote the set of symmetric polynomials in $K[t_1,\dots,t_n]$. 
+Clearly,
+$P$ is a subalgebra of $K[t_1,\dots,t_n]$. The following statements hold:
+\begin{enumerate}
+    \item $K\subseteq P$.
+    \item $\sum_{i=1}^n t_i^r\in P$ for all $r\geq1$.
+    \item $s_i\in P$ for all $i$.
+    \item $K(P)\subseteq\prescript{G}{}{E}$, where $G=\{\widehat{\sigma}:\sigma\in\Sym_n\}$.  
+\end{enumerate}
+
+Let $F=K(s_1,s_2,\dots,s_n)$. Then $E/F$ is a Galois extension, as 
+it is a decomposition field of $f$. 
+
+\begin{proposition}
+    $[E:F]\leq n!$.
+\end{proposition}
+
+\begin{proof}
+    We proceed by induction on $n$. The case $n=1$ is clear, as $E=F$. Assume
+    that $n>1$. Let $u_1,\dots,u_{n-1}$ be the elementary symmetric
+    polynomials in $t_1,\dots,t_{n-1}$. Then
+    \[
+    s_i=u_i+t_nu_{i-1}
+    \]
+    for all $i\in\{1,\dots,n\}$, where $u_0=1$ and $u_n=0$. Note that
+    $u_1=s_1-t_n$ and $u_i=s_i-t_nu_{i-1}$ for all $i$. Since
+    $K(s_1,\dots,s_n,t_n)=K(u_1,\dots,u_{n-1},t_n)$, 
+    \begin{align*}
+    &F(t_n)=K(u_1,\dots,u_{n-1},t_n)=K(t_n)(u_1,\dots,u_{n-1})
+    \shortintertext{and}
+    &[E:F]=[E:F(t_n)][F(t_n):F]\leq n[E:F(t_n)].
+    \end{align*}
+    
+    Note that $E=K(t_1,\dots,t_n)=K(t_n)(t_1,\dots,t_{n-1})$. By the
+    inductive hypothesis, $[E:F(t_n)]\leq (n-1)!$ and hence 
+    $[E:F]\leq n!$, as desired. 
+\end{proof}
+
+\begin{theorem}
+    $\prescript{G}{}{E}=F$.
+\end{theorem}
+
+\begin{proof}
+    By Artin's theorem,
+    \[
+    \left[\prescript{G}{}{E}:F\right]=\frac{[E:F]}{\left[E:\prescript{G}{}{E}\right]}
+    \leq\frac{n!}{\left[E:\prescript{G}{}{E}\right]}=1
+    \]
+    and hence $\prescript{G}{}{E}=F$.
+\end{proof}
+
+\begin{exercise}
+    Prove that $\Gal(E/F)\simeq\Sym_n$.
+\end{exercise}
+
+\begin{exercise}
+    Prove that $\{s_1,\dots,s_n\}$ is algebraically independent over $K$. 
+\end{exercise}
+
+\begin{exercise}
+    Prove that every symmetric polynomial in $t_1,\dots,t_n$ can be written as a rational
+    fraction in $s_1,\dots,s_n$. 
+\end{exercise}
+
+\topic{Solvable groups}
+
+\index{Commutator subgroup}
+Let $G$ be a group. If $x,y\in G$ we define
+the \textbf{commutator} of $x$ and $y$ as
+\[
+[x,y]=xyx^{-1}y^{-1}.
+\]
+Note that $[x,y]=1$ if and only if $xy=yx$. 
+Moreover, $[x,y]^{-1}=[y,x]$. 
+The
+\textbf{commutator (or derived) subgroup} $[G,G]$ of $G$ is defined as
+the subgroup of $G$ generated by all commutators, i.e. 
+\[
+[G,G]=\langle [x,y]:x,y\in G\rangle.
+\]
+This means that every element of $[G,G]$ is a finite product of commutators, 
+so every element of $[G,G]$ is of the form $\prod_{i=1}^m [x_i,y_i]$. 
+In general, the commutator subgroup is not equal to the set of commutators!
+
+\begin{example}
+This example is taken from the book \cite{MR0075938} of Carmichael. 
+Let $G$ be the subgroup of $\Sym_{16}$ generated by the permutations
+\begin{align*}
+&a = \cycle{1,3}\cycle{2,4},&&
+b = \cycle{5,7}\cycle{6,8},\\
+&c = \cycle{9,11}\cycle{10,12},&&
+d = \cycle{13,15}\cycle{14,16},\\
+&e = \cycle{1,3}\cycle{5,7}\cycle{9,11},&&
+f = \cycle{1,2}\cycle{3,4}\cycle{13,15},\\
+&g = \cycle{5,6}\cycle{7,8}\cycle{13,14}\cycle{15,16},&&
+h =\cycle{9,10}\cycle{11,12}.
+\end{align*}
+Then $[G,G]$ has order $16$. However, 
+the set $\{[x,y]:x,y\in G\}$ of commutators has 15 elements:
+\begin{lstlisting}
+julia> a = @perm (1,3)(2,4);
+
+julia> b = @perm (5,7)(6,8);
+
+julia> c = @perm (9,11)(10,12);
+
+julia> d = @perm (13,15)(14,16);
+
+julia> e = @perm (1,3)(5,7)(9,11);
+
+julia> f = @perm (1,2)(3,4)(13,15);
+
+julia> g = @perm (5,6)(7,8)(13,14)(15,16);
+
+julia> h = @perm (9,10)(11,12);
+   
+julia> S16 = symmetric_group(16);
+
+julia> G = sub(S16, [a,b,c,d,e,f,g,h])[1];
+
+julia> commutators = G -> Set(comm(x,y) for x in G, y in G);
+
+julia> length(commutators(G))
+15
+
+julia> order(derived_subgroup(G)[1])
+16
+\end{lstlisting}
+\end{example}
+
+%julia> c*d in derived_subgroup(G)[1]
+%true
+%julia> c*d in commutators(G)
+%false
+
+\begin{exercise}
+    Let $G$ be a group. 
+    Prove the following facts:
+    \begin{enumerate}
+        \item $G$ is abelian if and only if $[G,G]=\{1\}$.
+        \item $[G,G]$ is a normal subgroup of $G$. 
+        \item $G/[G,G]$ is abelian. 
+        \item If $H$ is a subgroup of $G$ and $[G,G]\subseteq H$, then 
+        $H$ is normal in $G$.
+        \item If $H$ is a normal subgroup of $G$, then 
+        $G/H$ is abelian if and only if $[G,G]\subseteq H$. 
+    \end{enumerate}
+\end{exercise}
+
+\begin{definition}
+\index{Derived series}
+    Let $G$ be a group. The \textbf{derived series} of $G$ 
+    is defined as $G^{(0)}=G$ and
+    $G^{(k+1)}=[G^{(k)},G^{(k)}]$ for $k\geq 0$. 
+\end{definition}
+
+\begin{exercise}
+    Prove that $G^{(k)}$ is normal in $G$ for all $k$. 
+\end{exercise}
+
+Why derived series? We cannot explain this here, but let us use the following
+notation. 
+We write $G'=[G,G]$, $G''=[G',G']$... 
+Note that 
+\[
+G\supseteq G'\supseteq G''\supseteq\cdots
+\]
+
+%\begin{exercise}
+%    $[\Sym_3,\Sym_3]=\Alt_3$. 
+%\end{exercise}
+
+\begin{exercise}
+    Let $n\geq3$. Prove that 
+    $[\Sym_n,\Sym_n]=\Alt_n$. 
+\end{exercise}
+
+\begin{example}
+    Let $K=\{\id,(12)(34),(13)(24),(14)(23)\}$. Then 
+    $K$ is a normal subgroup of $\Alt_4$. 
+    One proves that $[\Alt_4,\Alt_4]=K$. 
+\end{example}
+
+\index{Group!simple}
+A group $G$ is said to be \textbf{simple} 
+if there are no proper non-trivial subgroups of $G$. If $p$
+is a prime number, then the group 
+$\Z/p$ of integers modulo $p$ 
+is a simple group. We will prove
+later that $\Alt_n$ is simple if 
+$n\geq5$. 
+
+\begin{example}
+    Let $n\geq5$. Since $\Alt_n$ is a non-abelian simple group, 
+    $[\Alt_n,\Alt_n]=\Alt_n$. 
+\end{example}
+
+Let us show that $\Alt_5$ is a non-abelian simple group. Hence
+it is not solvable: 
+\begin{lstlisting}
+julia> A5 = alternating_group(5)
+Alt( [ 1 .. 5 ] )
+
+julia> is_abelian(A5)
+false
+
+julia> is_simple(A5)
+true
+
+julia> is_solvable(A5)
+false
+\end{lstlisting}
+
+\begin{definition}
+\index{Group!solvable}
+    A group $G$ is \textbf{solvable} if and only if
+    $G^{(m)}=\{1\}$ for some $m$. 
+\end{definition}
+
+Every abelian group is solvable. 
+
+\begin{exercise}
+    Prove that $\Sym_n$ is solvable if and only if $n\leq4$. 
+\end{exercise}
+
+Let us compute (with the computer software Oscar) 
+the derived series of the symmetric group
+$\Sym_4$. The calculation shows that $\Sym_4$ is solvable: 
+\begin{lstlisting}
+julia> G = symmetric_group(4);
+
+julia> derived_series(G)
+4-element Vector{PermGroup}:
+ Sym( [ 1 .. 4 ] )
+ Alt( [ 1 .. 4 ] )
+ Group([ (1,4)(2,3), (1,2)(3,4) ])
+ Group(())
+ 
+julia> [order(x) for x in derived_series(G)]
+4-element Vector{fmpz}:
+ 24
+ 12
+ 4
+ 1
+ 
+julia> is_solvable(G)
+true
+\end{lstlisting}
+
+\begin{proposition}
+\label{pro:solvable}
+    Let $G$ be a group and $H$ be a subgroup of $G$. 
+    The following statements hold:
+    \begin{enumerate}
+        \item If $G$ is solvable, then $H$ is solvable.
+        \item If $H$ is normal in $G$ and $G$ is solvable, then $G/H$ is solvable. 
+        \item If $H$ is normal in $G$ and $H$ and $G/H$ are solvable, then $G$ is solvable. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    The first statement follows from the fact that
+    $H^{(i)}\subseteq G^{(i)}$ holds for all $i$. 
+ 
+    Assume now that $H$ is normal in $G$. 
+    Let $Q=G/H$ and $\pi\colon G\to Q$ be the canonical map.
+    By induction one proves that $\pi(G^{(i)})=Q^{(i)}$ for all $i\geq0$.
+    The case where $i=0$ is trivial, as $\pi$ is surjective. 
+    If the result holds for some $i\geq0$, then
+    \[
+            \pi(G^{(i+1)})=\pi([G^{(i)},G^{(i)}])=[\pi(G^{(i)}),\pi(G^{(i)})]=[Q^{(i)},Q^{(i)}]=Q^{(i+1)}.
+    \]
+
+    We now prove 2). Since $G$ is solvable, $G^{(n)}=\{1\}$ for some $n$. 
+    Thus $Q$ is solvable, as $Q^{n}=\pi(G^{(n)})=\pi(\{1\})=\{1\}$. 
+
+    We finally prove 3). 
+    Since $Q$ is solvable, $Q^{(n)}=\{1\}$ for some $n$.
+    Moreover, since $\pi(G^{(n)})=Q^{(n)}=\{1\}$, it follows that
+    $G^{(n)}\subseteq H$. Since $H$
+    is solvable, 
+    \[
+        G^{(n+m)}\subseteq (G^{(n)})^{(m)}\subseteq H^{(m)}=\{1\}
+    \]
+    for some $m$. Thus $G$ is solvable.
+\end{proof}
+
+An application:
+
+\begin{proposition}
+    Let $G$ be a finite $p$-group. Then $G$ is solvable. 
+\end{proposition}
+
+\begin{proof}
+    Assume the result is not true. Let $G$ be a finite
+    $p$-group of minimal order that is not solvable. Since 
+    $G$ is a $p$-group, $Z(G)\ne\{1\}$. Since $|G|$ is minimal, 
+    $G/Z(G)$ is a solvable $p$-group. Since $Z(G)$ is abelian, 
+    $Z(G)$ is solvable. Now $G$ is solvable 
+    by Proposition \ref{pro:solvable}.
+\end{proof}
+
+\index{Subgroup!maximal normal}
+Let $G$ be a group. A subgroup $N$ of $G$ is said to be \textbf{maximal normal} 
+if $N$ is a normal subgroup of $G$ and there is no other normal subgroup of $G$ 
+containing $N$. 
+
+\begin{exercise}
+    If a subgroup $N$ of $G$ is maximal (for the inclusion) and
+    normal, then it is maximal normal. Show that the converse does not hold.
+\end{exercise}
+
+% $G=\Alt_5$. Since $G$ is simple, the trivial subgroup is the only maximal normal subgroup. However, 
+% the trivial subgroup is not a maximal subgroup. 
+
+The following result is a direct consequence of the correspondence theorem:
+
+\begin{exercise}
+\label{xca:G/N_simple}
+    Let $G$ be a group and $N$ be a normal subgroup of $G$. Prove that 
+    $N$ is maximal normal if and only if $G/N$ is simple. 
+\end{exercise}
+
+Maximal normal subgroups always exist in finite groups (they could be trivial). 
+We can compute maximal normal subgroups as follows:
+\begin{lstlisting}
+julia> maximal_normal_subgroups(symmetric_group(3))
+1-element Vector{PermGroup}:
+ Group([ (1,2,3) ])
+
+julia> maximal_normal_subgroups(quaternion_group(8))
+3-element Vector{PcGroup}:
+ Group([ y2, x ])
+ Group([ y2, y ])
+ Group([ y2, x*y ])
+
+julia> maximal_normal_subgroups(alternating_group(4))
+1-element Vector{PermGroup}:
+ Group([ (1,4)(2,3), (1,2)(3,4) ])    
+\end{lstlisting}
+
+% It follows from the correspondence theorem. 
+
+\begin{exercise}
+\label{xca:solvable+simple}
+    Let $G$ be a 
+    finite solvable group. Prove that if $G$ is simple, then 
+    $G$ is cyclic of prime order. 
+\end{exercise}
+
+The following result will be important later:
+
+\begin{proposition}
+    Every finite solvable group contains a normal subgroup of prime index. 
+\end{proposition}
+
+\begin{proof}
+    Let $G$ be a finite solvable group. 
+    Let $M$ be a maximal normal subgroup of $G$ (there is at least one, as $G$ is finite). 
+    Since $G/M$ is simple and solvable (see Proposition \ref{pro:solvable}), 
+    $G/M$ is cylic of prime order by Exercise \ref{xca:solvable+simple}.  
+\end{proof}
+
+We finish this discussion with two important theorems (without proof) 
+about finite solvable groups. 
+
+\begin{theorem}[Burnside]
+\index{Burnside's theorem}
+    Let $p$ and $q$ be prime numbers. If $G$ is a group
+    of order $p^aq^b$, then $G$ is solvable. 
+\end{theorem}
+
+The proof appears in courses on the 
+representation theory of finite groups. 
+
+\begin{theorem}[Feit--Thompson]
+\index{Feit--Thompson theorem}
+    Every finite group of odd order is solvable.
+\end{theorem}
+
+The proof of the theorem is extremely hard. It occupies a full volume of
+\emph{Pacific Journal of Mathematics}, see~\cite{MR166261}.
+
+\topic{Simplicity of the alternating simple group}
+
+
+\begin{exercise}
+\label{xca:diagonal}
+    Let $G$ be a group. 
+    Prove that $G$ is simple if and only if 
+    $\{(g,g):g\in G\}$ 
+    is a maximal subgroup of $G\times G$. 
+\end{exercise}
+
+
+We will present a family of non-abelian simple groups. 
+
+\begin{exercise}
+    Prove that $\Alt_n$ is generated by 3-cycles. 
+\end{exercise}
+
+\begin{exercise}
+    Compute the commutator subgroup of $\Alt_n$ for
+    $n\geq2$. 
+\end{exercise}
+
+Note that $\Alt_2$ and $\Alt_3$ are abelian. 
+For $\Alt_4$, one proves that 
+\[
+[\Alt_4,\Alt_4]=\{\id,(12)(34),(13)(24),(14)(23)\}.
+\]
+Finally, $[\Alt_n,\Alt_n]=\Alt_n$ for $n\geq5$. 
+
+Let us compute some commutator subgroups (and the inclusion group homomorphism)  
+with the computer:
+\begin{lstlisting}
+julia> derived_subgroup(symmetric_group(3))
+(Alt( [ 1 .. 3 ] ), Group homomorphism from 
+Alt( [ 1 .. 3 ] )
+to
+Sym( [ 1 .. 3 ] ))    
+\end{lstlisting}
+
+\begin{exercise}
+    Let $n\geq3$. 
+    Prove that $[\Sym_n,\Sym_n]=\Alt_n$. 
+\end{exercise}
+
+Recall that every normal subgroup is a union of conjugacy classes. The group 
+$\Alt_5$ has conjugacy classes of sizes 1, 15, 20, 12 and 12. It follows that 
+the only possible normal subgroups of $\Alt_5$ are $\{\id\}$ and $\Alt_5$. 
+\begin{lstlisting}
+julia> A5 = alternating_group(5);
+
+julia> [length(c) for c in conjugacy_classes(A5)]
+5-element Vector{ZZRingElem}:
+ 1
+ 15
+ 20
+ 12
+ 12 
+\end{lstlisting}
+
+\begin{theorem}[Jordan]
+\index{Jordan's theorem}
+\label{thm:Jordan}
+    Let $n\geq5$. Then $\Alt_n$ is simple. 
+\end{theorem}
+
+Before proving the theorem, we need some preliminary results.
+
+Every permutation $\rho\in\Sym_n$ decomposes as a product of disjoint cycles, say
+\[
+\rho=(a_1\cdots a_r)(b_1\cdots b_s)\cdots (c_1\cdots c_t)
+\]
+where, by convention, we do not write cycles of length one. 
+The cyclic structure of $\rho$ is, by definition, the ordered 
+sequence of integers $r,s,\dots t$, where, again by convention,  
+we omit fixed points. For example, the cyclic structure of 
+the transposition $(ab)$ is 2, 
+of $(abc)(d)$ is 3 and of $(123)(45)(789a)(bcd)(d)$ is 2,3,3,4. 
+
+\begin{lemma}
+If $\rho_1$ and $\rho_2$ are permutations in $\Sym_n$ with the same
+cyclic structure, then 
+$\rho_2=\sigma\rho_1\sigma^{-1}$ for some
+$\sigma\in\Sym_n$. 
+\end{lemma}
+
+\begin{proof}
+Assume that 
+\begin{align*}
+\rho_1&=(a_1\cdots a_r)(b_1\cdots b_s)\cdots (c_1\cdots c_t),\\
+\rho_2&=(x_1\cdots x_r)(y_1\cdots y_s)\cdots (z_1\cdots z_t).
+\end{align*}
+Let  
+\begin{align*}
+\Fix(\rho_1) &= \{x\in\{1,\dots,n\}:\rho_1(x)=x\}=\{k_1,\dots,k_m\},&&
+\Fix(\rho_2)=\{l_1,\dots,l_m\}	
+\end{align*}
+be the fixed points of the permutations $\rho_1$ and $\rho_2$,
+respectively. Then 
+\[
+\sigma(x)=\begin{cases}
+x_j & \text{if $x=a_j$ for some $j$},\\
+y_j & \text{if $x=b_j$ for some $j$},\\
+\;\vdots\\
+z_j & \text{if $x=c_j$ for some $j$},\\
+l_j & \text{if $x=k_j$ for some $j$},	
+\end{cases}
+\]
+is such that $\sigma\rho_1\sigma^{-1}=\rho_2$. 
+\end{proof}
+
+What happens with the alternating group? 
+
+\begin{lemma}
+If $\rho_1,\rho_2\in\Sym_n$ are conjugate in $\Sym_n$ and  $|\Fix(\rho_1)|\geq2$, then 
+$\mu\rho_1\mu^{-1}=\rho_2$ for some $\mu\in\Alt_n$.  
+\end{lemma}
+
+\begin{proof}
+Assume that $\rho_2=\sigma\rho_1\sigma^{-1}$ for some $\sigma\in\Sym_n$. 
+There are $a,b\in\{1,\dots,n\}$ such that
+$\rho_1(a)=a$, $\rho_1(b)=b$ and $a\ne b$. Let 
+\[
+\mu=\begin{cases}
+\sigma & \text{if $\sigma\in\Alt_n$,}\\
+\sigma(ab) & \text{otherwise.}
+\end{cases}
+\]
+Then $\mu\in\Alt_n$ and $\mu\rho_1\mu^{-1}=\rho_2$, as 
+$(ab)$ commutes with $\rho_1$. 
+\end{proof}
+
+Let us discuss some examples.
+
+\begin{example}
+If $\rho_1=(23)(156)$ and $\rho_2=(45)(123)$, then 
+$\rho_2=\sigma\rho_1\sigma^{-1}$ for  
+\[
+\sigma=\binom{123456}{145623}.
+\]
+\end{example}
+
+\begin{example}
+The permutations $\rho_1=(123)$ and $\rho_2=(132)$ are conjugate 
+in $\Sym_3$, as  
+$(123)=\sigma(132)\sigma^{-1}$ if $\sigma=(23)$. However, $\rho_1$ and $\rho_2$ are not conjugate in $\Alt_3$. 
+\end{example}
+
+Now we are ready to prove the theorem. 
+
+\begin{proof}[Proof of Theorem~\ref{thm:Jordan}]
+Let $N\ne\{\id\}$ be a normal subgroup of $\Alt_n$. If $(abc)\in N$, then every 3-cycle belongs to $N$, because all 3-cycles 
+are conjugate in $\Sym_n$, and the previous lemma 
+states that 
+$(ijk)=\mu(abc)\mu^{-1}\in N$ for some
+$\mu\in\Alt_n$. Thus $N=\Alt_n$. 
+
+We claim that $N$ contains a 3-cycle. 
+Since $N\ne\{id\}$, there exists $\sigma\in N\setminus\{\id\}$. Let $m=|\sigma|$ and let $p$ be a prime number dividing $m$. 
+Then $\tau=\sigma^{m/p}$ has order $p$ and hence
+$\tau=\rho_1\cdots\rho_s$, where the $\rho_j$'s are disjoint 
+$p$-cycles. 
+
+If $p=2$, then $1=\sgn(\tau)=(-1)^s$. Thus $s$ is even. Write
+\[
+\tau=(ab)(cd)\rho_3\cdots\rho_s. 
+\]
+Since $\rho_3\cdots\rho_s$ commutes with $(abc)$ and $(acb)$, 
+\[
+\underbrace{(abc)\tau(abc)^{-1}\tau^{-1}}_{\in N}
+=(abc)(ab)(cd)(acb)(ab)(cd)=(ac)(bd).
+%(ac)(bd)\tau=(abc)\tau(abc)^{-1}\in N. 
+\]
+Hence $(ac)(bd)\in N$. Let 
+$e\in\{1,\dots,n\}\setminus\{a,b,c,d\}$. Then 
+\[
+(ae)(bd)=(aec)\underbrace{(ac)(bd)}_{\in N}(aec)^{-1}\in N
+\]
+and therefore  
+\[
+(aec)=(ac)(ae)=(ac)(bd)(ae)(bd)\in N.
+\]
+
+If $p=3$, without loss of generality, we may assume that $s\geq2$ (otherwise, $\tau$ would be a 3-cycle). Then
+$\tau=(abc)(def)\rho_3\cdots\rho_s$. Since $(bcd)$ commutes with
+$\rho_3\cdots\rho_s$ and $N$ is normal in $\Alt_n$, 
+\begin{align*}
+\underbrace{(bcd)\tau(bcd)^{-1}\tau^{-1}}_{\in N}=(bcd)(abc)(def)(bdc)(acb)(dfe)=(adbce)
+%&(adbce)=(bcd)\tau(bcd)^{-1}\tau^{-1}\in N
+%\shortintertext{and therefore}
+\end{align*}
+and therefore 
+\begin{align*}
+&(adc)=(adb)(adbce)(adb)^{-1}(adbce)^{-1}\in N.
+\end{align*}
+
+If $p>3$, then $\tau=(abcd\cdots z)\rho_2\cdots\rho_s$. In particular, $(abc)$ commutes with $\rho_2\cdots\rho_s$. Then 
+\[
+(abd)=(abc)\tau(abc)^{-1}\tau^{-1}\in N.\qedhere
+\]
+\end{proof}
+
+As an application, we compute the normal subgroups 
+of the symmetric group $\Sym_n$. 
+
+\begin{exercise}
+    Compute the list of normal subgroups of $\Sym_n$ for $n\geq2$. 
+\end{exercise}
+
+%The first cases
+%are easy: $\Sym_2$ is simple, 
+%the normal subgroups of $\Sym_3$ 
+%are $\{\id\}$, $\Alt_3$ and $\Sym_3$, and
+%the normal subgroups of $\Sym_4$ are
+%\[
+%\{\id\},\{\id,(12)(34),(13)(24),(14)(23)\},
+%\Alt_4, \Sym_4.
+%\]
+%
+%\begin{exercise}
+%Let $n\geq5$ and $N$ be a normal subgroup of $\Sym_n$. Then either 
+%$N=\{\id\}$, $N=\Alt_n$ or $N=\Sym_n$.     
+%\end{exercise}
+%
+%\begin{proposition}
+%\index{Subgrupos normales!de $\Sym_n$}
+%Sea $n\geq5$ y sea $N$ un subgrupo normal de $\Sym_n$. Entonces $N=\{\id\}$, $N=\Alt_n$ o bien $N=\Sym_n$. 
+%\end{proposition}
+%
+%\begin{proof}
+%Sea $N$ un subgrupo normal de $\Sym_n$. Como la restricción $\sgn|_N$ de la función signo a $N$ es un morfismo de grupos, 
+%\[
+%(N:\ker(\sgn|_N))=|\sgn(N)|\in\{1,2\}.
+%\] 
+%Si $(N:\ker(\sgn|_N)=1$, entonces $N\subseteq\Alt_n$ y entonces $N$ es normal en $\Alt_n$. 
+%Luego $N=\{\id\}$ o bien $N=\Alt_n$ pues $\Alt_n$ es un grupo simple si $n\geq5$. 
+%
+%Si $(N:\ker(\sgn|_N)=2$, entonces $N\cap\Alt_n=\ker(\sgn|_N)$ es normal en $\Alt_n$ y luego, por la simplicidad de $\Alt_n$ para $n\geq5$, $N\cap\Alt_n=\{\id\}$ o bien $N\cap\Alt_n=\Alt_n$. 
+%
+%En el primer caso, $|N|=2$ y entonces $N$ contiene una permutación impar que además tiene orden dos, digamos
+%$\tau=(ij)\tau_2\cdots\tau_s$, escrita como producto de trasposiciones disjuntas. Entonces
+%$\pi=(ik)\tau(ik)\in N$ si $k\not\in\{i,j\}$ y $\pi\ne \tau$ pues $\tau(j)=i$ y $\pi(j)=k$. Luego $|N|\geq3$, una contradicción. 
+%
+%En el segundo caso, si $N\cap\Alt_n=\Alt_n$, entonces $N=\Alt_n$.
+%\
+%
+%\begin{proof}
+%    
+%\end{proof}
+

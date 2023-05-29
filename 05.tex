@@ -3,32 +3,32 @@
 
 \topic{Normal extensions}
 
-\begin{proposition}
-    Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
-    Then $\sigma$ is bijective. 
-\end{proposition}
+% \begin{proposition}
+%     Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
+%     Then $\sigma$ is bijective. 
+% \end{proposition}
 
-\begin{proof}
-    Let $x\in E$ and 
-    $C$ be an algebraic closure of $K$ that contains $E$. There
-    exists a field homomorphism $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
-    Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
-    $\varphi\in G$. If $z\in O_G(x)$, 
-    then $z=\tau(x)$ for some $\tau\in G$ and hence
-    \[
-    \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
-    \]
-    This implies that $\varphi(z)\in O_G(x)$ 
-    and $\varphi(O_G(x))=O_G(x)$. The restriction
-    $\sigma|_{E\cap O_G(x)}$ is injective. Then 
-    \begin{align*}
-        \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
-        &=\varphi(E)\cap\varphi(O_G(x))
-        =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
-        \end{align*}
-    Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
-    hence $x$ belongs to the image of $\sigma$. 
-\end{proof}
+% \begin{proof}
+%     Let $x\in E$ and 
+%     $C$ be an algebraic closure of $K$ that contains $E$. There
+%     exists a field homomorphism $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
+%     Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
+%     $\varphi\in G$. If $z\in O_G(x)$, 
+%     then $z=\tau(x)$ for some $\tau\in G$ and hence
+%     \[
+%     \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
+%     \]
+%     This implies that $\varphi(z)\in O_G(x)$ 
+%     and $\varphi(O_G(x))=O_G(x)$. The restriction
+%     $\sigma|_{E\cap O_G(x)}$ is injective. Then 
+%     \begin{align*}
+%         \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
+%         &=\varphi(E)\cap\varphi(O_G(x))
+%         =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
+%         \end{align*}
+%     Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
+%     hence $x$ belongs to the image of $\sigma$. 
+% \end{proof}
 
 
 % pag 21 example
@@ -116,7 +116,7 @@ $y\in O_{\Gal(E/K)}(x)$.
 \end{proposition}
 
 \begin{proof}
-    Let $C$ be an algebraic closure of $E$ containing $EF$. 
+    Let $C$ be an algebraic closure of $E$ containing $EF$ (this exists because $EF/E$ is algebraic). 
     Let $\sigma\in\Hom(EF/E,C/E)$. We claim that $\sigma(EF)=EF$. Let 
     \[
     \overline{K}=\{x\in C:x\text{ is algebraic over $K$}\}.
@@ -172,7 +172,7 @@ deeply related. The following proposition serves as an explanation:
 \end{exercise}
 
 
-\section{Dedekind's theorem}
+\topic{Dedekind's theorem}
 
 Note that every extension homomorphism $E/K\to F/K$ is, in particular, 
 a $K$-linear map $E\to F$, that is
@@ -181,9 +181,10 @@ a $K$-linear map $E\to F$, that is
 \]
 If $F/K$ is an extension and $V$ 
 is a $K$-vector space, the set
-$\Hom_K(E,F)$ of $K$-linear maps
+$\Hom_K(V,F)$ of $K$-linear maps
 is a vector space over $F$ with
-$(a\cdot f)(v)=af(v)$ for $a\in F$, $f\in\Hom_K(E,F)$ and $v\in V$. 
+$(a\cdot f)(v)=af(v)$ for $a\in F$, 
+$f\in\Hom_K(V,F)$ and $v\in V$. 
 
 \begin{exercise}
 \label{xca:dim}
@@ -251,7 +252,7 @@ Prove the following statements:
 \begin{enumerate}
     \item $\gamma(E/K,F/K)\leq\dim_F\Hom_K(E,F)$.
     \item If $[E:K]<\infty$, then $\gamma(E/K,F/K)\leq[E:K]$. 
-    \item If $x$ is algebraic over $K$, then $\gamma(K(x)/K,F/K)\leq\deg(x,K)$.
+    \item If $x$ is algebraic over $K$, then $\gamma(K(x)/K,F/K)\leq\deg f(x,K)$.
 \end{enumerate}
 \end{exercise}
 

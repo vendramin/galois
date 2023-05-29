@@ -1,6 +1,5 @@
 \chapter{}
 
-
 If $E/K$ is an extension and $x\in E$ is algebraic
 over $K$, then the evaluation homomorphism 
 $K[X]\to E$, $p\mapsto p(x)$, is not injective. In particular,
@@ -134,7 +133,7 @@ and $A$ is an integral domain, then $A$ is a field.
     \theta(\lambda x)=a(\lambda x)=\lambda (ax)=\lambda\theta(x),
     \]
     for all $x,y\in A$ and $\lambda\in K$. 
- It is injective, since $A$ is an
+ It is injective since $A$ is an
 	integral domain.  Since $\dim_KA<\infty$, it follows that $\theta$ is an
 	isomorphism. In particular, $\theta(A)=A$, which implies that there exists
 	$b\in A$ such that $1=ab$. 
@@ -228,6 +227,7 @@ Note that if $x$ is algebraic over $K$, then
 $K[x]\simeq K[X]/(f(x,K))$. 
 
 \begin{corollary}
+\label{cor:finite=>algebraic}
 	If $E/K$ is finite, then $E/K$ is algebraic. 
 \end{corollary}
 
@@ -241,7 +241,19 @@ $K[x]\simeq K[X]/(f(x,K))$.
 	polynomial $a_0+a_1X+\cdots+a_nX^n\in K[X]$. 
 \end{proof}
 
-We note that the converse of the previous result does not hold. 
+In Example~\ref{exa:two_algebraics} we 
+prove that $\sqrt{2}+\sqrt[3]{3}$ and $\sqrt{2}\sqrt[3]{3}$ 
+are algebraic over $\Q$. This can be easily proved
+now with Corollary~\ref{cor:finite=>algebraic}. 
+
+\begin{exercise}
+\label{xca:algebraic}
+    Let $E/K$ be an extension and 
+    $a$ and $b$ be algebraic over $K$. Prove 
+    that $a+b$ and $ab$ are algebraic over $K$. 
+\end{exercise}
+
+We note that the converse of Corollary~\ref{cor:finite=>algebraic} result does not hold. 
 
 \begin{corollary}
 	If $E/K$ is an extension and $x_1,\dots,x_n\in E$ 
@@ -276,7 +288,8 @@ We note that the converse of the previous result does not hold.
 \begin{corollary}
 	If $E/K$ is  an extension, then $\overline{K}_E$ 
 	is a subfield of $E$ that contains $K$. Moreover, 
-	$K(\overline{K}_E)/K$ is algebraic. 
+	$K(\overline{K}_E)=\overline{K}_E$ and 
+        $K(\overline{K}_E)/K$ is algebraic. 
 \end{corollary}	
 
 \begin{proof}
