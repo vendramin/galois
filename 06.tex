@@ -15,7 +15,8 @@ $|A|=m|\overline{A}|=m|B|$.
 
  \begin{proof}
     Assume that $E=F(x)$. Let $f=f(x,F)=\sum b_iX^i$ and
-    let $G=\Gal(E/F)$. Let $C$ be an algebraic closure of $K$ containing $E$. 
+    Let $C$ be an algebraic closure of $K$ containing $E$ 
+    and $G=\Gal(C/F)$. 
     The map
     \[
     \lambda\colon \Hom(E/K,C/K)\to\Hom(F/K,C/K),\quad
@@ -89,7 +90,8 @@ $|A|=m|\overline{A}|=m|B|$.
     
     \begin{claim}
         If $\phi\in G$ is such that $\phi|_F=\varphi$, then 
-        $O_{G}(x)=\phi^{-1}(R_\varphi)$.
+        $|\phi^{-1}(R_\varphi)|=|R_{\varphi}|$. 
+        %$O_{G}(x)=\phi^{-1}(R_\varphi)$.
     \end{claim}
 
     Let us first prove $O_{G}(x)\supseteq \phi^{-1}(R_\varphi)$.
@@ -99,18 +101,18 @@ $|A|=m|\overline{A}|=m|B|$.
     f(\phi^{-1}(y))&=\sum b_i\phi^{-1}(y^i)=\phi^{-1}\left(\sum\phi(b_i)y^i\right)\\
 &=\phi^{-1}(\overline{\varphi}(f)(y))=\phi^{-1}(0)=0.
     \end{align*}
+    Then $f(x,F)=f(\phi^{-1}(y),F)$. By Proposition \ref{pro:gamma_orbit}, $\phi^{-1}(y)\in O_G(x)$. 
     Now we prove $O_{G}(x)\subseteq\phi^{-1}(R_\varphi)$.
-    Let $z\in O_{G}(x)$ and $y\in C$ be such that 
-    $\phi^{-1}(y)=z$. Then $\overline{\varphi}(f)(y)=0$, as
+    Let $z\in O_{G}(x)$. Then $\overline{\varphi}(f)(\phi(z))=0$, as
     \begin{align*}
-    \overline{\varphi}(f)(y)&=\sum\varphi(b_i)y^i\\
-    &=\sum\varphi(b_i)\phi(z^i)
-    =\sum\phi(b_i)\phi(z^i)
+    \overline{\varphi}(f)(\phi(z))&=\sum\varphi(b_i)\phi(z^i)\\
+    &=\sum\phi(b_i)\phi(z^i)
     =\phi\left(\sum b_iz^i\right)
     =\phi(f(z))=\phi(0)=0.
     \end{align*}
     
     \medskip
+    Thus $\phi(z)\in R_{\varphi}$ and hence $z\in\phi^{-1}(R_{\varphi})$. 
     It follows that $|\lambda^{-1}(\varphi)|=|O_{G}(x)|$ for
     all $\varphi$. By using the argument
     before the proposition, 
@@ -119,7 +121,7 @@ $|A|=m|\overline{A}|=m|B|$.
         &=|O_{G}(x)||\Hom(F/K,C/K)|\\
         &=|O_{G}(x)|\gamma(F/K).
     \end{align*}
-    Since $\gamma(K(x)/K)=|O_{G}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
+    Since $\gamma(E/K)=\gamma(F(x)/F)=|O_{G}(x)|$ by Proposition \ref{pro:gamma_orbit}, the claim follows. 
     
     \medskip 
     For the general case, we assume that $E=F(x_1,\dots,x_n)$. We proceed
