@@ -3,32 +3,32 @@
 
 \topic{Normal extensions}
 
-% \begin{proposition}
-%     Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
-%     Then $\sigma$ is bijective. 
-% \end{proposition}
+\begin{proposition}
+    Let $E/K$ be an algebraic extension and $\sigma\in\Hom(E/K,E/K)$. 
+    Then $\sigma$ is bijective. 
+\end{proposition}
 
-% \begin{proof}
-%     Let $x\in E$ and 
-%     $C$ be an algebraic closure of $K$ that contains $E$. There
-%     exists a field homomorphism $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
-%     Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
-%     $\varphi\in G$. If $z\in O_G(x)$, 
-%     then $z=\tau(x)$ for some $\tau\in G$ and hence
-%     \[
-%     \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
-%     \]
-%     This implies that $\varphi(z)\in O_G(x)$ 
-%     and $\varphi(O_G(x))=O_G(x)$. The restriction
-%     $\sigma|_{E\cap O_G(x)}$ is injective. Then 
-%     \begin{align*}
-%         \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
-%         &=\varphi(E)\cap\varphi(O_G(x))
-%         =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
-%         \end{align*}
-%     Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
-%     hence $x$ belongs to the image of $\sigma$. 
-% \end{proof}
+\begin{proof}
+    Let $x\in E$ and 
+    $C$ be an algebraic closure of $K$ that contains $E$. There
+    exists a field homomorphism $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
+    Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
+    $\varphi\in G$. If $z\in O_G(x)$, 
+    then $z=\tau(x)$ for some $\tau\in G$ and hence
+    \[
+    \varphi(z)=\varphi(\tau(x))=(\varphi\tau)(x). 
+    \]
+    This implies that $\varphi(z)\in O_G(x)$ 
+    and $\varphi(O_G(x))=O_G(x)$. The restriction
+    $\sigma|_{E\cap O_G(x)}$ is injective. Then 
+    \begin{align*}
+        \sigma(E\cap O_G(x))&=\varphi(E\cap O_G(x))\\
+        &=\varphi(E)\cap\varphi(O_G(x))
+        =\sigma(E)\cap O_G(x)\subseteq E\cap O_G(x).
+        \end{align*}
+    Since $|E\cap O_G(x)|<\infty$, it follows that $E\cap O_G(x)=\sigma(E\cap O_G(x))$ and
+    hence $x$ belongs to the image of $\sigma$. 
+\end{proof}
 
 
 % pag 21 example
@@ -225,14 +225,15 @@ is linearly independent over $F$.
     =\left(\sum_{i=1}^n (a_i\varphi_i(z))\varphi_i\right)(x).
     \]
     Thus 
-    \begin{equation}
-        \label{eq:Dedekind2}
-        \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
-    \end{equation}
-    Since $\sum_{i=1}^na_i\varphi_i=0$ and $\varphi_1(z)\ne0$, 
     \[
-    a_1\varphi_1+a_2\frac{\varphi_2(z)}{\varphi_1(z)}\varphi_2+\cdots+a_n\frac{\varphi_n(z)}{\varphi_1(z)}\varphi_n=0.
+        \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
     \]
+    Since $\sum_{i=1}^na_i\varphi_i=0$ and $\varphi_1(z)\ne0$, 
+    \begin{equation}
+    \label{eq:Dedekind2}
+        a_1\varphi_1+a_2\frac{\varphi_2(z)}{\varphi_1(z)}\varphi_2+\cdots+a_n\frac{\varphi_n(z)}{\varphi_1(z)}\varphi_n=0.
+    \end{equation}
+
     Thus, 
     subtracting \eqref{eq:Dedekind1} and \eqref{eq:Dedekind2}, 
     \[
