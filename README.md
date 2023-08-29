@@ -1,5 +1,7 @@
 # Galois Theory
 
+[![DOI](https://zenodo.org/badge/425450147.svg)](https://zenodo.org/badge/latestdoi/425450147)
+
 ## Leandro Vendramin
 
 These are lecture notes for the course _Galois Theory_, taught by Leandro Vendramin 
