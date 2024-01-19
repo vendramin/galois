@@ -1,6 +1,6 @@
-\chapter{}
+\section{12/02/2024}
 
-\topic{Fields}
+\subsection{Fields}
 
 Recall that a \textbf{field} is a commutative
 ring such that $1\ne 0$ and 
@@ -332,13 +332,14 @@ for all $\lambda\in K$ and $x\in E$.
 \end{example}
 
 \begin{exercise}
-	Prove that if $K$ is a field and $\sigma\colon K\to K$ is a field homomorphism, 
-then $\sigma\in\Hom(K/K_0,K/K_0)$. 
+	Let $K$ be a field, $K_0$ be its prime field 
+        and $\sigma\colon K\to K$ be a field homomorphism. Prove that 
+        $\sigma\in\Hom(K/K_0,K/K_0)$. 
 \end{exercise}
 
 If $E/K$ is an extension, then
 \[
-	\Aut(E/K)=\{\sigma:\sigma\colon E\to E\text{ is a bijective extension homomorphism}\}
+	\Aut(E/K)=\{\sigma\colon E\to E\text{ is a bijective extension homomorphism}\}
 \]
 is a group with composition.
 
@@ -410,8 +411,11 @@ The following exercise is known as the
 \begin{exercise}
     Prove that
     the polynomials 
-    $f=X^{10}+60X^7+82X^6-36X^3+2$ and 
-    $g=3X^{10}+15X^2-45$ are irreducible in $\Z[X]$. 
+    \begin{align*}
+    &f=X^{10}+60X^7+82X^6-36X^3+2,\\
+    &g=3X^{10}+15X^2-45, 
+    \end{align*}
+    are irreducible in $\Z[X]$. 
 \end{exercise}
 
 \begin{exercise}
@@ -455,7 +459,7 @@ Then
 If, moreover, 
 $S\subseteq T$, then $K(S)\subseteq K(T)$. 
 
-\topic{Algebraic extensions}
+\subsection{Algebraic extensions}
 
 \begin{definition}
 \index{Algebraic!element}
@@ -517,7 +521,7 @@ not algebraic $\Q$; see \cite[Theorem 24.5]{MR3379917}.
     g(X)=f(X-a)=X^3-3aX^2+3aX-a^3-3\in\Q(a)[X]
     \]
     is such that $g(a+b)=0$. How can we find a polynomial 
-    with coefficients in $\Q$ that vanishes on $a+b$? We do the ``conjugation" trick:
+    with coefficients in $\Q$ that vanishes on $a+b$? We do the ``conjugation'' trick:
     \[
     h(X)=f(X-a)f(X+a)=X^6-6X^4-6X^3+12X^2-36X+1\in\Q[X].
     \]

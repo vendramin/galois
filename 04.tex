@@ -1,4 +1,4 @@
-\chapter{}
+\section{}
 
 The previous proposition will be used to prove 
 that the algebraic closure always exists. 
@@ -76,7 +76,7 @@ that the algebraic closure always exists.
     that $g$ has a root in $E_{r+1}\subseteq E$. 
 \end{proof}
 
-\topic{Decomposition fields}
+\subsection{Decomposition fields}
 
 \begin{definition}
 \index{Decomposition field}
@@ -148,8 +148,11 @@ If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite.
     f=\overline{\varphi}(f)=\varphi(a)\prod_{j=1}^s(X-\varphi(y_j))^{m_j}
     \]
     so $f$ factorizes linearly in $\varphi(E_1)[X]$. Moreover, 
-    $E_1=K(y_1,\dots,y_s)$ and it follows that 
-    $\varphi(E_1)=K(\varphi(y_1),\dots,\varphi(y_s))$. Thus
+    $E_1=K(y_1,\dots,y_s)$ and  
+    \[
+    \varphi(E_1)=K(\varphi(y_1),\dots,\varphi(y_s)).
+    \]
+    Thus
     $\varphi(E_1)$ is a decomposition field of $f$. Since  
     $\varphi(E_1)\subseteq C$, it follows that $\varphi(E_1)=E$. 
 \end{proof}
@@ -212,7 +215,10 @@ if $y=\sigma(x)$ for some $\sigma\in G$.
     \]
     Let us show that the map $\varphi$ is well-defined: we need to show 
     that if 
-    $h_1(x)=h_2(x)$, then $h_1(y)=\varphi(h_1(x))=\varphi(h_2(x))=h_2(y)$. 
+    $h_1(x)=h_2(x)$, then 
+    \[
+    h_1(y)=\varphi(h_1(x))=\varphi(h_2(x))=h_2(y).
+    \]
     If $h_1(x)=h_2(x)$, then 
     \[
     (h_1-h_2)(x)=h_1(x)-h_2(x)=0.
