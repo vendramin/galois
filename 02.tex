@@ -1,4 +1,4 @@
-\chapter{}
+\section{}
 
 If $E/K$ is an extension and $x\in E$ is algebraic
 over $K$, then the evaluation homomorphism 
@@ -20,7 +20,7 @@ Some basic properties of the minimal polynomial of an algebraic element:
 \begin{proposition}
 	Let $E/K$ be an extension and $x\in E$. 
 	\begin{enumerate}
-		\item If $g\in K[X]\setminus\{0\}$ is such that $g(x)=0$, then $f(x,K)$ divides $g$. In particular, 
+		\item If $g\in K[X]\setminus\{0\}$ is such that $g(x)=0$, then $f(x,K)$ divides $g$ and  
 		$\deg f(x,K)\leq\deg g$. 
 %		\item If $g(x)=0$ and $g\ne 0$, then $\deg g\geq\gr f(x,K)$.
 		\item $f(x,K)$ is irreducible in $K[X]$.
@@ -208,7 +208,10 @@ The exercise is not an accident.
 		z=h(x)=g(x)q(x)+r(x)=r(x).
 	\]
 	If $\deg g=m$, then $r=\sum_{i=0}^{m-1}a_iX^i$ for some $a_0,\dots,a_{m-1}\in K$. Thus
-	$z=\sum_{i=0}^{m-1}a_ix^i$, so $K[x]\subseteq\langle 1,x,\dots,x^{m-1}\rangle$. 
+	\[
+ z=\sum_{i=0}^{m-1}a_ix^i 
+ \]
+ and hence $K[x]\subseteq\langle 1,x,\dots,x^{m-1}\rangle$. 
 
 	The previous lemma proves that $2)\implies 3)$. 
 

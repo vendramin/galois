@@ -1,0 +1,145 @@
+\usepackage[foot]{amsaddr} 
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tikz-cd}
+\usepackage{datetime}
+\usepackage{mathptmx}
+\usepackage{amssymb}
+\usepackage{newtxtext}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{mdframed}
+\usepackage{textcomp}
+
+\usepackage[margin=1in,footskip=.25in]{geometry}
+
+\overfullrule=1mm
+
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\definecolor{background}{HTML}{F5F5F5}
+\definecolor{jlstring}{HTML}{880000}%          % julia's strings
+\definecolor{jlbase}{HTML}{444444}%            % julia's base color
+\definecolor{jlkeyword}{HTML}{444444}%         % julia's keywords
+\definecolor{jlliteral}{HTML}{78A960}%         % julia's literals
+\definecolor{jlbuiltin}{HTML}{397300}%         % julia's built-ins
+\definecolor{jlmacros}{HTML}{1F7199}%          % julia's macros
+\definecolor{jlfunctions}{HTML}{444444}%       % julia's functions
+\definecolor{jlcomment}{HTML}{888888}%         % julia's comments
+\definecolor{jlstring}{HTML}{880000}%          % julia's strings
+
+
+\lstset{%
+    language         = Julia,
+    basicstyle       = \color{jlstring}\ttfamily\scriptsize,
+    backgroundcolor  = \color{background},
+    keywordstyle     = \color{jlkeyword},
+    stringstyle      = \color{jlstring},
+    commentstyle     = \color{jlcomment},
+    showstringspaces = false,
+    columns=fixed,
+}
+
+\renewcommand\sectionname{Lecture}
+\renewcommand\subsectionname{\S}
+
+% para enumerar
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi})}}
+
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{mybox}{
+enhanced,
+boxrule=0pt,frame hidden,
+%borderline west={4pt}{0pt}{black},
+colback={gray!20},
+sharp corners
+}
+
+\makeindex             
+
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\norm}{\operatorname{norm}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Syl}{\mathrm{Syl}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Alt}{\mathbb{A}}
+\newcommand{\Sym}{\mathbb{S}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\trace}{\operatorname{trace}}
+\newcommand{\sgn}{\operatorname{sign}}
+\newcommand{\ch}{\operatorname{char}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Ret}{\operatorname{Ret}}
+\newcommand{\GL}{\mathbf{GL}}
+\newcommand{\SL}{\mathbf{SL}}
+\newcommand{\PSL}{\mathbf{PSL}}
+\newcommand{\PGL}{\mathbf{PGL}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Aff}{\operatorname{Aff}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+%\newmdtheoremenv{exercise}[theorem]{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+
+\newenvironment{sol}[1]
+{\renewcommand{\qedsymbol}{}\begin{proof}[\ref{#1}]}
+  {\end{proof}}
+
+\newenvironment{exercise}
+  {\begin{mybox}\begin{xca}}
+  {\end{xca}\end{mybox}}
+  
+\numberwithin{equation}{section}
+
+\makeindex
+
+\title{\course}
+\author{Leandro Vendramin}
+\address{Department of Mathematics and Data
+Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
+\email{Leandro.Vendramin@vub.be}
+\thanks{}
+\date{}
+
+\makeatletter
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyhead[L]{\course}
+\fancyhead[R]{Lecture \thesection}
+\setlength{\headheight}{14pt}
