@@ -672,16 +672,14 @@ and group homomorphisms is exact.
     \[
     \phi(\sigma)=\alpha^{-1}(\sigma\cdot m-m)=0.
     \]
-    Conversely, if $n\in\ker\delta$, then 
-    there exists $p\in P$ such that 
-    $\delta(n)(\sigma)=\sigma\cdot p-p$ for all $\sigma\in G$. Let $m\in M$ be such that $\delta(m)=n$. 
-    Then $\delta(m-\alpha(p))=\delta(m)=n$ and 
+    Conversely, if $n\in\ker\delta$, then there exists $m\in M$ such that $\beta(m)=n$ and
+    $\delta(\beta(m))=\phi+B^1(G,P)$, where $\phi\in B^1(G,P)$ and 
+    $\phi(\sigma)=\alpha^{-1}(\sigma\cdot m-m)$ for all $\sigma\in G$. Since $\phi\in B^1(G,P)$, there
+    exists $p\in P$ such that $\phi(\sigma)=\sigma\cdot p-p$ for all $\sigma\in G$. Note that 
     \[
-    ...
+    \beta(m-\alpha(p))=\beta(m)-\beta(\alpha(p))=\beta(m)=n.
     \]
-    % if $n\in\ker\delta$, then there exists $m\in M^G$ such that $n=\beta(m)$ and 
-    % $\delta(n)=\phi+B^1(G,P)$, where $\phi(\sigma)=\sigma\cdot m-m$
-    % for all $\sigma\in G$. 
+    Moreover, $m-\alpha(p)\in M^G$, as $\sigma\cdot (m-\alpha(p))=m-\alpha(p)$. Hence $n\in\im\beta^0$. 
 
     We now prove that \eqref{eq:long} is exact at $H^1(G,P)$, that 
     is $\im\delta=\ker\alpha^1$. To prove
