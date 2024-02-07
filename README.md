@@ -8,7 +8,7 @@ These are lecture notes for the course _Galois Theory_, taught by Leandro Vendra
 at Vrije Universiteit Brussel.
 
 ## PDF
-[Here](https://github.com/vendramin/galois/blob/main/book.pdf) is the PDF.
+[Here](https://github.com/vendramin/galois/blob/main/notes.pdf) is the PDF.
 
 ## License
 
