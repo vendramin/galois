@@ -18,15 +18,15 @@ is a prime number, then $\Z/p$ is a field.
 \end{example}
 
 \begin{example}
-	$\Q(i)=\{a+bi:a,b\in\Q\}$ and 
-	$\Q(\sqrt{2})$ are fields.
+	$\Q[i]=\{a+bi:a,b\in\Q\}$ and 
+	$\Q[\sqrt{2}]$ are fields.
 \end{example}
 
 \[
 \begin{tikzcd}
 	{\mathbb{C}} \\
 	&& {\mathbb{R}} \\
-	{\mathbb{Q}(i)} && {\mathbb{Q}(\sqrt{2})} \\
+	{\mathbb{Q}[i]} && {\mathbb{Q}[\sqrt{2}]} \\
 	& {\mathbb{Q}}
 	\arrow[no head, from=3-3, to=4-2]
 	\arrow[no head, from=2-3, to=3-3]
@@ -38,8 +38,8 @@ is a prime number, then $\Z/p$ is a field.
 
 
 \begin{exercise}
-	\label{xca:Q(i)}
-	Prove that $\Q(i)$ and $\Q(\sqrt{2})$ are not isomorphic as fields.
+\label{xca:Q(i)}
+Prove that $\Q[i]$ and $\Q[\sqrt{2}]$ are not isomorphic as fields.
 \end{exercise}
 
 If $R$ is a ring, there exists a unique ring homomorphism
@@ -486,12 +486,6 @@ $S\subseteq T$, then $K(S)\subseteq K(T)$.
 	not algebraic over $K$, 
 	then it is called \textbf{trascendental} over $K$.
 \end{definition}
-
-If $E/K$ is an extension, let 
-\[
-	\overline{K}_E=\{x\in E:x\text{ is algebraic over }K\}. 
-\]
-%is the \textbf{algebraic closure} of $K$ in $E$. 
 
 \begin{definition}	
 \index{Algebraic!extension}
