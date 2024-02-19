@@ -63,8 +63,10 @@
 enhanced,
 boxrule=0pt,frame hidden,
 %borderline west={4pt}{0pt}{black},
-colback={gray!20},
-sharp corners
+%colback={gray!20},
+sharp corners,
+left=.5cm
+%left=18.0pt
 }
 
 \makeindex             
@@ -108,8 +110,10 @@ sharp corners
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{xca}[theorem]{Exercise}
-%\newmdtheoremenv{exercise}[theorem]{Exercise}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{problem}[theorem]{Open problem}
 
 \theoremstyle{remark}
 \newtheorem*{claim}{Claim}
@@ -121,7 +125,8 @@ sharp corners
 \newenvironment{exercise}
   {\begin{mybox}\begin{xca}}
   {\end{xca}\end{mybox}}
-  
+
+\numberwithin{figure}{section}
 \numberwithin{equation}{section}
 
 \makeindex
@@ -143,3 +148,5 @@ Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
 \fancyhead[L]{\course}
 \fancyhead[R]{Lecture \thesection}
 \setlength{\headheight}{14pt}
+
+\usepackage[english.nosectiondot]{babel}
