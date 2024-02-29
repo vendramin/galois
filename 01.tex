@@ -191,9 +191,9 @@ if $[E:K]$ is finite.
 We know that $[\C:\R]=2$. 
 
 \begin{example}
-	A basis of $\Q(\sqrt{2})$ over $\Q$ 
+	A basis of $\Q[\sqrt{2}]$ over $\Q$ 
 	is given by $\{1,\sqrt{2}\}$. Then 
-	$[\Q(\sqrt{2}):\Q]=2$. The calculations 
+	$[\Q[\sqrt{2}]:\Q]=2$. The calculations 
 	can be easily done by computer: 
 \begin{lstlisting}
 julia> E, a = quadratic_field(2)
@@ -363,7 +363,7 @@ is a group with composition.
 
 A typical example: $\Gal(\C/\R)\simeq\Z/2$. 
 
-As an example, we show with the computer that $\Gal(\Q(\sqrt{2})/\Q)\simeq\Z/2$:
+As an example, we show with the computer that $\Gal(\Q[\sqrt{2}]/\Q)\simeq\Z/2$:
 \begin{lstlisting}
 julia> E, x = quadratic_field(2)
 (Real quadratic field defined by x^2 - 2, sqrt(2))
@@ -478,13 +478,13 @@ $S\subseteq T$, then $K(S)\subseteq K(T)$.
 
 \begin{definition}
 \index{Algebraic!element}
-\index{Trascendental!element}
+\index{Transcendental!element}
 	Let $E/K$ be an extension. An element $x\in E$
 	is \textbf{algebraic} over $K$ if there
 	exists a non-zero polynomial 
 	$f(X)\in K[X]$ such that $f(x)=0$. If $x$ is
 	not algebraic over $K$, 
-	then it is called \textbf{trascendental} over $K$.
+	then it is called \textbf{transcendental} over $K$.
 \end{definition}
 
 \begin{definition}	
@@ -517,9 +517,9 @@ then $x$ is algebraic over~$F$.
 \index{Hermite's theorem}
 The extension $\C/\Q$ is not algebraic. For example, Hermite proved 
 that $e$ is transcendental 
-over $\Q$; see \cite[Therem 24.4]{MR3379917}. Lindemann's theorem 
+over $\Q$; see \cite[Theorem 24.4]{MR3379917}. Lindemann's theorem 
 states that $\pi$ is 
-not algebraic $\Q$; see \cite[Theorem 24.5]{MR3379917}. 
+not algebraic over $\Q$; see \cite[Theorem 24.5]{MR3379917}. 
 
 \begin{example}
 \label{exa:two_algebraics}
