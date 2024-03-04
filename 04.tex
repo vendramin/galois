@@ -78,10 +78,12 @@ that the algebraic closure always exists.
 
 \subsection{Decomposition fields}
 
+% explain what factorizes linearly means! 
+
 \begin{definition}
 \index{Decomposition field}
 	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. A \textbf{decomposition field}
-	of $f$ over $K$ is field $E$ that contains $K$ and that satisfies the following properties:
+	of $f$ over $K$ is a field $E$ that contains $K$ and that satisfies the following properties:
 	\begin{enumerate}
 		\item $f$ factorizes linearly in $E[X]$. 
 		\item If $F$ is a field such that $K\subseteq F\subseteq E$ and 
@@ -134,7 +136,7 @@ If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite.
 \end{theorem}
 
 \begin{proof}
-    Let $C/K$ be an algebraic closure. Write 
+    Let $C/K$ be an algebraic closure of $K$. Write 
     \[
     f=a\prod_{i=1}^r(X-x_i)^{n_i}
     \]
@@ -200,8 +202,9 @@ if $y=\sigma(x)$ for some $\sigma\in G$.
     If $x$ and $y$ are conjugate, say $y=\sigma(x)$ for some $\sigma\in G$, 
     let us write $g=f(x,K)$ as 
     \[
-    g=X^n+\sum_{i=0}^{n-1} a_iX^i. 
+    g=X^n+\sum_{i=0}^{n-1} a_iX^i
     \]
+    for some $n\geq1$ and $a_0,\dots,a_{n-1}\in K$. 
     Then $0=g(x)=x^n+\sum_{i=0}^{n-1}a_ix^i$ and hence $y$ is
     a root of $g$, as 
     \begin{align*}
