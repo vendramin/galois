@@ -9,8 +9,9 @@
 \end{proposition}
 
 \begin{proof}
+    It is enough to prove that $\sigma$ is surjective. Why? 
     Let $x\in E$ and 
-    $C$ be an algebraic closure of $K$ that contains $E$. There
+    $C$ be an algebraic closure of $K$ that contains $E$. By Proposition~\ref{pro:Artin}, there 
     exists a field homomorphism $\varphi\colon C\to C$ such that $\varphi|_E=\sigma$. 
     Thus $\varphi|_K=\sigma|_K=\id_K$. Let $G=\Gal(C/K)$. Then  
     $\varphi\in G$. If $z\in O_G(x)$, 
@@ -211,7 +212,7 @@ is linearly independent over $F$.
 \begin{proof}
     Assume it is not. Let $\{\varphi_1,\dots,\varphi_n\}$ 
     be linearly dependent over $F$ with $n$ minimal. Clearly, $n>1$. 
-    We may assume that 
+    Without loss of generality, we may assume that 
     \begin{equation}
         \label{eq:Dedekind1}
         \sum_{i=1}^n a_i\varphi_i=0
@@ -228,7 +229,7 @@ is linearly independent over $F$.
     \[
         \sum_{i=1}^n (a_i\varphi_i(z))\varphi_i=0.
     \]
-    Since $\sum_{i=1}^na_i\varphi_i=0$ and $\varphi_1(z)\ne0$, 
+    Since $\varphi_1(z)\ne0$, 
     \begin{equation}
     \label{eq:Dedekind2}
         a_1\varphi_1+a_2\frac{\varphi_2(z)}{\varphi_1(z)}\varphi_2+\cdots+a_n\frac{\varphi_n(z)}{\varphi_1(z)}\varphi_n=0.
