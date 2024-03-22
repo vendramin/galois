@@ -44,6 +44,169 @@
        a contradiction. 
 \end{sol}
 
+\begin{sol}{xca:dec field X^4-5X^2+5}
+Note that, since $f=X^4-5X^2+5$ is an even polynomial
+if $\alpha\in \C$ is a root of $f$,
+then also $-\alpha$ is a root of $f$.
+ Hence, given two roots $\alpha,\beta\in \C$
+ such that $\beta\neq-\alpha$,
+we have that the decomposition field of $f$ over $\Q$ is
+$E=\Q(\alpha,-\alpha,\beta,-\beta)$.
+ But $-\alpha,-\beta\in \Q(\alpha,\beta)\subseteq E$
+ and so 
+\[
+ E=\Q(\alpha,-\alpha,\beta,-\beta)\subseteq \Q(\alpha,\beta)\subseteq\Q(\alpha,-\alpha,\beta,-\beta)=E,
+ \]
+ which means that $E=\Q(\alpha,\beta)$.
+ Moreover we can decompose $f$ in $\C[X]$ as 
+ \[
+ (X-\alpha)(X+\alpha)(X-\beta)(X+\beta)=(X^2-\alpha^2)(X^2-\beta^2)=X^4-(\alpha^2+\beta^2)X^2+\alpha^2\beta^2.
+ \]
+This implies in particular that $\alpha^2\beta^2=5$, hence $\beta=\pm \frac{\sqrt{5}}{\alpha}\in \Q(\alpha,\sqrt{5})$.
+
+Therefore $E=\Q(\alpha,\beta)\subseteq \Q(\alpha,\sqrt{5})$.
+On the other hand $\sqrt{5}=\pm\alpha\beta\in\Q(\alpha,\beta)$,
+ hence $\Q(\alpha,\sqrt{5})\subseteq\Q(\alpha,\beta)=E$.
+ So we can conclude that $E=\Q(\alpha,\sqrt{5})$.
+Using the multiplicative of the degree of finite extension we get that
+ \[
+ [E:\Q]=[E:\Q(\alpha)][\Q(\alpha):\Q].
+\]
+But $[\Q(\alpha):\Q]=\deg(f(\alpha,\Q))$.
+ Using Eisenstein criterion (Exercise \ref{xca:Eisenstein's criterion}) with $p=5$,
+ we have that $f$ is irreducible (and monic), so $f=f(\alpha,\Q)$.
+Thus $[\Q(\alpha):\Q]=\deg f=4$.
+It remains to compute $[E:\Q(\alpha)]=[\Q(\alpha,\sqrt{5}):\Q(\alpha)]$.
+We have the following situation:
+\[
+\begin{tikzcd}
+	& {E=\Q(\alpha,\sqrt{5})}\arrow[rd,no head]\\
+	{\Q(\alpha)}\arrow[ru,no head,"\leq 2"]&& {\Q(\sqrt{5})}\arrow[ld,no head,"2"]  \\
+	& {\Q}\arrow[lu,no head,"4"] 
+ \end{tikzcd}
+\]
+Observe that $\Q(\alpha,\sqrt{5})$ is equal to the composite of $\Q(\alpha)$ and $\Q(\sqrt{5})$.
+ We can use the property of composite extension,
+$[LF:L]\leq[F:K]$, to deduce that 
+ \[
+ [\Q(\alpha,\sqrt{5}):\Q(\alpha)]\leq [\Q(\sqrt{5}):\Q]=2.
+ \]
+ The last equality is because $f(\sqrt{5},\Q)=X^2-5$,
+ as it is monic has $\sqrt{5}$ as a root 
+ and it's irreducible 
+ (due to Eisenstein's criterion or
+ because it is of degree 2 with 2 non-rational roots).
+ Finally, we want to understand whether $[\Q(\alpha,\sqrt{5}):\Q(\alpha)]$ is 1 or 2.
+ Note that $\alpha^4-5\alpha^2+5=0$, so we can solve the equation for
+$\alpha^2$ as it is a root of $X^2-5X+5$, i.e.
+ \[
+\alpha^2=\frac{5\pm \sqrt{25-20}}{2}=\frac{5\pm \sqrt{5}}{2},
+ \]
+ hence $\sqrt{5}=\pm (2\alpha^2-5)\in\Q(\alpha)$.
+ So $\Q(\alpha,\sqrt{5})\subseteq\Q(\alpha)\subseteq \Q(\alpha,\sqrt{5})$, 
+which means that $E=\Q(\alpha)$ and
+$[E:\Q]=[\Q(\alpha):\Q]=4$.
+\end{sol}
+
+
+\begin{sol}{xca:Q(sqrt[3]{2},xi) normal}
+First of all, note that $\sqrt[3]{2}$ is a root of
+the polynomial $f(X)=X^3-2$.
+To prove that $\Q(\sqrt[3]{2},\xi)$ is a normal extension 
+we use Proposition \ref{pro: normal iff dec field},
+so it is enough to prove
+that $\Q(\sqrt[3]{2},\xi)$ is the decomposition field of $f$.
+We know that the decomposition field $E$ of $f$ over $\Q$ is
+$\Q$ extended with the roots of $f$, i.e.
+$E=\Q(\sqrt[3]{2},\sqrt[3]{2}\xi,\sqrt[3]{2}\xi^2)$.
+But it's easy to see that actually 
+\[
+\Q(\sqrt[3]{2},\xi)=\Q(\sqrt[3]{2},\sqrt[3]{2}\xi,\sqrt[3]{2}\xi^2)=E.
+\]
+The inclusion $\subseteq$ is because $\sqrt[3]{2},  \xi=\frac{\sqrt[3]{2}\xi}{\sqrt[3]{2}}\in E$. 
+Vice versa $\supseteq$ is due to the fact that 
+the roots of $f$ are products of $\sqrt[3]{2}$ and $\xi$, elements in $\Q(\sqrt[3]{2},\xi)$.
+\end{sol}
+
+
+\begin{sol}{xca:Q[sqrt[4]{7}+sqrt{2}]}
+Let $\alpha=\sqrt[4]{7}+\sqrt{2}$. Then $(\alpha - \sqrt{2})^4 -7 = 0$.
+By expanding the left side, we get
+\[
+0  =\alpha^4 - 4\sqrt{2}\alpha^3 + 12 \alpha^2 - 8\sqrt{2}\alpha - 3 
+ = (\alpha^4 + 12\alpha^2 - 3) -  (4 \alpha^3 + 8 \alpha )\sqrt{2}.
+\]
+But $4 \alpha^3 + 8 \alpha = 4\alpha (\alpha^2+2) \neq 0$, otherwise $\alpha\in\{0,\pm i\sqrt{2})$.
+Therefore $\sqrt{2}=\frac{\alpha^4 + 12\alpha^2 - 3}{4 \alpha^3 + 8 \alpha}\in \Q(\alpha) $.
+
+This allows us to prove that $\Q(\sqrt{2} , \sqrt[4]{7}) = \Q(\alpha)$.
+From the definition of $\alpha$ it's clear that 
+$\Q(\alpha) \subseteq \Q(\sqrt{2} , \sqrt[4]{7})$.
+On the other hand, we just proved that $\sqrt{2} \in \Q(\alpha)$.
+As $\sqrt[4]{7} = \alpha - \sqrt{2} \in \Q(\alpha)$,
+we also see that $\sqrt[4]{7} \in \Q(\alpha)$.
+It follows that $\Q(\sqrt{2} , \sqrt[4]{7}) \subseteq \Q(\alpha)$.
+
+Moreover, $\sqrt{2}\not\in \Q(\sqrt[4]{7})$. 
+Otherwise, as $[\Q(\sqrt[4]{7}):\Q] = 4$ and $[\Q(\sqrt{2}):\Q] = 2$
+we would get that $[\Q(\sqrt[4]{7}):\Q(\sqrt{2})] = 2$.
+Let $f(\sqrt[4]{7},\Q(\sqrt{2})) = X^2 + \beta X + \gamma$,
+with $\beta, \gamma \in \Q(\sqrt{2})$. 
+So 
+$$0=f(\sqrt[4]{7})=\sqrt{7} + \beta \sqrt[4]{7} + \gamma.$$
+Therefore 
+$$\beta^2 \sqrt{7}  = (- \sqrt{7} - \gamma)^2 =7 + 2\gamma \sqrt{7}  + \gamma^2.$$
+So $(\beta^2 - 2 \gamma)\sqrt{7}= \gamma^2 + 7$.
+But $\beta^2 - 2 \gamma\neq 0$ because 
+$\gamma^2 + \beta \gamma + \frac{\beta^2}{2} = 0$ 
+holds only for $\gamma =\frac{\beta}{2} (-1 \pm i)\in \C\setminus\R$,
+which is clearly not in $\Q(\sqrt{2})$.
+Thus we would have 
+$\sqrt{7} = \frac{\gamma^2 + 7}{\beta^2 - 2 \gamma} \in \Q(\sqrt{2})$, which 
+is a contradiction.
+
+To sum up we have that $\sqrt{2}\not\in \Q(\sqrt[4]{7})$ and
+\[
+\begin{tikzcd}
+	& {E=\Q(\alpha)=\Q(\sqrt{2},\sqrt[4]{7})}\arrow[rd,no head]\\
+	{\Q(\sqrt{2})}\arrow[ru,no head,]&& {\Q(\sqrt[4]{7})}\arrow[ld,no head,"4"]  \\
+	& {\Q}\arrow[lu,no head,"2"] 
+ \end{tikzcd}
+\]
+\begin{enumerate}
+    \item We know that $\sqrt[4]{7} \in \Q(\alpha)$ 
+    which has minimal polynomial $f(\sqrt[4]{7},\Q) = x^4-7$.
+    One root of this polynomial is $i\sqrt[4]{7}$.
+    This root is not in $\Q(\alpha)\subseteq \R$ as it is in $\C\setminus\R$. 
+    Therefore $\Q(\alpha)/\Q$ is not normal by Proposition \ref{pro: linear factorization in normal extension}.
+    \item  As $\sqrt{2} \not\in \Q(\sqrt[4]{7})$,
+    we see that $[\Q(\alpha):\Q(\sqrt[4]{7})] > 1$.
+    On the other hand, 
+    $$[\Q(\alpha):\Q(\sqrt[4]{7})] \leq [\Q(\sqrt{2}:\Q]=2,$$
+    which proves that $[\Q(\alpha):\Q(\sqrt[4]{7})] = 2$.
+    Therefore,
+    \[
+     [E:\Q]=[\Q(\alpha):\Q] = [\Q(\alpha):\Q(\sqrt[4]{7})] \cdot [\Q(\sqrt[4]{7}): \Q] = 2 \cdot 4 = 8.
+    \]
+    \item Let $\sigma\in G=\Gal(E/\Q)$.
+    Since $E=\Q(\sqrt{2},\sqrt[4]{7})$ and 
+    $\sqrt{2}$ and $\sqrt[4]{7}$ are independent 
+    because $\sqrt{2}\not\in \Q(\sqrt[4]{7})$,
+    we know that $\sigma$ is completely determined
+    by $\sigma(\sqrt{2})$ and $\sigma(\sqrt[4]{7})$.
+    By Proposition \ref{pro:conjugate},
+    $\sigma(\sqrt{2})\in E$ has to be a root of $f(\sqrt{2},\Q)=X^2-2$ 
+    and $\sigma(\sqrt[4]{7})\in E$ has to be a root of $f(\sqrt[4]{7},\Q)=X^4-7$.
+    So $\sigma(\sqrt{2})=\pm\sqrt{2}$ and, since $E\subseteq \R$,
+    $$\sigma(\sqrt[4]{7})\in E\cap\{\sqrt[4]{7}i^j\mid j\in\{0,1,2,3\}\}=\{\pm\sqrt[4]{7}\}.$$
+    Therefore $G$ contains 4 elements $\sigma_{k,l}$ for $k,l\in \Z/2$
+    such that $\sigma_{k,l}(\sqrt{2})=(-1)^k\sqrt{2}$ 
+    and $\sigma_{k,l}(\sqrt[4]{7})=(-1)^l\sqrt[4]{7}$.
+    This gives directly the isomorphism between $G$ and $\Z/2\times\Z/2$. 
+\end{enumerate}
+\end{sol}
+
+
 
 \begin{sol}{xca:dim}
  Let $\{v_i:i\in I\}$ be a basis of $V$ over $K$. For each $i\in I$
