@@ -226,6 +226,7 @@ To sum up we have that $\sqrt{2}\not\in \Q(\sqrt[4]{7})$ and
 \end{sol}
 
 
+
 \begin{sol}{xca:gamma_C}
 We need to find a bijective map 
 \[
@@ -235,6 +236,20 @@ If $\sigma\in\Hom(E/K,C/K)$, then $\theta^{-1}\sigma\in\Hom(E/K,C_1/K)$.
 If $\varphi\in\Hom(E/K,C_1/K)$, then $\theta\varphi\in\Hom(E/K,C/K)$. The 
 maps $\sigma\mapsto\theta^{-1}\sigma$ and 
 $\varphi\mapsto\theta\varphi$ are inverse to each other. 
+\end{sol}
+
+\begin{sol}{xca:separable_charp}
+    Write $f=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0$. Then 
+    \[ 
+    f'=nX^{n-1}+(n-1)a_{n-1}X^{n-2}+\cdots+2a_2X+a_1.
+    \]
+    Since $f$ is not separable, $f'=0$. Thus $n=ka_k=0$ in $K$ for all $k\in\{0,\dots,n-1\}$. This implies
+    that $p$ divides $k$ whenever $a_k\ne 0$. This means that the only terms in $f$ occur in degree 
+    that are multiples of $p$. In particular, $n=pm$ for some $m$. Hence 
+    \[
+    f=X^{pm}+a_{p(n-1)}X^{p(m-1)}+\cdots+a_pX^p+a_0=g(X^p)
+    \]
+    for some $g\in K[X]$.  
 \end{sol}
 
 % \begin{sol}\

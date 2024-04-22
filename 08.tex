@@ -409,6 +409,14 @@ The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the \textbf{degree of 
 Clearly, $E/K$ is separable if and only if $[E:K]_{\operatorname{ins}}=1$ and 
 $E/K$ is purely inseparable if and only if $[E:K]_{\operatorname{ins}}=[E:K]$. 
 
+\begin{exercise}
+    \label{xca:separable_charp}
+    Let $K$ be a field of characteristic $p>0$ and $f\in K[X]$ be irreducible.
+    If $f$ is not separable, then $f=g(X^p)$ for some $g\in K[X]$. 
+\end{exercise}
+
+
+
 \begin{proposition}
 Let $K$ be a field of characteristic $p>0$ and
 $E/K$ be an algebraic extension. The following statements are equivalent:
@@ -423,12 +431,8 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 \begin{proof}
     We first prove $1)\implies 2)$. 
     Let $x\in E$ and $f=f(x,K)$. Assume $x$ is not separable. Then
-    $f(x)=0$ and $f'(x)=0$, as $x$ is not a simple root. Since $\deg f'<\deg f$
-    and $f$ is the minimal polynomial of $x$, it follows that 
-    $f'=0$. The coefficients of $f'$ are of the form $ka_k$. 
-    Since $E$ is a field, $a_k=0$ if $k$ is not divisible by $p$. If $a_k\ne 0$, 
-    then $k=pm$ for some $m\geq0$. It follows that $f=g(X^p)$
-    for some $g\in K[X]$ with $\deg g<\deg f$. 
+    $f(x)=0$ and $f'(x)=0$, as $x$ is not a simple root. By Exercise \ref{xca:separable_charp}, 
+    $f=g(X^p)$ for some $g\in K[X]$. 
 %Since $f\in K[X]$, 
 %the set
 %$\left\{k\geq 0:f\in K\left[X^{p^k}\right]\right\}$ is non-empty
