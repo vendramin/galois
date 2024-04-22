@@ -1,21 +1,102 @@
 \section{15/04/2024}
 
-
-
 \subsection{Galois' correspondence}
+
+\index{Partially ordered set}
+\index{Poset}
+A \textbf{partially order set} (or \emph{poset}) is a pair $(X,\leq)$, where $X$ is a non-empty set
+and $\leq$ is a reflexive, antisymmetric and transitive relation on $X$. This means:
+\begin{enumerate}
+    \item $x\leq x$ for all $x\in X$, 
+    \item $x\leq y$ and $y\leq x$ imply $x=y$, and 
+    \item $x\leq y$ and $y\leq z$ imply $x\leq z$. 
+\end{enumerate}
+Let $(X,\leq)$ be a partially ordered set and $x,y\in X$. 
+An element $z$ of a poset $(X,\leq)$ is an \textbf{upper bound} of $x$ and $y$ if 
+$x\leq z$ and $y\leq z$. And $\xi$ 
+is a \textbf{least upper bound} of $x$ and $y$ 
+if it is an upper bound with $\xi\leq z$ for every upper bound $z$ of $x$ and $y$. 
+Similarly, one defines lower bounds and greatest lower bounds. 
+
+\begin{definition}
+\index{Lattice}
+    A \textbf{lattice} if a partially ordered set $L$ in which 
+    each pair of elements $x,y\in L$ has a least upper bound $x\vee y$ and a
+    greatest lower bound $x\wedge y$. 
+\end{definition}
+
+The basic example is the following. 
+Let $X$ be a set and $\mathcal{P}(X)$ be the collection of all subsets of $X$. The relation 
+$A\leq B\Longleftrightarrow A\subseteq B$
+turns $\mathcal{P}(X)$ into a lattice 
+with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$. 
+
+\begin{example}
+\index{Lattice!of subgroups}
+    Let $G$ be a group and $L(G)$ be the collection of subgroups of $G$. The relation
+    \[ 
+    H\leq K\Longleftrightarrow H\subseteq K
+    \] 
+    turns $L(G)$ into a lattice 
+    with $H\vee K=\langle H,K\rangle$ and 
+    $H\wedge K=H\cap K$. 
+\end{example}
+
+\begin{example}
+    Let $E/K$ be a field extension and $L(E/K)$ be the collection of 
+    intermediate fields. The relation
+    \[
+    F\leq L\Longleftrightarrow F\subseteq L
+    \]
+    turns $L(E/K)$ into a lattice with 
+    $F\vee L=FL$ and $F\wedge L=F\cap L$. 
+\end{example}
+
+\index{Order-reversing map}
+A map $f\colon L\to L_1$ between two lattices is 
+said to be \textbf{order-reversing} if 
+$x\leq y$ implies $f(y)\leq f(x)$. 
+
+We shall need an exercise. 
+
+\begin{exercise}
+\label{xca:order_reversing}
+    Let $L_1$ and $L_2$ be lattices and $f\colon L_1\to L_2$ be a bijection 
+    such that $f$ and its inverse are both order reversing. Then 
+    \[
+    f(x\vee y)=f(x)\wedge f(y),\quad 
+    f(x\wedge y)=f(x)\vee f(y)
+    \]
+    for all $x,y\in L_1$. 
+\end{exercise}
+
+% \begin{proof}
+%     Since $x\leq x\vee y$ and $y\leq x\vee y$, 
+%     $f(x\vee y)$ is a lower bound of $f(x)$ and $f(y)$, as 
+%     \[
+%     f(x\vee y)\leq f(x),\quad f(x\vee y)\leq f(y).
+%     \]
+% \end{proof}
+
 
 \begin{theorem}[Galois]
 \index{Galois' theorem}
     Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
     There exists a bijective correspondence
     \[
-    \{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
-    \{S:S\text{ is a subgroup of $G$}\}
+    L(E/K)=\{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
+    \{S:S\text{ is a subgroup of $G$}\}=L(G). 
     \]
-    The correspondence is given by $F\mapsto \Gal(E/F)$ and 
-    $\prescript{S}{}{E}\mapsfrom S$. Moreover, 
-    normal subextensions of $E/K$ correspond 
-    to normal subgroups of $G$. 
+    The correspondence is given by $\alpha\colon F\mapsto \Gal(E/F)$ and 
+    $\beta\colon \prescript{S}{}{E}\mapsfrom S$. Moreover, the following
+    conditions hold:
+    \begin{enumerate}
+        \item $\alpha$ and $\beta$ are order-reversing bijections. 
+        \item $[F:K]=(G:\Gal(E/F))$ and $(G:S)=[\prescript{S}{}{E}:K]$.
+        \item $F/K$ is a Galois extension if and only if $\Gal(E/F)$ is a normal subgroup of $G$.        
+    \end{enumerate}
+    %normal subextensions of $E/K$ correspond 
+    %to normal subgroups of $G$. 
 \end{theorem}
 
 \[
@@ -35,7 +116,8 @@
 \]
 
 \begin{proof}
-Let $\alpha$ and $\beta$ be the maps $\alpha(F)=\Gal(E/F)$ and $\beta(S)=\prescript{S}{}{E}$. A routine
+Let $\alpha\colon L(E/K)\to L(G)$, $\alpha(F)=\Gal(E/F)$, and $\beta\colon L(G)\to L(E/K)$, 
+$\beta(S)=\prescript{S}{}{E}$. A routine
 exercise shows that $\alpha$ and $\beta$ are well-defined. 
 We first note that
 \begin{align*}
@@ -46,6 +128,8 @@ since $E/F$ is a Galois extension. Moreover,
    &\alpha(\beta(S))=\alpha(\prescript{S}{}{E})=\Gal(E/\prescript{S}{}{E})=S
 \end{align*}
 by Artin's theorem, as $S$ is finite. 
+
+It is straightforward to check that $\alpha$ and $\beta$ are order-reversing bijections. 
 
 Let $F$ be a subfield of $E$ containing $K$ and 
 $S=\alpha(F)$. Then
@@ -170,21 +254,36 @@ Some easy consequences.
     $F=\Q(\sqrt{5})$. 
 \end{example}
 
-Let us mention some other consequences.
+Let us mention some other consequences (of the fact that the correspondence 
+depends on order-reversing bijections). 
 
 \begin{exercise}
-\label{xca:composite}
-    Let $E/K$ be a finite Galois extension 
-    and $F_1,\dots,F_n$ fields 
-    such that $K\subseteq F_i\subseteq E$ for 
-    all $i\in\{1,\dots,n\}$. For every 
-    $i$ let $S_i=\Gal(E/F_i)$. Then
-    \[
-    \Gal\left(E/\bigcap_{i=1}^nF_i\right)=\left\langle\bigcup_{i=1}^nS_i\right\rangle,
-    \quad
-    \Gal\left(E/\prod_{i=1}^nF_i\right)=\bigcap_{i=1}^nS_i.
-    \]
+    Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
+    If $S$ and $T$ are subgroups of $G$, then 
+    $\prescript{\langle S,T\rangle}{}{E}=\prescript{S}{}{E}\cap \prescript{T}{}{E}$ and 
+    $\prescript{S\cap T}{}{E}=\prescript{S}{}{E}\prescript{T}{}{E}$.
 \end{exercise}
+
+\begin{exercise}
+Let $E/K$ be a finite Galois extension 
+and $F,L\in L(E/K)$. Prove that $\Gal(E/FL)=\Gal(E/F)\cap\Gal(E/L)$ and 
+$\Gal(E/F\cap L)=\langle\Gal(E/F),\Gal(E/L)\rangle$.    
+\end{exercise}
+
+
+% \begin{exercise}
+% \label{xca:composite}
+%     Let $E/K$ be a finite Galois extension 
+%     and $F_1,\dots,F_n$ fields 
+%     such that $K\subseteq F_i\subseteq E$ for 
+%     all $i\in\{1,\dots,n\}$. For every 
+%     $i$ let $S_i=\Gal(E/F_i)$. Then
+%     \[
+%     \Gal\left(E/\bigcap_{i=1}^nF_i\right)=\left\langle\bigcup_{i=1}^nS_i\right\rangle,
+%     \quad
+%     \Gal\left(E/\prod_{i=1}^nF_i\right)=\bigcap_{i=1}^nS_i.
+%     \]
+% \end{exercise}
 
 % \begin{sol}{xca:composite}
 %     We solve the exercise for $n=2$. The general case 
@@ -209,9 +308,6 @@ Let us mention some other consequences.
 %     \end{align*}
 % \end{sol}
 
-The following statement is a concrete application of the 
-previous exercise.
-
 \begin{exercise}
     Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$.
     Assume that $G$ is the direct product
@@ -222,19 +318,19 @@ previous exercise.
 \end{exercise}
 
 \begin{proposition}
-Let $E_1/K,\dots,E_r/K$ be Galois extensions. 
-If $E=\prod_{i=1}^rE_i$, then $E/K$ is a Galois extension. If, moreover, each $E_i/K$ is finite,
+Let $E_1/K,E_2/K$ be Galois extensions. 
+If $E=E_1E_2$, then $E/K$ is a Galois extension. If, moreover, $E_1/K$ and $E_2/K$ are finite,
 then 
 \[
-\theta\colon \Gal(E/K)\to \Gal(E_1/K)\times\cdots\times\Gal(E_r/K),
+\theta\colon \Gal(E/K)\to \Gal(E_1/K)\times\Gal(E_2/K),
 \quad
-\sigma\mapsto(\sigma|_{E_1},\dots,\sigma|_{E_r}),
+\sigma\mapsto(\sigma|_{E_1},\sigma|_{E_2}),
 \]
 is an injective group homomorphism.
 \end{proposition}
 
 \begin{proof}
-    We only do the first part in the case $r=2$, the general case is left as an exercise. Since $E_1/K$ is algebraic, 
+    Since $E_1/K$ is algebraic, 
     then $E_1E_2/E_2$ is algebraic. Since $E_2/K$ is algebraic, $E_1E_2/K$ is algebraic. Similarly, 
     $E_1E_2/K$ is separable. 
     
@@ -246,8 +342,8 @@ is an injective group homomorphism.
     If both $E_1/K$ and $E_2/K$ are finite, then $E_1E_2/K$ is finite. 
     
     Then $\theta$ is a group homomorphism. We claim that the map $\theta$ is injective. Let $\sigma\in\ker\theta$. Then
-    $\sigma|_{E_i}=\id_{E_i}$ for all $i\in\{1,\dots,r\}$. Let $S=\langle\sigma\rangle\subseteq\Gal(E/K)$ and
-    $F=\prescript{S}{}{E}$. Then $E_i\subseteq F$ for all $i\in\{1,\dots,r\}$ and
+    $\sigma|_{E_i}=\id_{E_i}$ for all $i\in\{1,2\}$. Let $S=\langle\sigma\rangle\subseteq\Gal(E/K)$ and
+    $F=\prescript{S}{}{E}$. Then $E_i\subseteq F$ for all $i\in\{1,2\}$ and
     hence $E\subseteq F$. It follows that $F=E=\prescript{\{\id\}}{}{E}$ and therefore $S=\{\id\}$, so 
     $\sigma=\id$. 
 \end{proof}
@@ -309,8 +405,7 @@ $F/K$ is separable and
 $E/F$ is a \textbf{purely inseparable} extension, meaning that
 for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable. 
 
-The number $[E:F]$ is known as the \textbf{degree of inseparability} of $E/K$. 
-We write $[E:K]_{\operatorname{ins}}=[E:F]$.
+The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the \textbf{degree of inseparability} of $E/K$. 
 Clearly, $E/K$ is separable if and only if $[E:K]_{\operatorname{ins}}=1$ and 
 $E/K$ is purely inseparable if and only if $[E:K]_{\operatorname{ins}}=[E:K]$. 
 
@@ -367,8 +462,8 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     The minimality of $m$ implies that $s\geq m$ and hence $s=m$. Now $p^mt=p^st=r\leq p^m$, so $t=1$. 
     This means $f(x,K)=X^{p^m}-x^{p^m}$. 
     
-    We now prove $3)\implies 4)$. Let $C/K$ be an algebraic closure that contains $E$
-    and $\sigma\in\Hom(E/K,C/K)$. Let $x\in E$. We claim that $\sigma(x)=x$. Since 
+    We now prove $3)\implies 4)$. Let $C/K$ be an algebraic closure of $K$ containing $E$ and $x\in E$.  
+    Let $\sigma\in\Hom(E/K,C/K)$. We claim that $\sigma(x)=x$. Since 
     $f(x,K)=X^{p^m}-a$, 
     \[
     \left(\sigma(x)\right)^{p^m}=\sigma\left(x^{p^m}\right)=\sigma(a)=a=x^{p^m}.
@@ -394,7 +489,7 @@ Some consequences:
     Moreover, $x^{[E:K]}\in K$. 
 \end{exercise}
 
-For the first part of the previous exercise, write $E=K(x_1,\dots,x_n)$ and proceed by induction on $n$. 
+For the first part of the previous exercise, write $E=K(x_1,\dots,x_n)$ and proceed by induction on~$n$. 
 
 \begin{exercise}
     Let $K$ be of characteristic $p>0$ and 
@@ -410,91 +505,3 @@ Since
 [E:K]=[E:F]\gamma(E/K)=[E:K]_{\operatorname{ins}}\gamma(E/K).
 \end{gather*}
 
-\subsection{Norm and trace}
-
-\begin{definition}
-\index{Trace}
-\index{Norm}
-    Let $E/K$ be a finite extension and $C/K$ be an algebraic closure 
-    that contains $E$. Let $A=\Hom(E/K,C/K)$. For $x\in E$
-    we define the \textbf{trace} of $x$ in $E/K$ 
-    as 
-    \[
-    \trace_{E/K}(x)=[E:K]_{\operatorname{ins}}\sum_{\varphi\in A}\varphi(x)
-    \]
-    and the \textbf{norm} of $x$ in $E/K$ as
-    \[
-    \norm_{E/K}(x)=\left(\prod_{\varphi\in A}\varphi(x)\right)^{[E:K]_{\operatorname{ins}}}.
-    \]
-\end{definition}
-
-As an optional exercise, one can show that these definitions do not depend on the algebraic closure. 
-
-We collect some basic properties as an exercise:
-
-\begin{exercise}
-\label{xca:norm_and_trace}
-    Let $E/K$ be a finite extension. The following statements hold:
-    \begin{enumerate}
-        \item If $E/K$ is not separable, then $\trace_{E/K}(x)=0$ for all $x\in E$.
-        \item If $x\in K$, then $\trace_{E/K}(x)=[E:K]x$.
-        \item $\trace_{E/K}(x)\in K$ for all $x\in E$.
-        \item $\norm_{E/K}(x)=0$ if and only if $x=0$. 
-        \item If $x\in K$, then $\norm_{E/K}(x)=x^{[E:K]}$. 
-        \item $\norm_{E/K}(x)\in K$ for all $x\in E$. 
-    \end{enumerate}
-\end{exercise}
-
-One proves, moreover, that  
-$\trace_{E/K}\colon E\to K$ 
-satisfies
-\[
-\trace_{E/K}(x+\lambda y)=
-\trace_{E/K}(x)+\lambda\trace_{E/K}(y)
-\]
-for all $x,y\in E$ and $\lambda\in K$, that is to say that 
-$\trace_{E/K}\colon E\to K$ 
-is a 
-linear form in $E$ The norm  
-$\norm_{E/K}\colon E^{\times}\to K^{\times}$ 
-is a group homomorphism. 
-
-\begin{exercise}
-        Let $E/K$ be a finite extension and
-        $x\in E$. If
-        \[
-        f(x,K)=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0,
-        \]
-        then 
-        $\norm_{E/K}(x)=\left((-1)^na_0\right)^{[E:K(x)]}$ and 
-        $\trace_{E/K}(x)=-[E:K(x)]a_{n-1}$. 
-\end{exercise}
-
-\begin{example}
-    Let $E=\Q(\sqrt{2},\sqrt{3})$. Then 
-    \begin{align*}
-    &\trace_{E/\Q}(\sqrt{2})=0,
-    &&
-    \norm_{E/\Q}(\sqrt{2})=4,\\
-    &\trace_{E/\Q(\sqrt{2})}(\sqrt{2})=2\sqrt{2},
-    &&\norm_{E/\Q(\sqrt{2})}(\sqrt{2})=2.    
-    \end{align*}
-\end{example}
-
-\begin{example}
-    If $E/K$ is a finite Galois extension, then 
-    \[
-    \trace_{E/K}(x)=\sum_{\sigma\in\Gal(E/K)}\sigma(x)
-    \quad\text{and}\quad
-    \trace_{E/K}(x)=\prod_{\sigma\in\Gal(E/K)}\sigma(x)
-    \]
-    for all $x\in E$. In particular, since $E=K(y)$ for some
-    $y$ by Proposition \ref{pro:monogenic}, 
-    \[
-    \trace_{E/K}(y)=-a_{n-1}
-    \quad\text{and}\quad
-    \norm_{E/K}(y)=(-1)^na_0,
-    \]
-    where
-    $f(y,K)=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0$.
-\end{example}        
