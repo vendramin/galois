@@ -1,10 +1,11 @@
 \section{24/03/2024}
 
 
-\begin{proposition}
+\begin{theorem}[Steinitz]
+\index{Steinitz' theorem}
     Let $E/K$ be a finite extension. Then $E=K(x)$ for some $x\in E$ 
     if and only if $E/K$ admits finitely many subextensions. 
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
      We may assume that $K$ is infinite; otherwise, the result is trivial. 
@@ -227,8 +228,7 @@ Before proving the theorem, we need a lemma.
 
 \begin{proof}
    Let $z\in E$ be of maximal degree. If $x\in E$, 
-   then $K(x,z)/K$ is separable. Then $K(x,z)=K(y)$ for some $y$. 
-   It follows that 
+   then $K(x,z)/K$ is separable. There exists $y$ such that $K(x,z)=K(y)$. Then 
    \[
    K(z)\subseteq K(x,z)=K(y).
    \]
