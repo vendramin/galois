@@ -188,3 +188,91 @@ $\Sym_5$.
 %\end{lstisting}
 
 %\subsection{Constructions (optional)}
+
+It is now time to prove Galois' great theorem on solvability 
+of polynomials. 
+
+\begin{theorem}[Galois]
+\index{Galois' theorem}
+\label{thm:Galois_great}
+    Let $K$ be a field of characteristic zero and $f\in K[X]$. 
+    Then $f$ is solvable by radicals if and only if $\Gal(f,K)$ is solvable. 
+\end{theorem}
+
+We proved in Theorem~\ref{thm:by_radicals} that solvable 
+polynomials have solvable Galois groups. 
+For the converse, we need two auxiliary results. 
+
+\begin{lemma}
+\label{lem:E=K(beta)}
+    Let $E/K$ be a Galois extension of prime degree $p$. Assume that $K$ admits a primitive $p$-root of one. 
+    Then $E=K(\beta)$ where $\beta^p\in K$. 
+\end{lemma}
+
+\begin{proof}
+    Assume that $\Gal(E/K)=\langle\sigma\rangle$. 
+    Let $\omega\in K$ be a primitive $p$-root of one. Then $\norm_{E/K}(\omega)=\omega^p=1$. By Hilbert's theorem, 
+    $\omega=\beta/\sigma(\beta)$ for some $\beta\in E$. Note that $\beta\not\in K$, as $\omega\ne1$. Moreover, 
+    \[
+    \sigma(\beta^p)=(\beta\omega^{-1})^p=\beta^p\in\prescript{\Gal(E/K)}{}{E}=K.
+    \]
+    Since $K\subseteq K(\beta)\subseteq E$ and $[E:K]=p$, we conclude that $E=K(\beta)$ with $\beta^p\in K$. 
+\end{proof}
+
+\begin{exercise}
+\label{xca:embedding}
+    Let $E/K$ be a decomposition field of $f\in K[X]$ and $K^*/K$ be an extension.
+    If $E^*/K^*$ is a decomposition field of $f$ containing $E$, then 
+    \[
+    \Gal(E^*/K^*)\to\Gal(E/K),\quad \sigma\mapsto\sigma|_{E},
+    \]
+    is an injective group homomorphism. 
+\end{exercise}
+
+Now Theorem \ref{thm:Galois_great} will follow from the following theorem. 
+
+\begin{theorem}
+    Let $K$ be a field of characteristic zero and $E/K$ be a Galois extension.
+    If $\Gal(E/K)$ is solvable, then $E$ can be embedded in a radical extension. 
+\end{theorem}
+
+\begin{proof}
+    Let $G=\Gal(E/K)$. Since $G$ is solvable, by Proposition \ref{pro:prime_index}, 
+    there exists a normal subgroup $H$ of $G$ of prime index $p$. 
+    Let $\omega$ be a primitive $p$-th root of one. (It exists because $K$ is a field of characteristic zero.)
+    
+    We proceed by induction on $[E:K]$. 
+    
+    If $[E:K]=1$, there is nothing to prove. 
+    So assume that $[E:K]>1$. 
+
+    We first assume that $\omega\in K$. 
+    The group $\Gal(E/\prescript{H}{}{E})$ is solvable, as it is a subgroup of $G$. Moreover, since 
+    \[
+    [E:\prescript{H}{}{E}]<[E:K],
+    \]
+    the inductive hypothesis implies that $\prescript{H}{}{E}/E$ can be embedded in a radical extension, so 
+    there exists a radical tower
+    is 
+    \begin{equation}
+    \label{eq:radical_tower1}
+    \prescript{H}{}{E}\subseteq R_1\subseteq R_2\subseteq\cdots\subseteq R_m,
+    \end{equation}
+    where $E\subseteq R_m$. Now $\prescript{H}{}{E}/K$ is a Galois extension, as $H$ is normal in $G$. Moreover, 
+    \[ 
+    [\prescript{H}{}{E}:K]=(G:H)=p.
+    \]
+    Since $\omega\in K$, Lemma~\ref{lem:E=K(beta)} implies that 
+    $\prescript{H}{}{E}=K(\beta)$ for some $\beta$ such that $\beta^p\in K$. The radical tower \ref{eq:radical_tower1} can be 
+    extended by adding $K\subseteq \prescript{H}{}{E}$. 
+
+    For the general case, let $K^*=K(\omega)$ and $E^*=E(\omega)$. Then $E^*/K^*$ is a Galois extension with Galois group 
+    $\Gal(E^*/K^*)$. By Exercise~\ref{xca:embedding}, $\Gal(E^*/K^*)$ is solvable. By the previous part, 
+    $E^*$ and $E$ can be embedded in a radical extension $R^*/K^*$, so there exists a radical tower
+    \begin{equation}
+    \label{eq:radical_tower2}
+    K^*\subseteq R_1^*\subseteq R_2^*\subseteq\cdots\subseteq R_n^*.
+    \end{equation}
+    Since $K^*=K(\omega)$ is a pure extension, the radical tower \eqref{eq:radical_tower2} 
+    can be extended by adding $K\subseteq K^*$. 
+\end{proof}
