@@ -238,6 +238,80 @@ maps $\sigma\mapsto\theta^{-1}\sigma$ and
 $\varphi\mapsto\theta\varphi$ are inverse to each other. 
 \end{sol}
 
+\begin{sol}{xca:order_reversing}
+    We first prove that for every order
+    reversing function $\varphi$
+    and every element $s,t$ in its domain,
+    \[
+    \varphi(s\vee t)\leq \varphi(s)\wedge \varphi(t) \text{ and }
+    \varphi(s)\vee \varphi(t)\leq \varphi(s\wedge t).
+    \]
+    Since that $s\leq s\vee t$
+    and $t\leq s\vee t$ and $\varphi$
+    is order reversing,
+    we have that $\varphi(s\vee t)\leq \varphi(s)$ 
+    and $\varphi(s\vee t)\leq \varphi(t)$.
+    Hence $\varphi(s\vee t)\leq \varphi(s)\wedge \varphi(t).$
+    Moreover $s\wedge t\leq s$
+    and $s\wedge t\leq t$.
+    So $\varphi(s)\leq \varphi(s\wedge t)$ and $\varphi(t)\leq \varphi(s\wedge t)$.
+    Hence 
+    $\varphi(s)\vee \varphi(t)\leq \varphi(s\wedge t).$
+
+    We can now apply this result
+    for $\varphi=f$, $s=x$ and $t=y$
+    obtaining that
+    \[
+    f(x\vee y)\leq f(x)\wedge f(y), \quad
+    f(x)\vee f(y)\leq f(x\wedge y).
+    \]
+    On the other hand, for $\varphi=f^{-1}$, 
+    $s=f(x)$ and $t=f(y)$,
+    we obtain that 
+    \[
+    f^{-1}(f(x)\vee f(y))\leq
+    f^{-1}(f(x))\wedge f^{-1}(f(y))=
+    x\wedge y,
+    \]
+    and
+    \[
+    x\vee y=f^{-1}(f(x))\vee f^{-1}(f(y))\leq f^{-1}\big(f(x)\wedge f(y)\big).
+    \]
+    Thus, applying $f$, which is order reversing,
+    it implies that 
+    \[
+    f(x\wedge y)\leq f\big(f^{-1}(f(x)\vee f(y))\big)=
+    f(x)\vee f(y)
+    \]
+    and
+    \[
+    f(x)\wedge f(y)=f\big(f^{-1}\big(f(x)\wedge f(y)\big)\big)\leq f(x\vee y).
+    \]
+ \end{sol}
+
+ \begin{sol}{xca:Cauchy+Galois}
+     Since $E/K$ is a Galois extension,
+     the order of $\Gal(E/K)$ is precisely $[E:K]=n$.
+     So, by Cauchy's Theorem, there exists a subgroup $S$ 
+     of $\Gal(E/K)$
+     of order $p$.
+     Then, by Galois' Theorem, the subextension
+     ${}^SE/K$
+     has degree equal to the index of $S$,
+     which is $n/p$.
+ \end{sol}
+
+ \begin{sol}{xca:Sylow+Galois}
+     Since $E/K$ is a Galois extension,
+     $|\Gal(E/K)|=[E:K]=p^\alpha m$.
+     So, by Sylow's Theorem, there exists a subgroup $P$ 
+     of $\Gal(E/K)$
+     of order $p^{\alpha}$.
+     Then, by Galois' Theorem, the subextension
+     ${}^PE/K$
+     has degree $(\Gal(E/K):P)=m$.
+ \end{sol}
+
 \begin{sol}{xca:separable_charp}
     Write $f=X^n+a_{n-1}X^{n-1}+\cdots+a_1X+a_0$. Then 
     \[ 
