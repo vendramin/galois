@@ -96,6 +96,33 @@ are integral domains.
 % 	$|K|=p^m$ for some prime number $p$ and some $m\geq1$. 
 % \end{exercise}
 
+\begin{proposition}
+\label{pro:cyclic}
+    Let $K$ be a field. Then any finite subgroup of  $K^\times=K\setminus\{0\}$ is cyclic. 
+\end{proposition}
+
+\begin{proof}
+    Let $G$ be a finite subgroup of $K^\times$. Let 
+    $x\in G$ of maximal order $N$. We will show that any element of 
+    $G$ is a power of $x$. Let $y\in G$ and $n=|y|$. 
+    Note that $X^n-1\in K[X]$ has at most $n$ roots in $K$. 
+    
+    We claim that $n$ divides $N$. If not, there exists
+    a prime number $p$ and a power $q=p^\beta$ of $p$ 
+    such that 
+    $q\mid n$ and $q\nmid N$. Let $z=xy^{n/q}$. Since 
+    $G$ is abelian, 
+    \[
+    |z|=\lcm\{N,q\}=Nq>N,
+    \]
+    a contradiction. 
+
+    The polynomial $X^n-1\in K[X]$ has $n$ distinct roots in $K$, these are
+    the elements $x^{kN/n}$ for $k\in\{0,\dots,n-1\}$. Since $y$ 
+    has order $n$, it has to be one of these roots. Thus
+    $y=x^{kN/n}$ for some $k\in\{0,\dots,n-1\}$. 
+\end{proof}
+
 \begin{definition}
 	\index{Subfield}
 	A \textbf{subfield} of a ring $R$ is a subring of $R$ 
@@ -114,7 +141,7 @@ $K$ and $L$ have the same characteristic.
 	for all $n\in\Z_{\geq 0}$. 
 \end{exercise}
 
-Note that finite fields are of characteristic $p$. 
+Note that finite fields are of prime characteristic. 
 
 Let $K$ be a subfield of a field $E$. Then $E$ 
 is a $K$-vector space with the usual scalar multiplication
