@@ -198,6 +198,24 @@ and $g$ satisfies it for $p=5$.
     Hence $f$ is reducible.
 \end{sol}
 
+\begin{sol}{xca: Q[sqrt2]=Q(sqrt2)}
+Clearly for every field extension $L/K$ and 
+    every $\alpha\in L$ we have that
+    $K[\alpha]\subseteq K(\alpha)$.
+
+    Vice versa take $\frac{a+\sqrt{2}b}{c+\sqrt{2}d}\in \Q(\sqrt{2})$,
+    then we can write:
+    \[
+    \frac{a+\sqrt{2}b}{c+\sqrt{2}d}=\frac{(a+\sqrt{2}b)(c-\sqrt{2}d)}{(c+\sqrt{2}d)(c-\sqrt{2}d)}=
+    \frac{ac-2bd+(bc-ad)\sqrt{2}}{c^2-2d^2}.
+    \]
+    Hence
+    \[
+    \frac{a+\sqrt{2}b}{c+\sqrt{2}d}=\frac{ac-2bd}{c^2-2d^2}+\frac{bc-ad}{c^2-2d^2}\sqrt{2}\in \Q[\sqrt{2}].
+    \]
+\end{sol}
+
+
 \begin{sol}{xca:degree_of_x}
     Let $f=f(x,K)$ be the minimal polynomial of $x$ over $K$ of degree $\deg(f)=n$.
     We claim that $\{1,x,\dots, x^{n-1}\}$ is a basis of $K(x)$ as a $K$-vector space. 
@@ -221,6 +239,68 @@ and $g$ satisfies it for $p=5$.
         n=\deg(f)\leq \deg(h)\leq n-1,
         \]
        a contradiction. 
+\end{sol}
+
+\begin{sol}{xca:algebraic}
+$a$ is algebraic over $K$, 
+so, by Theorem \ref{thm:simple extesnions},
+it has finite degree over $K$
+and $K[a]=K(a)$.
+$b$ is algebraic over $K$,
+so it is also algebraic over $K(a)$, hence it has finite degree over $K(a)$ and 
+$K(a)[b]=K(a,b)$.
+This implies that the extension
+$K(a,b)/K$ is a finite extension
+since it is a tower of finite extensions.
+Hence, by Corollary \ref{cor:finite=>algebraic}, $K(a,b)/K$ is an algebraic extension.
+Therefore, since $a+b,ab\in K(a,b)$,
+this implies that $a+b$ and $ab$
+are algebraic over $K$.
+\end{sol}
+
+\begin{sol}{xca:finite type}
+    Assume that $K(S)/K$ is algebraic, then, by Corollary \ref{cor:finite type algebraic}, 
+    $x$ is algebraic over $K$ for all $x\in S$.
+    By Corollary \ref{cor:finite type finite}, we conclude that $K(S)/K$ is finite.
+
+    On the other hand, if $K(S)/K$ is finite, then
+    $K\subseteq K(x)\subseteq K(S)$ for all $x\in S$, so
+    $K(x)/K$ is finite for all $x\in S$.
+    Then, by Theorem \ref{thm:simple extesnions},
+    $x$ is algebraic over $K$ for all $x\in S$.
+    Hence, by Corollary \ref{cor:finite type algebraic}, $K(S)/K$ is algebraic.
+ \end{sol}
+
+\begin{sol}{xca:degree of sqrt[3]2}
+    $\sqrt[3]{2}$ is a root of the monic polynomial $f=X^3-2\in \Q[X]$.
+    Therefore $\sqrt[3]{2}$ is algebraic over $\Q$ 
+    and $\Q[\sqrt[3]{2}]=\Q(\sqrt[3]{2})$.
+    In Exercise \ref{xca: X^3-2}, we proved that
+    $f$ is irreducible in $\Q[X]$.
+    Hence $f$ is the minimal polynomial of $\sqrt[3]{2}$
+    over $\Q$ and, by Theorem \ref{thm:simple extesnions},
+    $[\Q(\sqrt[3]{2}):\Q]=\deg f=3$.
+\end{sol}
+
+\begin{sol}{xca:Q(i,sqrt2)}
+    $i$ is a root of the monic polynomial $X^2+1\in\Q[X]$
+    and $\sqrt{2}$ is a root of the monic polynomial of 
+    $X^2-2\in\Q[X]$.
+    So, by Corollary \ref{cor:finite type finite},
+     $\Q[i,\sqrt{2}]=\Q(i,\sqrt{2})$ and it is algebraic over $\Q$.
+    By Eisenstein's criterion with $p=2$,
+    $X^2-2$ is irreducible in $\Q[X]$, so 
+    $[\Q(\sqrt{2}):\Q]=2$.
+    Since $i$ is a root of $X^2+1\in\Q[X]$,
+    then $[E:\Q(\sqrt{2})]\leq 2$.
+    Moreover, $i\notin \R\supseteq \Q(\sqrt{2})$.
+    Therefore $[E:\Q(\sqrt{2})]=2$ and,
+    by Proposition \ref{pro:multiplicativity of degree},
+    $$[E:\Q]=[E:\Q(\sqrt{2})][\Q(\sqrt{2}):\Q]=4$$.
+\end{sol}
+
+\begin{sol}{xca:Q(sqrt2,sqrt[3]5)}
+    
 \end{sol}
 
 \begin{sol}{xca:dec field X^4-5X^2+5}
