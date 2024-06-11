@@ -193,7 +193,7 @@ and $g$ satisfies it for $p=5$.
 \end{sol}
 
 \begin{sol}{xca: counterexample os Eisenstein in Z}
-    $f=3(X^10+5X^2-15)$ is a product of $3$ and $(X^10+5X^2-15)$,
+    $f=3(X^{10}+5X^2-15)$ is a product of $3$ and $(X^{10}+5X^2-15)$,
     which are both non-invertible elements of $\Z[X]$.
     Hence $f$ is reducible.
 \end{sol}
@@ -296,11 +296,248 @@ are algebraic over $K$.
     Moreover, $i\notin \R\supseteq \Q(\sqrt{2})$.
     Therefore $[E:\Q(\sqrt{2})]=2$ and,
     by Proposition \ref{pro:multiplicativity of degree},
-    $$[E:\Q]=[E:\Q(\sqrt{2})][\Q(\sqrt{2}):\Q]=4$$.
+    $$[E:\Q]=[E:\Q(\sqrt{2})][\Q(\sqrt{2}):\Q]=4.$$
 \end{sol}
 
 \begin{sol}{xca:Q(sqrt2,sqrt[3]5)}
+    \begin{enumerate}
+        \item       
+        We know that $[\Q(\sqrt[3]{5}):\Q]$ is the same as
+    the degree of the minimal polynomial of $\sqrt[3]{5}$
+    over $\Q$.
+    Clearly $\sqrt[3]{5}$ is a root of $X^3-5\in\Q[X]$.
+    Moreover, by Eisenstein's criterion with
+    $p=5$, we get that $X^3-5$ is irreducible in $\Q[X]$.
+    Hence $f(\sqrt[3]{5},\Q)=X^3-5$ and $[\Q(\sqrt[3]{5}:\Q]=3$.
+    We also know that $X^2-2$ is the minimal polynomial of $\sqrt{2}$ over $\Q$. 
+    So $[\Q(\sqrt{2}):\Q]=2$.
+    Therefore we are in the following situation:
+    \
+    \begin{center}
+        \begin{tikzcd}
+	& {E=\Q(\sqrt[3]{5},\sqrt{2})}\arrow[rd,no head]\\
+	{\Q(\sqrt[3]{5})}\arrow[ru,no head,"\leq 2"]&& {\Q(\sqrt{2})}\arrow[ld,no head,"2"]  \\
+	& {\Q}\arrow[lu,no head,"3"]
+ \end{tikzcd}
+    \end{center}
+    so on the one hand
+    \[
+    [E:\Q]=[E:\Q(\sqrt{2})][\Q(\sqrt{2}):\Q]=[E:\Q(\sqrt{2})]2
+    \]
+    and on the other hand
+    \[
+    [E:\Q]=[E:\Q(\sqrt[3]{5})][\Q(\sqrt[3]{5}):\Q]=[E:\Q(\sqrt[3]{5})]3\leq 2\cdot 3=6.
+    \]
+    Therefore $2$ and $3$ divide $[EF:\Q]\leq 6$.
+    Hence the only possibility is that $[E:\Q]=6$.
+    \item Clearly $\Q(\sqrt{2}+\sqrt[3]{5})\subseteq E$.
+    On the other hand, let $\alpha=\sqrt{2}+\sqrt[3]{5}$.
+    Then 
+    \[
+    5=(\alpha-\sqrt{2})^3=\alpha^3-3\sqrt{2}\alpha^2+6\alpha-2\sqrt{2},
+    \]
+    which implies that 
+    \[
+    \sqrt{2}=\frac{5-6\alpha}{}\in\Q(\alpha)).
+    \]
+    Moreover, $\sqrt[3]{5}=\alpha-\sqrt{2}\in\Q(\alpha)$, hence $E=\Q(\alpha)$.
+    \item From the previous part of this exercise
+    we get that 
+    \[
+    \sqrt{2}(3\alpha^2+2)=\alpha^3+6\alpha-5.
+    \]
+    Hence, squaring both sides of the previous equality,
+    we obtain
+    \[
+    18\alpha^4+24\alpha^2+8=\alpha^6+36\alpha^2+25+12\alpha^4-10\alpha^3-60\alpha.
+    \]
+    Therefore $\alpha$ is a root of the 
+    polynomial $f(X)=X^6-6X^4-10X^3+12X^2-60X+17$.
+    Moreover, from the first part, we know that
+    $[E:\Q]=6=\deg f$, hence $f(\alpha,\Q)=f(X)$.
+    \end{enumerate}
+\end{sol}
+
+\begin{sol}{xca:isqrt[4]3}
+Let $\alpha=\sqrt[4]{3}i$. Observe that $\alpha^2 = -\sqrt{3}$,
+so $\Q(\sqrt{3})\subseteq \Q(\alpha)$ and 
+\[
+2\geq \deg f(\alpha,\Q(\sqrt{3}))=[\Q(\alpha):\Q(\sqrt{3})].
+\]
+Moreover $\alpha\notin\R$,
+while $\Q(\sqrt{3})\subseteq \R$.
+So $[\Q(\alpha):\Q(\sqrt{3})]>1$, 
+hence $[\Q(\alpha):\Q(\sqrt{3})]=2$ and 
+$$f(\alpha,\Q(\sqrt{3}))=X^2+\sqrt{3}.$$
+
+Note that the minimal polynomial of $\alpha$
+over $\Q(i)$ has degree $[\Q(\sqrt[4]{3}i,i):\Q(i)]$.
+Moreover, $\Q(\sqrt[4]{3}i,i)=\Q(\sqrt[4]{3},i)$ and
+$$f(\alpha,\Q)=f(\sqrt[4]{3},\Q)=X^4+3,$$
+since $X^4+3$ is an irreducible
+(due to Eisenstein with $p=3$)
+monic polynomial that has $\alpha$ and $\sqrt[4]{3}$
+as roots.
+Therefore $[\Q(\sqrt[4]{3}):\Q]=[\Q(\sqrt[4]{3}i):\Q]=4$.
+Since $\Q(\sqrt[4]{3})\subseteq\R$, while $\sqrt[4]{3}i\notin\R$,
+we obtain that $1<[\Q(\sqrt[4]{3}i,i):\Q(\sqrt[4]{3})]\leq [\Q(i):\Q]=2$.
+\begin{center}
+        \begin{tikzcd}
+	& {\Q(\sqrt[4]{3}i,i)=\Q(\sqrt[4]{3},i)}\arrow[rd,no head]\\
+	{\Q(\sqrt[4]{3})}\arrow[ru,no head,"2"]& & {\Q(i)}\arrow[ld,no head,"2"]  \\
+	& {\Q}\arrow[lu,no head,"4"]
+ \end{tikzcd}
+    \end{center}
+Hence $[\Q(\sqrt[4]{3}i,i):\Q]=8$ and $[\Q(\sqrt[4]{3}i,i):\Q(i)]=4$, which means that $\deg f(\sqrt[4]{3}i,\Q(i))=4$.
+But $f(\sqrt[4]{3}i,\Q(i))$ divides $f(\alpha,\Q)=X^4+3,$ so
+$$f(\sqrt[4]{3}i,\Q(i))=X^4+3.$$
+\end{sol}
+
+\begin{sol}{xca:sqrt{2}+sqrt[3]{5}i}
+    Let $\alpha=\sqrt{2}+i\sqrt[3]{5}$ and $E=\Q(\alpha,i)$. 
+    The minimal polynomial of $\alpha$ over $\Q(i)$ has
+    degree $[E:\Q(i)]$.
+    Observe that, since $\alpha-\sqrt{2}=i\sqrt[3]{5}$,
+    we have that $\alpha^3-3\sqrt{2}\alpha^2+6\alpha-2\sqrt{2}=-i5$.
+    Hence 
+    \[
+    \sqrt{2}=\frac{\alpha^3\alpha^2+6\alpha+i5}{3\alpha^2+2}\in E
+    \]
+    and so also $\sqrt[3]{5}=\frac{\alpha-\sqrt{2}}{i}\in E$. 
+    Therefore $E=\Q(\sqrt{2},\sqrt[3]{5},i)$.
+    To compute $[E:\Q(i)]$ we first compute $[\Q(\sqrt{2},i):\Q(i)]$
+    and  $[\Q(\sqrt[3]{5},i):\Q(i)]$.
     
+    We know that $i$ has degree 2 over $\Q$,
+so $[\Q(\sqrt[3]{5},i):\Q(\sqrt[3]{5})]$ and 
+$[\Q(\sqrt{2},i):\Q(\sqrt{2})]$ are both at most 2.
+Moreover $\Q(\sqrt[3]{5})$ and $Q(\sqrt{2})$ are contained in $\R$,
+while $i\notin\R$.
+Hence
+\[
+[\Q(\sqrt[3]{5},i):\Q(\sqrt[3]{5})]=2=[\Q(\sqrt{2},i):\Q(\sqrt{2})].
+\]
+\begin{center}
+        \begin{tikzcd}
+	& {\Q(\sqrt{2},i)}\arrow[rd,no head]\\
+	{\R\supseteq\Q(\sqrt{2})}\arrow[ru,no head,"2"]& & {\Q(i)}\arrow[ld,no head,"2"]  \\
+	& {\Q}\arrow[lu,no head,"2"]
+ \end{tikzcd}
+ \begin{tikzcd}
+	& {\Q(\sqrt[3]{5},i)}\arrow[rd,no head,"2"]&\\
+	{\Q(i)}\arrow[ru,no head,""]& & {\Q(\sqrt[3]{5})\subseteq \R}\arrow[ld,no head,"3"]  \\
+	& {\Q}\arrow[lu,no head,"2"]
+ \end{tikzcd}
+    \end{center}
+Therefore $[\Q(\sqrt{2},i):\Q(i)]=2$
+    and  $[\Q(\sqrt[3]{5},i):\Q(i)]=3$.
+    \begin{center}
+        \begin{tikzcd}
+	& {\Q(\alpha,i)=\Q(\sqrt{2},\sqrt[3]{5},i)}\arrow[rd,no head]\\
+	{\Q(\sqrt{2},i)}\arrow[ru,no head,""]& & {\Q(\sqrt[3]{5},i)}\arrow[ld,no head,"3"]  \\
+	& {\Q(i)}\arrow[lu,no head,"2"]
+ \end{tikzcd}
+    \end{center}
+So $[\Q(\alpha, i):\Q(i)]$ is divisible by 2 and 3 and it is also at most 6.
+Therefore the degree of the minimal polynomial
+of $\alpha$ over $\Q(i)$ is $[\Q(\alpha,i):\Q(i)]=6$.
+
+We already got $\alpha^3-3\sqrt{2}\alpha^2+6\alpha-2\sqrt{2}=-i5$, 
+so $2(3\alpha^2+2)^2=(\alpha^3\alpha^2+6\alpha+i5)^2,
+$
+i.e. 
+\[
+\alpha^6-6\alpha^4+10i\alpha^3+12\alpha^2+60i\alpha-33=0.
+\]
+This means that $\alpha$ is a root of the polynomial
+\[
+f(X)=X^6-6X^4+10iX^3+12X^2+60iX-33\in\Q(i)[X].
+\]
+Since $f$ is also monic and of degree 6, we can deduce that 
+$f(\alpha,\Q(i))=f$.
+\end{sol}
+
+\begin{sol}{xca:tower of finite extensions}
+By Proposition \ref{pro:multiplicativity of degree},
+we know that $[E:K]=[E:F][F:K]$, so 
+$[E:K]$ is finite if and only if $[E:F]$ and $[F:K]$ are finite.
+\end{sol}
+
+\begin{sol}{xca:sqrt(2),sqrt(3)}
+    We know that the minimal polynomials over $\Q$ are
+    $f(\sqrt{2},\Q)=X^2-2$ and $f(\sqrt{3},\Q)=X^2-3$.
+    So $[\Q(\sqrt{2}):\Q]=[\Q(\sqrt{3}):\Q]=2$.
+    Moreover,
+    $[\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2$.
+    It remains to check whether $\sqrt{2}\in \Q(\sqrt{3})$ or not.
+    A $\Q$ basis of $\Q(\sqrt{3})$ is $\{1,\sqrt{3}\}$.
+    If $\sqrt{2}\in \Q(\sqrt{3})$, then $\sqrt{2}=a+b\sqrt{3}$ for 
+    some $a,b\in\Q$, so $2=a^2+2ab\sqrt{3}+3b^2$.
+    Using the $\Q$-linear independence of $\{1,\sqrt{3}\}$,
+    we get that $2ab=0$ and $2=a^2+3b^2$.
+    Therefore either $a=0$ and $2/3=b^2$,
+    or $b=0$ and $2=a^2$.
+    But both cases are not possible because neither $2$ nor $2/3$ are 
+    squares in $\Q$.
+
+    We conclude that $\sqrt{2}\notin\Q(\sqrt{3})$.
+    So $[\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{3})]=2$ and
+    $[\Q(\sqrt{2},\sqrt{3}):\Q]=4$.
+    \begin{center}
+        \begin{tikzcd}
+	& {\Q(\sqrt{2},\sqrt{3})}\arrow[rd,no head]\\
+	{\Q(\sqrt{2})}\arrow[ru,no head,""]& & {\Q(\sqrt{3})}\arrow[ldd,no head,"2"]\arrow[ld,no head,""]  \\
+	& {\Q(\sqrt{2})\cap\Q(\sqrt{3})}\arrow[lu,no head,""]\\
+    & {\Q}\arrow[luu,no head,"2"]\arrow[u,no head]
+ \end{tikzcd}
+    \end{center}
+    Similarly to before 
+    $[\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2$,
+    but $\sqrt{2}\notin\Q(\sqrt{2})\cap\Q(\sqrt{3})$, so 
+    $[\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]=2$.
+    Hence $[\Q(\sqrt{2})\cap\Q(\sqrt{3}):\Q]=1$, i.e. $\Q(\sqrt{2})\cap\Q(\sqrt{3})=\Q$.
+\end{sol}
+
+\begin{sol}{xca:sqrt[3]2,3rd root of 1}
+The minimal polynomial of $\sqrt[3]{2}$ is $X^3-2$
+since it is monic, irreducible (by Eisenstein) and has $\sqrt[3]{2}$
+as a root. Hence $[\Q(\sqrt[3]{2}):\Q]=3$.
+$\xi\neq 1$ and it is a root of the polynomial $X^3-1=(X-1)(X^2+X+1)$,
+so it is a root of $X^2+X+1$, which is monic and
+irreducible (it is of degree 2 and the roots are not in $\Q)$.
+Hence $f(\xi,\Q)=X^2+X+1$ and $[\Q(\xi):\Q]=2$.
+We also have that $[\Q(\sqrt[3]{2},\xi):\Q]\leq 6$.
+    \begin{center}
+        \begin{tikzcd}
+	& {\Q(\sqrt[3]{2},\xi)}\arrow[rd,no head]\\
+	{\Q(\sqrt[3]{2})}\arrow[ru,no head,""]& & {\Q(\xi)}\arrow[ldd,no head,"2"]\arrow[ld,no head,""]  \\
+	& {\Q(\sqrt[3]{2})\cap\Q(\xi)}\arrow[lu,no head,""]\\
+    & {\Q}\arrow[luu,no head,"3"]\arrow[u,no head]
+ \end{tikzcd}
+    \end{center}
+By multiplicity of the degree of extensions, we obtain that
+6 has to divide $[\Q(\sqrt[3]{2},\xi):\Q]\leq 6$ and
+$[\Q(\sqrt[3]{2})\cap\Q(\xi):\Q]$ has to divide 2 and 3.
+Therefore 
+\[
+[\Q(\sqrt[3]{2},\xi):\Q]=6 \text{ and }
+[\Q(\sqrt[3]{2})\cap\Q(\xi):\Q]=1,
+\]
+which means that
+$\Q(\sqrt[3]{2})\cap\Q(\xi)=\Q$.
+\end{sol}
+
+\begin{sol}{xca: shift for algebraic}
+By definition $EF=E(F)$. If $F/K$ is algebraic, then $EF$ is
+generated by algebraic elements over $K$, so also over $E$.
+Hence $EF/E$ is an algebraic extension.
+\end{sol}
+
+\begin{sol}{xca: shift for finite}
+If $F/K$ is finite,
+then $F$ is generated by a finite number of algebraic elements over $K$.
+The same elements are algebraic over $E$ and generate $EF=E(F)$ over $E$.
+Hence $EF/E$ is a finite extension and $[EF:E]\leq [F:K]$.
 \end{sol}
 
 \begin{sol}{xca:dec field X^4-5X^2+5}
