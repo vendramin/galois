@@ -354,9 +354,15 @@ are algebraic over $K$.
     18\alpha^4+24\alpha^2+8=\alpha^6+36\alpha^2+25+12\alpha^4-10\alpha^3-60\alpha.
     \]
     Therefore $\alpha$ is a root of the 
-    polynomial $f(X)=X^6-6X^4-10X^3+12X^2-60X+17$.
+    polynomial 
+    \[
+    f(X)=X^6-6X^4-10X^3+12X^2-60X+17.
+    \]
     Moreover, from the first part, we know that
-    $[E:\Q]=6=\deg f$, hence $f(\alpha,\Q)=f(X)$.
+    \[
+    [E:\Q]=6=\deg f.
+    \]
+    Hence $f(\alpha,\Q)=f(X)$.
     \end{enumerate}
 \end{sol}
 
@@ -400,7 +406,9 @@ $$f(\sqrt[4]{3}i,\Q(i))=X^4+3.$$
     The minimal polynomial of $\alpha$ over $\Q(i)$ has
     degree $[E:\Q(i)]$.
     Observe that, since $\alpha-\sqrt{2}=i\sqrt[3]{5}$,
-    we have that $\alpha^3-3\sqrt{2}\alpha^2+6\alpha-2\sqrt{2}=-i5$.
+    \[
+    \alpha^3-3\sqrt{2}\alpha^2+6\alpha-2\sqrt{2}=-i5.
+    \]
     Hence 
     \[
     \sqrt{2}=\frac{\alpha^3\alpha^2+6\alpha+i5}{3\alpha^2+2}\in E
@@ -492,7 +500,9 @@ Then in particular $k_i\in K\subseteq F$ and $h_j\in K\subseteq E$, hence $x\in 
     $f(\sqrt{2},\Q)=X^2-2$ and $f(\sqrt{3},\Q)=X^2-3$.
     So $[\Q(\sqrt{2}):\Q]=[\Q(\sqrt{3}):\Q]=2$.
     Moreover,
-    $[\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2$.
+    \[
+    [\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2.
+    \]
     It remains to check whether $\sqrt{2}\in \Q(\sqrt{3})$ or not.
     A $\Q$ basis of $\Q(\sqrt{3})$ is $\{1,\sqrt{3}\}$.
     If $\sqrt{2}\in \Q(\sqrt{3})$, then $\sqrt{2}=a+b\sqrt{3}$ for 
@@ -515,11 +525,15 @@ Then in particular $k_i\in K\subseteq F$ and $h_j\in K\subseteq E$, hence $x\in 
     & {\Q}\arrow[luu,no head,"2"]\arrow[u,no head]
  \end{tikzcd}
     \end{center}
-    Similarly to before 
-    $[\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2$,
-    but $\sqrt{2}\notin\Q(\sqrt{2})\cap\Q(\sqrt{3})$, so 
-    $[\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]=2$.
-    Hence $[\Q(\sqrt{2})\cap\Q(\sqrt{3}):\Q]=1$, i.e. $\Q(\sqrt{2})\cap\Q(\sqrt{3})=\Q$.
+    Similarly, 
+    \[
+    [\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]\leq [\Q(\sqrt{2}):\Q]=2,
+    \]
+    but $\sqrt{2}\notin\Q(\sqrt{2})\cap\Q(\sqrt{3})$. Thus 
+    \[
+    [\Q(\sqrt{2}):\Q(\sqrt{2})\cap\Q(\sqrt{3})]=2
+    \] 
+    and hence $[\Q(\sqrt{2})\cap\Q(\sqrt{3}):\Q]=1$. Therefore  $\Q(\sqrt{2})\cap\Q(\sqrt{3})=\Q$.
 \end{sol}
 
 \begin{sol}{xca:sqrt[3]2,3rd root of 1}
@@ -663,8 +677,10 @@ But $4 \alpha^3 + 8 \alpha = 4\alpha (\alpha^2+2) \neq 0$, otherwise $\alpha\in\
 Therefore $\sqrt{2}=\frac{\alpha^4 + 12\alpha^2 - 3}{4 \alpha^3 + 8 \alpha}\in \Q(\alpha) $.
 
 This allows us to prove that $\Q(\sqrt{2} , \sqrt[4]{7}) = \Q(\alpha)$.
-From the definition of $\alpha$ it's clear that 
-$\Q(\alpha) \subseteq \Q(\sqrt{2} , \sqrt[4]{7})$.
+From the definition of $\alpha$ it is clear that 
+\[
+\Q(\alpha) \subseteq \Q(\sqrt{2} , \sqrt[4]{7}).
+\]
 On the other hand, we just proved that $\sqrt{2} \in \Q(\alpha)$.
 As $\sqrt[4]{7} = \alpha - \sqrt{2} \in \Q(\alpha)$,
 we also see that $\sqrt[4]{7} \in \Q(\alpha)$.
@@ -679,14 +695,16 @@ So
 $$0=f(\sqrt[4]{7})=\sqrt{7} + \beta \sqrt[4]{7} + \gamma.$$
 Therefore 
 $$\beta^2 \sqrt{7}  = (- \sqrt{7} - \gamma)^2 =7 + 2\gamma \sqrt{7}  + \gamma^2.$$
-So $(\beta^2 - 2 \gamma)\sqrt{7}= \gamma^2 + 7$.
+Thus 
+\[
+(\beta^2 - 2 \gamma)\sqrt{7}= \gamma^2 + 7.
+\]
 But $\beta^2 - 2 \gamma\neq 0$ because 
 $\gamma^2 + \beta \gamma + \frac{\beta^2}{2} = 0$ 
 holds only for $\gamma =\frac{\beta}{2} (-1 \pm i)\in \C\setminus\R$,
 which is clearly not in $\Q(\sqrt{2})$.
-Thus we would have 
-$\sqrt{7} = \frac{\gamma^2 + 7}{\beta^2 - 2 \gamma} \in \Q(\sqrt{2})$, which 
-is a contradiction.
+Thus 
+$\sqrt{7} = \frac{\gamma^2 + 7}{\beta^2 - 2 \gamma} \in \Q(\sqrt{2})$, a contradiction.
 
 To sum up we have that $\sqrt{2}\not\in \Q(\sqrt[4]{7})$ and
 \[

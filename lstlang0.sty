@@ -1,0 +1,47 @@
+\ProvidesFile{lstlang0.sty}
+    [2010/12/01 1.0 Language definition file for listings]
+
+%% This is a Magma language definition file for the listings package
+%% Based on Magma 2.17 (2010)
+%% Don Taylor (don.e.taylor@gmail.com)
+    
+\lst@definelanguage{Magma}%
+  {%
+   otherkeywords={:=,+:=,-:=,*:=},%
+          % functions
+   procnamekeys={function,func,intrinsic,procedure,proc},%
+         % Booleans
+   morekeywords={true,false},%
+          % relations
+   morekeywords=[2]{adj,and,cat,cmpeq,cmpne,diff,div,eq,ge,gt,in,is,join,le,lt,%
+          meet,mod,ne,notadj,notin,notsubset,or,sdiff,subset,xor},%
+          % keywords
+   morekeywords=[3]{assigned,break,by,case,catch,continue,declare,default,%
+          delete,do,elif,else,end,eval,exists,exit,for,forall,fprintf,if,local,%
+          not,print,printf,quit,random,read,readi,repeat,restore,save,select,%
+          then,time,to,try,until,vprint,vprintf,vtime,when,where,while},%
+          % directives
+   morekeywords=[4]{clear,forward,freeze,iload,import,load},%
+          % error checks
+   morekeywords=[5]{assert,assert2,assert3,error,require,requirege,requirerange},%
+          % constructors
+   morekeywords=[6]{car,comp,cop,elt,ext,frac,hom,ideal,iso,lideal,loc,map,%
+          ncl,pmap,quo,rec,recformat,rep,rideal,sub},%
+          % other constructors (semi-reserved)
+   morekeywords=[7]{AbelianGroup,AdditiveCode,AffineAlgebra,Algebra,%
+          AssociativeAlgebra,Character,CliffordAlgebra,Design,Digraph,%
+          ExtensionField,FPAlgebra,FiniteAffinePlane,FiniteProjectivePlane,%
+          Graph,Group,GroupAlgebra,IncidenceStructure,LieAlgebra,LinearCode,%
+          LinearSpace,MatrixAlgebra,MatrixGroup,MatrixRing,Monoid,%
+          MultiDigraph,MultiGraph,NearLinearSpace,Network,PartialMap,%
+          PermutationGroup,PolycyclicGroup,QuaternionAlgebra,Semigroup,%
+          ZModule},%
+          % functions
+   morekeywords={[8]function,func,intrinsic,procedure,proc,return},%
+      sensitive,%
+      morecomment=[l]//,%
+      morecomment=[s]{/*}{*/},%
+      morecomment=[s]{\{}{\}},%
+      morestring=[b]"%
+  }[keywords,procnames,comments,strings]%
+\endinput

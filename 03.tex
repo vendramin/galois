@@ -101,8 +101,11 @@
 \end{proof}
 
 If $\sigma\colon A\to B$ is a ring homomorphism, then $\sigma$ induces a ring
-homomorphism $\overline{\sigma}\colon A[X]\to B[X]$,
-$\sum_ia_iX^i\mapsto\sum_i\sigma(a_i)X^i$. 
+homomorphism 
+\[
+\overline{\sigma}\colon A[X]\to B[X],\quad 
+\sum_ia_iX^i\mapsto\sum_i\sigma(a_i)X^i.
+\]
 
 \begin{theorem}
 	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. Then 
@@ -111,7 +114,10 @@ $\sum_ia_iX^i\mapsto\sum_i\sigma(a_i)X^i$.
 
 \begin{proof}
 	We may assume that $f$ is irreducible over $K$. Let $L=K[X]/(f)$ and 
-	$\pi\colon K[X]\to L$ be the canonical map. Then $L$ 
+	\[
+    \pi\colon K[X]\to L
+    \]
+    be the canonical map. Then $L$ 
 	is a field (the reader should explain why). 
 	Let $\sigma\colon K\to L$, $a\mapsto \pi(aX^0)$, and 
 	$g=\overline{\sigma}(f)\in L[X]$. 
@@ -123,7 +129,7 @@ $\sum_ia_iX^i\mapsto\sum_i\sigma(a_i)X^i$.
 		&=\sum_i \sigma(a_i)\pi(X)^i
 		=\sum_i\pi(a_iX^0)\pi(X^i)=\pi(\sum a_iX^i)=\pi(f)=0.
 	\end{align*}
-	The previous lemma states that 
+    By Lemma \ref{lem:exists_bijective},  
 	there exists an extension $E/K$ and an isomorphism $\varphi\colon E\to L$
 	such that $\varphi|_K=\sigma$. Note that
 	$\varphi(x)=0$ if and only if $x=0$. If $u=\pi(X)$, then $\varphi^{-1}(u)$ is a root of $f$ in $E$, 
@@ -140,7 +146,7 @@ of positive degree, then there exists an extension $E/K$  such that
 each $f_i$ admits a root in $E$. This is proved by induction on~$n$.  
 
 \begin{definition}
-	A field $K$ is \textbf{algebraically closed} if each $f\in K[X]$ 
+	A field $K$ is \emph{algebraically closed} if each $f\in K[X]$ 
 	of positive degree admits a root in $K$. 
 \end{definition}
 
@@ -184,7 +190,7 @@ using Galois theory.
 \subsection{Artin's theorem}
 
 \begin{definition}
-	An \textbf{algebraic closure} of a field $K$ is an algebraic extension $C/K$ 
+	An \emph{algebraic closure} of a field $K$ is an algebraic extension $C/K$ 
 	such that $C$ is algebraically closed. 
 \end{definition}
 
