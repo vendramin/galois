@@ -1,4 +1,4 @@
-\section{06/05/2024}
+\section{Lecture -- Week 11}
 
 \subsection{Simplicity of the alternating simple group}
 
@@ -32,11 +32,11 @@ Finally, $[\Alt_n,\Alt_n]=\Alt_n$ for $n\geq5$.
 Let us compute some commutator subgroups (and the inclusion group homomorphism)  
 with the computer:
 \begin{lstlisting}
-julia> derived_subgroup(symmetric_group(3))
-(Alt( [ 1 .. 3 ] ), Group homomorphism from 
-Alt( [ 1 .. 3 ] )
-to
-Sym( [ 1 .. 3 ] ))    
+> S3 := Sym(3);
+> DerivedSubgroup(S3);
+Permutation group acting on a set of cardinality 3
+Order = 3
+    (1, 2, 3)   
 \end{lstlisting}
 
 \begin{exercise}
@@ -48,15 +48,24 @@ Recall that every normal subgroup is a union of conjugacy classes. The group
 $\Alt_5$ has conjugacy classes of sizes 1, 15, 20, 12 and 12. It follows that 
 the only possible normal subgroups of $\Alt_5$ are $\{\id\}$ and $\Alt_5$. 
 \begin{lstlisting}
-julia> A5 = alternating_group(5);
+> A5 := Alt(5);
+> ConjugacyClasses(A5);
+Conjugacy Classes of group A5
+-----------------------------
+[1]     Order 1       Length 1
+        Rep Id(A5)
 
-julia> [length(c) for c in conjugacy_classes(A5)]
-5-element Vector{ZZRingElem}:
- 1
- 15
- 20
- 12
- 12 
+[2]     Order 2       Length 15
+        Rep (1, 2)(3, 4)
+
+[3]     Order 3       Length 20
+        Rep (1, 2, 3)
+
+[4]     Order 5       Length 12
+        Rep (1, 2, 3, 4, 5)
+
+[5]     Order 5       Length 12
+        Rep (1, 3, 4, 5, 2)
 \end{lstlisting}
 
 \begin{theorem}[Jordan]
