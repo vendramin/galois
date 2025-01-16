@@ -3,55 +3,91 @@
 \usepackage{listings}
 \usepackage{tikz-cd}
 \usepackage{datetime}
-\usepackage{mathptmx}
 \usepackage{amssymb}
-\usepackage{newtxtext}
 \usepackage{mathtools}
 \usepackage{stmaryrd}
 \usepackage{mdframed}
 \usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage[most]{tcolorbox}
+%\usepackage{cleveref}
+
+%\usepackage{fontspec}
+%\setmainfont{Verdana}
+
+\hypersetup{
+  final, 
+  colorlinks, 
+  linkcolor=-red!55!green!50, 
+  citecolor=blue!50!red,
+  urlcolor=green!30!black
+}
+
+\swapnumbers
+
+% For Dyslexic replace the next three lines by 
+%\usepackage{fontspec}
+%\setmainfont{OpenDyslexic}
+%\usepackage{mathptmx}
+%\usepackage{newtxtext}
 
 \usepackage[margin=1in,footskip=.25in]{geometry}
 
 \overfullrule=1mm
 
-\lstdefinelanguage{Julia}%
-  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
-      end,export,false,for,function,immutable,import,importall,if,in,%
-      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
-      using,while},%
-   sensitive=true,%
-   alsoother={$},%
-   morecomment=[l]\#,%
-   morecomment=[n]{\#=}{=\#},%
-   morestring=[s]{"}{"},%
-   morestring=[m]{'}{'},%
-}[keywords,comments,strings]%
+\renewcommand\emph[1]{\textcolor{blue!50!red}
+{\bfseries #1}}
 
-\definecolor{background}{HTML}{F5F5F5}
-\definecolor{jlstring}{HTML}{880000}%          % julia's strings
-\definecolor{jlbase}{HTML}{444444}%            % julia's base color
-\definecolor{jlkeyword}{HTML}{444444}%         % julia's keywords
-\definecolor{jlliteral}{HTML}{78A960}%         % julia's literals
-\definecolor{jlbuiltin}{HTML}{397300}%         % julia's built-ins
-\definecolor{jlmacros}{HTML}{1F7199}%          % julia's macros
-\definecolor{jlfunctions}{HTML}{444444}%       % julia's functions
-\definecolor{jlcomment}{HTML}{888888}%         % julia's comments
-\definecolor{jlstring}{HTML}{880000}%          % julia's strings
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
 
 
-\lstset{%
-    language         = Julia,
-    basicstyle       = \color{jlstring}\ttfamily\scriptsize,
-    backgroundcolor  = \color{background},
-    keywordstyle     = \color{jlkeyword},
-    stringstyle      = \color{jlstring},
-    commentstyle     = \color{jlcomment},
+% \lstdefinelanguage{Julia}%
+%   {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+%       end,export,false,for,function,immutable,import,importall,if,in,%
+%       macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+%       using,while},%
+%    sensitive=true,%
+%    alsoother={$},%
+%    morecomment=[l]\#,%
+%    morecomment=[n]{\#=}{=\#},%
+%    morestring=[s]{"}{"},%
+%    morestring=[m]{'}{'},%
+% }[keywords,comments,strings]%
+
+% \definecolor{background}{HTML}{F5F5F5}
+% \definecolor{jlstring}{HTML}{880000}%          % julia's strings
+% \definecolor{jlbase}{HTML}{444444}%            % julia's base color
+% \definecolor{jlkeyword}{HTML}{444444}%         % julia's keywords
+% \definecolor{jlliteral}{HTML}{78A960}%         % julia's literals
+% \definecolor{jlbuiltin}{HTML}{397300}%         % julia's built-ins
+% \definecolor{jlmacros}{HTML}{1F7199}%          % julia's macros
+% \definecolor{jlfunctions}{HTML}{444444}%       % julia's functions
+% \definecolor{jlcomment}{HTML}{888888}%         % julia's comments
+% \definecolor{jlstring}{HTML}{880000}%          % julia's strings
+
+
+% \lstset{%
+%     language         = Julia,
+%     basicstyle       = \color{jlstring}\ttfamily\scriptsize,
+%     backgroundcolor  = \color{background},
+%     keywordstyle     = \color{jlkeyword},
+%     stringstyle      = \color{jlstring},
+%     commentstyle     = \color{jlcomment},
+%     showstringspaces = false,
+%     columns=fixed,
+% }
+
+\lstset{
+    language = Magma,
+    basicstyle=\ttfamily\small,
+    commentstyle=\small,
+    backgroundcolor = \color{gray!20!white},
     showstringspaces = false,
     columns=fixed,
 }
 
-\renewcommand\sectionname{Lecture}
+%\renewcommand\sectionname{Lecture}
 \renewcommand\subsectionname{\S}
 
 % para enumerar
@@ -59,23 +95,28 @@
 
 \usepackage[most]{tcolorbox}
 
-\newtcolorbox{mybox}{
-enhanced,
-boxrule=0pt,frame hidden,
-%borderline west={4pt}{0pt}{black},
-%colback={gray!20},
-sharp corners,
-left=.5cm
-%left=18.0pt
-}
+%\newtcolorbox{mybox}%[colback=red!5!white,colframe=red!75!black]
+% enhanced,
+% boxrule=0pt,frame hidden,
+% %borderline west={4pt}{0pt}{black},
+% %colback={gray!20},
+% sharp corners,
+% left=.5cm
+% %left=18.0pt
+% }
 
 \makeindex             
 
+\newcommand{\Irr}{\operatorname{Irr}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\op}{\operatorname{op}}
 \newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\supp}{\operatorname{supp}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\B}{\mathbb{B}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\rank}{\operatorname{rank}}
@@ -100,6 +141,38 @@ left=.5cm
 \newcommand{\PGL}{\mathbf{PGL}}
 \newcommand{\Fix}{\operatorname{Fix}}
 \newcommand{\Aff}{\operatorname{Aff}}
+\newcommand{\Soc}{\operatorname{Soc}}
+\newcommand{\Core}{\operatorname{Core}}
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\Fun}{\operatorname{Fun}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\cp}{\operatorname{cp}}
+\newcommand{\cf}{\operatorname{cf}}
+\newcommand{\Char}{\operatorname{Char}}
+\newcommand{\gl}{\mathfrak{gl}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\ad}[1]{\operatorname{ad}\,#1}
+\newcommand{\A}{\mathbb{A}}
+
+
+% column vector
+\newcount\colveccount
+\newcommand*\colvec[1]{
+\global\colveccount#1
+\begin{pmatrix}
+        \colvecnext
+        }
+        \def\colvecnext#1{
+        #1
+        \global\advance\colveccount-1
+        \ifnum\colveccount>0
+        \\
+        \expandafter\colvecnext
+        \else
+\end{pmatrix}
+\fi
+}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -109,11 +182,17 @@ left=.5cm
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+%\newtheorem{examples}[theorem]{Examples}
 \newtheorem{xca}[theorem]{Exercise}
+\newtheorem{bxca}[theorem]{Bonus exercise}
+%\newtheorem{exa}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem{question}[theorem]{Question}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{problem}[theorem]{Open problem}
+\newtheorem{que}[theorem]{Question}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{open}[theorem]{Open problem}
+\newtheorem{convention}[theorem]{Convention}
+
+%\newtheorem{exercise}[theorem]{Exercise}
 
 \theoremstyle{remark}
 \newtheorem*{claim}{Claim}
@@ -122,9 +201,61 @@ left=.5cm
 {\renewcommand{\qedsymbol}{}\begin{proof}[\ref{#1}]}
   {\end{proof}}
 
+% \newtcolorbox{mybox}{
+% enhanced,
+% boxrule=0pt,frame hidden,
+% %borderline west={4pt}{0pt}{black},
+% %colback={gray!20},
+% sharp corners,
+% left=.5cm
+% %left=18.0pt
+% }
+% \newenvironment{exercise}
+%   {\begin{mybox}\begin{xca}}
+%   {\end{xca}\end{mybox}}
+
+\newenvironment{problem}
+{\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=blue!5!white,
+  left=.3em, right=.3em, top=-.2em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm\noindent},
+colframe=blue!55!white]\begin{open}}{\end{open}\end{tcolorbox}}
+
+\newenvironment{question}
+{\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=blue!5!white,
+  left=.3em, right=.3em, top=-.2em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm\noindent},
+colframe=blue!55!white]\begin{que}}{\end{que}\end{tcolorbox}}
+
+\newenvironment{conjecture}
+{\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=blue!5!white,
+  left=.3em, right=.3em, top=-.2em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm\noindent},
+colframe=blue!55!white]\begin{conj}}{\end{conj}\end{tcolorbox}}
+
+
 \newenvironment{exercise}
-  {\begin{mybox}\begin{xca}}
-  {\end{xca}\end{mybox}}
+{\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=green!5!white,
+  left=.3em, right=.3em, top=-.2em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm\noindent},
+colframe=green!55!black]\begin{xca}}{\end{xca}\end{tcolorbox}}
+
+\newenvironment{bonus}
+{\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=yellow!15!white,
+  left=.3em, right=.3em, top=-.2em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm\noindent},
+colframe=yellow!45!black]\begin{bxca}}{\end{bxca}\end{tcolorbox}}
+
+% \newenvironment{example}
+% {\begin{tcolorbox}[boxrule=0pt,frame hidden,colback=red!5!white,
+%   left=.3em, right=.3em, top=-.2em, bottom=.3em,
+%   beforeafter skip balanced=.4\baselineskip plus 2pt,
+%   before upper={\parindent4mm\noindent},
+% colframe=red!55!black]\begin{exa}}{\end{exa}\end{tcolorbox}}
 
 \numberwithin{figure}{section}
 \numberwithin{equation}{section}
@@ -140,6 +271,16 @@ Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
 \date{}
 
 \makeatletter
+\renewcommand\section{\@startsection{section}{1}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\color{green!30!black}\normalfont\bfseries\centering}}
+\renewcommand\subsection{\@startsection{subsection}{2}%
+  \normalparindent{.5\linespacing\@plus.7\linespacing}{-.5em}%
+  {\color{-red!55!green!50}\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}%
+  \normalparindent\z@{-.5em}%
+  {\color{green!50!blue}\normalfont\itshape}}
+
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}

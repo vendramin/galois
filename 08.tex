@@ -1,10 +1,10 @@
-\section{15/04/2024}
+\section{Lecture -- Week 8}
 
 \subsection{Galois' correspondence}
 
 \index{Partially ordered set}
 \index{Poset}
-A \textbf{partially order set} (or \emph{poset}) is a pair $(X,\leq)$, where $X$ is a non-empty set
+A \emph{partially order set} (or \emph{poset}) is a pair $(X,\leq)$, where $X$ is a non-empty set
 and $\leq$ is a reflexive, antisymmetric and transitive relation on $X$. This means:
 \begin{enumerate}
     \item $x\leq x$ for all $x\in X$, 
@@ -12,15 +12,15 @@ and $\leq$ is a reflexive, antisymmetric and transitive relation on $X$. This me
     \item $x\leq y$ and $y\leq z$ imply $x\leq z$. 
 \end{enumerate}
 Let $(X,\leq)$ be a partially ordered set and $x,y\in X$. 
-An element $z$ of a poset $(X,\leq)$ is an \textbf{upper bound} of $x$ and $y$ if 
+An element $z$ of a poset $(X,\leq)$ is an \emph{upper bound} of $x$ and $y$ if 
 $x\leq z$ and $y\leq z$. And $\xi$ 
-is a \textbf{least upper bound} of $x$ and $y$ 
+is a \emph{least upper bound} of $x$ and $y$ 
 if it is an upper bound with $\xi\leq z$ for every upper bound $z$ of $x$ and $y$. 
 Similarly, one defines lower bounds and greatest lower bounds. 
 
 \begin{definition}
 \index{Lattice}
-    A \textbf{lattice} if a partially ordered set $L$ in which 
+    A \emph{lattice} if a partially ordered set $L$ in which 
     each pair of elements $x,y\in L$ has a least upper bound $x\vee y$ and a
     greatest lower bound $x\wedge y$. 
 \end{definition}
@@ -54,7 +54,7 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 
 \index{Order-reversing map}
 A map $f\colon L\to L_1$ between two lattices is 
-said to be \textbf{order-reversing} if 
+said to be \emph{order-reversing} if 
 $x\leq y$ implies $f(y)\leq f(x)$. 
 
 We shall need an exercise. 
@@ -183,7 +183,7 @@ Some easy consequences.
 
 \begin{definition}
 \index{Extension!abelian}
-    An extension $E/K$ is \textbf{abelian} if $E/K$ is a Galois extension
+    An extension $E/K$ is \emph{abelian} if $E/K$ is a Galois extension
     with $\Gal(E/K)$ abelian.
 \end{definition}
 
@@ -194,7 +194,7 @@ Some easy consequences.
 
 \begin{definition}
     \index{Extension!cyclic}
-    An extension $E/K$ is \textbf{cyclic} if $E/K$ is 
+    An extension $E/K$ is \emph{cyclic} if $E/K$ is 
     a Galois extension with $\Gal(E/K)$ cyclic. 
 \end{definition}
 
@@ -224,10 +224,14 @@ Some easy consequences.
     degree four. 
     Moreover, $\Q(\omega)/\Q$ is a Galois extension
     and 
-    $\Gal(\Q(\omega)/\Q)\simeq C_4$. If $\sigma\in \Gal(\Q(\omega)/\Q)$,
+    \[
+    \Gal(\Q(\omega)/\Q)\simeq C_4.
+    \]
+    
+    If $\sigma\in \Gal(\Q(\omega)/\Q)$,
     then $\sigma(\omega)=\omega^i$ for some $i\in\{1,\dots,4\}$. 
-    Moreover, for every $i\in\{1,\dots,4\}$ 
-    the map $\omega\mapsto\omega^i$ induces an automorphism
+    Moreover, each  
+    map $\omega\mapsto\omega^i$, for $i\in\{1,\dots,4\}$, induces an automorphism
     of $\Q(\omega)/\Q$. Thus $|\Gal(\Q(\omega)/\Q)|=4$. Now 
     \[
     \sigma_i^k=\id\Longleftrightarrow
@@ -396,7 +400,7 @@ The field $\C$ is algebraically closed.
 
 Let $E/K$ be an algebraic extension. 
 In page \ref{separable} we defined the 
-\textbf{separable closure} of $K$ with respect to $E$ as 
+\emph{separable closure} of $K$ with respect to $E$ as 
 the field 
 \[
     F=\{x\in E:x\text{ is separable over }K\}.
@@ -404,10 +408,10 @@ the field
 Note that $K\subseteq F\subseteq E$ 
 and $F=K(F)$. Moreover, 
 $F/K$ is separable and 
-$E/F$ is a \textbf{purely inseparable} extension, meaning that
+$E/F$ is a \emph{purely inseparable} extension, meaning that
 for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable. 
 
-The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the \textbf{degree of inseparability} of $E/K$. 
+The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the \emph{degree of inseparability} of $E/K$. 
 Clearly, $E/K$ is separable if and only if $[E:K]_{\operatorname{ins}}=1$ and 
 $E/K$ is purely inseparable if and only if $[E:K]_{\operatorname{ins}}=[E:K]$. 
 
