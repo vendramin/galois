@@ -279,8 +279,8 @@ and group homomorphisms is exact.
 \end{theorem}
 
 \begin{proof}
-    By Proposition \ref{pro:H0}, the 
-    sequence is exact at $H^0(G,P)=P^G$, 
+    By Proposition \ref{pro:H0}, the long 
+    sequence~\eqref{eq:long} is exact at $H^0(G,P)=P^G$, 
     $H^0(G,M)=M^G$ and 
     $H^0(G,N)=N^G$. Note that, in particular, 
     $\alpha\colon P\to\alpha(P)$ is a bijective group homomorphism. 
@@ -299,7 +299,10 @@ and group homomorphisms is exact.
     \]
 
     Let us prove that the map $\delta$ is well-defined: if $m,m'\in M$ are such that
-    $\beta(m)=\beta(m')=n$, then  $m-m'\in\ker\beta=\alpha(P)$. 
+    \[
+    \beta(m)=\beta(m')=n,
+    \]
+    then  $m-m'\in\ker\beta=\alpha(P)$. 
     For $\sigma\in G$, write $\phi'(\sigma)=\sigma\cdot m'-m'$. 
     Since  
     $m-m'=\alpha(p)$ for some $p\in P$ and  
@@ -329,8 +332,12 @@ and group homomorphisms is exact.
     \phi(\sigma)=\alpha^{-1}(\sigma\cdot m-m)=0.
     \]
     Conversely, if $n\in\ker\delta$, then there exists $m\in M$ such that $\beta(m)=n$ and
-    $\delta(\beta(m))=\phi+B^1(G,P)$, where $\phi\in B^1(G,P)$ and 
-    $\phi(\sigma)=\alpha^{-1}(\sigma\cdot m-m)$ for all $\sigma\in G$. Since $\phi\in B^1(G,P)$, there
+    \[
+    \delta(\beta(m))=\phi+B^1(G,P),
+    \]
+    where $\phi\in B^1(G,P)$ and 
+    $\phi(\sigma)=\alpha^{-1}(\sigma\cdot m-m)$
+    for all $\sigma\in G$. Since $\phi\in B^1(G,P)$, there
     exists $p\in P$ such that $\phi(\sigma)=\sigma\cdot p-p$ for all $\sigma\in G$. Note that 
     \[
     \beta(m-\alpha(p))=\beta(m)-\beta(\alpha(p))=\beta(m)=n.
