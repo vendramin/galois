@@ -111,7 +111,7 @@ In this section, $p$ will be a prime number.
 \end{proof}
 
 Let $K=\Z/p$ and $C$ be an algebraic closure of $K$. 
-We claim that $C=\cup_k F_k$. If $x\in C$, then $x$ is algebraic over $K$. 
+We claim that $C=\bigcup_k F_k$. If $x\in C$, then $x$ is algebraic over $K$. 
 Since $K(x)/K$ is finite, $K(x)$ is a finite field, say 
 $|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_r$. 
 
@@ -162,8 +162,9 @@ $|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_r$.
     and hence $p^s\equiv 1\bmod (p^n-1)$. Thus $p^n-1$ divides $p^s-1$ and
     hence $n$ divides $s$. Therefore $n=s$ and $\Gal(F_n/K)=\langle\sigma\rangle$. 
     
-    For the general case note that if $m$ divides $n$, 
-    then $\Gal(F_n/F_m)$ is a subgroup of $\Gal(F_n/K)$. Since  $\Gal(F_n/K)$ is cyclic, 
+    For the general case, note that if $m$ divides $n$, 
+    then the Galois group 
+    $\Gal(F_n/F_m)$ is a subgroup of $\Gal(F_n/K)$. Since  $\Gal(F_n/K)$ is cyclic, 
     the claim follows.
 \end{proof}
 
@@ -310,7 +311,10 @@ $K(\omega)/K$ for some $\omega\in H_n(K)$.
     it follows that $\lambda(\sigma)\lambda(\tau)=\lambda(\sigma\tau)$. Since 
     $\lambda$ is injective, $\Gal(K(\omega)/K)$ is isomorphic to a subgroup 
     of the abelian group $U$. Hence $\Gal(K(\omega)/K)$ is abelian. Moreover, 
-    $[K(\omega):K]=|\Gal(K(\omega)/K)|$ is a divisor of $|U|=\varphi(n)$. 
+    \[
+    [K(\omega):K]=|\Gal(K(\omega)/K)|
+    \]
+    is a divisor of $|U|=\varphi(n)$. 
 \end{proof}
 
 \begin{exercise}
