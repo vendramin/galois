@@ -19,7 +19,7 @@ is a prime number, then $\Z/p$ is a field.
 
 \begin{example}
 	$\Q[i]=\{a+bi:a,b\in\Q\}$ and 
-	$\Q[\sqrt{2}]$ are fields.
+	$\Q[\sqrt{2}]=\{a+b\sqrt{2}:a,b\in\Q\}$ are fields.
 \end{example}
 
 \[
@@ -45,7 +45,7 @@ Prove that $\Q[i]$ and $\Q[\sqrt{2}]$ are not isomorphic as fields.
 If $R$ is a ring, there exists a unique ring homomorphism
 $\Z\to R$, $m\mapsto m1$. The image 
 \[
-\{m1:m\in\Z\}
+R_\Z=\{m1:m\in\Z\}
 \]
 of this homomorphism is a subring 
 of $R$ and it is known as the \emph{ring of integers} of $R$. The
@@ -99,6 +99,8 @@ are integral domains.
 % 	$|K|=p^m$ for some prime number $p$ and some $m\geq1$. 
 % \end{exercise}
 
+Note that finite fields are of prime characteristic. 
+
 \begin{proposition}
 \label{pro:cyclic}
     Let $K$ be a field. Then any finite subgroup of  $K^\times=K\setminus\{0\}$ is cyclic. 
@@ -145,13 +147,6 @@ $K$ and $L$ have the same characteristic.
 	for all $n\in\Z_{\geq 0}$. 
 \end{exercise}
 
-Note that finite fields are of prime characteristic. 
-
-Let $K$ be a subfield of a field $E$. Then $E$ 
-is a $K$-vector space with the usual scalar multiplication
-$K\times E\to E$, 
-$(\lambda, x)\mapsto \lambda x$.
-
 \begin{definition}
 	A field $K$ is \emph{prime} if there are no
 	proper subfields of $K$. 
@@ -162,7 +157,7 @@ Examples of prime fields are $\Q$ and $\Z/p$ for a prime number $p$.
 \begin{proposition}
 	Let $K$ be a field. The following statements hold:
 	\begin{enumerate}
-		\item $K$ contains a unique prime field, it is known as the 
+		\item $K$ has a unique subfield which is prime, it is known as the 
 			\emph{prime subfield} of $K$.
 		\item The prime subfield of $K$ is either isomorphic to $\Q$ if 
 			the characteristic of $K$ is zero, or it is isomorphic to $\Z/p$ for
@@ -181,9 +176,9 @@ Examples of prime fields are $\Q$ and $\Z/p$ for a prime number $p$.
 
 	Let $K_0$ be the prime field of $K$. Suppose that $K$ is of characteristic
 	$p>0$. Then the ring $K_\Z$ of integers of $K$ 
-	is a field isomorphic to $\Z/p$ and hence $K_0\simeq
-	K_\Z$. Suppose now that the characteristic of $K$ is zero. Let
-	$E=\{m1/n1:m,n\in\Z,n\ne 0\}$. We claim that $K_0=E$. Since $K_\Z\subseteq
+	is a field isomorphic to $\Z/p$ and hence $K_0=
+	K_\Z\simeq \Z/p$. Suppose now that the characteristic of $K$ is zero. Let
+	$E=\{m1(n1)^{-1}:m,n\in\Z,n\ne 0\}$. We claim that $K_0=E$. Since $K_\Z\subseteq
 	K_0$, it follows that $E\subseteq K_0$. Hence $E=K_0$, as $E$ is a subfield
 	of $K$.  
 \end{proof}
@@ -196,8 +191,10 @@ Examples of prime fields are $\Q$ and $\Z/p$ for a prime number $p$.
 	the notation $E/K$. 
 \end{definition}
 
-If $E$ is an extension of $K$, then $E$ is a
-$K$-vector space. 
+Let $E/K$ be a field extension. Then $E$ 
+is a $K$-vector space with the usual scalar multiplication
+$K\times E\to E$, 
+$(\lambda, x)\mapsto \lambda x$.
 
 \begin{definition}
 \index{Degree of an extension}
