@@ -584,6 +584,47 @@ The same elements are algebraic over $E$ and generate $EF=E(F)$ over $E$.
 Hence $EF/E$ is a finite extension and $[EF:E]\leq [F:K]$.
 \end{sol}
 
+\begin{sol}{xca:C/K_bijective}
+$\varphi$ is a field homomorphism,
+so it is injective.
+Take $\sigma:\varphi(C)\to C$ a left inverse
+of $\varphi$, i.e such that $\sigma\circ\varphi=\id$.
+Then $\sigma$ is a surjective field homomorphism (it is actually an isomorphism).
+Moreover $C/K$ is algebraic and $\varphi(C)\subseteq C$,
+so, by Proposition \ref{pro:Artin}, there exists 
+a field homomorphism $\psi: C\to C$
+such that $\psi|_{\varphi(C)}=\sigma$.
+But then $\psi$ is injective and 
+$\psi(x)=\sigma(\varphi(\psi(x)))=\psi(\varphi(\psi(x)))$, for every $x\in C$.
+So $x=\varphi(\psi(x))$ for every $x\in C$.
+Hence $\varphi(C)=C$, $\psi=\sigma$ and $\varphi$ is an isomorphism.
+\end{sol}
+
+\begin{sol}{xca:dec field of X^3-X-1 over Z3}
+We can easily check that $f$ has no roots 
+in $\Z/3$, so, having degree 3, it is
+irreducible over $\Z/3$.
+Note also that $f = X^3-X-1 = X(X-1)(X+1) -1$
+So if $\alpha\in E$ is a root of $f$,
+then 
+\[
+f(\alpha+1)=
+(\alpha+1)\alpha(\alpha+2)-1=
+(\alpha+1)\alpha(\alpha-1)-1=
+f(\alpha)=0,
+\]
+\[
+f(\alpha-1)=
+(\alpha-1)(\alpha-2)\alpha-1=
+(\alpha-1)(\alpha+1)\alpha-1
+f(\alpha)=0.
+\]
+This means that $\alpha+1$ and $\alpha-1$ are also roots of $f$.
+Hence $E=\Z/3(\alpha)$ and 
+$f(\alpha,\Z/3)=f$,
+so $[E:\Z/3]=3$.
+\end{sol}
+
 \begin{sol}{xca:dec field X^4-5X^2+5}
 Note that, since $f=X^4-5X^2+5$ is an even polynomial
 if $\alpha\in \C$ is a root of $f$,
