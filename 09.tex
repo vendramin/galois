@@ -96,14 +96,14 @@ In this section, $p$ will be a prime number.
 \begin{proposition}
     Let $m$ be a positive integer. 
     Up to isomorphism, there exists a unique 
-    field $F_m$ of size $p^m$. 
+    field $F_{p^m}$ of size $p^m$. 
 \end{proposition}
 
 \begin{proof}
     Let $C$ be an algebraic closure of the field $\Z/p$ and 
-    let $F_m=\{x\in C:x^{p^m}=x\}$ be the set of roots of $X^{p^m}-X$. Since 
-    the polynomial $X^{p^m}-X$ has no multiple roots, $|F_m|=p^m$. Moreover, 
-    $F_m$ is the unique subfield of $C$ of size $p^m$. 
+    let $F_{p^m}=\{x\in C:x^{p^m}=x\}$ be the set of roots of $X^{p^m}-X$. Since 
+    the polynomial $X^{p^m}-X$ has no multiple roots, $|F_{p^m}|=p^m$. Moreover, 
+    $F_{p^m}$ is the unique subfield of $C$ of size $p^m$. 
     
     To prove the uniqueness, it is enough to note that 
     if $K$ is a field of $p^m$ elements, then
@@ -111,17 +111,17 @@ In this section, $p$ will be a prime number.
 \end{proof}
 
 Let $K=\Z/p$ and $C$ be an algebraic closure of $K$. 
-We claim that $C=\bigcup_k F_k$. If $x\in C$, then $x$ is algebraic over $K$. 
+We claim that $C=\bigcup_k F_{p^k}$. If $x\in C$, then $x$ is algebraic over $K$. 
 Since $K(x)/K$ is finite, $K(x)$ is a finite field, say 
-$|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_r$. 
+$|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_{p^r}$. 
 
 \begin{exercise}
     Prove the following statements:
     \begin{enumerate}
-        \item If $x\in F_r$, then $x^{p^{rk}}=x$ for all $k\geq0$.
-        %\item If $m\mid n$, then $F_m\subseteq F_n$. 
-        \item $F_m\subseteq F_n$ if and only if $m\mid n$. 
-        \item $F_m\cap F_n=F_{\gcd(m,n)}$.
+        \item If $x\in F_{p^r}$, then $x^{p^{rk}}=x$ for all $k\geq0$.
+        %\item If $m\mid n$, then $F_{p^m}\subseteq F_{p^n}$. 
+        \item $F_{p^m}\subseteq F_{p^n}$ if and only if $m\mid n$. 
+        \item $F_{p^m}\cap F_{p^n}=F_{p^{\gcd(m,n)}}$.
     \end{enumerate}
 \end{exercise}
 
@@ -130,54 +130,54 @@ $|K|=p^r$ for some $r$. Then $x^{p^r}=x$ and hence $x\in F_r$.
 \end{proposition}
 
 \begin{proof}
-    Let $K=\Z/p$. It is enough to show that $F_n/F_m$ is cyclic if $m$ divides $n$. 
+    Let $K=\Z/p$. It is enough to show that $F_{p^n}/F_{p^m}$ is cyclic if $m$ divides $n$. 
     
-    We first prove that $F_n/K$ is cyclic. 
+    We first prove that $F_{p^n}/K$ is cyclic. 
     Let 
     \[
-    \sigma\colon F_n\to F_n,\quad 
+    \sigma\colon F_{p^n}\to F_{p^n},\quad 
     x\mapsto x^p.
     \]
     Then 
-    $\sigma\in\Gal(F_n/K)$ (it is bijective because all field homomorphisms 
-    are injective and $F_n$ is finite). 
+    $\sigma\in\Gal(F_{p^n}/K)$ (it is bijective because all field homomorphisms 
+    are injective and $F_{p^n}$ is finite). 
 
     Note that 
-    $F_n/K$ is a Galois extension, as $F_n$ is the splitting
+    $F_{p^n}/K$ is a Galois extension, as $F_{p^n}$ is the splitting
     field over $K$ 
     of the separable polynomial $X^{p^n}-X\in K[X]$. 
-    Thus $|\Gal(F_n/K)|=[F_n:K]=n$. 
+    Thus $|\Gal(F_{p^n}/K)|=[F_{p^n}:K]=n$. 
     
-    We claim that $\sigma$ generated $\Gal(F_n/K)$. Since 
+    We claim that $\sigma$ generated $\Gal(F_{p^n}/K)$. Since 
     $\sigma^i(x)=x^{p^i}$ for all $i\geq 0$, in particular, 
     \[
     \sigma^n(x)=x^{p^n}=x.
     \]
     Thus $\sigma^n=\id$ and hence $|\sigma|$ divides $n$. Let 
-    $s=|\sigma|$. We know that $F_n^{\times}=F_n\setminus\{0\}$ is
-    cyclic, say $F_n^{\times}=\langle g\rangle$. Since $|g|=p^n-1$, 
+    $s=|\sigma|$. We know that $F_{p^n}^{\times}=F_{p^n}\setminus\{0\}$ is
+    cyclic, say $F_{p^n}^{\times}=\langle g\rangle$. Since $|g|=p^n-1$, 
     \[
     g=\sigma^s(g)=g^{p^s}
     \]
     and hence $p^s\equiv 1\bmod (p^n-1)$. Thus $p^n-1$ divides $p^s-1$ and
-    hence $n$ divides $s$. Therefore $n=s$ and $\Gal(F_n/K)=\langle\sigma\rangle$. 
+    hence $n$ divides $s$. Therefore $n=s$ and $\Gal(F_{p^n}/K)=\langle\sigma\rangle$. 
     
     For the general case, note that if $m$ divides $n$, 
     then the Galois group 
-    $\Gal(F_n/F_m)$ is a subgroup of $\Gal(F_n/K)$. Since  $\Gal(F_n/K)$ is cyclic, 
+    $\Gal(F_{p^n}/F_{p^m})$ is a subgroup of $\Gal(F_{p^n}/K)$. Since  $\Gal(F_{p^n}/K)$ is cyclic, 
     the claim follows.
 \end{proof}
 
 \index{Frobenius automorphism}
 If $K=\Z/p$ and 
-$m$ divides $n$, the subextension $F_m$ corresponds 
+$m$ divides $n$, the subextension $F_{p^m}$ corresponds 
 to the unique
-subgroup of index $m$ of $\Gal(F_n/K)=\langle\sigma\rangle$. This subgroup
+subgroup of index $m$ of $\Gal(F_{p^n}/K)=\langle\sigma\rangle$. This subgroup
 is $\langle\sigma^m\rangle$, where
 \[
-\sigma^m(x)=x^{p^m}=x^{|F_m|}.
+\sigma^m(x)=x^{p^m}=x^{|F_{p^m}|}.
 \]
-Note that $\Gal(F_n/F_m)=\langle\sigma^m\rangle$. 
+Note that $\Gal(F_{p^n}/F_{p^m})=\langle\sigma^m\rangle$. 
 The map $\sigma^m$ is known as 
 the \emph{Frobenius automorphism}. 
 
@@ -248,7 +248,7 @@ For example, $\varphi(4)=2$, $\varphi(8)=\varphi(10)=4$ and $\varphi(p)=p-1$ for
 \begin{proposition}
     Let $K$ be an algebraically closed field and $n$ be
     such that $n$ is coprime with the characteristic of $K$. Let $A$ be
-    the ring of integers of $K$. 
+    the prime subring of $K$. 
     \begin{enumerate}
         \item $\deg\Phi_n=\varphi(n)$.
         \item $\Phi_n\in A[X]$.
