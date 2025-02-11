@@ -113,12 +113,16 @@ Note that finite fields are of prime characteristic.
     Note that $X^n-1\in K[X]$ has at most $n$ roots in $K$. 
     
     We claim that $n$ divides $N$. If not, there exists
-    a prime number $p$ and a power $q=p^\beta$ of $p$ 
+    a prime number $p$ and 
+    two powers $q=p^\beta$ and $p^\alpha$ of $p$
+    with $\alpha<\beta$
+    %a power $q=p^\beta$ of $p$ 
     such that 
-    $q\mid n$ and $q\nmid N$. Let $z=xy^{n/q}$. Since 
+    $q\mid n$ and $p^\alpha\mid N$, but $p^{\alpha+1}\nmid N$.
+    Let $z=xy^{n/q}$. Since 
     $G$ is abelian, 
     \[
-    |z|=\lcm\{N,q\}=Nq>N,
+    |z|=\lcm\{N,q\}=Np^{\beta-\alpha}>N,
     \]
     a contradiction. 
 
