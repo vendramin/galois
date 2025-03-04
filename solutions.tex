@@ -6,6 +6,13 @@
 % \fancyhead[RE,LO]{Some solutions}
 % \fancyfoot[CE,CO]{\leftmark}
 % \fancyfoot[LE,RO]{\thepage}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyhead[L]{\course}
+\fancyhead[R]{Some solutions}
+\setlength{\headheight}{14pt}
+
+\newtheorem{lemma*}{Lemma}
 
 %\addcontentsline{toc}{chapter}{Some solutions}
 
@@ -156,12 +163,66 @@ Therefore, $\Phi$ is a field homomorphism.
     So all the roots are not in $\Q$, a contradiction.
 \end{sol}
 
+\begin{sol}{xca:Eisenstein's criterion}
+Recall first the following:
+\begin{lemma*}[Gauss' Lemma for integer polynomials]
+\label{Gauss lem}
+A non-constant polynomial $f\in \Z[X]$ is irreducible if and only if it is primitive and irreducible in $\Q[X]$.
+\end{lemma*}
+\begin{lemma*}
+\label{mod p is a hom}
+   Let $p$ be a prime number and $\pi_p:\Z\to\Z/p$
+   be the canonical homomorphism. 
+    The map $\overline{\pi_p}:\Z[X]\to \Z/p[X]$, defined as 
+    \[
+    \overline{\pi_p} ~:~ f(X)=\sum_{i=0}^na_iX^i~\longmapsto~\sum_{i=0}^n\pi_p(a_i)X^i
+    \]
+    is a ring homomorphism.
+\end{lemma*}
+
+    Suppose that $f$ is reducible in $\Q[X]$.
+    Then $\widetilde{f}=c^{-1}f$, where $c$ is the content of $f$,
+    would be reducible and primitive.
+    Hence, by Gauss' Lemma for integer polynomials, $\widetilde{f}$ is also 
+    reducible in $\Z[X]$.
+    So we can write $c^{-1}f=\widetilde{f}=gh$, for some 
+    polynomials $g,h\in \Z[X]\setminus\mathcal{U}(\Z[X])=\Z[X]\setminus\{\pm1\}$.
+    Write $g(X)=\sum_{i=0}^k b_iX^i$ and $h(X)=\sum_{i=0}^{n-k} c_iX^i$, where $k=\deg(g)$ and $n-k=\deg(h)$.
+    
+    First, we prove that $g$ and $h$ are non-constant.
+    Suppose for example that $g$ is constant.
+    Then, denoting by $c:Z[X]\to \Z$ the content map that sends a polynomial to its content, i.e. the $\gcd$ of all the coefficients of the polynomial,
+    \[
+    \pm 1=c(\widetilde{f})=c(gh)=gc(h).
+    \]
+    Hence $g\in \mathcal{U}(\Z)=\{\pm1\}$, a contradiction. In the same way, we can prove that $h$ is also non-constant.
+    Therefore $0<k<n$ and $0<n-k<n$.
+    
+    We now apply $\pi_p$ to $f$.
+    Since $p$ divides $a_i$ for all 
+    $i\in\{0,1,\dots, n-1\}$,then $\pi_p(a_i)=0$ for all 
+    $i\in\{0,1,\dots, n-1\}$.
+    Therefore, using also the previous lemma, we have that 
+    \[
+    \pi_p(a_n)X^n=\overline{\pi_p}(f)=\pi_p{c}\:\overline{\pi_p}(g)\overline{\pi_p}(h)=
+    \overline{\pi_p}(cg)\overline{\pi_p}(h).
+    \]
+    But $\Z/p[X]$ is a UFD and $X$ is irreducible in $\Z/p[X]$ (see ring and module theory course), so necessarily
+    \[
+    \overline{\pi_p}(cg)=\pi_p(cb_k)X^k \quad\text{ and }\quad\overline{\pi_p}(h)=\pi_p(c_{n-k})X^{n-k}.
+    \]
+    In particular, since $g$ and $h$ are non-constant, $\overline{\pi_p}(cg)$ and $\overline{\pi_p}(h)$ both have a constant term equal to 0.
+    Hence $p$ divides $cb_o$ and $c_0$ in $\Z$.
+    Therefore, $p^2$ divides $cb_0c_0=a_0$,
+    a contradiction with the hypothesis.
+\end{sol}
+
 \begin{sol}{bxca:Eisenstein's criterion}
 Recall first the following:
-\begin{lemma}[Gauss' Lemma]
+\begin{lemma*}[Gauss' Lemma]
     Let $A$ be a unique factorization domain and $K$ be its fraction field.
     A non-constant polynomial $f\in A[X]$ is irreducible if and only if it is primitive and irreducible in $K[X]$.
-\end{lemma}
+\end{lemma*}
 
     Suppose that $f$ is reducible in $K[X]$.
     Then $g=c^{-1}f$, where $c$ is the content of $f$,
