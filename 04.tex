@@ -76,16 +76,15 @@ that the algebraic closure always exists.
     that $g$ has a root in $E_{r+1}\subseteq E$. 
 \end{proof}
 
-\subsection{Decomposition fields}
+\subsection{Splitting fields}
 
 % explain what factorizes linearly means! 
 
 \begin{definition}
-\index{Decomposition field}
+\index{Splitting field}
 \label{def:splitting_field}
 \label{def:decomposition_field}
-	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. A \emph{decomposition field} (or \emph{splitting field}) 
-	of $f$ over $K$ is a field $E$ that contains $K$ and that satisfies the following properties:
+	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. A \emph{splitting field} of $f$ over $K$ is a field $E$ that contains $K$ and that satisfies the following properties:
 	\begin{enumerate}
 		\item $f$ factorizes linearly in $E[X]$. 
 		\item If $F$ is a field such that $K\subseteq F\subseteq E$ and 
@@ -97,26 +96,26 @@ that the algebraic closure always exists.
 Easy examples: 
 
 \begin{example}
-	$\C$ is a decomposition field of $X^2+1\in\R[X]$. 
+	$\C$ is a splitting field of $X^2+1\in\R[X]$. 
 \end{example}
 
 \begin{example}
-	$\Q[\sqrt{2}]$ is a decomposition field of $X^2-2\in\Q[X]$. 
+	$\Q[\sqrt{2}]$ is a splitting field of $X^2-2\in\Q[X]$. 
 \end{example}
 
 \begin{example}
-    The decomposition field of $f=X^2-2$ over $\Z/7$ is 
+    The splitting field of $f=X^2-2$ over $\Z/7$ is 
     precisely $\Z/7$, as 3 and 4 are the roots of $f$ in $\Z/7$. 
 \end{example}
 
 \begin{example}
-	$\Q(\sqrt[3]{2})$ is not a decomposition field of $X^3-2\in\Q[X]$. However, if
+	$\Q(\sqrt[3]{2})$ is not a splitting field of $X^3-2\in\Q[X]$. However, if
 	$\omega$ is a primitive cubic root of one, then 
-	$\Q(\sqrt[3]{2},\omega)$ is a decomposition field of the polynomial $X^3-2\in\Q[X]$. 
+	$\Q(\sqrt[3]{2},\omega)$ is a splitting field of the polynomial $X^3-2\in\Q[X]$. 
 \end{example}
 
-\begin{proposition}
-	$E$ is a decomposition field of $f\in K[X]$ if and only if
+\begin{proposition} \label{split_char}
+	$E$ is a splitting field of $f\in K[X]$ if and only if
 	$f$ factorizes linearly in $E[X]$ and $E=K(x_1,\dots,x_n)$, where 
 	$x_1,\dots,x_n$ are the roots of $f$. 
 \end{proposition}
@@ -129,12 +128,14 @@ Easy examples:
     $F=E$. 
 \end{proof}
 
+Note that if $E=K(x_1,\cdots,x_n)$ as in the statement of Proposition \ref{split_char}, then it automatically follows that $f$ factorizes linearly in $E[X]$.
+
 One immediately obtains the following consequence:
-If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite. 
+If $E$ is a splitting field of $f\in K[X]$, then $E/K$ is finite. 
 
 \begin{theorem}
     Let $f\in K[X]$ be such that $\deg f>0$. There exists a (unique up to extension isomorphism) 
-    decomposition field of $f$ over $K$. 
+    splitting field of $f$ over $K$. 
 \end{theorem}
 
 \begin{proof}
@@ -143,10 +144,10 @@ If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite.
     f=a\prod_{i=1}^r(X-x_i)^{n_i}
     \]
     in $C[X]$. 
-    Then $E=K(x_1,\dots,x_r)$ is a decomposition field of $f$ over $K$. 
+    Then $E=K(x_1,\dots,x_r)$ is a splitting field of $f$ over $K$. 
     
     Let us prove the 
-    uniqueness: if $E_1/K$ is a decomposition field of $f$ over $K$, 
+    uniqueness: if $E_1/K$ is a splitting field of $f$ over $K$, 
     then $E_1/K$ is algebraic and thus Proposition
     \ref{pro:Artin} implies that 
     there exists $\varphi\in\Hom(E_1/K,C/K)$, that is $\varphi\colon E_1\to C$ is a field
@@ -163,8 +164,8 @@ If $E$ is a decomposition field of $f\in K[X]$, then $E/K$ is finite.
     \varphi(E_1)=K(\varphi(y_1),\dots,\varphi(y_s)).
     \]
     Thus
-    $\varphi(E_1)$ is a decomposition field of $f$. Since  
-    $\varphi(E_1)\subseteq C$, it follows that $\varphi(E_1)=E$. 
+    $\varphi(E_1)$ is a splitting field of $f$. Since  
+    $\varphi(E_1)\subseteq E$, it follows that $\varphi(E_1)=E$. 
 \end{proof}
 
 \begin{exercise}
@@ -282,10 +283,10 @@ not true if $f$ is not irreducible. Find an example.
 % pag 20
 
 \begin{definition}
-\index{Decomposition field}
+\index{Splitting field}
     Let $K$ be a field and $\{f_i:i\in I\}$ be a non-empty 
     family of polynomials of positive degree
-    with coefficients in $K$. A \emph{decomposition field} 
+    with coefficients in $K$. A \emph{splitting field} 
     of $\{f_i:i\in I\}$ is an extension $E/K$
     such that every $f_i$ factorizes linearly in $E[X]$ and 
     if $F/K$ is a sub extension of $E/K$ such that every $f_i$ 
@@ -293,36 +294,36 @@ not true if $f$ is not irreducible. Find an example.
 \end{definition}
 
 \begin{exercise}
-    Prove that $E/K$ is a decomposition field of
+    Prove that $E/K$ is a splitting field of
     $\{f_i:i\in I\}$ if and only if every $f_i$ factorizes linearly 
     in $E[X]$ and $E=K(S)$ where $S=\{\text{roots of $f_i$ for all $i$}\}$. 
 \end{exercise}
 
 \begin{exercise}
-    Prove that if $E/K$ is a decomposition field
+    Prove that if $E/K$ is a splitting field
     of $\{f_i:i\in I\}$, then $E/K$ is algebraic. If, moreover, 
-    $I$ is finite, then $E/K$ is a decomposition field
+    $I$ is finite, then $E/K$ is a splitting field
     of $\prod_{i\in I}f_i$. 
 \end{exercise}
 
 \begin{exercise}
     Prove that 
-    there exists a decomposition field of $\{f_i:i\in I\}$ 
+    there exists a splitting field of $\{f_i:i\in I\}$ 
     and it is unique up to extension isomorphism. 
 \end{exercise}
 
 \begin{exercise}
 \label{xca:dec field of X^3-X-1 over Z3}
-    Let $f=X^3-X-1\in (\Z/3)[X]$ and $E$ be a decomposition field of $f$. 
+    Let $f=X^3-X-1\in (\Z/3)[X]$ and $E$ be a splitting field of $f$. 
     Compute $[E:\Z/3]$. 
 \end{exercise}
 
 % it is 3, as E is (\Z/3)[\alpha], where $\alpha$ is a root of $f$ (in some algebraic closure)
-What about the decomposition field of $f=X^3-X-1\in \Q[X]$?
+What about the splitting field of $f=X^3-X-1\in \Q[X]$?
 
 \begin{exercise}
 \label{xca:dec field X^4-5X^2+5}
-    Let $f=X^4-5X^2+5\in \Q[X]$ and $E$ be a decomposition field of $f$. 
+    Let $f=X^4-5X^2+5\in \Q[X]$ and $E$ be a splitting field of $f$. 
     Compute $[E:\Q]$ and $\Gal(E/\Q)$. 
 \end{exercise}
 
