@@ -283,7 +283,7 @@ $m$-th roots of one, then $E/K$ is a splitting field of $X^m-x^m$.
 Note that radical extensions are finite. 
 
 \begin{example}
-    Let $E$ be a decomposition field of $X^4-2$ over $\Q$. Then $E/\Q$ is radical, 
+    Let $E$ be a splitting field of $X^4-2$ over $\Q$. Then $E/\Q$ is radical, 
     as $E=\Q(\sqrt[4]{2},i)$. 
 \end{example}
 
@@ -368,7 +368,7 @@ Note that radical extensions are finite.
     if $R=K(x_1,\dots,x_m)$ and $x_i^{a_i}\in K(x_1,\dots,x_{i-1})$, 
     then we may assume that $K$ contains a primitive $a_i$-root of one. We proceed by induction on $m$. 
     The case $m=0$ is trivial. Assume that the claim holds for some $m\geq0$. Let 
-    $L=K(x_1)$. Then $L/K$ is a decomposition field of $X^{a_1}-x_1^{a_1}$, and hence
+    $L=K(x_1)$. Then $L/K$ is a splitting field of $X^{a_1}-x_1^{a_1}$, and hence
     $L/K$ is a cyclic extension. Thus $\Gal(L/K)$ is cyclic (and hence, in particular, solvable). 
     Let $H$ be the subgroup that corresponds to $L$, that is
     $H=\Gal(R/L)$ (here, we use Galois' correspondence). Then $H$ is normal in $\Gal(R/K)$. 
@@ -381,7 +381,7 @@ Note that radical extensions are finite.
 \end{proof}
 
 \begin{definition}
-    Let $f\in K[X]$ and $E$ be a decomposition field of $f$ over $K$. 
+    Let $f\in K[X]$ and $E$ be a splitting field of $f$ over $K$. 
     We say that $f$ is \emph{solvable by radicals} if
     there is a radical extension $R/K$ such that $E\subseteq R$. 
 \end{definition}
@@ -424,7 +424,7 @@ $\Sym_5$.
     
     By Eisenstein's theorem, $f$ is irreducible. 
     
-    Let $E/\Q$ be a decomposition field of $f$. 
+    Let $E/\Q$ be a splitting field of $f$. 
     Then $\Gal(f,\Q)=\Gal(E/\Q)$ is isomorphic 
     to a subgroup $G$ of $\Sym_5$.
     Since 
@@ -480,8 +480,8 @@ For the converse, we need two auxiliary results.
 
 \begin{exercise}
 \label{xca:embedding}
-    Let $E/K$ be a decomposition field of $f\in K[X]$ and $K^*/K$ be an extension.
-    If $E^*/K^*$ is a decomposition field of $f$ containing $E$, then 
+    Let $E/K$ be a splitting field of $f\in K[X]$ and $K^*/K$ be an extension.
+    If $E^*/K^*$ is a splitting field of $f$ containing $E$, then 
     \[
     \Gal(E^*/K^*)\to\Gal(E/K),\quad \sigma\mapsto\sigma|_{E},
     \]
