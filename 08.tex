@@ -20,8 +20,8 @@ Similarly, one defines lower bounds and greatest lower bounds.
 
 \begin{definition}
 \index{Lattice}
-    A \emph{lattice} if a partially ordered set $L$ in which 
-    each pair of elements $x,y\in L$ has a least upper bound $x\vee y$ and a
+    A \emph{lattice} is a partially ordered set $\cL$ in which 
+    each pair of elements $x,y\in \cL$ has a least upper bound $x\vee y$ and a
     greatest lower bound $x\wedge y$. 
 \end{definition}
 
@@ -33,41 +33,50 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 
 \begin{example}
 \index{Lattice!of subgroups}
-    Let $G$ be a group and $L(G)$ be the collection of subgroups of $G$. The relation
+    Let $G$ be a group and $\cL(G)$ be the collection of subgroups of $G$. The relation
     \[ 
     H\leq K\Longleftrightarrow H\subseteq K
     \] 
-    turns $L(G)$ into a lattice 
+    turns $\cL(G)$ into a lattice 
     with $H\vee K=\langle H,K\rangle$ and 
     $H\wedge K=H\cap K$. 
 \end{example}
 
 \begin{example}
-    Let $E/K$ be a field extension and $L(E/K)$ be the collection of 
+    Let $E/K$ be a field extension and $\cL(E/K)$ be the collection of 
     intermediate fields. The relation
     \[
     F\leq L\Longleftrightarrow F\subseteq L
     \]
-    turns $L(E/K)$ into a lattice with 
+    turns $\cL(E/K)$ into a lattice with 
     $F\vee L=FL$ and $F\wedge L=F\cap L$. 
 \end{example}
 
+\begin{example}
+    Let $n \in \Z$ be a positive integer and $\mathcal{D}(n)$ be the collection of positive integer devisors $d \in \Z$ of $n$. The relation
+    \[
+    l \leq m \Longleftrightarrow l \mid m
+    \]
+    turns $\mathcal{D}(n)$ into a lattice with
+    $l \vee m = \lcm(l,m)$ and $l \wedge m = \gcd(l,m)$.
+\end{example}
+
 \index{Order-reversing map}
-A map $f\colon L\to L_1$ between two lattices is 
+A map $f\colon \cL\to \cL_1$ between two lattices is 
 said to be \emph{order-reversing} if 
-$x\leq y$ implies $f(y)\leq f(x)$. 
+$x\leq_1 y$ implies $f(y)\leq_2 f(x)$. 
 
 We shall need an exercise. 
 
 \begin{exercise}
 \label{xca:order_reversing}
-    Let $L_1$ and $L_2$ be lattices and $f\colon L_1\to L_2$ be a bijection 
+    Let $\cL_1$ and $\cL_2$ be lattices and $f\colon \cL_1\to \cL_2$ be a bijection 
     such that $f$ and its inverse are both order reversing. Then 
     \[
-    f(x\vee y)=f(x)\wedge f(y),\quad 
-    f(x\wedge y)=f(x)\vee f(y)
+    f(x\vee_1 y)=f(x)\wedge_2 f(y),\quad 
+    f(x\wedge_1 y)=f(x)\vee_2 f(y)
     \]
-    for all $x,y\in L_1$. 
+    for all $x,y\in \cL_1$. 
 \end{exercise}
 
 % \begin{proof}
@@ -84,8 +93,8 @@ We shall need an exercise.
     Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
     There exists a bijective correspondence
     \[
-    L(E/K)=\{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
-    \{S:S\text{ is a subgroup of $G$}\}=L(G). 
+    \cL(E/K)=\{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
+    \{S:S\text{ is a subgroup of $G$}\}=\cL(G). 
     \]
     The correspondence is given by $\alpha\colon F\mapsto \Gal(E/F)$ and 
     $\beta\colon \prescript{S}{}{E}\mapsfrom S$. Moreover, the following
@@ -118,8 +127,8 @@ We shall need an exercise.
 \begin{proof}
 Let 
 \begin{align*}
-&\alpha\colon L(E/K)\to L(G),\quad\alpha(F)=\Gal(E/F),\\
-&\beta\colon L(G)\to L(E/K),\quad\beta(S)=\prescript{S}{}{E}.
+&\alpha\colon \cL(E/K)\to \cL(G),\quad\alpha(F)=\Gal(E/F),\\
+&\beta\colon \cL(G)\to \cL(E/K),\quad\beta(S)=\prescript{S}{}{E}.
 \end{align*}
 A routine
 exercise shows that $\alpha$ and $\beta$ are well-defined. 
@@ -212,7 +221,7 @@ Some easy consequences.
     \quad 
     \Q(\sqrt{6})/\Q,
     \]
-    as $\Gal(\Q(\sqrt{2},\sqrt{3})/Q)\simeq C_2\times C_2$. 
+    as $\Gal(\Q(\sqrt{2},\sqrt{3})/\Q)\simeq C_2\times C_2$. 
     % Note that if $\sigma\in\Gal(\Q(\sqrt{2},\sqrt{3})/Q)$, then
     % $\sigma(\sqrt{2})\in\{\sqrt{2},-\sqrt{2}\}$ and
     % $\sigma(\sqrt{3})\in\{\sqrt{3},-\sqrt{3}\}$.
@@ -487,7 +496,7 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     
     Finally, we prove that $4)\implies1)$. Let 
     $C$ be an algebraic closure of $K$ containing $E$. 
-    Then $\Gal(E/K)=\Hom(E/K,C/K)=\{\id\}$, as $\gamma(E/K)=1$. 
+    Then $\Gal(E/K)\subseteq\Hom(E/K,C/K)=\{\id\}$, as $\gamma(E/K)=1$. 
     If $x\in E$ is separable over $K$, then
     \[
     f(x,K)=\prod_{y\in O_{\Gal(E/K)}(x)}(X-y)=X-x\in\ K[X].
