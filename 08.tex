@@ -1,6 +1,6 @@
-\section{Lecture -- Week 8}
+%\section{Lecture -- Week 8}
 
-\subsection{Galois' correspondence}
+\section{Galois' correspondence}
 
 \index{Partially ordered set}
 \index{Poset}
@@ -20,8 +20,8 @@ Similarly, one defines lower bounds and greatest lower bounds.
 
 \begin{definition}
 \index{Lattice}
-    A \emph{lattice} is a partially ordered set $\cL$ in which 
-    each pair of elements $x,y\in \cL$ has a least upper bound $x\vee y$ and a
+    A \emph{lattice} is a partially ordered set $\mathcal{L}$ in which 
+    each pair of elements $x,y\in \mathcal{L}$ has a least upper bound $x\vee y$ and a
     greatest lower bound $x\wedge y$. 
 \end{definition}
 
@@ -33,22 +33,22 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 
 \begin{example}
 \index{Lattice!of subgroups}
-    Let $G$ be a group and $\cL(G)$ be the collection of subgroups of $G$. The relation
+    Let $G$ be a group and $\mathcal{L}(G)$ be the collection of subgroups of $G$. The relation
     \[ 
     H\leq K\Longleftrightarrow H\subseteq K
     \] 
-    turns $\cL(G)$ into a lattice 
+    turns $\mathcal{L}(G)$ into a lattice 
     with $H\vee K=\langle H,K\rangle$ and 
     $H\wedge K=H\cap K$. 
 \end{example}
 
 \begin{example}
-    Let $E/K$ be a field extension and $\cL(E/K)$ be the collection of 
+    Let $E/K$ be a field extension and $\mathcal{L}(E/K)$ be the collection of 
     intermediate fields. The relation
     \[
     F\leq L\Longleftrightarrow F\subseteq L
     \]
-    turns $\cL(E/K)$ into a lattice with 
+    turns $\mathcal{L}(E/K)$ into a lattice with 
     $F\vee L=FL$ and $F\wedge L=F\cap L$. 
 \end{example}
 
@@ -62,7 +62,7 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 \end{example}
 
 \index{Order-reversing map}
-A map $f\colon \cL_1\to \cL_2$ between two lattices is 
+A map $f\colon \mathcal{L}_1\to \mathcal{L}_2$ between two lattices is 
 said to be \emph{order-reversing} if 
 $x\leq_1 y$ implies $f(y)\leq_2 f(x)$. 
 
@@ -70,13 +70,13 @@ We shall need an exercise.
 
 \begin{exercise}
 \label{xca:order_reversing}
-    Let $\cL_1$ and $\cL_2$ be lattices and $f\colon \cL_1\to \cL_2$ be a bijection 
+    Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be lattices and $f\colon \mathcal{L}_1\to \mathcal{L}_2$ be a bijection 
     such that $f$ and its inverse are both order reversing. Then 
     \[
     f(x\vee y)=f(x)\wedge f(y),\quad 
     f(x\wedge y)=f(x)\vee f(y)
     \]
-    for all $x,y\in \cL_1$. 
+    for all $x,y\in \mathcal{L}_1$. 
 \end{exercise}
 
 % \begin{proof}
@@ -93,8 +93,8 @@ We shall need an exercise.
     Let $E/K$ be a finite Galois extension and $G=\Gal(E/K)$. 
     There exists a bijective correspondence
     \[
-    \cL(E/K)=\{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
-    \{S:S\text{ is a subgroup of $G$}\}=\cL(G). 
+    \mathcal{L}(E/K)=\{F:K\subseteq F\subseteq E\text{ subfields}\}\leftrightarrow
+    \{S:S\text{ is a subgroup of $G$}\}=\mathcal{L}(G). 
     \]
     The correspondence is given by $\alpha\colon F\mapsto \Gal(E/F)$ and 
     $\beta\colon \prescript{S}{}{E}\mapsfrom S$. Moreover, the following
@@ -127,8 +127,8 @@ We shall need an exercise.
 \begin{proof}
 Let 
 \begin{align*}
-&\alpha\colon \cL(E/K)\to \cL(G),\quad\alpha(F)=\Gal(E/F),\\
-&\beta\colon \cL(G)\to \cL(E/K),\quad\beta(S)=\prescript{S}{}{E}.
+&\alpha\colon \mathcal{L}(E/K)\to \mathcal{L}(G),\quad\alpha(F)=\Gal(E/F),\\
+&\beta\colon \mathcal{L}(G)\to \mathcal{L}(E/K),\quad\beta(S)=\prescript{S}{}{E}.
 \end{align*}
 A routine
 exercise shows that $\alpha$ and $\beta$ are well-defined. 
@@ -376,7 +376,7 @@ is an injective group homomorphism.
     In this case, $[E:K]=\prod_{i=1}^r[E_i:K]$. 
 \end{exercise}
 
-\subsection{The fundamental theorem of algebra}
+\section{The fundamental theorem of algebra}
 
 We now present an easy proof of the fundamental theorem 
 of algebra based on the ideas of Galois Theory. 
@@ -409,7 +409,7 @@ The field $\C$ is algebraically closed.
     and $[L:\C]=1$, so $L=\C$ and $E=\C$. 
 \end{proof}
 
-\subsection{Purely inseparable extensions}
+\section{Purely inseparable extensions}
 
 Let $E/K$ be an algebraic extension. 
 In page \ref{separable} we defined the 
