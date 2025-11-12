@@ -78,6 +78,25 @@
 %     columns=fixed,
 % }
 
+\newcommand{\TOCpart}[1]{\addtocontents{toc}
+{\bigskip\noindent\textcolor{green!40!blue}{\textbf{#1.}}}}
+
+% To put some text with a light pink background
+\newtcolorbox{eqbox}[1][]
+{
+boxrule=0pt,frame hidden,colback=red!5!white,
+  left=.3em, right=.3em, top=.3em, bottom=.3em,
+  beforeafter skip balanced=.4\baselineskip plus 2pt,
+  before upper={\parindent4mm},
+colframe=blue!55!white
+}
+\newenvironment{optional}[1][]{
+\begin{eqbox}
+}{
+\end{eqbox}
+}
+
+
 \lstset{
     language = Magma,
     basicstyle=\ttfamily\small,
@@ -88,7 +107,7 @@
 }
 
 %\renewcommand\sectionname{Lecture}
-\renewcommand\subsectionname{\S}
+\renewcommand\sectionname{\S}
 
 % para enumerar
 \renewcommand{\labelenumi}{\textbf{\arabic{enumi})}}
@@ -154,7 +173,6 @@
 \renewcommand{\sl}{\mathfrak{sl}}
 \newcommand{\ad}[1]{\operatorname{ad}\,#1}
 \newcommand{\A}{\mathbb{A}}
-\newcommand{\cL}{\mathcal{L}}
 
 
 % column vector
@@ -288,7 +306,7 @@ Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
 \fancyhf{}
 \fancyfoot[R]{\thepage}
 \fancyhead[L]{\course}
-\fancyhead[R]{Lecture \thesection}
+%\fancyhead[R]{\S\thesection}
 \setlength{\headheight}{14pt}
 
 \usepackage[english.nosectiondot]{babel}
