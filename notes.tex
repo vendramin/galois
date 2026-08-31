@@ -1,14 +1,18 @@
 \documentclass[12pt]{amsproc}
+\usepackage{mynotes}
+%\usepackage{lecturenotes}
 
-\newcommand{\course}{Galois theory}
-\input{mystuff}
+\renewcommand{\course}{Galois theory}
 
-%\usepackage{fontspec}
-%\setmainfont{Open Dyslexic}
+\title{\course}
+\author{Leandro Vendramin}
+\address{Department of Mathematics and Data
+Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
+\email{Leandro.Vendramin@vub.be}
+\thanks{}
+\date{}
 
 \begin{document}
-
-\pagenumbering{roman}
 
 \begin{abstract}
     The notes correspond to the bachelor
@@ -18,15 +22,26 @@
     Department of Mathematics and Data Sciences.
 \end{abstract}
 
-\setcounter{tocdepth}{1}
 \maketitle
-\tableofcontents 
 
-\clearpage 
+%\begin{figure}[h]
+%    \includegraphics[scale=0.5]{hungerford.png}
+%\end{figure}
+
+\thispagestyle{empty}
+
+\setcounter{tocdepth}{1}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
 \pagenumbering{arabic}
 
 \include{introduction}
 
+% Rings 
 \input{01}
 \input{02}
 \input{03}
@@ -40,8 +55,7 @@
 \input{11}
 \input{12}
 
-\include{solutions}
-
+\input{solutions}
 \bibliographystyle{abbrv}
 \bibliography{refs}
 
