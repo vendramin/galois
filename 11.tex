@@ -355,6 +355,89 @@ representation theory of finite groups.
 The proof of the theorem is extremely hard. It occupies a full volume of
 \emph{Pacific Journal of Mathematics}, see~\cite{MR166261}.
 
+The proof is hard and occupies a full volume~\cite{MR166261} of
+the \emph{Pacific Journal of Mathematics} (see Figure~\ref{fig:FeitThompson}).
+The theorem was formally verified
+by the computer proof assistant \lstinline{Coq},
+see~\cite{MR3111271} for the announcement.
+
+The proof of the Feit--Thompson theorem suggests the following conjecture:
+
+\begin{problem}[Feit--Thompson]
+\index{The Feit--Thompson conjecture}
+Are there distinct prime numbers $p$ and $q$ such that
+$\frac {p^{q}-1}{p-1}$ divides $\frac{q^{p} - 1}{q - 1}$?
+\end{problem}
+
+The conjecture states that there are no such prime numbers.
+The problem is still open; see \cite{MR297686} for some partial results.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.2]{images/FeitThompson.pdf}
+    \caption{The proof of the Feit--Thompson theorem occupies a full volume of
+the Pacific Journal of Mathematics.}
+    \label{fig:FeitThompson}
+\end{figure}
+
+The Feit--Thompson theorem is one of the starting points
+of the classification of finite simple groups (CFSG).
+This classification is one
+of the deepest theorems
+of the 20th century. The proof consists of tens of thousands
+of pages in several hundred journal articles written
+by about 100 authors, published mostly between 1955 and 2004.
+
+\begin{theorem}[CFSG]
+\index{Classification of simple groups}
+\label{thm:CFSG}
+Let $G$ be a finite simple group. Then $G$ lies in one (or more)
+of the following families:
+\begin{enumerate}
+    \item Cyclic groups of prime order.
+    \item $\Alt_n$ for $n\geq5$.
+    \item Finite groups of Lie type.
+    \item 26 sporadic simple groups.
+\end{enumerate}
+\end{theorem}
+
+Groups of Lie type are finite analogs of simple Lie groups, such as
+$\SL_n(\C)$. A typical example
+of a finite simple group of Lie type is
+$\PSL_n(p)$ for some prime number $p$, which is defined
+as $\SL_n(p)$ over its center.
+
+The \emph{sporadic simple groups} are 26 groups that do not follow a systematic pattern.
+The first five of the sporadic groups were discovered by Mathieu in the 1860s, and the other 21
+were found between 1965 and 1975.
+Several of these groups were predicted to exist before they were constructed, sometimes
+just knowing their character tables!
+The full list of sporadic simple groups is as follows:
+\begin{itemize}
+\item Mathieu groups $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$ and $M_{24}$.
+\item Janko groups $J_1$, $J_2$, $J_3$ and $J_4$.
+\item Conway groups $Co_1$, $Co_2$ and $Co_3$.
+\item Fischer groups $Fi_{22}$, $Fi_{23}$ and $Fi_{24}$.
+\item Higman–Sims group $HS$.
+\item McLaughlin group $McL$.
+\item Held group $He$.
+\item Rudvalis group $Ru$.
+\item Suzuki group $Suz$.
+\item O'Nan group $ON$.
+\item Harada–Norton group $HN$.
+\item Lyons group $Ly$.
+\item Thompson group $Th$.
+\item Baby Monster group $B$.
+\item Monster group $M$.
+\end{itemize}
+
+Mathieu groups can be realized
+as automorphism groups of certain very complicated
+combinatorial structures known as \emph{Steiner systems}.
+A concrete example:
+\[
+M_{11}=\langle (123456789\,10\,11), (37\,11\,8)(4\,10\,56)\rangle,
+\]
+which is a subgroup of $\Sym_{11}$ of order 7920.
 
 
 \section{Simplicity of the alternating simple group}
