@@ -37,6 +37,7 @@
 % pag 21 example
 
 \begin{definition}
+\index{Extension!normal}
     Let $E/K$ be an algebraic extension and $C$ be an algebraic closure of $K$ containing $E$. Then $E/K$ is \emph{normal} if 
     $\sigma(E)\subseteq E$ for all $\sigma\in\Hom(E/K,C/K)$. 
 \end{definition}
@@ -66,7 +67,7 @@ The following result is practical but technical. That is why we leave the proof
 as an exercise. 
 
 \begin{exercise}
-    Prove that the previous definition depends only on $E$ (and not on the
+    Prove that the previous definition depends only on the extension $E/K$ (and not on the
     algebraic closure $C$). 
 \end{exercise}
 
@@ -83,13 +84,13 @@ Some properties:
     We may assume that $f$ is monic. Let $C/K$ be an algebraic closure of $K$ containing $E$. 
     Let $y$ be a root of $f$ in $C$. Since $f=f(x,K)=f(y,K)$, 
     it follows that $y=\sigma(x)$ for some $\sigma\in\Gal(C/K)$. Since 
-    $E/K$ is normal, $\sigma|_E\colon E\to C$ is an automorphism of $E/K$, that is
+    $E/K$ is normal, $\sigma|_E\colon E\to E$ is an automorphism of $E/K$, that is
     $\sigma(E)\subseteq E$. In particular, $y\in E$. 
 \end{proof}
 
 Let $K\subseteq F\subseteq E$ be a tower of fields. 
 If $E/K$ is normal, then $E/F$ is normal. However, 
-Note that $E/K$ normal does not imply $F/K$ normal, as this would imply 
+note that $E/K$ normal does not imply $F/K$ normal, as this would imply 
 that every extension is normal. Moreover, 
 $E/F$ normal and $F/K$ normal do not imply $E/K$ normal.
     
@@ -116,7 +117,7 @@ where the product is taken over all
 $y\in O_{\Gal(E/K)}(x)$. 
 
 \begin{proposition}
-    Let $E/K$ and $F/K$ be extensions. If $F/K$ 
+    Let $E/K$ and $F/K$ be extensions contained in a common field $L$. If $F/K$ 
     is normal, then $EF/E$ is normal.
 \end{proposition}
 
