@@ -71,7 +71,7 @@
 
 \begin{proof}
     Note that $\sigma\colon K\to\sigma(K)$ is bijective. 
-    Let $A$ be a set in bijection with $L\setminus\sigma(K)$ and disjoint with $K$. 
+    Let $A$ be a set in bijection with $L\setminus\sigma(K)$ and disjoint from $K$. 
 	Let $E=K\cup A$. If $\theta\colon A\to L\setminus\sigma(K)$ is bijective, then 
 	let 
 	\[
@@ -83,8 +83,8 @@
 		\end{cases}
 	\]
 	Then $\varphi$ is a bijective map such that $\varphi|_K=\sigma$. 
-	Transport the operations of $L$ onto $E$, that is 
-	to define binary operations on $E$ as follows: 
+	Transport the operations of $L$ onto $E$, that is,  
+	define binary operations on $E$ as follows: 
 	\begin{align*}
 		&(x,y)\mapsto x\oplus y=\varphi^{-1}(\varphi(x)+\varphi(y)), && 
 		(x,y)\mapsto x\odot y=\varphi^{-1}(\varphi(x)\varphi(y)).
@@ -143,10 +143,12 @@ of positive degree, then there exists an extension $E/K$  such that
 each $f_i$ admits a root in $E$. This is proved by induction on~$n$.  
 
 \begin{definition}
+	\index{Field!algebraically closed}
 	A field $K$ is \emph{algebraically closed} if each $f\in K[X]$ 
 	of positive degree admits a root in $K$. 
 \end{definition}
 
+\index{Fundamental theorem of algebra}
 The \emph{fundamental theorem of algebra} states that $\C$ is algebraically closed. A
 typical proof uses complex analysis.  Later we will give a proof of this result
 using Galois theory. 
@@ -160,7 +162,7 @@ using Galois theory.
 			\[
 				f=a\prod_{i=1}^n(X-\alpha_i)^{m_i}
 			\]
-			for some $a\in K$ and $\alpha_1,\dots,\alpha_n\in K$. 
+			for some $a\in K\setminus\{0\}$, $n\in\Z_{\geq0}$, $\alpha_1,\dots,\alpha_n\in K$, and $m_1,\dots,m_n\in\Z_{>0}$.
 		\item If $E/K$ is algebraic, then $E=K$. 
 	\end{enumerate}
 \end{proposition}
@@ -187,6 +189,7 @@ using Galois theory.
 \section{Artin's theorem}
 
 \begin{definition}
+	\index{Field!algebraic closure}
 	An \emph{algebraic closure} of a field $K$ is an algebraic extension $C/K$ 
 	such that $C$ is algebraically closed. 
 \end{definition}
@@ -220,7 +223,7 @@ For example, $\C/\R$ is an algebraic closure but $\C/\Q$ is not.
 	
 	Let $a\in K$. It follows that $\varphi|_K=\sigma$, as 
 	\[
-	\varphi(a)=\overline{\sigma}(aX^0)(y)=\sigma(a)
+	\varphi(a)=\overline{\sigma}(aX^0)(y)=\sigma(a).
 	\]
 	%and 
 	%$\varphi(x)=\overline{\sigma}(X)(y)=y$. 
@@ -232,10 +235,10 @@ For example, $\C/\R$ is an algebraic closure but $\C/\Q$ is not.
 	\[
 	(F,\tau)\leq (F_1,\tau_1)\Longleftrightarrow F\subseteq F_1\text{ and }\tau_1|_F=\tau.
 	\]
-	If $\{(F_i,\tau_i):i\in I\}$ is a chain in $X$, then $F=\cup_{i\in I}F_i$ is a subfield of $E$
+	If $\{(F_i,\tau_i):i\in I\}$ is a non-empty chain in $X$, then $F=\cup_{i\in I}F_i$ is a subfield of $E$
 	that contains $K$. Moreover, if $z\in F$, then $z\in F_i$ for some $i\in I$ and 
 	then one defines $\tau(z)=\tau_i(z)$. It is an exercise to prove that $\tau$ is well-defined.
-	Since $(F,\tau)\in X$ is an upper bound, Zorn's lemma implies that there exists
+	Since $(F,\tau)\in X$ is an upper bound, Zorn's lemma\index{Zorn's lemma} implies that there exists
 	a maximal element 
 	$(E_1,\theta)\in X$. We claim that $E=E_1$. If not, let $z\in E\setminus E_1$. 
 	Since we know the proposition is true for the extension $E_1(z)/E_1$, 

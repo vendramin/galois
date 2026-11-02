@@ -13,7 +13,7 @@ that the algebraic closure is unique up to isomorphism.
 \begin{proof}
     Let us first prove the uniqueness. The previous proposition implies the existence of 
     an extension homomorphism $\varphi\colon C\to C_1$. Let $y\in C_1$ and $f=f(y,K)$ be 
-    the minimal polynomial of $y$ in $K$. Since $f$ admits a factorization
+    the minimal polynomial of $y$ over $K$. Since $f$ admits a factorization
     \[
         f=\prod (X-\alpha_i)^{m_i}
     \]
@@ -44,7 +44,9 @@ that the algebraic closure is unique up to isomorphism.
     \[
     1=\sum_{j=1}^m g_jf_{i_j}(X_{i_j})
     \]
-    for some $g_1,\dots,g_m\in R$. There exists an extension $F/K$ such that
+    for some $g_1,\dots,g_m\in R$ and 
+    pairwise distinct elements $i_1,\dots,i_m$. 
+    There exists an extension $F/K$ such that
     $f_{i_j}$ has a root $\alpha_j$ in $F$ for all $j$. Let 
     \[
     \tau\colon R\to F,\quad
@@ -70,7 +72,7 @@ that the algebraic closure is unique up to isomorphism.
     \[
     E_1\subseteq E_2\subseteq\cdots
     \]
-    of fields such that every polynomial of positive degree and coefficients in $E_k$ 
+    of fields such that every polynomial of positive degree with coefficients in $E_k$ 
     admits a root in $E_{k+1}$. Let $E=\cup E_k$. We claim that $E$ is algebraically closed. In fact, 
     let $g\in E[X]$ be such that $\deg g>0$. Then, since $g\in E_r[X]$ for some $r$, it follows
     that $g$ has a root in $E_{r+1}\subseteq E$. 
@@ -81,7 +83,7 @@ that the algebraic closure is unique up to isomorphism.
 % explain what factorizes linearly means! 
 
 \begin{definition}
-\index{Splitting field}
+\index{Field!splitting}
 \label{def:splitting_field}
 \label{def:decomposition_field}
 	Let $K$ be a field and $f\in K[X]$ be such that $\deg f>0$. A \emph{splitting field} of $f$ over $K$ is a field $E$ that contains $K$ and that satisfies the following properties:
@@ -115,6 +117,7 @@ Easy examples:
 \end{example}
 
 \begin{proposition} \label{split_char}
+    Let $E/K$ be an extension and $f\in K[X]$ have positive degree. 
 	$E$ is a splitting field of $f\in K[X]$ if and only if
 	$f$ factorizes linearly in $E[X]$ and $E=K(x_1,\dots,x_n)$, where 
 	$x_1,\dots,x_n$ are the roots of $f$. 
@@ -123,8 +126,9 @@ Easy examples:
 \begin{proof}
     Let $f=a\prod_{i=1}^r(X-x_i)^{n_i}$ and $F=K(x_1,\dots,x_r)$ with $x_1,\dots,x_r\in E$. Since $f$
     factorizes linearly in $F[X]$, it follows that $F=E$. 
-    Conversely, let $E=K(x_1,\dots,x_r)$ and assume that $f$ factorizes linearly
-    in $F[X]$. Then, in particular, $x_1,\dots,x_r\in F$. Hence $E\subseteq F$ and
+    Conversely, let $E=K(x_1,\dots,x_r)$ and
+    and let $F$ be a field with $K\subseteq F\subseteq E$ such that $f$ factorizes linearly in $F[X]$.
+    Then, in particular, $x_1,\dots,x_r\in F$. Hence $E\subseteq F$ and
     $F=E$. 
 \end{proof}
 
@@ -190,7 +194,7 @@ are of the form
 O_G(x)=\{\sigma(x):\sigma\in G\}
 =\{y\in C:y=\sigma(x)\text{ for some $\sigma\in G$}\}
 \]
-The elements $x,y\in C$ are \emph{conjugate} 
+The elements $x,y\in C$ are \emph{conjugate}\index{Element!conjugate} 
 if $y=\sigma(x)$ for some $\sigma\in G$. 
 
 \begin{proposition}
@@ -239,7 +243,7 @@ if $y=\sigma(x)$ for some $\sigma\in G$.
     that $g$ divides $h_1-h_2$. In particular, $h_1(y)=h_2(y)$.
     
     A straightforward calculation shows that $\varphi$ is a field 
-    homomorphism such that $\varphi|_K=\id$, this means that
+    homomorphism such that $\varphi|_K=\id$; this means that
     $\varphi$ is 
     an extension homomorphism such that $\varphi(x)=y$. There exists a homomorphism 
     $\sigma\in\Hom(C/K,C/K)$ such that 
@@ -274,13 +278,9 @@ The previous proposition shows, in particular,
 that all the roots of 
 an irreducible polynomial $f\in K[X]$ 
 in an algebraic closure $C$ of $K$
-have the same multiplicity. This is  
-not true if $f$ is not irreducible. Find an example.
-
-%Take 
-%for example $f=(X-1)^2(X^2+1)\in\Q[X]$. 
-
-% pag 20
+have the same multiplicity. 
+This need not hold if $f$ is reducible.
+Find an example.
 
 \begin{definition}
 \index{Splitting field}
