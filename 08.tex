@@ -1,10 +1,9 @@
-%\section{Lecture -- Week 8}
-
 \section{Galois' correspondence}
+\lecture 
 
-\index{Partially ordered set}
 \index{Poset}
-A \emph{partially order set} (or \emph{poset}) is a pair $(X,\leq)$, where $X$ is a non-empty set
+\index{Set!partially ordered}
+A \emph{partially ordered set} (or \emph{poset}) is a pair $(X,\leq)$, where $X$ is a non-empty set
 and $\leq$ is a reflexive, antisymmetric and transitive relation on $X$. This means:
 \begin{enumerate}
     \item $x\leq x$ for all $x\in X$, 
@@ -43,6 +42,7 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 \end{example}
 
 \begin{example}
+    \index{Lattice!of intermediate fields}
     Let $E/K$ be a field extension and $\mathcal{L}(E/K)$ be the collection of 
     intermediate fields. The relation
     \[
@@ -53,6 +53,7 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
 \end{example}
 
 \begin{example}
+    \index{Lattice!of divisors}
     Let $n \in \Z$ be a positive integer and $\mathcal{D}(n)$ be the collection of positive integer divisors $d \in \Z$ of $n$. The relation
     \[
     l \leq m \Longleftrightarrow l \mid m
@@ -61,7 +62,7 @@ with $A\vee B=A\cup B$ and $A\wedge B=A\cap B$.
     $l \vee m = \lcm(l,m)$ and $l \wedge m = \gcd(l,m)$.
 \end{example}
 
-\index{Order-reversing map}
+\index{Map!order-reversing}
 A map $f\colon \mathcal{L}_1\to \mathcal{L}_2$ between two lattices is 
 said to be \emph{order-reversing} if 
 $x\leq_1 y$ implies $f(y)\leq_2 f(x)$. 
@@ -258,7 +259,7 @@ Some easy consequences.
     where $\sigma(\omega)=\omega^2$, 
     is cyclic of order four, 
     the extension $\Q(\omega)/\Q$ has a unique degree-two 
-    subtextension $F/\Q$. Note that $|\langle\sigma^2\rangle|=2$ 
+    subextension $F/\Q$. Note that $|\langle\sigma^2\rangle|=2$ 
     and $\sigma^2(\omega)=\omega^4=\omega^{-1}$. Thus 
     $F=\prescript{\langle\sigma^2\rangle}{}{\Q(\omega)}$. Let 
     $\theta=\omega+\omega^{-1}$. Then 
@@ -337,7 +338,7 @@ $\Gal(E/F\cap L)=\langle\Gal(E/F),\Gal(E/L)\rangle$.
 \end{exercise}
 
 \begin{proposition}
-Let $E_1/K,E_2/K$ be Galois extensions. 
+Let $E_1/K,E_2/K$ be Galois extensions contained in a common field. 
 If $E=E_1E_2$, then $E/K$ is a Galois extension. If, moreover, $E_1/K$ and $E_2/K$ are finite,
 then 
 \[
@@ -368,7 +369,7 @@ is an injective group homomorphism.
 \end{proof}
 
 \begin{exercise}
-    Let $E_1/K,\dots,E_r/K$ be finite Galois extensions such that for each $j$ 
+    Let $E_1/K,\dots,E_r/K$ be finite Galois extensions contained in a common field. Assume that for each $j$ 
     one has $E_j\cap (E_1\cdots E_{j-1}E_{j+1}\cdots E_r)=K$. If $E=E_1E_2\cdots E_r$, then
     \[
     \Gal(E/K)\simeq\Gal(E_1/K)\times\cdots\times\Gal(E_r/K).
@@ -389,12 +390,13 @@ does not admit degree-two extensions.
 \end{enumerate}
 
 \begin{theorem}
+\index{Fundamental theorem of algebra}
 The field $\C$ is algebraically closed.
 \end{theorem}
 
 \begin{proof}
     Let $E/\C$ be an algebraic finite extension. Then $E/\R$ 
-    is a finite separable extension of even degree. There exists a Galois
+    is a finite separable extension of even degree. There exists a finite Galois
     extension 
     $L/\R$ such that $E\subseteq L$, so $[L:\R]$ is even. Let $G=\Gal(L/\R)$. 
     Then $|G|=2^ms$ for some odd number $s$. If $T$ is a 2-Sylow subgroup
@@ -412,7 +414,7 @@ The field $\C$ is algebraically closed.
 \section{Purely inseparable extensions}
 
 Let $E/K$ be an algebraic extension. 
-In Chapter \ref{separable} we defined the 
+We defined the 
 \emph{separable closure} of $K$ with respect to $E$ as 
 the field 
 \[
@@ -421,12 +423,15 @@ the field
 Note that $K\subseteq F\subseteq E$ 
 and $F=K(F)$. Moreover, 
 $F/K$ is separable and 
-$E/F$ is a \emph{purely inseparable} extension, meaning that
+$E/F$ is a \emph{purely inseparable}\index{Extension!degree!inseparability} extension, meaning that
 for every $x\in E\setminus F$, the polynomial $f(x,F)$ is not separable. 
 
-The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the \emph{degree of inseparability} of $E/K$. 
-Clearly, $E/K$ is separable if and only if $[E:K]_{\operatorname{ins}}=1$ and 
-$E/K$ is purely inseparable if and only if $[E:K]_{\operatorname{ins}}=[E:K]$. 
+The number $[E:K]_{\operatorname{ins}}=[E:F]$ is known as the
+\emph{degree of inseparability} of $E/K$.
+Clearly, $E/K$ is separable if and only if
+$[E:K]_{\operatorname{ins}}=1$.
+If $E/K$ is finite, then $E/K$ is purely inseparable if and only if
+$[E:K]_{\operatorname{ins}}=[E:K]$.
 
 \begin{exercise}
     \label{xca:separable_charp}
@@ -464,13 +469,17 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
 %$p^m$ divides $\deg f$. In conclusion, $f=g(X^p)$ 
 %for some $g\not\in K[X^p]$. 
     We now proceed by induction on the degree of $x$. The result
-    is true for elements of degree one. So assume the result holds for the element of degree $\leq n$ 
+    is true for all elements of degree one. So assume the result holds for the element of degree $\leq n$ 
     for some $n\geq1$. 
     If $x\in E$ is such that $\deg f(x,K)=n+1$, then, since $f(x,K)=g(X^p)$, the element 
     $x^p$ has degree $\leq n$. By the inductive hypothesis, $x^{p^{m+1}}=(x^p)^{p^m}\in K$.  
 
-    We now prove $2)\implies 3)$. Let $x\in E$ and $m$ be the minimal positive integer 
-    such that $x^{p^m}\in K$. Then
+We now prove $2)\implies 3)$. Let $x\in E$.
+If $x=0$, then $f(x,K)=X$, so statement 3) holds
+with $m=0$ and $a=0$.
+Assume now that $x\ne0$, and let $m$ be the least non-negative
+integer such that $x^{p^m}\in K$. Then
+    Then
     $x$ is a root of $X^{p^m}-x^{p^m}\in K[X]$. Since 
     $X^{p^m}-x^{p^m}=(X-x)^{p^m}$, it follows that 
     \[
@@ -496,12 +505,15 @@ $E/K$ be an algebraic extension. The following statements are equivalent:
     
     Finally, we prove that $4)\implies1)$. Let 
     $C$ be an algebraic closure of $K$ containing $E$. 
-    Then $\Gal(E/K)\subseteq\Hom(E/K,C/K)=\{\id\}$, as $\gamma(E/K)=1$. 
+    Then $\Gal(E/K)\subseteq\Hom(E/K,C/K)=\{\id\}$,
+    as $\gamma(E/K)=1$.
+    In particular, $E/K$ is normal, since every $K$-embedding
+    of $E$ into $C$ has image $E$.
     If $x\in E$ is separable over $K$, then
     \[
-    f(x,K)=\prod_{y\in O_{\Gal(E/K)}(x)}(X-y)=X-x\in\ K[X].
+    f(x,K)=\prod_{y\in O_{\Gal(E/K)}(x)}(X-y)=X-x\in K[X].
     \]
-    Thus $x\in K$ and hence $E/K$ is purely inseparable. 
+    Thus $x\in K$ and hence $E/K$ is purely inseparable.
 \end{proof}
 
 Some consequences:
