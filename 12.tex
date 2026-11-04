@@ -1,12 +1,7 @@
-%\section{Lecture -- Week 12}
-
-
-%\section{The inverse Galois problem}
-
-
-
 \section{Group cohomology}
+\lecture 
 
+\index{Module!over a group}
 Let $G$ be a group and $A$ be a \emph{(left) $G$-module}. This means that $A$ is an abelian
 group together with a map
 \[
@@ -26,12 +21,14 @@ More generally, if $E/K$ is a finite Galois extension, then
 the Galois group $\Gal(E/K)$ acts on $E$ and $E^\times$. 
 
 \begin{definition}
-    Let $G$ be a group and $M$ and $N$ be $G$-modules. A map 
+    \index{Homomorphism!of modules}
+    Let $G$ be a group and $M$ and $N$ be $G$-modules. A homomorphism of abelian groups 
     $f\colon M\to N$ is a \emph{homomorphism} of $G$-modules
     if $f(\sigma\cdot m)=\sigma\cdot f(m)$ for all $m\in M$ and $\sigma\in G$.
 \end{definition}
 
 \begin{definition}
+    \index{Submodule!of invariants}
     Let $G$ be a group and $M$ be a $G$-module.
     The submodule of \emph{$G$-invariants} is defined as
     \[
@@ -46,7 +43,7 @@ $G=\Gal(E/K)$, then $E^G=K$.
 \begin{proposition}
 \label{pro:H0}
     Let $G$ be a group. If the sequence
-of $G$-modules and $G$-module homomorphism
+of $G$-modules and $G$-module homomorphisms
 \[
 \begin{tikzcd}
     0 & P & M & N & 0
@@ -113,7 +110,7 @@ the map $\beta|_{M^G}$ is surjective.
     to obtain the sequence  
     \[
     \begin{tikzcd}
-     0 & \{-1,1\} & \R^\times & \R^\times 
+     1 & \{-1,1\} & \R^\times & \R^\times 
      \arrow[from=1-1, to=1-2]
      \arrow[from=1-2, to=1-3]
      \arrow["\beta^0", from=1-3, to=1-4]
@@ -123,12 +120,15 @@ the map $\beta|_{M^G}$ is surjective.
 \end{example}
 
 \begin{definition}
-    Let $G$ be a group and $N$ be a $G$-module. 
+\index{Group!cohomology!zeroth}
+\index{Cochain}
+\index{Cocycle}
+    Let $G$ be a group and $M$ be a $G$-module. 
     We define 
     \begin{align*}
         H^0(G,M)&=M^G,\\
         C^1(G,M)&=\{\phi\colon G\to M:\phi\text{ is a map}\},\\
-        Z^1(G,M)&=\{\phi\in C^1(G,M):\phi(\sigma\tau)=\phi(\sigma)+\sigma\cdot\phi(\tau)\text{ for all $\sigma,\tau\in G$}\},
+        Z^1(G,M)&=\{\phi\in C^1(G,M):\phi(\sigma\tau)=\phi(\sigma)+\sigma\cdot\phi(\tau)\text{ for all $\sigma,\tau\in G$}\}.
         \end{align*}    
 \end{definition}
 
@@ -159,11 +159,12 @@ that $\phi(1_G)=0_M$.
 \end{example}
 
 \begin{definition}
+\index{Coboundary}
     Let $G$ be a group and $M$ be a $G$-module. The set
     $B^1(G,M)$ of \emph{coboundaries} is the set 
     of elements $\phi\in C^1(G,M)$ such that there is a fixed 
     $m\in M$ such that
-    $\phi(\sigma)=\sigma\cdot m=m$ for all $\sigma\in G$.
+    $\phi(\sigma)=\sigma\cdot m-m$ for all $\sigma\in G$.
 \end{definition}
 
 We proved in Example \ref{exa:BinZ} that  
@@ -171,6 +172,7 @@ $B^1(G,M)\subseteq Z^1(G,M)$. A direct calculation shows that, in fact,
 $B^1(G,M)$ is a subgroup of $Z^1(G,M)$. 
 
 \begin{definition}
+\index{Group!cohomology!first}
     Let $G$ be a group and $M$ be a $G$-module. The 
     \emph{first cohomology group} of $G$ with coefficients
     in $M$ is defined as the quotient
@@ -218,7 +220,7 @@ The following lemma will be useful.
 \end{lemma}
 
 \begin{proof}
-    Let us prove that the map $\alpha^1$ is well-defined. If 
+    If $\phi\in Z^1(G,M)$, then $\alpha\circ\phi\in Z^1(G,N)$ by additivity and equivariance of $\alpha$. Let us prove that the map $\alpha^1$ is well-defined. If 
     $\phi-\phi'\in B^1(G,M)$, then 
     there exists a fixed 
     $m\in M$ such that 
@@ -243,6 +245,7 @@ The following lemma will be useful.
     \end{align*}
 \end{proof}
 
+\index{Diagram chasing}
 We will provide a detailed proof of the upcoming result. 
 The theorem will be established by applying a \emph{diagram chasing} technique, a widely used tool in homological algebra.
 The proof is tedious and may seem intricate, but the method essentially 
@@ -259,8 +262,8 @@ Let $G$ be a group and
     \arrow[from=1-4, to=1-5]
     \end{tikzcd}
 \] 
-be an exact sequence of $G$-modules and $G$-module homomorphism. 
-Then there exists a \emph{connection homomorphism} $\delta$ such that the sequence 
+be an exact sequence of $G$-modules and $G$-module homomorphisms. 
+Then there exists a \emph{connecting homomorphism}\index{Homomorphism!connecting} $\delta$ such that the sequence 
 \begin{equation}
 \label{eq:long}
 \begin{tikzcd}
@@ -280,9 +283,8 @@ and group homomorphisms is exact.
 
 \begin{proof}
     By Proposition \ref{pro:H0}, the long 
-    sequence~\eqref{eq:long} is exact at $H^0(G,P)=P^G$, 
-    $H^0(G,M)=M^G$ and 
-    $H^0(G,N)=N^G$. Note that, in particular, 
+    sequence~\eqref{eq:long} is exact at $H^0(G,P)=P^G$ and  
+    $H^0(G,M)=M^G$. Note that, in particular, 
     $\alpha\colon P\to\alpha(P)$ is a bijective group homomorphism. 
 
 
@@ -303,7 +305,9 @@ and group homomorphisms is exact.
     \beta(m)=\beta(m')=n,
     \]
     then  $m-m'\in\ker\beta=\alpha(P)$. 
-    For $\sigma\in G$, write $\phi'(\sigma)=\sigma\cdot m'-m'$. 
+    For $\sigma\in G$, write 
+    $\phi'(\sigma)=\alpha^{-1}(\sigma\cdot m'-m')$. 
+    %$\phi'(\sigma)=\sigma\cdot m'-m'$. 
     Since  
     $m-m'=\alpha(p)$ for some $p\in P$ and  
     $\alpha^{-1}$ is a homomorphism of $G$-modules, 
@@ -324,6 +328,11 @@ and group homomorphisms is exact.
     &=\sigma\cdot\phi(\tau)+\phi(\sigma)
     \end{align*}
     holds for all $\sigma,\tau\in G$. 
+
+    If $n,n_1\in N^G$ have lifts $m,m_1\in M$, then $m+m_1$ lifts
+    $n+n_1$, and its associated cocycle is the sum of the cocycles
+    associated with $m$ and $m_1$. Thus
+    $\delta(n+n_1)=\delta(n)+\delta(n_1)$.
     
     We now prove that the sequence \eqref{eq:long}
     is exact at $H^0(G,N)=N^G$. We need to prove that $\ker\delta=\im\beta^0$. To prove $\supseteq$ note that if $m\in M^G$ is such that 
@@ -357,7 +366,8 @@ and group homomorphisms is exact.
     \]
     To prove $\supseteq$, let $\phi+B^1(G,P)\in\ker\alpha^1$. Then
     $\alpha\circ\phi\in B^1(G,M)$, that is $\alpha(\phi(\sigma))=\sigma\cdot m-m$ for 
-    all $\sigma\in G$ and some $m\in M$. Note that 
+    all $\sigma\in G$ and some $m\in M$. Since
+    $\sigma\cdot\beta(m)-\beta(m)=\beta(\alpha(\phi(\sigma)))=0$ for all $\sigma\in G$, $\beta(m)\in N^G$. Note that 
     \[
     \delta(\beta(m))=\psi+B^1(G,P),
     \]
@@ -373,7 +383,7 @@ and group homomorphisms is exact.
     \beta^1(\alpha^1(\phi+B^1(G,P)))=\beta^1(\alpha\circ\phi+B^1(G,M))
     =(\beta\circ\alpha)\circ\phi+B^1(G,N)=B^1(G,N).
     \]
-    Conversely, let $\phi+B^1(G,M)\in\ker\beta_1$. Then $\beta\circ\phi\in B^1(G,N)$. Thus
+    Conversely, let $\phi+B^1(G,M)\in\ker\beta^1$. Then $\beta\circ\phi\in B^1(G,N)$. Thus
     there exists $n\in N$ such that $\beta(\phi(\sigma))=\sigma\cdot n-n$ 
     for all $\sigma\in G$. Since $\beta$ is surjective, 
     $n=\beta(m)$ for some $m\in M$. Hence 
@@ -382,7 +392,7 @@ and group homomorphisms is exact.
     =\beta(\sigma\cdot m-m).
     \]
     For each $\sigma\in G$, 
-    $\phi(\sigma)-(\sigma\cdot m-m)\in\ker\beta=\im\alpha$. 
+    $\phi(\sigma)-(\sigma\cdot m-m)\in\ker\beta=\im\alpha$ 
     and therefore  $\phi(\sigma)-(\sigma\cdot m-m)=\alpha(\rho_\sigma)$. 
     This defines a map $\rho\colon G\to P$, $\sigma\mapsto\rho_\sigma$.
     We claim that $\rho\in Z^1(G,P)$. If $\sigma,\tau\in G$, then
@@ -394,7 +404,7 @@ and group homomorphisms is exact.
     Since $\alpha$ is injective, it follows that $\rho\in Z^1(G,P)$.
     Now
     \[
-    \alpha_1(\rho+B^1(G,P))=\alpha\circ\rho+B^1(G,M)=\phi+B^1(G,M).\qedhere
+    \alpha^1(\rho+B^1(G,P))=\alpha\circ\rho+B^1(G,M)=\phi+B^1(G,M).\qedhere
     \]
 \end{proof}
 
@@ -417,7 +427,7 @@ and group homomorphisms is exact.
     \begin{equation}
         \label{eq:|G|H1(G,M)=0}    
         \sum_{\tau\in G}\phi(\tau)=\sum_{\tau\in G}\phi(\sigma\tau)
-        =\sum_{\tau\in G}\sigma\cdot\phi(\tau)+\sum_{\tau\in G}\phi(\sigma)=n\phi(\sigma).
+        =\sum_{\tau\in G}\sigma\cdot\phi(\tau)+\sum_{\tau\in G}\phi(\sigma).
     \end{equation}
     Let $m=-\sum_{\tau\in G}\phi(\tau)\in M$. Then 
     \eqref{eq:|G|H1(G,M)=0} can be rewritten as 
