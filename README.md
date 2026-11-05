@@ -9,6 +9,8 @@ at Vrije Universiteit Brussel.
 
 ## PDF
 [Here](https://github.com/vendramin/galois/blob/main/notes.pdf) is the PDF.
+[Here](https://github.com/vendramin/galois/blob/main/dyslexic.pdf) is a
+dyslexic-friendly version.
 
 ## Compiling 
 

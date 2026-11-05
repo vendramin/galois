@@ -1,0 +1,81 @@
+\documentclass[12pt,oneside]{amsproc}
+\usepackage{mynotes}
+
+\renewcommand{\course}{Galois theory}
+
+\title{\course}
+\author{Leandro Vendramin}
+\address{Department of Mathematics and Data
+Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
+\email{Leandro.Vendramin@vub.be}
+\thanks{}
+\date{}
+
+% This is the special dyslexic-friendly configuration
+\overfullrule=0mm
+\geometry{margin=1.2in}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{sfmath}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{ragged2e}
+\RaggedRight
+\thickmuskip=6mu plus 3mu
+\medmuskip=5mu plus 2mu minus 1mu
+
+
+\makeindex 
+
+\begin{document}
+
+\begin{abstract}
+    The notes correspond to the bachelor
+    course \textbf{Galois Theory} of the
+    Vrije Universiteit Brussel,
+    Faculty of Sciences,
+    Department of Mathematics and Data Sciences.
+\end{abstract}
+
+\maketitle
+\listoflectures
+
+\vspace{5cm}
+\begin{figure}[h]
+    \includegraphics[scale=0.2]{images/VUB.jpg}
+\end{figure}
+
+\thispagestyle{empty}
+
+\setcounter{tocdepth}{1}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\input{introduction}
+
+\include{01}
+\input{02}
+\input{03}
+\input{04}
+\input{05}
+\input{06}
+\input{07}
+\input{08}
+\input{09}
+\input{10}
+\input{11}
+\input{12}
+
+\newpage 
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+\printindex
+
+\end{document}

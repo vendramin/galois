@@ -1,8 +1,8 @@
 # ============================================================
 # Makefile for building both versions of the notes:
 #   notes.pdf           -- original version   (notes.tex,     pdflatex)
+#   dyslexic.pdf        -- accessible version (dyslexic.tex,   xelatex)
 #   solutions.pdf       -- just the solutions section, standalone
-#
 #
 # Usage (from a terminal, in this folder):
 #   make              build both PDFs
